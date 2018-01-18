@@ -1,0 +1,1306 @@
+
+<svg contentScriptType="text/ecmascript" width="15.80000cm"
+     xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify"
+     contentStyleType="text/css" viewBox="0 0 474.00000 836.99180"
+     height="27.89973cm" preserveAspectRatio="xMidYMid meet"
+     xmlns="http://www.w3.org/2000/svg" onload="Init(evt)" version="1.0">
+    <script xlink:actuate="onLoad" xlink:type="simple" xlink:show="other"
+            type="text/ecmascript" xmlns:xlink="http://www.w3.org/1999/xlink"><![CDATA[
+var lMouseDragging = true;
+var hideTimeLine = false;
+var X1 = 0;
+var Y1 = 0;
+var X2 = 0;
+var Y2 = 0;
+
+var SVGDoc = null;
+var SVGRoot = null;
+var SVGViewBox = null;
+
+function Init(evt) {
+    SVGDoc = evt.target.ownerDocument;
+    SVGRoot = SVGDoc.documentElement;
+
+    SVGRoot.addEventListener('click', mouseClicked, false);
+    SVGRoot.addEventListener('mousemove', mouseMove, false);
+    SVGRoot.addEventListener('keypress', keyPressed, false);
+    if(typeof(top) !== "undefined")
+        browserFix();
+}
+
+function keyPressed(evt) {
+    var chCode = evt.charCode? evt.charCode : evt.keyCode;
+    if (chCode == 72 || chCode == 104) {
+        hideTimeLine = !hideTimeLine;
+        hideLine();
+    }
+}
+
+function mouseClicked(evt) {
+    lMouseDragging = !lMouseDragging;
+}
+
+function mouseMove(evt) { 
+    var p = document.documentElement.createSVGPoint();
+    evt = evt || window.event;
+    p.x = evt.clientX;
+    p.y = evt.clientY;
+    try {
+        if (evt.pageX || evt.pageY) {
+            p.x = evt.pageX;
+            p.y = evt.pageY;
+        }
+        else{
+            p.x = evt.clientX + (document.documentElement.scrollLeft + document.body.scrollLeft);
+            p.y = e.clientY + (document.documentElement.scrollTop + document.body.scrollTop);
+        }
+    }
+    catch (e){}
+ 
+    var timeLine = document.getElementById("timeline");
+    var timeLineUp = document.getElementById("timeline_up");
+    var timeLineDown = document.getElementById("timeline_down");
+    var timeLabel = document.getElementById("TimeLineLabel");
+
+    if (timeLine && timeLabel) {
+        var m = timeLine.getScreenCTM();
+        var scale = parseFloat(timeLine.getAttribute("vertScale"));
+        p = p.matrixTransform(m.inverse());
+        var indicatorLineWidth = 10;
+        if (lMouseDragging){
+            if (timeLine){
+                var minY = Number(timeLine.getAttribute("minY"));
+                var maxY = Number(timeLine.getAttribute("maxY"));
+                if (p.y > minY) {
+                    minY = p.y;
+                }
+                if (minY > maxY) {
+                    minY = maxY
+                }
+                
+                timeLine.setAttribute("y1", minY);
+                timeLine.setAttribute("y2", minY);
+                
+                // This sets the attributes for the indicators for one unit up and down
+                // p.x and minY are where the mouse currently is
+                // This is when timeline is floating
+                
+                timeLineUp.setAttribute("y1", minY - scale);
+                timeLineUp.setAttribute("y2", minY - scale);
+                timeLineUp.setAttribute("x1", p.x - indicatorLineWidth / 2);
+                timeLineUp.setAttribute("x2", p.x + indicatorLineWidth / 2);
+                
+                timeLineDown.setAttribute("y1", minY + scale);
+                timeLineDown.setAttribute("y2", minY + scale);
+                timeLineDown.setAttribute("x1", p.x - indicatorLineWidth / 2);
+                timeLineDown.setAttribute("x2", p.x + indicatorLineWidth / 2);
+            }
+        }
+        else {
+        	if (timeLine){
+            	var minY = Number(timeLine.getAttribute("minY"));
+            	var maxY = Number(timeLine.getAttribute("maxY"));
+            	if (p.y > minY) {
+                	minY = p.y;
+            	}
+            	if (minY > maxY) {
+                	minY = maxY
+            	}
+                            
+            	// This sets the attributes for the indicators for one unit up and down
+            	// p.x and minY are where the mouse currently is
+            	// This is for when timeline is locked
+
+            	timeLineUp.setAttribute("x1", p.x - indicatorLineWidth / 2);
+            	timeLineUp.setAttribute("x2", p.x + indicatorLineWidth / 2);
+                
+            	timeLineDown.setAttribute("x1", p.x - indicatorLineWidth / 2);
+            	timeLineDown.setAttribute("x2", p.x + indicatorLineWidth / 2);
+        	}
+        }
+    }
+    
+    if (timeLabel) {
+        var y = parseInt(timeLine.getAttribute("y1"));
+        showCurrAge(p.x,y,evt);
+    }
+}
+
+function showCurrAge(x,y,evt) {
+    var timeLine = document.getElementById("timeline");
+    var timeLabel = document.getElementById("TimeLineLabel");
+    var timeLabelUp = document.getElementById("TimeLineLabelUp");
+    var timeLabelDown = document.getElementById("TimeLineLabelDown");
+    
+    if(timeLabel && timeLine) {
+        var minY = parseFloat(timeLine.getAttribute("minY"));
+        var scale = parseFloat(timeLine.getAttribute("vertScale"));
+        var topAge = parseFloat(timeLine.getAttribute("topAge"));
+        var currY = minY;
+        if (y > minY){
+            currY = y;
+        }
+        var currAge = topAge + ((currY - minY)/scale);
+        
+        timeLabel.setAttribute("x", x + 12);
+        timeLabel.setAttribute("y", currY - 5);
+        timeLabel.firstChild.nodeValue = Math.round(currAge*1000)/1000;
+        
+        timeLabelUp.setAttribute("x", x - 25);
+        timeLabelUp.setAttribute("y", currY - scale + 4.5);
+        timeLabelUp.firstChild.nodeValue = -1;
+        
+        timeLabelDown.setAttribute("x", x - 21);
+        timeLabelDown.setAttribute("y", currY + scale + 4.5);
+        timeLabelDown.firstChild.nodeValue = +1;
+    }
+}
+
+function hideLine() {
+    var timeLine = document.getElementById("timeline");
+	var timeLineUp = document.getElementById("timeline_up");
+	var timeLineDown = document.getElementById("timeline_down");
+	
+    var timeLabel = document.getElementById("TimeLineLabel");
+    var timeLabelUp = document.getElementById("TimeLineLabelUp");
+    var timeLabelDown = document.getElementById("TimeLineLabelDown");
+    
+    timeLabel.setAttributeNS(null, "visibility", "visible");
+    timeLabelUp.setAttributeNS(null, "visibility", "visible");
+    timeLabelDown.setAttributeNS(null, "visibility", "visible");
+    
+    if (timeLine && timeLabel) {
+        timeLine.setAttribute("style", hideTimeLine ? "stroke-opacity: 0;" : "stroke: red; stroke-opacity: 0.5;");
+        timeLineUp.setAttribute("style", hideTimeLine ? "stroke-opacity: 0;" : "stroke: red; stroke-opacity: 0.5;");
+        timeLineDown.setAttribute("style", hideTimeLine ? "stroke-opacity: 0;" : "stroke: red; stroke-opacity: 0.5;");
+        timeLabel.setAttribute("style", hideTimeLine ? "fill-opacity: 0;" : "font-size: 10; fill: red; fill-opacity: 0.7;");
+        timeLabelUp.setAttribute("style", hideTimeLine ? "fill-opacity: 0;" : "font-size: 10; fill: red; fill-opacity: 0.7;");
+        timeLabelDown.setAttribute("style", hideTimeLine ? "fill-opacity: 0;" : "font-size: 10; fill: red; fill-opacity: 0.7;");
+    }
+}
+]]>
+    </script>
+    <script xlink:actuate="onLoad" xlink:type="simple" xlink:show="other"
+            type="text/ecmascript" xmlns:xlink="http://www.w3.org/1999/xlink"><![CDATA[
+function browserFix()
+{
+ var patterns = document.getElementsByTagName("pattern");
+
+ var length = patterns.length;
+ for (i=0; i<length; i++)
+ {
+     var pattern = patterns[i];
+     var viewbox = pattern.getAttribute("viewBox");
+     if (viewbox == null)
+         continue;
+     viewbox = viewbox.split(" ");
+
+     var transx = -parseFloat(viewbox[0]);
+     var transy = -parseFloat(viewbox[1]);
+     pattern.removeAttribute("viewBox");
+
+     var children = pattern.childNodes;
+     var clength = children.length;
+     for (j=0; j<clength; j++)
+     {
+         var child = children[j];
+
+	if(child.nodeType != 1)
+		continue;
+
+         var transform = child.getAttribute("transform");
+         if (transform != "")
+             transform += " ";
+         child.setAttribute("transform", "translate(" + transx + "," + transy + ")");
+     }
+ }
+}
+]]>
+    </script>
+    <script xlink:actuate="onLoad" xlink:type="simple" xlink:show="other"
+            type="text/ecmascript" xmlns:xlink="http://www.w3.org/1999/xlink"><![CDATA[
+var curHoverElemID = 0;
+var curHoverTextID = 0;
+
+function doMOHover(evt, elemID, textID) {
+    var e = document.getElementById(elemID);
+    var bounds = e.getBBox();
+
+    e.setAttribute("opacity", "1");
+
+    curHoverElemID = elemID;
+    curHoverTextID = textID;
+}
+
+function doMOOut(evt) {
+    document.getElementById(curHoverElemID).setAttribute("opacity", "0");
+}
+
+function doMOClick(evt, elemID, textID) {
+    if(typeof(top) === "undefined")
+        alert(textID);
+    else{
+        var text = document.getElementById(textID).getAttribute("popuptext");
+//        alert(text);
+        top.showPopup(evt, text);
+        
+//        var svg = document.getElementsByTagName('svg')[0]; //Get svg element
+//        svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
+//        var g=document.createElementNS("http://www.w3.org/2000/svg", 'g', "#ananda"); //Create a g element in SVG's namespace
+//        svg.appendChild(g);
+//        alert(svg.getChild("#ananda"));
+//
+//        var newNode = document.createElementNS("http://www.w3.org/2000/svg", 'foreignObject'); //Create a rect in SVG's namespace
+//        newNode.setAttribute("x",0); //Set rect data
+//        newNode.setAttribute("y",0); //Set rect data
+//        newNode.setAttribute("width","180"); //Set rect data
+//        newNode.setAttribute("height","80"); //Set rect data
+//        g.appendChild(newNode);
+//
+//        var f=newNode;
+//
+//        var newDiv = document.createElement('div');     
+//        var divIdName = "div_1";
+//        newDiv.setAttribute('id',divIdName);
+//        newDiv.innerHTML = "First";
+//        f.appendChild(newDiv);
+    }
+}
+
+]]>
+    </script>
+    <g>
+        <pattern x="0" y="0" width="10.00000"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 patternUnits="userSpaceOnUse" xlink:type="simple"
+                 xlink:actuate="onLoad" height="10.00000"
+                 id="ChronColumn_Unknown" preserveAspectRatio="xMidYMid meet"
+                 xlink:show="other">
+            <rect x="0" width="10.00000" height="10.00000" y="0"
+                  style="stroke-width: 0; fill: rgb(192, 192, 192);"/>
+            <line y2="10.00000"
+                  style="stroke-width: 1; stroke: black; fill: none;"
+                  x1="10.00000" x2="-4.99999" y1="-4.99999"/>
+            <line y2="15.00000"
+                  style="stroke-width: 1; stroke: black; fill: none;"
+                  x1="15.00000" x2="0" y1="0"/>
+        </pattern>
+        <linearGradient xlink:actuate="onLoad" xlink:type="simple" id="grad29"
+                        xlink:show="other"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+            <stop style="stop-color:rgb(100,100,200);stop-opacity:1" offset="0"/>
+            <stop style="stop-color:rgb(255,50,50);stop-opacity:1"
+                  offset="1.00000"/>
+        </linearGradient>
+        <linearGradient xlink:actuate="onLoad" xlink:type="simple" id="grad30"
+                        xlink:show="other"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+            <stop style="stop-color:rgb(100,100,200);stop-opacity:1" offset="0"/>
+            <stop style="stop-color:rgb(255,50,50);stop-opacity:1"
+                  offset="1.00000"/>
+        </linearGradient>
+    </g>
+    <rect x="2.00000" width="469.00000" height="98.59180" y="2.00000"
+          style="stroke-width: 0; fill: rgb(255,255,255);"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 14px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 14px;fill: rgb(0,0,0);;"
+          transform="translate(2.00000, 18.09863) ">
+        <tspan x="126.73486" y="13.00000">
+            TimeScale Creator GTS2016 chart
+        </tspan>
+    </text>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 14px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 14px;fill: rgb(0,0,0);;"
+          transform="translate(2.00000, 82.49316) ">
+        <tspan x="15.96045" y="13.00000">
+            Ma
+        </tspan>
+    </text>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 14px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 14px;fill: rgb(0,0,0);;"
+          transform="translate(55.36914, 50.29590) ">
+        <tspan x="118.11426" y="13.00000">
+            Standard Chronostratigraphy
+        </tspan>
+    </text>
+    <g id="spawner429" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner429&apos;, &apos;id429&apos;)"
+       onclick="doMOClick(evt, &apos;spawner429&apos;, &apos;id429&apos;)">
+        <rect x="55.36914" width="416.00000" height="16.09863" y="50.29590"
+              style="stroke-width: 0; opacity: 0.5; fill: red;"/>
+    </g>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 14px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 14px;fill: rgb(0,0,0);;"
+          transform="translate(55.36914, 82.49316) ">
+        <tspan x="39.10693" y="13.00000">
+            Era
+        </tspan>
+    </text>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 14px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 14px;fill: rgb(0,0,0);;"
+          transform="translate(157.36914, 82.49316) ">
+        <tspan x="29.76563" y="13.00000">
+            Period
+        </tspan>
+    </text>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 14px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 14px;fill: rgb(0,0,0);;"
+          transform="translate(259.36914, 82.49316) ">
+        <tspan x="30.15186" y="13.00000">
+            Epoch
+        </tspan>
+    </text>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 14px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 14px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 82.49316) ">
+        <tspan x="22.30713" y="13.00000">
+            Age/Stage
+        </tspan>
+    </text>
+    <line y2="101.59180"
+          style="stroke-width: 3; stroke: black; shape-rendering: geometricPrecision; "
+          x1="156.36914" x2="156.36914" y1="75.44385"/>
+    <line y2="101.59180"
+          style="stroke-width: 3; stroke: black; shape-rendering: geometricPrecision; "
+          x1="258.36914" x2="258.36914" y1="75.44385"/>
+    <line y2="101.59180"
+          style="stroke-width: 3; stroke: black; shape-rendering: geometricPrecision; "
+          x1="360.36914" x2="360.36914" y1="75.44385"/>
+    <line y2="101.59180"
+          style="stroke-width: 3; stroke: black; shape-rendering: geometricPrecision; "
+          x1="54.36914" x2="54.36914" y1="67.39453"/>
+    <rect x="2.00000" width="51.36914" height="731.40000" y="102.59180"
+          style="stroke-width:0; fill: rgb(255,255,255);"/>
+    <line y2="107.39180" style="stroke-width: 2; stroke: black;" x1="53.36914"
+          x2="45.36914" y1="107.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(17.34766, 100.49238) ">
+        <tspan x="0" y="11.00000">
+            202
+        </tspan>
+    </text>
+    <line y2="114.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="114.89180"/>
+    <line y2="122.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="122.39180"/>
+    <line y2="129.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="129.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 122.99238) ">
+        <tspan x="0" y="11.00000">
+            205
+        </tspan>
+    </text>
+    <line y2="137.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="137.39180"/>
+    <line y2="144.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="144.89180"/>
+    <line y2="152.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="152.39180"/>
+    <line y2="159.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="159.89180"/>
+    <line y2="167.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="167.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 160.49238) ">
+        <tspan x="0" y="11.00000">
+            210
+        </tspan>
+    </text>
+    <line y2="174.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="174.89180"/>
+    <line y2="182.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="182.39180"/>
+    <line y2="189.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="189.89180"/>
+    <line y2="197.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="197.39180"/>
+    <line y2="204.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="204.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 197.99238) ">
+        <tspan x="0" y="11.00000">
+            215
+        </tspan>
+    </text>
+    <line y2="212.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="212.39180"/>
+    <line y2="219.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="219.89180"/>
+    <line y2="227.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="227.39180"/>
+    <line y2="234.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="234.89180"/>
+    <line y2="242.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="242.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 235.49238) ">
+        <tspan x="0" y="11.00000">
+            220
+        </tspan>
+    </text>
+    <line y2="249.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="249.89180"/>
+    <line y2="257.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="257.39180"/>
+    <line y2="264.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="264.89180"/>
+    <line y2="272.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="272.39180"/>
+    <line y2="279.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="279.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 272.99238) ">
+        <tspan x="0" y="11.00000">
+            225
+        </tspan>
+    </text>
+    <line y2="287.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="287.39180"/>
+    <line y2="294.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="294.89180"/>
+    <line y2="302.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="302.39180"/>
+    <line y2="309.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="309.89180"/>
+    <line y2="317.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="317.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 310.49238) ">
+        <tspan x="0" y="11.00000">
+            230
+        </tspan>
+    </text>
+    <line y2="324.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="324.89180"/>
+    <line y2="332.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="332.39180"/>
+    <line y2="339.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="339.89180"/>
+    <line y2="347.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="347.39180"/>
+    <line y2="354.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="354.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 347.99238) ">
+        <tspan x="0" y="11.00000">
+            235
+        </tspan>
+    </text>
+    <line y2="362.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="362.39180"/>
+    <line y2="369.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="369.89180"/>
+    <line y2="377.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="377.39180"/>
+    <line y2="384.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="384.89180"/>
+    <line y2="392.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="392.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 385.49238) ">
+        <tspan x="0" y="11.00000">
+            240
+        </tspan>
+    </text>
+    <line y2="399.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="399.89180"/>
+    <line y2="407.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="407.39180"/>
+    <line y2="414.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="414.89180"/>
+    <line y2="422.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="422.39180"/>
+    <line y2="429.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="429.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 422.99238) ">
+        <tspan x="0" y="11.00000">
+            245
+        </tspan>
+    </text>
+    <line y2="437.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="437.39180"/>
+    <line y2="444.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="444.89180"/>
+    <line y2="452.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="452.39180"/>
+    <line y2="459.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="459.89180"/>
+    <line y2="467.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="467.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 460.49238) ">
+        <tspan x="0" y="11.00000">
+            250
+        </tspan>
+    </text>
+    <line y2="474.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="474.89180"/>
+    <line y2="482.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="482.39180"/>
+    <line y2="489.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="489.89180"/>
+    <line y2="497.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="497.39180"/>
+    <line y2="504.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="504.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 497.99238) ">
+        <tspan x="0" y="11.00000">
+            255
+        </tspan>
+    </text>
+    <line y2="512.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="512.39180"/>
+    <line y2="519.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="519.89180"/>
+    <line y2="527.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="527.39180"/>
+    <line y2="534.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="534.89180"/>
+    <line y2="542.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="542.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 535.49238) ">
+        <tspan x="0" y="11.00000">
+            260
+        </tspan>
+    </text>
+    <line y2="549.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="549.89180"/>
+    <line y2="557.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="557.39180"/>
+    <line y2="564.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="564.89180"/>
+    <line y2="572.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="572.39180"/>
+    <line y2="579.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="579.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 572.99238) ">
+        <tspan x="0" y="11.00000">
+            265
+        </tspan>
+    </text>
+    <line y2="587.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="587.39180"/>
+    <line y2="594.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="594.89180"/>
+    <line y2="602.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="602.39180"/>
+    <line y2="609.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="609.89180"/>
+    <line y2="617.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="617.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 610.49238) ">
+        <tspan x="0" y="11.00000">
+            270
+        </tspan>
+    </text>
+    <line y2="624.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="624.89180"/>
+    <line y2="632.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="632.39180"/>
+    <line y2="639.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="639.89180"/>
+    <line y2="647.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="647.39180"/>
+    <line y2="654.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="654.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 647.99238) ">
+        <tspan x="0" y="11.00000">
+            275
+        </tspan>
+    </text>
+    <line y2="662.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="662.39180"/>
+    <line y2="669.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="669.89180"/>
+    <line y2="677.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="677.39180"/>
+    <line y2="684.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="684.89180"/>
+    <line y2="692.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="692.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 685.49238) ">
+        <tspan x="0" y="11.00000">
+            280
+        </tspan>
+    </text>
+    <line y2="699.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="699.89180"/>
+    <line y2="707.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="707.39180"/>
+    <line y2="714.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="714.89180"/>
+    <line y2="722.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="722.39180"/>
+    <line y2="729.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="729.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 722.99238) ">
+        <tspan x="0" y="11.00000">
+            285
+        </tspan>
+    </text>
+    <line y2="737.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="737.39180"/>
+    <line y2="744.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="744.89180"/>
+    <line y2="752.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="752.39180"/>
+    <line y2="759.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="759.89180"/>
+    <line y2="767.39180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="767.39180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 760.49238) ">
+        <tspan x="0" y="11.00000">
+            290
+        </tspan>
+    </text>
+    <line y2="774.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="774.89180"/>
+    <line y2="782.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="782.39180"/>
+    <line y2="789.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="789.89180"/>
+    <line y2="797.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="797.39180"/>
+    <line y2="804.89180" style="stroke-width: 3; stroke: black;" x1="53.36914"
+          x2="39.36914" y1="804.89180"/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(12.34766, 797.99238) ">
+        <tspan x="0" y="11.00000">
+            295
+        </tspan>
+    </text>
+    <line y2="812.39180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="812.39180"/>
+    <line y2="819.89180" style="stroke-width: 1; stroke: black;" x1="53.36914"
+          x2="48.36914" y1="819.89180"/>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(153,192,141);"
+             points="55.36914,481.64180 60.36914,481.64180 64.36914,481.64180 146.36914,481.64180 150.36914,481.64180 155.36914,481.64180 155.36914,833.99180 150.36914,833.99180 146.36914,833.99180 64.36914,833.99180 60.36914,833.99180 55.36914,833.99180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(55.36914, 650.91738) ">
+        <tspan x="23.98438" y="11.00000">
+            Paleozoic
+        </tspan>
+    </text>
+    <g id="spawner430" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner430&apos;, &apos;id430&apos;)"
+       onclick="doMOClick(evt, &apos;spawner430&apos;, &apos;id430&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="55.36914,481.64180 60.36914,481.64180 64.36914,481.64180 146.36914,481.64180 150.36914,481.64180 155.36914,481.64180 155.36914,833.99180 150.36914,833.99180 146.36914,833.99180 64.36914,833.99180 60.36914,833.99180 55.36914,833.99180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(103,197,202);"
+             points="55.36914,102.59180 60.36914,102.59180 64.36914,102.59180 146.36914,102.59180 150.36914,102.59180 155.36914,102.59180 155.36914,481.64180 150.36914,481.64180 146.36914,481.64180 64.36914,481.64180 60.36914,481.64180 55.36914,481.64180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="55.36914,481.64180 60.36914,481.64180 64.36914,481.64180 146.36914,481.64180 150.36914,481.64180 155.36914,481.64180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(55.36914, 285.21738) ">
+        <tspan x="24.65820" y="11.00000">
+            Mesozoic
+        </tspan>
+    </text>
+    <g id="spawner431" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner431&apos;, &apos;id431&apos;)"
+       onclick="doMOClick(evt, &apos;spawner431&apos;, &apos;id431&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="55.36914,102.59180 60.36914,102.59180 64.36914,102.59180 146.36914,102.59180 150.36914,102.59180 155.36914,102.59180 155.36914,481.64180 150.36914,481.64180 146.36914,481.64180 64.36914,481.64180 60.36914,481.64180 55.36914,481.64180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(240,64,40);"
+             points="157.36914,481.64180 162.36914,481.64180 166.36914,481.64180 248.36914,481.64180 252.36914,481.64180 257.36914,481.64180 257.36914,833.99180 252.36914,833.99180 248.36914,833.99180 166.36914,833.99180 162.36914,833.99180 157.36914,833.99180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: white;"
+          transform="translate(157.36914, 650.91738) ">
+        <tspan x="27.65820" y="11.00000">
+            Permian
+        </tspan>
+    </text>
+    <g id="spawner432" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner432&apos;, &apos;id432&apos;)"
+       onclick="doMOClick(evt, &apos;spawner432&apos;, &apos;id432&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="157.36914,481.64180 162.36914,481.64180 166.36914,481.64180 248.36914,481.64180 252.36914,481.64180 257.36914,481.64180 257.36914,833.99180 252.36914,833.99180 248.36914,833.99180 166.36914,833.99180 162.36914,833.99180 157.36914,833.99180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(129,43,146);"
+             points="157.36914,102.59180 162.36914,102.59180 166.36914,102.59180 248.36914,102.59180 252.36914,102.59180 257.36914,102.59180 257.36914,481.64180 252.36914,481.64180 248.36914,481.64180 166.36914,481.64180 162.36914,481.64180 157.36914,481.64180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="157.36914,481.64180 162.36914,481.64180 166.36914,481.64180 248.36914,481.64180 252.36914,481.64180 257.36914,481.64180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: white;"
+          transform="translate(157.36914, 285.21738) ">
+        <tspan x="29.33398" y="11.00000">
+            Triassic
+        </tspan>
+    </text>
+    <g id="spawner433" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner433&apos;, &apos;id433&apos;)"
+       onclick="doMOClick(evt, &apos;spawner433&apos;, &apos;id433&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="157.36914,102.59180 162.36914,102.59180 166.36914,102.59180 248.36914,102.59180 252.36914,102.59180 257.36914,102.59180 257.36914,481.64180 252.36914,481.64180 248.36914,481.64180 166.36914,481.64180 162.36914,481.64180 157.36914,481.64180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(239,88,69);"
+             points="259.36914,634.64180 264.36914,634.64180 268.36914,634.64180 350.36914,634.64180 354.36914,634.64180 359.36914,634.64180 359.36914,833.99180 354.36914,833.99180 350.36914,833.99180 268.36914,833.99180 264.36914,833.99180 259.36914,833.99180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(259.36914, 727.41738) ">
+        <tspan x="23.32227" y="11.00000">
+            Cisuralian
+        </tspan>
+    </text>
+    <g id="spawner434" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner434&apos;, &apos;id434&apos;)"
+       onclick="doMOClick(evt, &apos;spawner434&apos;, &apos;id434&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="259.36914,634.64180 264.36914,634.64180 268.36914,634.64180 350.36914,634.64180 354.36914,634.64180 359.36914,634.64180 359.36914,833.99180 354.36914,833.99180 350.36914,833.99180 268.36914,833.99180 264.36914,833.99180 259.36914,833.99180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(251,116,92);"
+             points="259.36914,540.96680 264.36914,540.96680 268.36914,540.96680 350.36914,540.96680 354.36914,540.96680 359.36914,540.96680 359.36914,634.64180 354.36914,634.64180 350.36914,634.64180 268.36914,634.64180 264.36914,634.64180 259.36914,634.64180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="259.36914,634.64180 264.36914,634.64180 268.36914,634.64180 350.36914,634.64180 354.36914,634.64180 359.36914,634.64180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(259.36914, 580.90488) ">
+        <tspan x="15.97168" y="11.00000">
+            Guadalupian
+        </tspan>
+    </text>
+    <g id="spawner435" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner435&apos;, &apos;id435&apos;)"
+       onclick="doMOClick(evt, &apos;spawner435&apos;, &apos;id435&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="259.36914,540.96680 264.36914,540.96680 268.36914,540.96680 350.36914,540.96680 354.36914,540.96680 359.36914,540.96680 359.36914,634.64180 354.36914,634.64180 350.36914,634.64180 268.36914,634.64180 264.36914,634.64180 259.36914,634.64180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(251,167,148);"
+             points="259.36914,481.64180 264.36914,481.64180 268.36914,481.64180 350.36914,481.64180 354.36914,481.64180 359.36914,481.64180 359.36914,540.96680 354.36914,540.96680 350.36914,540.96680 268.36914,540.96680 264.36914,540.96680 259.36914,540.96680 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="259.36914,540.96680 264.36914,540.96680 268.36914,540.96680 350.36914,540.96680 354.36914,540.96680 359.36914,540.96680 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(259.36914, 504.40488) ">
+        <tspan x="23.97559" y="11.00000">
+            Lopingian
+        </tspan>
+    </text>
+    <g id="spawner436" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner436&apos;, &apos;id436&apos;)"
+       onclick="doMOClick(evt, &apos;spawner436&apos;, &apos;id436&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="259.36914,481.64180 264.36914,481.64180 268.36914,481.64180 350.36914,481.64180 354.36914,481.64180 359.36914,481.64180 359.36914,540.96680 354.36914,540.96680 350.36914,540.96680 268.36914,540.96680 264.36914,540.96680 259.36914,540.96680 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(152,57,153);"
+             points="259.36914,443.39180 264.36914,443.39180 268.36914,443.39180 350.36914,443.39180 354.36914,443.39180 359.36914,443.39180 359.36914,481.64180 354.36914,481.64180 350.36914,481.64180 268.36914,481.64180 264.36914,481.64180 259.36914,481.64180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="259.36914,481.64180 264.36914,481.64180 268.36914,481.64180 350.36914,481.64180 354.36914,481.64180 359.36914,481.64180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: white;"
+          transform="translate(259.36914, 455.61738) ">
+        <tspan x="36.33008" y="11.00000">
+            Early
+        </tspan>
+    </text>
+    <g id="spawner437" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner437&apos;, &apos;id437&apos;)"
+       onclick="doMOClick(evt, &apos;spawner437&apos;, &apos;id437&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="259.36914,443.39180 264.36914,443.39180 268.36914,443.39180 350.36914,443.39180 354.36914,443.39180 359.36914,443.39180 359.36914,481.64180 354.36914,481.64180 350.36914,481.64180 268.36914,481.64180 264.36914,481.64180 259.36914,481.64180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(177,104,177);"
+             points="259.36914,369.89180 264.36914,369.89180 268.36914,369.89180 350.36914,369.89180 354.36914,369.89180 359.36914,369.89180 359.36914,443.39180 354.36914,443.39180 350.36914,443.39180 268.36914,443.39180 264.36914,443.39180 259.36914,443.39180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="259.36914,443.39180 264.36914,443.39180 268.36914,443.39180 350.36914,443.39180 354.36914,443.39180 359.36914,443.39180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(259.36914, 399.74238) ">
+        <tspan x="32.32520" y="11.00000">
+            Middle
+        </tspan>
+    </text>
+    <g id="spawner438" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner438&apos;, &apos;id438&apos;)"
+       onclick="doMOClick(evt, &apos;spawner438&apos;, &apos;id438&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="259.36914,369.89180 264.36914,369.89180 268.36914,369.89180 350.36914,369.89180 354.36914,369.89180 359.36914,369.89180 359.36914,443.39180 354.36914,443.39180 350.36914,443.39180 268.36914,443.39180 264.36914,443.39180 259.36914,443.39180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(189,140,195);"
+             points="259.36914,102.59180 264.36914,102.59180 268.36914,102.59180 350.36914,102.59180 354.36914,102.59180 359.36914,102.59180 359.36914,369.89180 354.36914,369.89180 350.36914,369.89180 268.36914,369.89180 264.36914,369.89180 259.36914,369.89180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="259.36914,369.89180 264.36914,369.89180 268.36914,369.89180 350.36914,369.89180 354.36914,369.89180 359.36914,369.89180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(259.36914, 229.34238) ">
+        <tspan x="38.32227" y="11.00000">
+            Late
+        </tspan>
+    </text>
+    <g id="spawner439" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner439&apos;, &apos;id439&apos;)"
+       onclick="doMOClick(evt, &apos;spawner439&apos;, &apos;id439&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="259.36914,102.59180 264.36914,102.59180 268.36914,102.59180 350.36914,102.59180 354.36914,102.59180 359.36914,102.59180 359.36914,369.89180 354.36914,369.89180 350.36914,369.89180 268.36914,369.89180 264.36914,369.89180 259.36914,369.89180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(227,99,80);"
+             points="361.36914,808.64180 366.36914,808.64180 370.36914,808.64180 462.36914,808.64180 466.36914,808.64180 471.36914,808.64180 471.36914,833.99180 466.36914,833.99180 462.36914,833.99180 370.36914,833.99180 366.36914,833.99180 361.36914,833.99180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 814.41738) ">
+        <tspan x="32.32129" y="11.00000">
+            Asselian
+        </tspan>
+    </text>
+    <g id="spawner440" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner440&apos;, &apos;id440&apos;)"
+       onclick="doMOClick(evt, &apos;spawner440&apos;, &apos;id440&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,808.64180 366.36914,808.64180 370.36914,808.64180 462.36914,808.64180 466.36914,808.64180 471.36914,808.64180 471.36914,833.99180 466.36914,833.99180 462.36914,833.99180 370.36914,833.99180 366.36914,833.99180 361.36914,833.99180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(227,111,92);"
+             points="361.36914,767.84180 366.36914,767.84180 370.36914,767.84180 462.36914,767.84180 466.36914,767.84180 471.36914,767.84180 471.36914,808.64180 466.36914,808.64180 462.36914,808.64180 370.36914,808.64180 366.36914,808.64180 361.36914,808.64180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; stroke-dasharray:7,4;"
+              points="361.36914,808.64180 366.36914,808.64180 370.36914,808.64180 462.36914,808.64180 466.36914,808.64180 471.36914,808.64180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 781.34238) ">
+        <tspan x="26.32129" y="11.00000">
+            Sakmarian
+        </tspan>
+    </text>
+    <g id="spawner441" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner441&apos;, &apos;id441&apos;)"
+       onclick="doMOClick(evt, &apos;spawner441&apos;, &apos;id441&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,767.84180 366.36914,767.84180 370.36914,767.84180 462.36914,767.84180 466.36914,767.84180 471.36914,767.84180 471.36914,808.64180 466.36914,808.64180 462.36914,808.64180 370.36914,808.64180 366.36914,808.64180 361.36914,808.64180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(227,123,104);"
+             points="361.36914,707.39180 366.36914,707.39180 370.36914,707.39180 462.36914,707.39180 466.36914,707.39180 471.36914,707.39180 471.36914,767.84180 466.36914,767.84180 462.36914,767.84180 370.36914,767.84180 366.36914,767.84180 361.36914,767.84180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; stroke-dasharray:7,4;"
+              points="361.36914,767.84180 366.36914,767.84180 370.36914,767.84180 462.36914,767.84180 466.36914,767.84180 471.36914,767.84180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 730.71738) ">
+        <tspan x="28.65625" y="11.00000">
+            Artinskian
+        </tspan>
+    </text>
+    <g id="spawner442" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner442&apos;, &apos;id442&apos;)"
+       onclick="doMOClick(evt, &apos;spawner442&apos;, &apos;id442&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,707.39180 366.36914,707.39180 370.36914,707.39180 462.36914,707.39180 466.36914,707.39180 471.36914,707.39180 471.36914,767.84180 466.36914,767.84180 462.36914,767.84180 370.36914,767.84180 366.36914,767.84180 361.36914,767.84180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(227,135,118);"
+             points="361.36914,634.64180 366.36914,634.64180 370.36914,634.64180 462.36914,634.64180 466.36914,634.64180 471.36914,634.64180 471.36914,707.39180 466.36914,707.39180 462.36914,707.39180 370.36914,707.39180 366.36914,707.39180 361.36914,707.39180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; stroke-dasharray:7,4;"
+              points="361.36914,707.39180 366.36914,707.39180 370.36914,707.39180 462.36914,707.39180 466.36914,707.39180 471.36914,707.39180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 664.11738) ">
+        <tspan x="27.64551" y="11.00000">
+            Kungurian
+        </tspan>
+    </text>
+    <g id="spawner443" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner443&apos;, &apos;id443&apos;)"
+       onclick="doMOClick(evt, &apos;spawner443&apos;, &apos;id443&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,634.64180 366.36914,634.64180 370.36914,634.64180 462.36914,634.64180 466.36914,634.64180 471.36914,634.64180 471.36914,707.39180 466.36914,707.39180 462.36914,707.39180 370.36914,707.39180 366.36914,707.39180 361.36914,707.39180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(251,128,105);"
+             points="361.36914,608.39180 366.36914,608.39180 370.36914,608.39180 462.36914,608.39180 466.36914,608.39180 471.36914,608.39180 471.36914,634.64180 466.36914,634.64180 462.36914,634.64180 370.36914,634.64180 366.36914,634.64180 361.36914,634.64180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="361.36914,634.64180 366.36914,634.64180 370.36914,634.64180 462.36914,634.64180 466.36914,634.64180 471.36914,634.64180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 614.61738) ">
+        <tspan x="32.64941" y="11.00000">
+            Roadian
+        </tspan>
+    </text>
+    <g id="spawner444" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner444&apos;, &apos;id444&apos;)"
+       onclick="doMOClick(evt, &apos;spawner444&apos;, &apos;id444&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,608.39180 366.36914,608.39180 370.36914,608.39180 462.36914,608.39180 466.36914,608.39180 471.36914,608.39180 471.36914,634.64180 466.36914,634.64180 462.36914,634.64180 370.36914,634.64180 366.36914,634.64180 361.36914,634.64180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(251,141,118);"
+             points="361.36914,580.94180 366.36914,580.94180 370.36914,580.94180 462.36914,580.94180 466.36914,580.94180 471.36914,580.94180 471.36914,608.39180 466.36914,608.39180 462.36914,608.39180 370.36914,608.39180 366.36914,608.39180 361.36914,608.39180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="361.36914,608.39180 366.36914,608.39180 370.36914,608.39180 462.36914,608.39180 466.36914,608.39180 471.36914,608.39180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 587.76738) ">
+        <tspan x="32.65820" y="11.00000">
+            Wordian
+        </tspan>
+    </text>
+    <g id="spawner445" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner445&apos;, &apos;id445&apos;)"
+       onclick="doMOClick(evt, &apos;spawner445&apos;, &apos;id445&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,580.94180 366.36914,580.94180 370.36914,580.94180 462.36914,580.94180 466.36914,580.94180 471.36914,580.94180 471.36914,608.39180 466.36914,608.39180 462.36914,608.39180 370.36914,608.39180 366.36914,608.39180 361.36914,608.39180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(251,154,133);"
+             points="361.36914,540.96680 366.36914,540.96680 370.36914,540.96680 462.36914,540.96680 466.36914,540.96680 471.36914,540.96680 471.36914,580.94180 466.36914,580.94180 462.36914,580.94180 370.36914,580.94180 366.36914,580.94180 361.36914,580.94180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="361.36914,580.94180 366.36914,580.94180 370.36914,580.94180 462.36914,580.94180 466.36914,580.94180 471.36914,580.94180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 554.05488) ">
+        <tspan x="26.31250" y="11.00000">
+            Capitanian
+        </tspan>
+    </text>
+    <g id="spawner446" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner446&apos;, &apos;id446&apos;)"
+       onclick="doMOClick(evt, &apos;spawner446&apos;, &apos;id446&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,540.96680 366.36914,540.96680 370.36914,540.96680 462.36914,540.96680 466.36914,540.96680 471.36914,540.96680 471.36914,580.94180 466.36914,580.94180 462.36914,580.94180 370.36914,580.94180 366.36914,580.94180 361.36914,580.94180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(252,180,162);"
+             points="361.36914,498.89180 366.36914,498.89180 370.36914,498.89180 462.36914,498.89180 466.36914,498.89180 471.36914,498.89180 471.36914,540.96680 466.36914,540.96680 462.36914,540.96680 370.36914,540.96680 366.36914,540.96680 361.36914,540.96680 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="361.36914,540.96680 366.36914,540.96680 370.36914,540.96680 462.36914,540.96680 466.36914,540.96680 471.36914,540.96680 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 513.02988) ">
+        <tspan x="15.64258" y="11.00000">
+            Wuchiapingian
+        </tspan>
+    </text>
+    <g id="spawner447" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner447&apos;, &apos;id447&apos;)"
+       onclick="doMOClick(evt, &apos;spawner447&apos;, &apos;id447&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,498.89180 366.36914,498.89180 370.36914,498.89180 462.36914,498.89180 466.36914,498.89180 471.36914,498.89180 471.36914,540.96680 466.36914,540.96680 462.36914,540.96680 370.36914,540.96680 366.36914,540.96680 361.36914,540.96680 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(252,192,178);"
+             points="361.36914,481.64180 366.36914,481.64180 370.36914,481.64180 462.36914,481.64180 466.36914,481.64180 471.36914,481.64180 471.36914,498.89180 466.36914,498.89180 462.36914,498.89180 370.36914,498.89180 366.36914,498.89180 361.36914,498.89180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="361.36914,498.89180 366.36914,498.89180 370.36914,498.89180 462.36914,498.89180 466.36914,498.89180 471.36914,498.89180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 483.36738) ">
+        <tspan x="14.96875" y="11.00000">
+            Changhsingian
+        </tspan>
+    </text>
+    <g id="spawner448" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner448&apos;, &apos;id448&apos;)"
+       onclick="doMOClick(evt, &apos;spawner448&apos;, &apos;id448&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,481.64180 366.36914,481.64180 370.36914,481.64180 462.36914,481.64180 466.36914,481.64180 471.36914,481.64180 471.36914,498.89180 466.36914,498.89180 462.36914,498.89180 370.36914,498.89180 366.36914,498.89180 361.36914,498.89180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(164,70,159);"
+             points="361.36914,465.96680 366.36914,465.96680 370.36914,465.96680 462.36914,465.96680 466.36914,465.96680 471.36914,465.96680 471.36914,481.64180 466.36914,481.64180 462.36914,481.64180 370.36914,481.64180 366.36914,481.64180 361.36914,481.64180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="361.36914,481.64180 366.36914,481.64180 370.36914,481.64180 462.36914,481.64180 466.36914,481.64180 471.36914,481.64180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: white;"
+          transform="translate(361.36914, 466.90488) ">
+        <tspan x="36.64844" y="11.00000">
+            Induan
+        </tspan>
+    </text>
+    <g id="spawner449" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner449&apos;, &apos;id449&apos;)"
+       onclick="doMOClick(evt, &apos;spawner449&apos;, &apos;id449&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,465.96680 366.36914,465.96680 370.36914,465.96680 462.36914,465.96680 466.36914,465.96680 471.36914,465.96680 471.36914,481.64180 466.36914,481.64180 462.36914,481.64180 370.36914,481.64180 366.36914,481.64180 361.36914,481.64180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(176,81,165);"
+             points="361.36914,443.39180 366.36914,443.39180 370.36914,443.39180 462.36914,443.39180 466.36914,443.39180 471.36914,443.39180 471.36914,465.96680 466.36914,465.96680 462.36914,465.96680 370.36914,465.96680 366.36914,465.96680 361.36914,465.96680 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; stroke-dasharray:7,4;"
+              points="361.36914,465.96680 366.36914,465.96680 370.36914,465.96680 462.36914,465.96680 466.36914,465.96680 471.36914,465.96680 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: white;"
+          transform="translate(361.36914, 447.77988) ">
+        <tspan x="27.98242" y="11.00000">
+            Olenekian
+        </tspan>
+    </text>
+    <g id="spawner450" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner450&apos;, &apos;id450&apos;)"
+       onclick="doMOClick(evt, &apos;spawner450&apos;, &apos;id450&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,443.39180 366.36914,443.39180 370.36914,443.39180 462.36914,443.39180 466.36914,443.39180 471.36914,443.39180 471.36914,465.96680 466.36914,465.96680 462.36914,465.96680 370.36914,465.96680 366.36914,465.96680 361.36914,465.96680 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(188,117,183);"
+             points="361.36914,403.64180 366.36914,403.64180 370.36914,403.64180 462.36914,403.64180 466.36914,403.64180 471.36914,403.64180 471.36914,443.39180 466.36914,443.39180 462.36914,443.39180 370.36914,443.39180 366.36914,443.39180 361.36914,443.39180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; stroke-dasharray:7,4;"
+              points="361.36914,443.39180 366.36914,443.39180 370.36914,443.39180 462.36914,443.39180 466.36914,443.39180 471.36914,443.39180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 416.61738) ">
+        <tspan x="35.32129" y="11.00000">
+            Anisian
+        </tspan>
+    </text>
+    <g id="spawner451" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner451&apos;, &apos;id451&apos;)"
+       onclick="doMOClick(evt, &apos;spawner451&apos;, &apos;id451&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,403.64180 366.36914,403.64180 370.36914,403.64180 462.36914,403.64180 466.36914,403.64180 471.36914,403.64180 471.36914,443.39180 466.36914,443.39180 462.36914,443.39180 370.36914,443.39180 366.36914,443.39180 361.36914,443.39180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(201,131,191);"
+             points="361.36914,369.89180 366.36914,369.89180 370.36914,369.89180 462.36914,369.89180 466.36914,369.89180 471.36914,369.89180 471.36914,403.64180 466.36914,403.64180 462.36914,403.64180 370.36914,403.64180 366.36914,403.64180 361.36914,403.64180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="361.36914,403.64180 366.36914,403.64180 370.36914,403.64180 462.36914,403.64180 466.36914,403.64180 471.36914,403.64180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 379.86738) ">
+        <tspan x="32.31250" y="11.00000">
+            Ladinian
+        </tspan>
+    </text>
+    <g id="spawner452" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner452&apos;, &apos;id452&apos;)"
+       onclick="doMOClick(evt, &apos;spawner452&apos;, &apos;id452&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,369.89180 366.36914,369.89180 370.36914,369.89180 462.36914,369.89180 466.36914,369.89180 471.36914,369.89180 471.36914,403.64180 466.36914,403.64180 462.36914,403.64180 370.36914,403.64180 366.36914,403.64180 361.36914,403.64180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(201,155,203);"
+             points="361.36914,305.76680 366.36914,305.76680 370.36914,305.76680 462.36914,305.76680 466.36914,305.76680 471.36914,305.76680 471.36914,369.89180 466.36914,369.89180 462.36914,369.89180 370.36914,369.89180 366.36914,369.89180 361.36914,369.89180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; "
+              points="361.36914,369.89180 366.36914,369.89180 370.36914,369.89180 462.36914,369.89180 466.36914,369.89180 471.36914,369.89180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 330.92988) ">
+        <tspan x="33.98828" y="11.00000">
+            Carnian
+        </tspan>
+    </text>
+    <g id="spawner453" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner453&apos;, &apos;id453&apos;)"
+       onclick="doMOClick(evt, &apos;spawner453&apos;, &apos;id453&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,305.76680 366.36914,305.76680 370.36914,305.76680 462.36914,305.76680 466.36914,305.76680 471.36914,305.76680 471.36914,369.89180 466.36914,369.89180 462.36914,369.89180 370.36914,369.89180 366.36914,369.89180 361.36914,369.89180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(214,170,211);"
+             points="361.36914,164.09180 366.36914,164.09180 370.36914,164.09180 462.36914,164.09180 466.36914,164.09180 471.36914,164.09180 471.36914,305.76680 466.36914,305.76680 462.36914,305.76680 370.36914,305.76680 366.36914,305.76680 361.36914,305.76680 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; stroke-dasharray:7,4;"
+              points="361.36914,305.76680 366.36914,305.76680 370.36914,305.76680 462.36914,305.76680 466.36914,305.76680 471.36914,305.76680 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 228.02988) ">
+        <tspan x="37.32520" y="11.00000">
+            Norian
+        </tspan>
+    </text>
+    <g id="spawner454" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner454&apos;, &apos;id454&apos;)"
+       onclick="doMOClick(evt, &apos;spawner454&apos;, &apos;id454&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,164.09180 366.36914,164.09180 370.36914,164.09180 462.36914,164.09180 466.36914,164.09180 471.36914,164.09180 471.36914,305.76680 466.36914,305.76680 462.36914,305.76680 370.36914,305.76680 366.36914,305.76680 361.36914,305.76680 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(227,185,219);"
+             points="361.36914,135.96680 366.36914,135.96680 370.36914,135.96680 462.36914,135.96680 466.36914,135.96680 471.36914,135.96680 471.36914,164.09180 466.36914,164.09180 462.36914,164.09180 370.36914,164.09180 366.36914,164.09180 361.36914,164.09180 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; stroke-dasharray:2,2;"
+              points="361.36914,164.09180 366.36914,164.09180 370.36914,164.09180 462.36914,164.09180 466.36914,164.09180 471.36914,164.09180 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 143.12988) ">
+        <tspan x="53.00195" y="11.00000">
+            -
+        </tspan>
+    </text>
+    <g id="spawner455" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner455&apos;, &apos;id455&apos;)"
+       onclick="doMOClick(evt, &apos;spawner455&apos;, &apos;id455&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,135.96680 366.36914,135.96680 370.36914,135.96680 462.36914,135.96680 466.36914,135.96680 471.36914,135.96680 471.36914,164.09180 466.36914,164.09180 462.36914,164.09180 370.36914,164.09180 366.36914,164.09180 361.36914,164.09180 "/>
+    </g>
+    <polygon style="stroke-width: 1; stroke: black;stroke-width:0; fill: rgb(227,185,219);"
+             points="361.36914,102.59180 366.36914,102.59180 370.36914,102.59180 462.36914,102.59180 466.36914,102.59180 471.36914,102.59180 471.36914,135.96680 466.36914,135.96680 462.36914,135.96680 370.36914,135.96680 366.36914,135.96680 361.36914,135.96680 "/>
+    <polyline style="stroke-width: 1; stroke: black;fill:none; stroke-dasharray:2,2;"
+              points="361.36914,135.96680 366.36914,135.96680 370.36914,135.96680 462.36914,135.96680 466.36914,135.96680 471.36914,135.96680 "/>
+    <text x="0" y="0"
+          style="font-family: Arial; font-size: 12px;fill: rgb(0,0,0); fill: font-family: Arial; font-size: 12px;fill: rgb(0,0,0);;"
+          transform="translate(361.36914, 112.37988) ">
+        <tspan x="30.98242" y="11.00000">
+            Rhaetian
+        </tspan>
+    </text>
+    <g id="spawner456" onmouseout="doMOOut(evt)" opacity="0"
+       onmouseover="doMOHover(evt, &apos;spawner456&apos;, &apos;id456&apos;)"
+       onclick="doMOClick(evt, &apos;spawner456&apos;, &apos;id456&apos;)">
+        <polygon style="stroke-width: 0; opacity: 0.5; fill: red;"
+                 points="361.36914,102.59180 366.36914,102.59180 370.36914,102.59180 462.36914,102.59180 466.36914,102.59180 471.36914,102.59180 471.36914,135.96680 466.36914,135.96680 462.36914,135.96680 370.36914,135.96680 366.36914,135.96680 361.36914,135.96680 "/>
+    </g>
+    <line y2="834.99180"
+          style="stroke-width: 3; stroke: black; shape-rendering: geometricPrecision; "
+          x1="156.36914" x2="156.36914" y1="101.59180"/>
+    <line y2="834.99180"
+          style="stroke-width: 3; stroke: black; shape-rendering: geometricPrecision; "
+          x1="258.36914" x2="258.36914" y1="101.59180"/>
+    <line y2="834.99180"
+          style="stroke-width: 3; stroke: black; shape-rendering: geometricPrecision; "
+          x1="360.36914" x2="360.36914" y1="101.59180"/>
+    <line y2="834.99180"
+          style="stroke-width: 3; stroke: black; shape-rendering: geometricPrecision; "
+          x1="54.36914" x2="54.36914" y1="101.59180"/>
+    <rect x="1.00000" width="471.00000" height="833.99180" y="1.00000"
+          style="stroke-width:2.0; fill: none; stroke: black;"/>
+    <line y2="101.59180" style="stroke-width:2.0; fill: none; stroke: black;"
+          x1="0" x2="473.00000" y1="101.59180"/>
+    <line topAge="201.36000" vertScale="7.50000" x1="0" x2="474.00000"
+          y1="101.5918" y2="101.5918" baseAge="298.88000" minY="101.59180"
+          maxY="836.99180" id="timeline"/>
+    <line topAge="201.36000" vertScale="7.50000" x1="228.5" x2="238.5"
+          y1="94.0918" y2="94.0918" baseAge="298.88000" minY="101.59180"
+          maxY="836.99180" id="timeline_up"/>
+    <line topAge="201.36000" vertScale="7.50000" x1="228.5" x2="238.5"
+          y1="109.0918" y2="109.0918" baseAge="298.88000" minY="101.59180"
+          maxY="836.99180" id="timeline_down"/>
+    <text x="245.5" id="TimeLineLabel" y="96.5918" style="fill-opacity: 0;"
+          visibility="hidden">
+        201.36
+    </text>
+    <text x="208.5" id="TimeLineLabelUp" y="98.5918" style="fill-opacity: 0;"
+          visibility="hidden">
+        -1
+    </text>
+    <text x="212.5" id="TimeLineLabelDown" y="113.5918" style="fill-opacity: 0;"
+          visibility="hidden">
+        1
+    </text>
+    <text id="id429"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="International Commission on Stratigraphy &lt;a href=&quot;http://www.stratigraphy.org/&quot;&gt;ICS&lt;/a&gt;.  Click  &lt;a href=&quot;http://stratigraphy.science.purdue.edu/&quot;&gt;Geol. TimeScale Foundation GSSP&lt;/a&gt;  for boundary (GSSP) definitions, status and nomenclature."/>
+    <text id="id430"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Paleozoic ( Age: 541.0 ) &lt;/u&gt;&lt;/h3&gt;FAD of trace fossil Tr. pedum&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id431"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Mesozoic ( Age: 251.9 ) &lt;/u&gt;&lt;/h3&gt;FAD of H. parvus = Base of Triassic (base of Mesozoic), by definition at Meishan GSSP boundary with dating = 251.90 Ma = FIXED age (Burgess et al., 2014).  In GTS2012. was 252.16 Ma (from Shen et al., 2010; Bowring ages in Lopingian paper).&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id432"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Permian ( Age: 298.88 ) &lt;/u&gt;&lt;/h3&gt;Base PERMIAN is coeval with FAD of Streptognathodus isolatus conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id433"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Triassic ( Age: 251.9 ) &lt;/u&gt;&lt;/h3&gt;FAD of H. parvus = Base of Triassic, by definition at Meishan GSSP boundary with dating = 251.90 Ma = FIXED age (Burgess et al., 2014).  In GTS2012. was 252.16 Ma (from Shen et al., 2010; Bowring ages in Lopingian paper). VERY brief.   Kozur (2003) estimates duration of H. parvus zone to be 0.1 myr, which is fairly consistent with Sweet&apos;s scaling.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id434"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Cisuralian ( Age: 298.88 ) &lt;/u&gt;&lt;/h3&gt;Base PERMIAN is coeval with FAD of Streptognathodus isolatus conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id435"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Guadalupian ( Age: 272.3 ) &lt;/u&gt;&lt;/h3&gt;Middle Permian&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id436"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Lopingian ( Age: 259.81 ) &lt;/u&gt;&lt;/h3&gt;Late Permian&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id437"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Early ( Age: 251.9 ) &lt;/u&gt;&lt;/h3&gt;FAD of H. parvus = Base of Triassic, by definition at Meishan GSSP boundary with dating = 251.90 Ma = FIXED age (Burgess et al., 2014).  In GTS2012. was 252.16 Ma (from Shen et al., 2010; Bowring ages in Lopingian paper). VERY brief.   Kozur (2003) estimates duration of H. parvus zone to be 0.1 myr, which is fairly consistent with Sweet&apos;s scaling.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id438"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Middle ( Age: 246.8 ) &lt;/u&gt;&lt;/h3&gt;EARLY Anisian is traditionally the  Aegean substage that begins in the Tethyan realm with the Japonites welteri Ammonoid zone.  But, base of Conodont Ch. timorensis is used here for base of Anisian, hence of Aegean.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id439"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Late ( Age: 237.0 ) &lt;/u&gt;&lt;/h3&gt;EARLY CARNIAN - BUT:  &quot;Cordevolian&quot; is a controversial additional subdivision of Early Carnian that equates to D. canadensis and Trachyceras aon Ammonoid Zones.  Bachmann (Aug2015 to J.Ogg): &quot;As pointed out by KOZUR (2003), the priority subdivision of the Carnian into the Cordevolian, Julian and Tuvalian substages (MOJSOSIVICS et al. 1895) should be preserved. Lumping the original Cordevolian and Julian into a new extended Julian substage (e. g. KRYSTYN 1974) violates the priority without convincing faunistic reason. Very characteristic for the Cordevolian is the co-occurrence of Ladinian and Carnian elements in all fossil groups, whereas the Ladinian elements disappear around the base of the Julian. The high percentage of Ladinian elements, in addition to the first occurrence of many Carnian forms, is the reason why the Cordevolian was for a long time considered to represent the youngest substage of the Ladinian.  The Julian begins with the Trachyceras aonoides Zone, which is characterised by both the disappearance of the last Ladinian holdovers and by the appearance of numerous new Carnian or Carnian-Norian types in all stratigraphically important fossil groups, especially well recognisable in radiolarian faunas. &quot;&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id440"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Asselian ( Age: 298.88 ) &lt;/u&gt;&lt;/h3&gt;Base PERMIAN is coeval with FAD of Streptognathodus isolatus conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id441"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Sakmarian ( Age: 295.5 ) &lt;/u&gt;&lt;/h3&gt;Base Sakmarian is proposed to be coeval with FAD of Sweetognathus merrilli conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id442"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Artinskian ( Age: 290.06 ) &lt;/u&gt;&lt;/h3&gt;Base Artinskian is proposed to be coeval with FAD of Sweetognathus whitei conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id443"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Kungurian ( Age: 282.0 ) &lt;/u&gt;&lt;/h3&gt;Base Kungurian is proposed to be coeval with FAD of Neostreptognathodus pnevi conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id444"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Roadian ( Age: 272.3 ) &lt;/u&gt;&lt;/h3&gt;Base Roadian is coeval with FAD of Jinogondolella nankingensis conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id445"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Wordian ( Age: 268.8 ) &lt;/u&gt;&lt;/h3&gt;Base Wordian is coeval with FAD of Jinogondolella aserrata conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id446"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Capitanian ( Age: 265.14 ) &lt;/u&gt;&lt;/h3&gt;Base Capitanian is coeval with FAD of Jinogondolella postserrata conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id447"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Wuchiapingian ( Age: 259.81 ) &lt;/u&gt;&lt;/h3&gt;Base Wuchiapingian is coeval with FAD of Clarkina postbitteri postbitteri conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id448"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Changhsingian ( Age: 254.2 ) &lt;/u&gt;&lt;/h3&gt;Base Changhsingian is coeval with FAD of Clarkina wangi conodont&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id449"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Induan ( Age: 251.9 ) &lt;/u&gt;&lt;/h3&gt;FAD of H. parvus = Base of Triassic, by definition at Meishan GSSP boundary with dating = 251.90 Ma = FIXED age (Burgess et al., 2014).  In GTS2012. was 252.16 Ma (from Shen et al., 2010; Bowring ages in Lopingian paper). VERY brief.   Kozur (2003) estimates duration of H. parvus zone to be 0.1 myr, which is fairly consistent with Sweet&apos;s scaling.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id450"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Olenekian ( Age: 249.81 ) &lt;/u&gt;&lt;/h3&gt;Base of Olenekian (base of Smithian substage) -- Assumed coincidence of Chaohu conodont marker for GSSP candidate and Tethyan ammonite zone usage (base of Flemingite, which is nearly same level at Chaohu).  At Chaohu GSSP candidate, this is just below (0.05 used here) the base of Hounslow-Muttoni magnetozone LT3n (CG6n of Szurlies 2007) =&gt; base-Induan (as used at Chaohu) would be base of Germanic cycle s3.3; Chaohu 405kyr cycle-strat suggests the Magzone is about 20% up in &quot;e5.2&quot; of Mingsong&apos;a band-pass version for 100kyr cycles (Mingsong Li to JOgg Aug2015), rather than 50% up (Szurlies cycles); but this assumed constant rates within 405kyr cycles; plus bases of Szurlies cycles are defined differently than Chaohu cycles.  Decided to stay with Szurlies 100kyr scale as standard for the moment.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id451"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Anisian ( Age: 246.8 ) &lt;/u&gt;&lt;/h3&gt;EARLY Anisian is traditionally the  Aegean substage that begins in the Tethyan realm with the Japonites welteri Ammonoid zone.  But, base of Conodont Ch. timorensis is used here for base of Anisian, hence of Aegean.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id452"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Ladinian ( Age: 241.5 ) &lt;/u&gt;&lt;/h3&gt;EARLY Ladinian substage is Fassanian in traditional usage in Tethyan region.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id453"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Carnian ( Age: 237.0 ) &lt;/u&gt;&lt;/h3&gt;EARLY CARNIAN - BUT:  &quot;Cordevolian&quot; is a controversial additional subdivision of Early Carnian that equates to D. canadensis and Trachyceras aon Ammonoid Zones.  Bachmann (Aug2015 to J.Ogg): &quot;As pointed out by KOZUR (2003), the priority subdivision of the Carnian into the Cordevolian, Julian and Tuvalian substages (MOJSOSIVICS et al. 1895) should be preserved. Lumping the original Cordevolian and Julian into a new extended Julian substage (e. g. KRYSTYN 1974) violates the priority without convincing faunistic reason. Very characteristic for the Cordevolian is the co-occurrence of Ladinian and Carnian elements in all fossil groups, whereas the Ladinian elements disappear around the base of the Julian. The high percentage of Ladinian elements, in addition to the first occurrence of many Carnian forms, is the reason why the Cordevolian was for a long time considered to represent the youngest substage of the Ladinian.  The Julian begins with the Trachyceras aonoides Zone, which is characterised by both the disappearance of the last Ladinian holdovers and by the appearance of numerous new Carnian or Carnian-Norian types in all stratigraphically important fossil groups, especially well recognisable in radiolarian faunas. &quot;&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id454"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Norian ( Age: 228.45 ) &lt;/u&gt;&lt;/h3&gt;EARLY Norian.  DASHED.  Assigned here as base of Tethyan Guembelites jandianus ammonoid zone, pending decision on GSSP.  Used proposed Norian GSSP at Pizzo Mondello (Italy), where base of Normal PM5n at GSSP) using Short Tuvalian option, is correlated to Base E7n; and assumed that this age which partly uses conodont markers also applied to the ammonoid zone.  However, Muttoni et al. (e.g., in Muttoni et al., 2014. or Maron et al., 2015) prefer a correlation to Base E8n (assuming Newark pattern failed to resolve a thin reversed-polarity zone in upper PM5n, etc. =&gt; about 1 myr younger.  Kozur uses S. kerri (N.Amer.) for this &quot;standard zone&quot;.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id455"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;- ( Age: 209.56 ) &lt;/u&gt;&lt;/h3&gt;Rhaetian (base at Austrian GSSP candidate) = DOTTED -- Misikella posthernsteini (sensu lato in taxonomy of Marun et al., 2015) is the proposed marker for base of Rhaetian at Austrian GSSP candidate at Steinbergkogel (e.g., Krystyn et al. 2007).  Magstrat for this FAD calibrated as 95% up in E17n under OptionA of Houslow-Muttoni (similar to Husing-Deened et al; but one reversed-zone higher).  However, Maron et al. (2015) consider this Miskella form to be transitional to M.posthernsteini sensu-stricto; therefore term it &quot;sensu lato&quot;.  Concise GTS -- FAD was in middle of &quot;B&quot; Reversed-magzone (Gallet et al., 2007); which they indicate is middle of E21r.1r = age for base Rhaetian. Tethyan M.posthernsteini zone subdivided in Kozur&apos;03 into upper M.koessensis and lower M.hernsteini-M.posthernsteini subzones at level corresponding to base of Vand. stuerzenbaumi ammonite subzone.&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+    <text id="id456"
+          docbase="jar:file:/Users/andy/Documents/projects/tscreator/jars/7.1/TSCreatorBASE-7.1_03June2017.jar!/resources/datapacks/"
+          visibility="hidden"
+          popuptext="&lt;h3&gt;&lt;u&gt;Rhaetian ( Age: 205.81 ) &lt;/u&gt;&lt;/h3&gt;Rhaetian (base at Italian GSSP candidate) = DOTTED -- Misikella posthernsteini (sensu stricto in taxonomy of Marun et al., 2015) is the proposed marker for base-Rhaetian Pignola-Abriola (southern Italy) GSSP canddiate is the FAD of Misikella posthernsteini (sensu stricto) as recognized and calibrated by Maron et al. (2015) as being in the lower part of reversed-polarity zone they suggests is about 20% up in Chron E20r.2r of Newark polarity scale.  This is preceded by transitional forms of Miskella that call M.posthernsteini sensu lato (hence a lower FAD at the Austrian GSSP candidate that uses that level).&lt;br/&gt;&lt;br/&gt;&lt;HR NOSHADE&gt; "/>
+</svg>
