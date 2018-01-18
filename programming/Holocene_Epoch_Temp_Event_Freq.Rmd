@@ -7,7 +7,10 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+setwd("/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/ML-Data Mining/programming")
 ```
+
+
 
 ## Greenland NGRIP delta-Oxy-18 data 
  For this analysis, we will use delta-Oxy-18-data compiled by Seierstad et al(2014)[5]. We will later look at the Holocene stage event frequency. We will only focus on the delta-Oxy-18-data of the Holocene stage for now.
@@ -21,6 +24,37 @@ grip_age <- ngrip_dat$ngrip_age
 grip_oxy <- ngrip_dat$ngrip_oxy18
 plot(grip_age, grip_oxy, type='l', xlab='Age(Ka)', ylab='delta-Oxy18(%)', main='NGRIP delta-Oxy18 vs Holocene Stage Ages')
 points(grip_age, grip_oxy, cex=0.01, col='red')
+```
+# Additional data download
+```{r}
+cur_dir <- getwd()
+t_dir <- "/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/ML-Data Mining/databases/external_data/"
+setwd(t_dir)
+
+stei_data_file_name <- "steinhilber2012.txt"
+stei_ftp_data_url <- "ftp://ftp.ncdc.noaa.gov/pub/data/paleo/climate_forcing/solar_variability/steinhilber2012.txt"
+
+if (!(stei_data_file_name %in% dir()))
+  download.file(stei_ftp_data_url, stei_data_file_name)
+
+f <- file(stei_data_file_name, 'r')
+stei_data <- readLines(f)
+stei_data_cols <- stei_data[157]
+stei_data <- stei_data[158:length(stei_data)]
+for(l in stei_data) {
+  chars <- strsplit(l, "")[[1]]
+  prev_c <- chars[1]
+  ln <- ""
+  for(c in chars) {
+     if(c == " "){
+     } else {
+          ln <- str_c(ln, c, sep = ",")
+     } 
+  } 
+  ln <- ln[2:length(ln)]
+}
+
+setwd(cur_dir)
 ```
 
 ## Investigation of NGRIP delta-Oxy-18 data
