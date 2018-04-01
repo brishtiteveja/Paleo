@@ -7,8 +7,8 @@ import numpy as np
 from pprint import pprint as pp
 
 # Directory to get the TSCreator datapack
-prev_dir= '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/'
-datapack_parent_dir = prev_dir +'Data Mining/datapacks/' 
+prev_dir= '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/projects/'
+datapack_parent_dir = prev_dir +'ML-Data Mining/datapacks/' 
 
 # open the datapack file
 dp_file = datapack_parent_dir + 'HumanCulture MidEastIntervals wGreenland-Ice cleaned 19Jan2016.txt'
@@ -26,13 +26,13 @@ min_age = float(raw_input("Minimum age to be explored in thousand years = "))
 max_age = float(raw_input("Maximum age to be explored in thousand years = "))
 
 # File for listing the events in yeach bin
-f_n = prev_dir + 'Data Mining/programming/output/HumanCulture_MidEastIntervals_' + str(yr_bin_size) +  'yr_bin_' + str(sliding_window) +'yr_slide_window.txt'
+f_n = prev_dir + 'ML-Data Mining/programming/output/HumanCulture_MidEastIntervals_' + str(yr_bin_size) +  'yr_bin_' + str(sliding_window) +'yr_slide_window.txt'
 f_w = open(f_n, 'wb');
 f_w.write('begin_age\tend_age\tevents\n')
 
 # Datapack file for creating curve column in tscreator after counting the events from the datapack
 f_d_n = 'HumanCulture_MidEastIntervals_' + str(yr_bin_size) + '_yr_bin' + str(sliding_window) + 'yr_event_frequency_curve'
-f_d = prev_dir + 'Data Mining/programming/output/' + f_d_n + '_datapack.txt'
+f_d = prev_dir + 'ML-Data Mining/programming/output/' + f_d_n + '_datapack.txt'
 f_d_w = open(f_d, 'wb');
 
 # Datapack header
