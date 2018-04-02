@@ -11,7 +11,39 @@ age = c(0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1.05, 1.15, 
 
 freq=c(70, 19, 13, 6, 25, 41, 17, 23, 10, 17, 22, 10, 21, 26, 27, 12, 22, 10, 4, 21, 24, 9, 14, 20, 26, 15, 9, 16, 2, 26, 11, 9, 7, 9, 17, 18, 7, 13, 3, 35, 7, 11, 2, 4, 1, 11, 10, 4, 3, 3, 15, 7, 3, 2, 0, 15, 4, 2, 1, 2, 16, 0, 6, 3, 1, 11, 1, 0, 5, 0, 27, 2, 0, 0, 1, 6, 0, 1, 0, 1, 24, 3, 3, 1, 0, 7, 0, 0, 1, 0, 10, 0, 0, 0, 1, 4, 5, 0, 0, 0, 13, 0, 0, 3, 0, 6, 0, 0, 1, 0, 15, 1, 0, 0, 0, 3, 0, 2, 0, 0)
 
+plot.fourier <- function(fourier.series, f.0, ts) {
+  w <- 2*pi*f.0
+  trajectory <- sapply(ts, function(t) fourier.series(t,w))
+  plot(ts, trajectory, type="l", xlab="time", ylab="f(t)"); abline(h=0,lty=3)
+}
 
+# An example
+plot.fourier(function(t,w) {sin(w*t)}, 1, ts=seq(0,1,1/100)) 
+
+acq.freq <- 100                    # data acquisition frequency (Hz)
+time     <- 6                      # measuring time interval (seconds)
+ts       <- seq(0,time,1/acq.freq) # vector of sampling time-points (s) 
+f.0      <- 1/time                 # fundamental frequency (Hz)
+
+dc.component       <- 0
+component.freqs    <- c(3,10)      # frequency of signal components (Hz)
+component.delay    <- c(0,0)       # delay of signal components (radians)
+component.strength <- c(.5,.25)    # strength of signal components
+
+f <- function(t,w) { 
+  dc.component + 
+    sum( component.strength * sin(component.freqs*w*t + component.delay)) 
+}
+
+plot.fourier(f,f.0,ts) 
+
+# Phase shift / delay
+component.delay <- c(pi/2,0)       # delay of signal components (radians)
+plot.fourier(f,f.0,ts)
+
+# DC component
+dc.component <- -2
+plot.fourier(f,f.0,ts)
 
 # cs is the vector of complex points to convert
 convert.fft <- function(cs, sample.rate=1) {
@@ -27,67 +59,148 @@ convert.fft <- function(cs, sample.rate=1) {
   df
 }
 
-convert.fft(fft(1:4))
+convert.fft(fft(ldeaths))
 
 # returns the x.n time series for a given time sequence (ts) and
 # a vector with the amount of frequencies k in the signal (X.k)
 get.trajectory <- function(X.k,ts,acq.freq) {
-  
   N   <- length(ts)
   i   <- complex(real = 0, imaginary = 1)
   x.n <- rep(0,N)           # create vector to keep the trajectory
-  ks  <- 0:(length(X.k)-1)
+  f  <- 0:(length(X.k)-1)
   
+  # Equation  x_n = \frac{1}{N} sum_{0}^{N-1} (X_k * exp(i * 2 * pi * \frac{k * n}{ N })) 
+  # X.k : amount of frequency k in the signal, each k-th value is a complex number including strength(amplitude) and phase shift
+  # N   : number of samples
+  # n   : current sample
+  # k   : current frequency, between 0 Hz to N-1 Hz
+  # 1/N : not necessary but it gives the actual sizes of the time spikes
+  # n/N : percent of time we have gone through
+  # 2pik: the speed in radians/second
+
   for(n in 0:(N-1)) {       # compute each time point x_n based on freqs X.k
-    x.n[n+1] <- sum(X.k * exp(i*2*pi*ks*n/N)) / N
+    t <- n / N
+    x.n[n+1] <- sum(X.k * exp(i*2*pi*f*t)) / N
   }
   
   x.n * acq.freq 
 }
 
-plot.frequency.spectrum <- function(X.k, xlimits=c(0,length(X.k))) {
-      plot.data  <- cbind(0:(length(X.k)-1), Mod(X.k))
+X.k<-fft(ldeaths)
+plot(ldeaths)
+N <- length(ldeaths)
+tr <- abs(get.trajectory(X.k, 0:(N-1), acq.freq = 1))
+plot(tr, type='l', ylab='ldeaths') # Got the trajectory
 
+plot.frequency.spectrum <- function(X.k, 
+                                    xlimits=c(0,length(X.k)/2), 
+                                    xlab='Frequency',
+                                    ylab='Amplitude',
+                                    density=FALSE,
+                                    plot.type='l'
+                                    ) { 
+    x <- (0:(length(X.k)-1)) 
+    plot.data  <- cbind(x, Mod(X.k))
   # TODO: why this scaling is necessary?
-  plot.data[2:length(X.k),2] <- 2*plot.data[2:length(X.k),2] 
+    plot.data[2:length(X.k),2] <- 2*plot.data[2:length(X.k),2] 
     
-    plot(plot.data, t="h", lwd=2, main="", 
-                xlab="Frequency (1/yr)", ylab="Strength", 
-                       xlim=xlimits, ylim=c(0,max(Mod(plot.data[,2]))))
+    N <- length(x)
+    freq <- x
+    
+    amp <- plot.data[,2]
+    if(density) {
+      tot <- sum(amp)
+      amp <- amp/tot
+      print(amp)
+      ylim <- c(0, max(amp))
+    }
+    else {
+      tot <- 1
+      ylim=c(0,max(Mod(plot.data[,2])))
+    }
+    
+    plot(freq, amp, lwd=2, main="", type=plot.type,
+                #xaxp=c(0, N, N/6),
+                xlim=xlimits, # show only half of the frequency 
+                ylim=ylim,
+                xlab=xlab, ylab="Amplitude") 
 }
 
+acq.freq <- 100                    # data acquisition (sample) frequency (Hz)
+time     <- 6                      # measuring time interval (seconds)
+ts       <- seq(0,time-1/acq.freq,1/acq.freq) # vector of sampling time-points (s) 
+f.0 <- 1/time
+
+w <- 2*pi*f.0
+trajectory <- sapply(ts, function(t) f(t,w))
+plot(trajectory, t='l')
+head(trajectory,n=30)
+X.k <- fft(trajectory)                   # find all harmonics with fft()
+plot.frequency.spectrum(X.k, xlimits=c(0,20), plot.type='h')
+
+
+# ldeaths example
+td <- ts(ldeaths)
+summary(td)
+X.k<-fft(td)
+time_window <- length(ldeaths) 
+ty <- time_window / 12
+xlab <- sprintf('frequency (cycle per %d years)', ty) 
+plot.frequency.spectrum(X.k, xlab=xlab, plot.type='h')
+
+# de-meaning is needed for the zero-th frequency to go away
+td <- ts(ldeaths)
+td.dm <- td - mean(td)
+summary(td.dm)
+X.k<-fft(td.dm)
+time_window <- length(ldeaths) 
+ty <- time_window / 12
+xlab <- sprintf('frequency (cycle per %d years)', ty) 
+plot.frequency.spectrum(X.k, xlab=xlab, plot.type='h')
+
+
+
 # Plot the i-th harmonic
-# Xk: the frequencies computed by the FFt
+# X.k: the frequencies computed by the FFt
 #  i: which harmonic
 # ts: the sampling time points
 # acq.freq: the acquisition rate
-plot.harmonic <- function(Xk, i, ts, acq.freq, color="red") {
-    Xk.h <- rep(0,length(Xk))
-    Xk.h[i+1] <- Xk[i+1] # i-th harmonic
-    print('i=')
-    print(i)
-    print(head(Xk.h,10))
-    print('---------------------------\n')
-    harmonic.trajectory <- get.trajectory(Xk.h, ts, acq.freq=acq.freq)
-    print('zeros')
-    zeros <- harmonic.trajectory 
-    idx=0
-    for(z in zeros) {
-        a = Mod(z)
-        print(z)
-        if(a==0) {
-            print(idx)
-            print(z)
-        }
-        idx = idx + 1
-    }
-    #zeros.index <- 
-    #cycle <- 
-    points(ts, harmonic.trajectory, type="l", col=color)
+plot.harmonic <- function(X.k, i, ts, acq.freq, color="red", xlab='time', add=TRUE) {
+    X.k.h <- rep(0,length(X.k))
+    X.k.h[i+1] <- X.k[i+1] # i-th harmonic
+    harmonic.trajectory <- get.trajectory(X.k.h, ts, acq.freq=acq.freq)
+    if (add == TRUE)
+      points(ts, harmonic.trajectory, type="l", col=color)
+    else
+      plot(ts, harmonic.trajectory, type="l", col=color, xlab=xlab)
+    
+    return(harmonic.trajectory) 
 }
 
-plot.show <- function(trajectory, time=1, harmonics=-1, plot.freq=FALSE) {
+X.k<-fft(td.dm)
+time <- 6 # 6 years of ldeaths
+acq.freq <- 72
+ts <- seq(0, time-1/acq.freq, 1/acq.freq)
+y1<-plot.harmonic(X.k, 6, ts, acq.freq = 1, xlab='year')
+abline(h=0, lty=2)
+y2<-plot.harmonic(X.k, 12, ts, acq.freq = 1, add=TRUE, color = 'green' )
+y3<-plot.harmonic(X.k, 1, ts, acq.freq = 1, add=TRUE, color = 'blue' )
 
+
+plot(td.dm)
+# combine the harmonics
+# Major harmonics : 6, 12, 1 cycles per 6 years
+y <- y1+y2+y3
+par(new=TRUE)
+plot(ts, y, t='l', col='darkblue', lwd=2, axes = FALSE, xlab='', ylab='')
+
+
+plot.show <- function(trajectory, 
+                      time=1, 
+                      harmonics=-1, 
+                      plot.freq=FALSE, 
+                      plot.type='l',
+                      scale=1.5) {
   acq.freq <- length(trajectory)/time      # data acquisition frequency (Hz)
   ts  <- seq(0,time-1/acq.freq,1/acq.freq) # vector of sampling time-points (s) 
   
@@ -95,59 +208,126 @@ plot.show <- function(trajectory, time=1, harmonics=-1, plot.freq=FALSE) {
   x.n <- get.trajectory(X.k,ts, acq.freq=acq.freq) / acq.freq
   
   if (plot.freq)
-    plot.frequency.spectrum(X.k)
+      plot.frequency.spectrum(X.k, plot.type=plot.type)
   
-  max.y <- ceiling(1.5*max(Mod(x.n)))
+  max.y <- ceiling(scale*max(Mod(x.n)))
   
   if (harmonics[1]==-1) {
     min.y <- floor(min(Mod(x.n)))-1
   } else {
-    min.y <- ceiling(-1.5*max(Mod(x.n)))
+    min.y <- ceiling(-scale*max(Mod(x.n)))
   }
   
-  plot(ts,x.n, type="l",ylim=c(3*min.y,3*max.y))
-  #abline(h=min.y:max.y,v=0:time,lty=3)
-  points(ts,trajectory,pch=19, cex=0.1, col="red")  # the data points we know
+  plot(ts,x.n, type="l", lwd=3, ylim=c(min.y,max.y))
+  #abline(h=min.y:max.y,v=0:time,lty=3, lwd=0.25)
+  points(ts,trajectory,cex=0.5, col="red")  # the data points we know
   
+  y <- rep(0, length(X.k))
   if (harmonics[1]>-1) {
     for(i in 0:length(harmonics)) {
-      plot.harmonic(X.k, harmonics[i], ts, acq.freq, color=i+1)
+      r <- plot.harmonic(X.k, harmonics[i], ts, acq.freq, color=i+1)
+      y <- y + r 
     }
   }
+  points(ts, y/scale, t='l', col='darkblue', lwd=2)
 }
 
-fit.lowess <- lowess(age, freq, f=0.33)
-fit.loess <- loess(freq ~ age, span=0.33, degree=2)
-summary(fit.lowess)
-summary(fit.loess)
+plot.show(td.dm, time = 6, harmonics = c(1,2, 6, 12, 20, 24), plot.freq = TRUE, scale=2.5)
 
-#Visualization also has different syntax
-plot(age, freq,  type='l',  
-  	xlab="age", ylab="Number of Events")
-points(age, freq, cex=0.25)
-lines(fit.lowess, col='green')
+trajectory <- 4:1
+plot.show(trajectory, time=2)
 
-timest<-seq(0,12,by=0.05)
+trajectory <- c(rep(1,5),rep(2,6),rep(3,7))
+plot.show(trajectory, time=2, harmonics=0:3, plot.freq=TRUE, plot.type='h')
 
-predict.loess <- predict(fit.loess, timest, se=TRUE)
+trajectory <- c(1:5,2:6,3:7)
+plot.show(trajectory, time=1, harmonics=c(1,2))
 
-#freq_new <- freq - predict.loess$fit
+set.seed(101)
+acq.freq <- 200
+time     <- 1
+w        <- 2*pi/time
+ts       <- seq(0,time,1/acq.freq)
+trajectory <- 3*rnorm(101) + 3*sin(3*w*ts)
+plot(trajectory, type="l")
 
-acq.freq = 100
+X.k <- fft(trajectory)
+plot.frequency.spectrum(X.k,xlimits=c(0,acq.freq/2), plot.type = 'h')
 
-trajectory = freq
-X.k = fft(trajectory)
-plot.frequency.spectrum(X.k, xlimits=c(0,acq.freq/2))
-
+plot.show(trajectory, time=1, harmonics=c(20, 24), scale=15)
 
 library(GeneCycle)
 
 f.data <- GeneCycle::periodogram(trajectory)
 harmonics <- 1:(acq.freq/2)
 
-#plot(f.data$freq[harmonics]*length(trajectory), 
-#     f.data$spec[harmonics]/sum(f.data$spec), 
-#     xlab="Harmonics (Hz)", ylab="Amplitute Density", type="h")
+plot(f.data$freq[harmonics]*length(trajectory), 
+     f.data$spec[harmonics]/sum(f.data$spec), 
+     xlab="Harmonics (Hz)", ylab="Amplitute Density", type="h")
 
+trajectory1 <- trajectory + 25*ts # let's create a linear trend 
+plot(trajectory1, type="l")
 
-plot.show(trajectory, time=10, harmonics=c(25, 36, 45, 47))#, 9,10,11,12, 17,18,19,20,25,26,27)) #, plot.freq=TRUE)
+f.data <- GeneCycle::periodogram(trajectory1)
+harmonics <- 1:20
+plot(f.data$freq[harmonics]*length(trajectory1), 
+     f.data$spec[harmonics]/sum(f.data$spec), 
+     xlab="Harmonics (Hz)", ylab="Amplitute Density", type="h")
+
+#The trended time-series didn’t capture the signal.
+
+#Let’s detrended it know, ie, find the linear trend and work with the residuals:
+trend <- lm(trajectory1 ~ts)
+detrended.trajectory <- trend$residuals
+plot(detrended.trajectory, type="l")
+
+# Loess/Lowess fit example
+f.data <- GeneCycle::periodogram(detrended.trajectory)
+harmonics <- 1:20
+plot(f.data$freq[harmonics]*length(detrended.trajectory), 
+     f.data$spec[harmonics]/sum(f.data$spec), 
+     xlab="Harmonics (Hz)", ylab="Amplitute Density", type="h")
+
+plot.frequency.spectrum(fft(detrended.trajectory), plot.type = 'h', xlimits = c(0,20))
+
+# Let’s try with a real dataset downloaded from Quandl from retail prices of gasoline from 1995 until the present.
+library(zoo) 
+#setwd("~/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/ML-Data Mining/programming")
+prices <- read.csv("retailgas.csv")       # weekly prices (1 Hz = 1 Week)
+prices <- prices[order(nrow(prices):1),]  # revert data frame
+plot(prices, type="l")
+
+trend <- lm(Price ~ index(Date), data = prices)
+abline(trend, col="red")
+
+detrended.trajectory <- trend$residuals
+plot(detrended.trajectory, type="l", main="detrended time series")
+
+f.data <- GeneCycle::periodogram(detrended.trajectory)
+harmonics <- 1:20 
+plot(f.data$freq[harmonics]*length(detrended.trajectory), 
+     f.data$spec[harmonics]/sum(f.data$spec), 
+     xlab="Harmonics (Hz)", ylab="Amplitute Density", type="h")
+
+plot.frequency.spectrum(fft(detrended.trajectory), xlimits = c(0,20), plot.type = 'h',
+                        density = FALSE)
+
+# And we are able to see that the stronger signals are the 1Hz, 2Hz and 3Hz which makes some sense
+plot.show(detrended.trajectory, time=1, harmonics = c(1,2,3), scale=1.5)
+
+# interpolation with lowess and loess
+td <- ts(ldeaths)
+N <- length(td)
+x <- 1:N
+plot(td,  plot.type='l',  
+  	xlab="time (month)", ylab="ldeaths")
+points(td, cex=0.25)
+fit.lowess <- lowess(ldeaths, f=0.33)
+lines(fit.lowess, col='green')
+fit.loess <- loess(td ~ x, span=0.75, degree=2)
+lines(fit.loess, col='blue')
+
+timest<-seq(0, 72,by=0.05)
+predict.loess <- predict(fit.loess, timest, se=TRUE)
+lines(timest, predict.loess$fit)
+

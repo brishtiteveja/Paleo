@@ -1,0 +1,71 @@
+---
+title: "Fourier Time Series"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#  **_Methods of Power Spectral Estimation_**
+
+\setlength{\leftskip}{0.5cm}
+
+## 1. Discrete Fourier Transform
+
+## 2. Periodogram
+
+## 3. Fast Fourier Transform
+
+## 4. Blackman-Tuckey Method
+
+## 5. Tapers
+
+\setlength{\leftskip}{1cm}
+
+## 5.1 Multitaper Analysis
+  
+\setlength{\leftskip}{0.5cm}
+
+## 6. Lomb-Scargle Periodogram
+
+## 7. Maximum Likelihood Analysis
+
+## 8. Maximum Entropy Method
+
+## 9. Cross Spectrum and Coherency
+
+## 10. Bispectra
+
+## 11. Monte Carlo Simulation
+
+
+\newpage
+\setlength{\leftskip}{0cm}
+
+#  **_Climate Proxies_**
+
+\setlength{\leftskip}{0.5cm}
+
+# 1. Oxygen Isotopes
+
+# 2. Deuterium - Temperature Proxy
+
+# 3. Carbon-13
+
+# 4. Vostok
+
+# 5. Atmospheric $\delta^{18}O$ and Dole Effect
+
+# 6. $\delta^{18}O$ / $CO_2$ Mystery
+
+# 7. Sea Floor Records
+
+# 8. Terrestrial Records
+
+
+\newpage
+\setlength{\leftskip}{0cm}
+
+#  **_Paper Review _**
+
+\setlength{\leftskip}{0.5cm}
