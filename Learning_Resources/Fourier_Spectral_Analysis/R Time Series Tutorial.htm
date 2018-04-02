@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>R Time Series Tutorial </title>
+	<meta http-equiv="Content-Language" content="English" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../tsa2/style.css" media="screen" />
+	<LINK REL="SHORTCUT ICON" HREF="../tsa2/favicon.ico">
+</head>
+<style type="text/css"> 
+   pre {	background-color: #eaeaea;
+			color: #000000;
+			border-top: 1px dotted #888;	
+	        border-bottom: 1px dotted #888;
+	        font-family:  "Courier New", Courier, monospace;
+	        font-weight: 400;
+	        font-size: 1em;
+	        padding: 10px;
+	        white-space: pre;
+	        line-height: 1.4em;
+      }
+    table{  background-color: #eaeaea;
+			color: #000000;
+			border-top: 1px dotted #888;	
+	        border-bottom: 1px dotted #888;
+	        padding: 5px;
+	        width:100%; 
+       }  
+    .blue { color: #000088; font-weight: 500; }
+    .red { color: #ff0000; font-weight: 500; }
+    .eqn {font-family: "Courier New", Courier, monospace;
+         font-size: 105%;
+         font-weight: 500;
+         padding: 2px;
+         }
+     .list  {font-size: 90%;
+             font-weight: 500;
+             }  
+     </style>
+     </head>
+     <body>
+     
+<body>
+<a name="Top"></a>
+<div id="wrap">
+
+	<div id="top">
+				<div class="rights">	</div>
+				<div class="lefts">	    
+					<h1>Time Series Analysis and Its Applications: With R Examples</h1>
+					<h2>Second Edition</h2>
+				</div>
+</div>
+	<div id="topmenu">
+		<div class="rights"></div>
+		<div class="lefts"><ul>
+		                    <li><a href="../tsa2/index.html"  title="home">HOME</a></li>
+		                    <li><a href="../tsa2/index.html#Data" title="Data">DATA</a></li>
+							<li><a href="../tsa2/errata.htm">ERRATA</a></li>
+							<li><a href="../tsa2/index.html#Rclass" title="Rclass">R CODE (Ch 1-5)</a></li>
+							<li><a href="../tsa2/chap6.htm" title="Rchapter6">R CODE (Ch 6)</a></li>
+							<li><a href="../tsa2/chap7.htm"  title="Ch 7">CHAPTER 7</a></li>
+							<li><a href="../tsa2/index.html#astsa" title="astsa">ASTSA</a></li>
+							<li><a href="../tsa2/index.html#Links" title="Links">STuFF</a></li>
+				
+				</ul></div>
+	</div>
+
+
+	
+	<div id="subheader"><h1>An R Time Series Quick Fix</h1>
+	Here are some examples that may help you become familiar
+with analyzing time series using R. 
+This is not meant to be a lesson in time series analysis.
+You can copy-and-paste the R commands (multiple lines are ok)
+ from this page into R. Printed output is</b> <EM CLASS=blue>blue</em>.
+ The R code used in the examples of Chapters 1 to 5  can be found   
+ <a href="../tsa2/textRcode.htm">here</a>.
+  <br><br>
+ 
+If you're new to R/Splus, I suggest reading
+ <a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf" target="_blank"><i>R for Beginners</i></a> (a pdf file) first.
+ Another good read for exploring time series
+ is <a href="http://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf" target="_blank"><i>Econometrics in R</i></a> (a pdf file).
+ You may also want to poke around the <a href="http://www.statmethods.net/  " target="_blank"><i>QuickR</i></a>  website. 
+ 
+ 
+ 
+ 
+<!--The best way to use this quick fix is to start up R and enter the commands below.
+ Then use the results and HELP FILES to figure out what the 
+ commands are doing. R commands and output are in a box.-->
+ 
+ 
+ 
+<!-- 
+ <b class=list>
+ <b>Help on Help:</b> If you're fishing for help, use the
+ html help. For specific help, use  <b class=eqn>help().</b>  Sometimes the help files are no help. In that case, do an 
+ internet search.   For example, start R and type <b class=eqn>help(plot)</b> or <b class=eqn>?plot</b> and take a quick look at the help
+ file.  Next, from the R prompt,  type  <b class=eqn>help.search("plot")</b> and note the differences
+ from the previous help screen. From the menu list, go to <b class=eqn>Help > Html help</b>, then click <b class=eqn>Search Engine & Keywords</b>
+ and enter <b class=eqn>plot</b>
+ in the search box. By the way, did you notice that you can get to the <b class=eqn>Manuals (in PDF)</b> from the Help menu list? Now try a Google search on <a href="http://www.google.com/search?hl=en&lr=&rls=GGGL%2CGGGL%3A2006-22%2CGGGL%3Aen&q=%22R+plot%22&btnG=Search" target="new">R plot</a>.
+ Also, you may want to nose around, or even subscribe to <a href="https://stat.ethz.ch/mailman/listinfo/r-help" target="new">
+ R-help</a>.</b>-->
+	</div>	
+	
+
+   
+   <br><br>
+<div id="leftside3">
+ 
+ First, let's play with the Johnson &amp; Johnson data set.
+ Download  <a href="../tsa2/data/jj.dat" target="_blank">jj.dat</a>
+ to a directory called mydata (or 
+ wherever you choose ... the examples below and in 
+ the text assume the data are in that directory).   
+<br>
+<pre>
+jj=scan("/mydata/jj.dat")            # read the data 
+jj=ts(jj,start=1960, frequency=4)    # make it a time series object
+#-- you can do the above steps in one line: 
+jj=ts(scan("/mydata/jj.dat"), start=1960, frequency=4)
+#-- in the lines above, you can replace scan by read.table
+#-- at this point you might want to find out about time series objects:
+help(ts) 
+</pre>
+
+<p>The data set is included with R, so you can also do this:
+<pre>
+jj=JohnsonJohnson
+jj               # view the data
+<EM CLASS=blue>
+        Qtr1  Qtr2  Qtr3  Qtr4
+  1960  0.71  0.63  0.85  0.44
+  1961  0.61  0.69  0.92  0.55
+  1962  0.72  0.77  0.92  0.60
+  1963  0.83  0.80  1.00  0.77
+  1964  0.92  1.00  1.24  1.00
+  1965  1.16  1.30  1.45  1.25
+  1966  1.26  1.38  1.86  1.56
+  1967  1.53  1.59  1.83  1.86
+  1968  1.53  2.07  2.34  2.25
+  1969  2.16  2.43  2.70  2.25
+  1970  2.79  3.42  3.69  3.60
+  1971  3.60  4.32  4.32  4.05
+  1972  4.86  5.04  5.04  4.41
+  1973  5.58  5.85  6.57  5.31
+  1974  6.03  6.39  6.93  5.85
+  1975  6.93  7.74  7.83  6.12
+  1976  7.74  8.91  8.28  6.84
+  1977  9.54 10.26  9.54  8.73
+  1978 11.88 12.06 12.15  8.91
+  1979 14.04 12.96 14.85  9.99
+  1980 16.20 14.67 16.02 11.61</EM>
+
+# -- you could have put the data into jj and printed 
+# -- it at the same time by enclosing the command: 
+(jj=JohnsonJohnson)
+</pre>
+
+<p>Now try a plot of the data:
+<pre>
+plot(jj, ylab="Earnings per Share", main="J & J")   
+</pre>
+
+<p>with the result being:
+<table>
+    <tr>
+    <td valign="top">
+      <img src="jj.jpg" alt="jj">
+    </td>
+    </tr>
+</table>
+<p>
+Try these and see what happens:
+<pre>
+plot.ts(jj, type="o",col="blue", lty="dashed")
+plot.ts(log(jj))
+plot.ts(diff(log(jj)), main="logged and diffed") 
+##-- while you're here, check out plot.ts and ts.plot:
+help(plot.ts)
+help(ts.plot)
+</pre>
+<p>How about some filtering/smoothing using a two-sided moving average? Let's try this:<br>
+<b class=eqn>fjj(t) = </b> &#8539;<b class=eqn>jj(t-2) + </b>&frac14;<b class=eqn>jj(t-1) + </b>&frac14;<b class=eqn>jj(t) + </b>&frac14;<b class=eqn>jj(t+1) + </b> &#8539;<b class=eqn>jj(t+2)</b>
+ <br>  
+ and we'll add a lowess fit for fun.
+<pre>
+k = c(.5,1,1,1,.5)
+k = k/sum(k)
+k <EM CLASS=blue>
+ [1] 0.125 0.250 0.250 0.250 0.125</em>
+##-- another way to generate k is:  k = kernel("modified.daniell",2)
+fjj = filter(jj,sides=2,k)
+plot(jj)
+lines(fjj, col="red")
+lines(lowess(jj), col="blue", lty="dashed")
+</pre>
+<p>... and the result:
+<table>
+    <tr>
+    <td valign="top">
+      <img src="filter.jpg" alt="filter">
+    </td>
+    </tr>
+</table>
+<p>
+Let's difference the logged data and call it <b class=eqn>dljj</b>. 
+Then we'll play with <b class=eqn>dljj</b>:
+<pre>
+dljj=diff(log(jj))          # difference the logged data
+plot(dljj)                  # plot it if you haven't already
+shapiro.test(dljj)          # test for normality 
+<EM CLASS=blue>
+          Shapiro-Wilk normality test
+
+  data:  dljj 
+  W = 0.9725, p-value = 0.07211</em>
+</pre>
+<p>Now a histogram and a Q-Q plot, one on top of the other:
+<pre>
+par(mfrow=c(2,1))        # set up the graphics
+hist(dljj, prob=T, 12)   # histogram
+lines(density(dljj))     # add this to the histogram
+qqnorm(dljj)             # normal Q-Q plot
+qqline(dljj)             # add a line 
+</pre>
+<p>and the results:
+
+<table>
+    <tr>
+    <td valign="top">
+      <img src="qq.jpg" alt="qq">
+    </td>
+    </tr>
+</table>
+<p>
+Let's check out the correlation structure of <b class=eqn>dljj</b> using
+various techniques:
+<pre>
+lag.plot(dljj,9, do.lines=F)  
+</pre>
+<p>Notice the large positive correlation at lags 4 and 8
+and the negative correlations at a few other lags:
+
+<table>
+    <tr>
+    <td valign="top">
+      <img src="lagplot.jpg" alt="lag plot">
+    </td>
+    </tr>
+</table>
+<p>
+Take a look at the ACF and PACF (no output shown here):
+<pre>
+acf(dljj,20)           # note the difference
+acf(ts(dljj),20)       # in these two lines
+dljj                   # print these 
+ts(dljj)               # to see the difference
+acf(dljj,20,type="partial") # partial correlation
+pacf(dljj,20)               # try it this way
+</pre>
+<br>
+Let's try a structural decomposition of <b class=eqn>log(jj) = trend + season + error</b>
+using lowess:
+<pre>
+plot(stl(log(jj), "per"))   
+</pre>
+<p>Here's what you get:
+<table>
+    <tr>
+    <td valign="top">
+      <img src="stl.jpg" alt="stl plot">
+    </td>
+    </tr>
+</table>
+Type <b class=eqn>?stl</b> for details.  There's also something called 
+<b class=eqn>StructTS</b> that
+will fit parametric structural models. 
+We don't use these functions
+in the text when we present structural modeling in Chapter 6 because  
+  we prefer to use our own programs.
+
+<br><br><br>
+Now we'll do some of Problem 2.1.   
+We're going to fit the regression<br>
+<b class=eqn> log(jj)= &beta;*time + &alpha;<sub>1</sub>*Q1 + &alpha;<sub>2</sub>*Q2 + &alpha;<sub>3</sub>*Q3 + &alpha;<sub>4</sub>*Q4 + &epsilon;</b><br>
+where <b class=eqn>Qi</b> is an indicator of the quarter <b class=eqn>i = 1,2,3,4.</b> 
+Then we'll inspect the residuals. 
+<pre>
+Q = factor(rep(1:4,21))             # make (Q)uarter factors
+trend = time(jj)     
+reg = lm(log(jj)~0+trend+Q, na.action=NULL)  # run the regression without an intercept
+# the na.action statement is to retain time series attributes
+summary(reg)<EM CLASS=blue>
+  Call:
+  lm(formula = log(jj) ~ 0 + trend + Q1 + Q2 + Q3 + Q4)
+  
+  Residuals:
+       Min       1Q   Median       3Q      Max 
+  -0.29318 -0.09062 -0.01180  0.08460  0.27644 
+  
+    Coefficients:
+          Estimate Std. Error t value Pr(>|t|)    
+  trend  1.672e-01  2.259e-03   74.00   <2e-16 ***
+  Q1    -3.283e+02  4.451e+00  -73.76   <2e-16 ***
+  Q2    -3.282e+02  4.451e+00  -73.75   <2e-16 ***
+  Q3    -3.282e+02  4.452e+00  -73.72   <2e-16 ***
+  Q4    -3.284e+02  4.452e+00  -73.77   <2e-16 ***
+  ---
+  Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+  
+  Residual standard error: 0.1254 on 79 degrees of freedom
+  Multiple R-Squared: 0.9935,     Adjusted R-squared: 0.9931 
+  F-statistic:  2407 on 5 and 79 DF,  p-value: < 2.2e-16 </em>
+  
+reg$coef     # actual values of the estimates<EM CLASS=blue>
+       trend           Q1           Q2           Q3           Q4 
+   0.1671722 -328.2763712 -328.2482485 -328.1781402 -328.4468978</em> 
+</pre>  
+You can view the model matrix (with the dummy variables) this way: 
+<pre>
+model.matrix(reg)<EM CLASS=blue>
+      time Q1 Q2 Q3 Q4
+1  1960.00  1  0  0  0
+2  1960.25  0  1  0  0
+3  1960.50  0  0  1  0
+4  1960.75  0  0  0  1
+5  1961.00  1  0  0  0
+6  1961.25  0  1  0  0
+7  1961.50  0  0  1  0
+8  1961.75  0  0  0  1
+.     .     .  .  .  .
+.     .     .  .  .  .
+81 1980.00  1  0  0  0
+82 1980.25  0  1  0  0
+83 1980.50  0  0  1  0
+84 1980.75  0  0  0  1</em>
+</pre>
+<p>Now check out what happened. Look at a plot of the observations and their
+fitted values:
+<pre>
+plot.ts(log(jj),type="o")
+lines(fitted(reg), col=2)         # the fitted values
+</pre>
+<p>you get:
+<table>
+    <tr>
+    <td valign="top">
+      <img src="fit.jpg" alt="fit plot">
+    </td>
+    </tr>
+</table>
+<p>
+... and a plot
+of the residuals and the ACF of the residuals:
+<pre>
+par(mfrow=c(2,1))
+plot.ts(resid(reg))   # residuals 
+acf(resid(reg),20)    # acf of the resids 
+</pre>
+and you get:
+<p>
+<table>
+    <tr>
+    <td valign="top">
+      <img src="res.jpg" alt="res plot">
+    </td>
+    </tr>
+</table>
+<p>
+Do those residuals look white? 
+ 
+
+<br><br><br>
+<a name="LagReg"></a>
+You have to be careful when you <b>regress one time series on lagged
+components of another</b> using <tt>lm()</tt>. There is a package called
+<tt>dynlm</tt> that makes it easy to fit lagged regressions, and I'll discuss
+that right after this example.  If you use <tt>lm()</tt>, then
+what you have to do is "tie" the series together
+using <b class=eqn>ts.intersect</b>.  If you don't tie the series together, they won't be
+aligned properly.
+
+ Here's an example regressing 
+weekly cardiovascular
+mortality (<b class=eqn>cmort.dat</b>) on particulate pollution (<b class=eqn>part.dat</b>)
+at the present value and lagged four weeks (about a month).  For details
+about the data set, see Chapter 2.
+<pre>
+mort = ts(scan("/tsdata/cmort.dat"),start=1970, frequency=52)  #<b class=red> make these time series objects</b>
+  <EM CLASS=blue>Read 508 items</em>                        
+part = ts(scan("/tsdata/part.dat"),start=1970, frequency=52)    
+  <EM CLASS=blue>Read 508 items</em>
+u=ts.intersect(mort,part,part4=lag(part,-4), dframe=T)   #<b class=red> tie them together in a data frame</b>
+fit=lm(mort~part+part4, data=u, na.action=NULL)          #<b class=red> now the regression will work</b>
+summary(fit)                            
+  <EM CLASS=blue>Call:
+  lm(formula = mort ~ part + part4, data = u, na.action = NULL)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-22.7429  -5.3677  -0.4136   5.2694  37.8539 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 69.01020    1.37498  50.190  < 2e-16 ***
+part         0.15140    0.02898   5.225 2.56e-07 ***
+part4        0.26297    0.02899   9.071  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+Residual standard error: 8.323 on 501 degrees of freedom
+Multiple R-Squared: 0.3091,     Adjusted R-squared: 0.3063 
+F-statistic: 112.1 on 2 and 501 DF,  p-value: < 2.2e-16 </em>
+</pre>
+Note: There was no need to rename <tt>lag(part,-4)</tt> to <tt>part4</tt>,
+it's just an example of what you can do.<br>
+
+<br>
+An alternative to the above is  the package <tt>dynlm</tt>,
+which has to be installed (Packages > Install package(s)...). After the package
+is installed, you can do the previous example as follows:
+<pre>
+library(dynlm)                         # load the package
+fit = dynlm(mort~part + lag(part,-4))  # assumes mort and part are ts objects
+# fit = dynlm(mort~part + L(part,4))  is the same thing.
+summary(fit)
+  <EM CLASS=blue>Call:
+  dynlm(formula = mort ~ part + lag(part, -4))
+  
+  Residuals:
+       Min       1Q   Median       3Q      Max 
+  -22.7429  -5.3677  -0.4136   5.2694  37.8539 
+  
+  Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+  (Intercept)   69.01020    1.37498  50.190  < 2e-16 ***
+  part           0.15140    0.02898   5.225 2.56e-07 ***
+  lag(part, -4)  0.26297    0.02899   9.071  < 2e-16 ***
+  ---
+  Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+  
+  Residual standard error: 8.323 on 501 degrees of freedom
+  Multiple R-Squared: 0.3091,     Adjusted R-squared: 0.3063 
+  F-statistic: 112.1 on 2 and 501 DF,  p-value: < 2.2e-16 </em>
+</pre>
+
+
+
+<br><br><br>
+Let's do something else now.  How about some
+ARIMA simulations (no output shown here)?
+<pre>
+# AR1s
+x1=arima.sim(list(order=c(1,0,0), ar=.9), n=100) 
+x2=arima.sim(list(order=c(1,0,0), ar=-.9), n=100)
+par(mfrow=c(2,1))
+plot(x1,  main="AR1 phi = +.9")
+plot(x2,  main="AR1 phi = -.9")
+par(mfcol=c(2,2))
+acf(x1, 20)
+acf(x2, 20)
+pacf(x1, 20)
+pacf(x2, 20)
+# MA1
+x=arima.sim(list(order=c(0,0,1), ma=.8), n=100)
+plot(x)
+par(mfcol=c(2,1))
+acf(x,20)
+pacf(x,20)
+# AR2
+x=arima.sim(list(order=c(2,0,0), ar=c(1,-.9)), n=100) 
+par(mfcol=c(3,1))
+plot(x)
+acf(x, 20)
+pacf(x, 20)
+# ARMA(1,1)
+x=arima.sim(list(order=c(1,0,1), ar=.9, ma=-.5), n=200)
+par(mfcol=c(3,1))
+plot(x)
+acf(x, 30)
+pacf(x, 30)
+</pre>
+<br><br><br>
+
+Let's fit an ARMA model to some simulated data (with diagnostics and forecasting):
+<pre>
+x = arima.sim(list(order=c(1,0,1), ar=.9, ma=-.5), n=100) # simulate some data
+(x.fit = arima(x, order = c(1, 0, 1))) # fit the model and print the results
+<em class=blue>
+  Call:
+  arima(x = x, order = c(1, 0, 1))
+  
+  Coefficients:
+           ar1      ma1  intercept <em class=red><-- NOT the intercept - see <a href="../tsa2/Rissues.htm#Issue1" target="new">R Issue 1</a></em>
+        0.8465  -0.5021     0.5006
+  s.e.  0.0837   0.1356     0.3150
+  
+  sigma^2 estimated as 1.027:  log likelihood = -143.44,  aic = 294.89</em>
+</pre>
+<p>diagnostics:
+<pre>
+tsdiag(x.fit, gof.lag=20)   
+</pre>
+<p>and the output
+<table>
+    <tr>
+    <td valign="top">
+      <img src="diag.jpg" alt="diag plot">
+    </td>
+    </tr>
+</table>
+<p>
+forecast 10 ahead:
+<pre>
+x.fore=predict(x.fit, n.ahead=10)  
+# plot the forecasts
+U = x.fore$pred + 2*x.fore$se
+L = x.fore$pred - 2*x.fore$se
+minx=min(x,L)
+maxx=max(x,U)
+ts.plot(x,x.fore$pred,col=1:2, ylim=c(minx,maxx))
+lines(U, col="blue", lty="dashed")
+lines(L, col="blue", lty="dashed") 
+</pre>
+<p>and here's the plot of the data and the forecasts (with error bounds):
+<table>
+    <tr>
+    <td valign="top">
+      <img src="fore.jpg" alt="fore plot">
+    </td>
+    </tr>
+</table>
+<br><br><br>
+
+
+Finally, a spectral analysis quicky:
+<pre>
+x=arima.sim(list(order=c(2,0,0), ar=c(1,-.9)), n=256)  # some data
+par(mfcol=c(3,1))
+plot.ts(x)                             # x is AR(2) w/complex roots
+spec.pgram(x, spans=c(3,3), log="no")  # nonparametric spectral estimate
+?spec.pgram                            # some help<em class=blue>  
+  'spec.pgram' calculates the periodogram using a fast Fourier
+  transform, and optionally smooths the result with a series of
+  modified Daniell smoothers (moving averages giving half weight to
+  the end values).</em>
+spec.ar(x, log="no")                   # parametric spectral estimate
+</pre>
+<p>and the graph:
+
+<table>
+    <tr>
+    <td valign="top">
+      <img src="spec.jpg" alt="spec plot">
+    </td>
+    </tr>
+</table><br>
+
+Finally, note that R tapers and logs by default, so if you simply want the periodogram of a series, the
+command is <b class=eqn>spec.pgram(x, taper=0, log="no")</b>. 
+If you just asked for <b class=eqn>spec.pgram(x)</b>, you wouldn't get the RAW periodogram (because the data
+are tapered)... even though the title of the resulting graphic would say <i>Raw Periodogram</i>. 
+<b class=red>The moral of this story ... and the bottom line:  pay special attention to the defaults of the functions you're using.</b>
+
+
+<br>
+</div><div class="up2"><a href="#top" title="top">top</a></div></div>
+<br><br><br><br><br><br>
+	<div id="footer">
+	<div class="rside">&copy; Copyright 2006, <a href="http://anson.ucdavis.edu/~shumway/">
+	R.H. Shumway</a> &amp;
+	<a href="http://www.stat.pitt.edu/stoffer/dss.html">D.S. Stoffer</a></div>
+
+<br><br><br><br>
+
+
+
+ </body>
+      </html>

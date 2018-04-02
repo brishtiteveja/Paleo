@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Spectral Analysis</title>
+
+<style type="text/css">
+pre { background-color: #eaeaea;
+color: #000000;
+border-top: 1px dotted #888; border-bottom: 1px dotted #888;
+font-family: "Courier New", Courier, monospace;
+font-weight: 400;
+font-size: 1em;
+padding: 0px;
+white-space: pre;
+line-height: 1.4em;
+}
+</style>
+</head>
+<body>
+<h2>Spectral Analyis</h2>
+<pre>soi &lt;- scan("soi.dat")<br>soi12 &lt;- ts(scan("soi.dat"), start=1950, frequency=12)<br><br># Three ways of calculating the raw periodogram<br>par(mfrow=c(3,1))<br>P1 &lt;- spec.pgram(soi,log='no',taper=0,pad=0,fast=FALSE,demean=TRUE,detrend=FALSE) <br>soi_demean &lt;- soi-mean(soi)<br>P2 &lt;- abs(fft(soi_demean))^2/length(soi_demean)<br>freq &lt;- seq(from=0,to=1,length=length(soi))<br>plot(freq,P2,type='l')<br>P3 &lt;- spec.pgram(soi12,log='no',taper=0,pad=0,fast=FALSE,demean=TRUE,detrend=FALSE) <br><br></pre>
+<br>
+You should see that the second plot is equivalent to the first plot,
+except that it also a a mirror image for frequencies between 1/2 and 1.
+&nbsp;The third plot is equivalent to the first, except it is
+scaled by a factor or 12.<br>
+<br>
+There is an identity called Parcival's inequality: which states that
+the average of the periodogram from 0 to 1 should be equal to the
+sample variance:
+<pre>mean(P2)<br>var(soi_demean) # The difference is due to dividing by N-1 rather than N<br>N &lt;- length(soi_demean)<br>var(soi_demean)*(N-1)/N<br></pre>
+There is at least one other "bizarre" element of the periodogram: the
+periodogram at frequency 0 divide by N is equal to the sample mean
+squared.
+<pre>P2[1]/N # Should be 0 because we demeaned<br>#suppose we did not demean...<br>P3 &lt;- abs(fft(soi))^2/length(soi)<br>P3[1]/N<br>mean(soi)^2</pre>
+In effect, it is impossible to estimate the periodogram at frequency
+zero, the estimate is always relatd to the mean. &nbsp;Related to
+this, is the effect of a trend in the data. &nbsp;You will see the
+impact of the trend later, but for the moment, let's just remove any
+trends.<br>
+<br>
+<pre><br>P &lt;- spec.pgram(soi,log='no',taper=0,pad=0,fast=FALSE,demean=TRUE,detrend=TRUE)<br>abline(v=1/12,lty='dotted')<br>abline(v=1/48,lty='dotted')<br>abline(v=2/12,lty='dotted')<br>abline(v=3/12,lty='dotted')<br><br></pre>
+Their is an obvious peak at the one year cycle, and there appears to be
+a small peak at around 4 years, as well as peaks at 1/2 year, and 1/3
+year. The yearly peak is obvious. The 4 year peak corresponds to El
+Nino. The peaks at 1/2 and 1/3 year intervals are more troublesome.
+&nbsp;These are likely not to be real, but are 'harmonics' of the
+one year cycle. &nbsp;Harmonics sometimes occur when there is a
+very large peak that is not exactly sinusoidal, but only approximately
+sinusoidal.<br>
+<br>
+<h3>Estimating the autocovariance function from the periodogram:</h3>
+<br>
+<pre><br>par(mfrow=c(2,1))<br>Cov_est &lt;- Re(fft(P2,inverse=TRUE))/N<br>lag &lt;- seq(from=0, to=8, by=1/12)<br>plot(lag,Cov_est[1:(length(lag))],ylab='Covariance',type='l',main='Covariance')<br>acf(soi12,type='covariance',lag.max=12*8,main='Covariance')<br></pre>
+The only difference between these two values, is that the denominator
+in the top plot is N, and in the bottom plot the denominator is N-1 for
+the first lag, N-2 for the second lag, N-3 for the third, etc.<br>
+<br>
+Compare the autocovariance plots and the periodogram.<br>
+<br>
+<h3>Confidence Intervals and Consistency</h3>
+The periodogram is extraordinarily noisy. &nbsp;It is possible to
+construct 1-2&#945; confidence intervals for a periodogram value, according to <br>
+2 I/ [&#967;<sup>2</sup><sub>2</sub>(&#945;)] &lt; &nbsp;f
+&lt;&nbsp;2 I/ [&#967;<sup>2</sup><sub>2</sub><sup></sup>(1-&#945;)]. (This is a chi-square with 2 degrees of freedom)<br>
+<br>
+For example:<br>
+<pre><br>P = spec.pgram(soi,log='no',taper=0,pad=0,fast=FALSE,demean=TRUE,detrend=TRUE,plot='no')<br>U = qchisq(.025,2) <br>L = qchisq(.975,2) <br>c(2*P1$spec[10]/L, P1$spec[10], 2*P1$spec[10]/U)<br>c(2*P1$spec[38]/L, P1$spec[38], 2*P1$spec[38]/U)<br> <br></pre>
+Note, that the confidence interval is not a function of N. &nbsp;If
+we collect more data, we will not be able to estimate the periodogram
+any better! &nbsp;The periodogram is unbiased, but it is
+inconsistent. &nbsp;(Remember, consistency means that not only is
+the estimate asymptotically unbiased, but consistency also means that
+the estimate get better as N get larger.)<br>
+<br>
+To consistently estimate the periodogram, one has two choices: 1)
+smooth periodogram by averaging over small windows, and 2) splitting
+the data into sections, calucating a periodogram for each section, and
+then averaging.<br>
+<br>
+<pre>par(mfrow=c(3,2))<br>window_1 &lt;- kernel('daniell',3)<br>window_2 &lt;- kernel('daniell',6)<br>window_3 &lt;- kernel('daniell',c(2,2))<br>plot(window_1)<br>spec.pgram(soi,kernel=window_1,log='no',taper=0,fast=F,detrend=T)<br>plot(window_2)<br>spec.pgram(soi,kernel=window_2,log='no',taper=0,fast=F,detrend=T)<br>plot(window_3)<br>spec.pgram(soi,kernel=window_3,log='no',taper=0,fast=F,detrend=T)<br><br></pre>
+Try other window sizes as well, and explain the effect of window size
+on the periodogram estimate. &nbsp;Calculate confidence intervals for the maximum value using window 3. &nbsp;(Note, the degrees of freedom are returned by spec.pgram)<br>
+<br>
+The second approach is given below. Note, that I use the time series
+version of the data, simply so that I can take advantage of the window
+function.
+<pre><br>k &lt;- matrix(0,nrow=48,ncol=5)<br>k[,1] &lt;- spec.pgram(window(soi12,start=1950,end=1958),log='no',taper=0,fast=F,detrend=T)$spec<br>k[,2] &lt;- spec.pgram(window(soi12,start=1956,end=1964),log='no',taper=0,fast=F,detrend=T)$spec<br>k[,3] &lt;- spec.pgram(window(soi12,start=1962,end=1970),log='no',taper=0,fast=F,detrend=T)$spec<br>k[,4] &lt;- spec.pgram(window(soi12,start=1968,end=1976),log='no',taper=0,fast=F,detrend=T)$spec<br>k[,5] &lt;- spec.pgram(window(soi12,start=1974,end=1982),log='no',taper=0,fast=F,detrend=T)$spec<br># This could have been automated or put in a loop, but I wanted to make it more obvious.<br>freq &lt;- spec.pgram(window(soi12,start=1974,end=1982),log='no',taper=0,fast=F,detrend=T)$freq<br>plot(freq,apply(k,1,mean),type='l')<br>abline(v=1/4,lty='dotted')<br>abline(v=1,lty='dotted')<br><br></pre>
+When there is a very strong periodoc signal, it is commonly the case
+that is upsets the estimation at other frequencies. &nbsp;This
+effect is called 'leakage,' &nbsp;essentially, some of the signal
+leaks out to other frequencies. &nbsp;The harmonics are one example
+of this, but it can happen throughout the entire spectrum. &nbsp;It
+is often desirable to filter out strong periodicities. &nbsp;We
+will do this by subtracting a 12 month moving average from the series.
+&nbsp;This should reduce the effect of all cycles with periods less
+than or equal to a year. &nbsp;Note, that it will also dampen any
+cycles that are slighly longer than one year as well, (if such exist). <br>
+<pre>####################<br># Filtering<br>k = kernel("modified.daniell", 6) #-- 12 month filter<br>plot(k)<br>soi_filter = kernapply(soi,k)<br>plot.ts(soi_filter)<br>spec.pgram(soi_filter,kernel('daniell',3),log='no',taper=0,fast=F)<br><br></pre>
+Describe
+the effect of taking a 12 month moving average on the data series and
+periodogram. &nbsp;Find the precise period of the maximum frequency
+in
+the periodogram.<br>
+<br>
+Finally, we finish our analysis of the periodogram by looking at the
+effect of a trend on the periodogram. &nbsp;&nbsp;
+<pre>##################################################<br># <br>N &lt;- length(soi)<br>summary(lm(soi~seq(1,N)))<br><br># Effect of not removing trend<br>par(mfrow=c(2,1))<br>spec.pgram(soi,kernel('daniell',c(2,2)),log='no',taper=0,fast=F,main='With<br>detrending')<br>spec.pgram(soi,kernel('daniell',c(2,2)),log='no',taper=0,fast=F,detrend=F,demean=T,main='Without<br>detrending')<br><br></pre>
+What is the effect of removing or not removing the trend?
+&nbsp;What is the significance of a trend for the detection of long
+wave cycles?<br>
+<br>
+Bivariate Analysis.<br>
+<br>
+Along with the soi index, we also have data on fish recruitment in the
+North Pacific.<br>
+<pre>rec &lt;- scan("recruit.dat")<br>acf(cbind(soi,rec),lag.max=12*6)<br>ccf(soi,rec)<br></pre>
+Compare the cross correlation functions and explain these results.
+&nbsp;How do you interpret the larger magnitudes on the
+negative portion &nbsp;than the positive portion? What is leading
+what here?<br>
+<br>
+It is also useful to determine which frequencies are contributing to
+the cross-corrlation. &nbsp;This is done using the 'coherence
+function'.<br>
+<pre>x = ts(cbind(soi,rec))<br>s = spec.pgram(x, kernel("daniell",c(2,2)), taper=0)<br>s$df # degrees of freedom<br>f = qf(.999, 2, s$df-2) <br>c = f/(18+f) # confidence interval<br>plot(s, plot.type = "coherency", ci.lty = 2)<br>abline(h=c)<br></pre>
+What frequencies appear to be contributing most to the
+cross-correlation between the soi and recruitment series?
+<pre>t</pre>
+t
+</body></html>
