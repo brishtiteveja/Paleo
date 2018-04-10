@@ -11,6 +11,13 @@ knitr::opts_chunk$set(echo = TRUE)
 \setlength{\leftskip}{0.5cm}
 
 ## 1. Discrete Fourier Transform
+  \setlength{\leftskip}{1cm}
+  
+  It was a significant discovery in mathematics that any function can be expanded as a sum of harmonic functions (sines and cosines) and the resulting expression is known as Fourier series. A harmonic of repeating signals such as sunusoidal wave is a wave with a frequency that is a positive integer multiple of the frequency of the original wave, known as the fundamental frequency. The original wave is called the first harmonic, the following harmonics are known as higher harmonics. Any function can also be expanded in terms of polynomials and the resulting expression is known as Taylor series. If the underlying forces are harmonic and there possibly exists some periodicity, then the use of harmonic series is more useful than using polynomials as it produces simpler equations. It is possible to discover a few dominating terms from such series expansion which may help identify the known natural forces with the same period.
+  Let the symbol $h(t)$ represent a continuous function of time. The Fourier transform is a function of 
+frequency f:
+  \setlength{\leftskip}{3cm}
+    $ H_T(f) = \int_{-\infty}^{\infty} h(t) e^{2 \pi i f t} dt $
 
 ## 2. Periodogram
 
@@ -167,7 +174,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## 7. Maximum Likelihood Analysis
   In maximum likelihood method, we adjust the parameter of the model and ultimately find the parameters with 
   which our model have the maximum probability/likelihood of generating the data. To estimate the spectral power, we first select a false alarm probability and calculate the normalized periodogram. We identify the 
-  maximum peak and test it against the false alarm probability. If the maximum peak meets the false alarm test, we determine the amplitude and phase of the sinusoid representing the peak. Then we subtract the sinusoidal curve from the data which also removes the annoying sidelobes associated with that peak. After peak removal, the variance in the total record is also reduced. Now, with the new subtracted data, we continue finding the other stronger peaks following the same procedure. We stop when a peak does not meet the false alarm test. We need to carefully choose the false alarm probability, as if it is too low, we can miss some significant peaks; it is too low, we can mislavel noise as peaks.
+  maximum peak and test it against the false alarm probability. If the maximum peak meets the false alarm test, we determine the amplitude and phase of the sinusoid representing the peak. Then we subtract the sinusoidal curve from the data which also removes the annoying sidelobes associated with that peak. After peak removal, the variance in the total record is also reduced. Now, with the new subtracted data, we continue finding the other stronger peaks following the same procedure. We stop when a peak does not meet the false alarm test. We need to carefully choose the false alarm probability, as if it is too low, we can miss some significant peaks; it is too low, we can mislabel noise as peaks.
+  
 ## 8. Maximum Entropy Method
   It is assumed that the true power spectrum can be approximated by an equation which has a power series. This method finds the spectrum which is closest to white noise (has the maximum randomness or "entropy") while still having an autocorrelation function that agrees with the measured values - in the range for which there are measured values. It yields narrower spectral lines. This method is suitable for relatively smooth spectra. With noisy input functions, if very high order is chosen, there may occur spurious peaks. This method should be used in conjuction with other conservative methods, like periodograms, to choose the correct model order and to avoid getting false peaks.
 ## 9. Cross Spectrum and Coherency
