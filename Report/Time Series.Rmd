@@ -1,29 +1,96 @@
 ---
-title: "Fourier Time Series"
+title: ""
+author: "Abdullah Khan Zehady"
+header-includes: 
+  - \usepackage{textcomp, amsmath}
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Abdullah Khan Zehady
+# Qualifier with Professor Robert Nowack
+
+\newpage
+
 #  **_Methods of Power Spectral Estimation_**
 
-\setlength{\leftskip}{0.5cm}
+\setlength{\leftskip}{1cm}
 
-## 1. Discrete Fourier Transform
+## Fourier Transform
   \setlength{\leftskip}{1cm}
   
-  It was a significant discovery in mathematics that any function can be expanded as a sum of harmonic functions (sines and cosines) and the resulting expression is known as Fourier series. A harmonic of repeating signals such as sunusoidal wave is a wave with a frequency that is a positive integer multiple of the frequency of the original wave, known as the fundamental frequency. The original wave is called the first harmonic, the following harmonics are known as higher harmonics. Any function can also be expanded in terms of polynomials and the resulting expression is known as Taylor series. If the underlying forces are harmonic and there possibly exists some periodicity, then the use of harmonic series is more useful than using polynomials as it produces simpler equations. It is possible to discover a few dominating terms from such series expansion which may help identify the known natural forces with the same period.
+  It was a significant discovery in mathematics that any function can be expanded as a sum of harmonic functions (sines and cosines) and the resulting expression is known as Fourier series. A harmonic of repeating signals such as sunusoidal wave is a wave with a frequency that is a positive integer multiple of the frequency of the original wave, known as the fundamental frequency. The original wave is called the first harmonic, the following harmonics are known as higher harmonics. Any function can also be expanded in terms of polynomials and the resulting expression is known as Taylor series. If the underlying forces are harmonic and there possibly exists some periodicity, then the use of harmonic series is more useful than using polynomials as it produces simpler equations. It is possible to discover a few dominating terms from such series expansion which may help identify the known natural forces with the same period. \newline
   Let the symbol $h(t)$ represent a continuous function of time. The Fourier transform is a function of 
-frequency f:
+frequency f. 
+
   \setlength{\leftskip}{3cm}
-    $ H_T(f) = \int_{-\infty}^{\infty} h(t) e^{2 \pi i f t} dt $
+  
+  $H_T(f) = \int_{-\infty}^{\infty} h(t) e^{2 \pi i f t} dt$\newline
+  $e^{2 \pi i f t} = cos(2\pi f t) + i sin(2\pi f t)$
+  
+  \setlength{\leftskip}{1cm}
+  
+  The amplitude and the phases of the sine waves can be found from this result. Given data h(t), we can find the Fourier transform H(f) using Inverse Fourier transform.
+  
+  \setlength{\leftskip}{3cm}
+  
+  $h(t) = \int_{-\infty}^{\infty} H_T(f) e^{-2 \pi i f t} dt$
+  
+  \setlength{\leftskip}{1cm}
+  
+  The spectral power P is defined as the square of the Fourier amplitude:
+  
+  \setlength{\leftskip}{3cm}
+  
+  $P_T(f) = |H_T(f)|^2$
+  
+  \setlength{\leftskip}{1cm}
+  
+  However, real data does not span infinite time and most likely be sampled only at a few discrete points
+  over time. Suppose that, we 
+  received values of h(t) at times $t_j$, then an estimate of the Fourier transform is made by using summation. The inverse transform is also shown using the summation.
+  
+  \setlength{\leftskip}{3cm}
+  
+  $h_j \equiv h(t_j)$ \newline
+  $H(f) \equiv \sum_{j=0}^{N-1} h_j e^{2 \pi i f t_j}$
+  
+  \setlength{\leftskip}{1cm}
+  
+  The data are desired to be sampled from equally spaced time as nice statistical properties are available in such regular case. If the interval between equally spaced data points is $\Delta t$, then the highest frequency that will appear in the fourier transform is given
+  by the Nyquist-Shannon sampling theorem. The theorem states "If a function $f(t)$ contains no frequencies higher than $f$ Hz, then it is completely determined by giving its ordinates at a series of points spaced $\frac{1}{2f}$ seconds apart". Therefore, the Nyquist frequency (highest frequency) is given by the following equation.
+  
+  \setlength{\leftskip}{3cm}
+  
+  $f_N = \frac{1}{2\Delta t}$ \newline
+  
+  \setlength{\leftskip}{1cm}
+  
+  The lowest frequency is the one that gives one full cycle in the time interval T. The other frequencies to evaluate is the multiples ($f_k$) of the low frequency $f_L$. And, also we can derive the symmetric pair of equations. Moreover, if $h(t)$ is band-limited (no frequencies below $f_L$ or above $f_N$), then 
+  there is a relationship between the continuous function $h(t)$ and the discrete values $H_k$.
+  
+  \setlength{\leftskip}{3cm}
+  
+  $f_L = \frac{1}{T}$ \newline
+  $f_k = kf_L$\newline
+  $H_k \equiv \sum_{j=0}^{N-1} h_j e^{2 \pi i jkf_L t_j}$\newline
+  $h_j = \sum_{k=0}^{N-1} H_k e^{2 \pi i jkf_L t_j}$\newline
+  $h(t) = \sum_{k=0}^{N-1} H_k e^{2 \pi i kf_L t}$ (when band limited)\newline
+  
+  \setlength{\leftskip}{1cm}
 
-## 2. Periodogram
+## Periodogram
+  Fourier transform give us the complex numbers and the square of the absolute value of these numbers represent the periodogram. This is the first form of numerical spectral analysis and is used to estimate spectral power. Even though the data points collected are at evenly spaced specific discrete time, it is possible to evaluate periodogram at any frequencies.
 
-## 3. Fast Fourier Transform
+## Fast Fourier Transform (FFT)
+  We can calculate the Fourier transform very efficiently by using FFT. It requires data at equally-spaced time points, and is most efficient when the number of points is an exact power of two. Interpolation is often used to produce the evenly-spaced data which may introduce additional bias and systematic eror. For real data consisting of $N$ data points $y_j$, each taken at time $t_j$, the power spectrum outputs a set of $N+1$ data points. The first and the last data points are the same, and they represent the power at frequency zero. The second through to the $N/2 + 1$ data points represent the power at evenly-spaced frequencies up to the Nyquist frequency. The spectral power for a given frequency is distributed over several frequency bins, therefore an optimum determination of the power requires combining these information and proper investigation of leakage. FFT, generally, calculates the amplitude for a set of frequencies. N/2 complex amplitudes are calculated at N/2 different frequencies. Because, these may not be the true frequencies present in the record, we subtract the mean from the data and then pad it with zeros to overcome this challenge.
 
-## 4. Tapers
+## Aliasing
+  The time series consists of measurements made at a discrete, equally spaced, set of times on some phenomenon that is actually evolving continuously, or at least on a much finer time scale. For example, samples of Greenland Ice represent the temperature every 100 years, but if the sampling is not precisely spaced by a year, we will sometimes measure winter ice, and other times measure summer ice. Even without the existence of long-term variation in the temperature, fluctuations (jumping up and down) in the data can be noticed. So, there can be frequencies higher than the Nyquist frequency associated with the sampling interval. Thus a peak in the true spectrum at a frequncy beyond the Nyquist frequency may be strong enough to be seen(aliased) in the spectrum which may give the impression that a frequency is significant when it is not. Or, a peak may partly obscure another frequency of interest. This phenomenon is known as aliasing.
+  
+## Tapers
   \setlength{\leftskip}{1cm}
   
   Fourier transform is defined for a function on a finite interval and the function needs to be periodic. But with the real data set, this requirment is not met as the data end suddenly at t=0 and t=T and can have discontinuities. This discontinuity introduces distortions (known as Gibbs phenomenon) in fourier transform and generates false high frequency in the spectrum. Tapering (using data window) is used to reduce these artificial presence. The data $y=f(t)$ is multiplied by a taper function $g(t)$ which is a simple, slowly varying function, often going towards zero
@@ -81,10 +148,10 @@ frequency f:
   
   \setlength{\leftskip}{1cm}
   
-## 4.1 Multitaper Analysis
+## Multitaper Analysis
   We apply taper or data window to reduce the side lobes of the spectral lines. Basically we want to minimize the leakage of power from the strong peaks to other frequencies. In multitaper method, several different tapers are applied to the data and the resulting powers then averaged. Each data taper is multiplied element-wise by the signal to provide a windowed trial from which one estimates the power at each component frequency. As each taper is pairwise orthogonal to all other tapers, the windowed signals provide statistically independent estimates of the underlying spectrum. The final spectrum is obtained by averaging over all the tapered spectra. D. Thomson chose the Slepian or discrete prolate spheroidal sequences as tapers since these vectors are mutually orthogonal and possess desirable spectral concentration properties. Multitaper method can suppress sidelobes but have higher resolution. If we use few tapers, the resolution won't be degraded, but then sidelobe reduction won't happen much. So, there is a trade-off which is often misunderstood.
   
-## 5. Blackman-Tuckey Method
+## Blackman-Tuckey Method
  \setlength{\leftskip}{1cm}
   Blackman and Tuckey prescribed some techniques to analyze a continuous spectrum that was biased by 
   the presence of sidelobes of strong peaks in the ordinary periodogram. Blackman-Tuckey(BT) method was developed before 1958, 
@@ -121,7 +188,7 @@ frequency f:
     $P_{BT}(f) = 2  \int_{0}^{\infty} cos(2\pi f) A_{BT}(\tau)$ \newline
     
   \setlength{\leftskip}{1cm}
-  If $N=1$, then it is basically the full autocorrelation function $A(\tau)$ and gives the same answer as the
+  If $l=1$, then it is basically the full autocorrelation function $A(\tau)$ and gives the same answer as the
   ordinary periodogram. 
   
   \setlength{\leftskip}{3cm}
@@ -133,9 +200,7 @@ frequency f:
   the process of squaring can make the function positive over the region of smoothing. The tapering does not 
   average the sidelobes into the main peak. Because, shift in the time scale behaves like phase modulation. The sidelobes, when tapering is applied, will not have the same phase, and if averaged in amplitude, they can reduce the strength of the peaks. A major challenge in the BT method is that we will have to estimate the proper lag to use before doing all the calculations. Blackman and Tukey recommended starting with the value 1/3 for the lag.
   
-\setlength{\leftskip}{0.5cm}
-
-## 6. Lomb-Scargle Periodogram
+## Lomb-Scargle Periodogram
 
   \setlength{\leftskip}{1cm}
   
@@ -171,47 +236,174 @@ frequency f:
   from 0 to 0.5, as the rest is a mirrored version. But with Lomb-Scargle periodogram, the aliasing 
   effect can be significantly reduced.
   
-## 7. Maximum Likelihood Analysis
+## Maximum Likelihood Analysis
   In maximum likelihood method, we adjust the parameter of the model and ultimately find the parameters with 
   which our model have the maximum probability/likelihood of generating the data. To estimate the spectral power, we first select a false alarm probability and calculate the normalized periodogram. We identify the 
   maximum peak and test it against the false alarm probability. If the maximum peak meets the false alarm test, we determine the amplitude and phase of the sinusoid representing the peak. Then we subtract the sinusoidal curve from the data which also removes the annoying sidelobes associated with that peak. After peak removal, the variance in the total record is also reduced. Now, with the new subtracted data, we continue finding the other stronger peaks following the same procedure. We stop when a peak does not meet the false alarm test. We need to carefully choose the false alarm probability, as if it is too low, we can miss some significant peaks; it is too low, we can mislabel noise as peaks.
   
-## 8. Maximum Entropy Method
+## Maximum Entropy Method
   It is assumed that the true power spectrum can be approximated by an equation which has a power series. This method finds the spectrum which is closest to white noise (has the maximum randomness or "entropy") while still having an autocorrelation function that agrees with the measured values - in the range for which there are measured values. It yields narrower spectral lines. This method is suitable for relatively smooth spectra. With noisy input functions, if very high order is chosen, there may occur spurious peaks. This method should be used in conjuction with other conservative methods, like periodograms, to choose the correct model order and to avoid getting false peaks.
-## 9. Cross Spectrum and Coherency
-
-## 10. Bispectra
-
-## 11. Monte Carlo Simulation
-
+  
+## Cross Spectrum and Coherency
+  If a climate proxy $a(t)$ is influenced or dominated by a driving force $b(t)$, we can use cross spectrum to see if their amplitudes are similar. Cross spectrum is given by the product of the fourier transform.
+  
+  \setlength{\leftskip}{3cm} 
+  
+  $C(f) = A(f) B^*(f)$ \newline
+  
+  \setlength{\leftskip}{1cm}
+  
+  where A is the Fourier transform of a and B is the complex conjugate of the fourier transform of b. If we want to know whether two signals are in phase with each other, regardless of amplitude, then we can take the cross spectrum, square it, and divide by the spectral powers of individual signals using the following equation for coherency. Coherency measures only the phase relationship and is not sensitive to amplitude which is a big drawback. 
+  
+  \setlength{\leftskip}{3cm} 
+  
+  $c(f) = \frac{|C(f)|^2}{P_a(f) P_b(f)}$ \newline
+  
+  \setlength{\leftskip}{1cm}
+  
+  Coherency is valuable if two signals that are varying in time, stay in phase over a band of frequencies instead of a single frequency. Therefore, a band of adjacent frequancies are used in the averaging process to compute coherency:
+  
+  \setlength{\leftskip}{3cm} 
+  
+  $coherency(f) = \gamma^2(f) = \frac{|<C(f)>|^2}{<P_a(f)> <P_b(f)>}$ \newline
+  
+  \setlength{\leftskip}{1cm}
+  
+## Bispectra
+  In bispectra, coherency relationship between several frequencies are used. A bispectrum shows a peak whenever (1) three frequencies $f_1$, $f_2$ and $f_3$ are present in the data such that $f_1 + f_2 = f_3$ and (2) the phase relationship between the three frequencies is coherent for at least a short averaging time for a band near these frequencies. If the nonlinear processes in driving force (e.g. eccentricity or inclination of the orbit of earth) has coherent frequency triplets, then the response (i.e. climate) is likely to contain same frequency triplet. For example, $\delta ^{18}O$ is driven by eccentricity, we should be able to find eccentricity triplet. Thus, by comparing the bispectrum plot of climate proxy with the bispectrum plot of the driving forces, we can verify the influences of driving forces.
+  
+  
+## Monte Carlo Simulation of Background
+  Monte carlo simulation is extremely useful to answer the questions like whether the data is properly tuned or not, whether the timescale is incorrect, whether some spectral power is being leaked to adjacent frequencies, whether the peak has real structure and also to understand the structures near the base of the peak (a shoulder) in a spectral analysis. Generally monte carlo simulation is run multiple times. For each simulation, a real signal(sinusoidal wave) is generated, then random background signal is added, then the spectral power is calculated to look for shoulders. In this way, the frequency of the shoulder occurence can be measured and the randomness can be realized. It is important to create background that behaves similarly to the background in real data. Dissimilar background will cause false conclusion. We also need to estimate the statistical significance of the peaks very carefully.
 
 \newpage
 \setlength{\leftskip}{0cm}
 
 #  **_Climate Proxies_**
 
-\setlength{\leftskip}{0.5cm}
+\setlength{\leftskip}{1cm}
 
-# 1. Oxygen Isotopes
+To know and understand about ancient climate, different climate proxies are generally used. We can measure the concentration of greenhouse gases by using entrapped air in the Greenland and Antarctic glaciers which give us samples of the atmosphere back to about 420 Kyr. The glaciers in North America and on mountains in tropical Andes can be estimated from scour marks, moraines and erratic boulders.Forams are microscopic organisms whose life cycles depend on local temperature and whose fossils preserve samples of ancient material. Some planktic forams (short for foraminifera) represent a "proxy" for sea surface temperature as they indirectly inform us about the temperature. One of the most remarkable proxies is the ratio of oxygen isotopes in benthic(bottom dwelling) forams in ancient sediment, which reflect the total amount of ice that existed on the Earth at the time the sea beds were formed. A scientist needs to be careful in their analysis as most proxies are dependent on more than one aspect of climate. Now I will discuss the primary proxies which have been used to investigate paleoclimate. Many of the samples come from seafloor cores, cores from Greenland or Anatarctic ice. The cores are named V22-174, RC13-110, DSXP-806 etc. In the geologic community, various of these prefixes are used some of which are enlisted below:
 
-# 2. Deuterium - Temperature Proxy
+\setlength{\leftskip}{2cm}
+- V : Vema, a converted yacht operated by Lamont-Doherty Earth Observatory of Columbia university. \newline
+- RC: Research vessel Robert Conrad.\newline
+- DSDP: Deep Sea Drilling Project operated from 1968 to 1983 by the Scripps Institution of Oceanography at University of California, San Diego.\newline
+- ODP: Ocean Drilling Program as an international collaboration.\newline
+- GRIP: European based GReenland Ice-core Project.\newline
+- GISP2: US-based Greenland Ice Sheet Project #2.\newline
+- Vostok: Russian station on the East Antarctic ice plateau.\newline
+- MD: The research vessel Marion Dufresne, operated by the French.\newline
 
-# 3. Carbon-13
 
-# 4. Vostok
+\setlength{\leftskip}{1cm}
 
-# 5. Atmospheric $\delta^{18}O$ and Dole Effect
+# Oxygen Isotopes
+The pattern of oxygen isotopes is remarkably similar in sea floor records around the world and this universality feature is very attractive for a climate proxy. The ratio of oxygen istopes found in ice, trapped air, benthic/planktic forams is widely used as a climate proxy. Oxygen consists of three stable istopes: $99.759$% is $^{16}O$, $0.037$%  is $^{17}O$, and $0.204$% is $^{18}O$. The variation in the fraction of $^{18}O$ can be measured with high accuracy. The fractional change, shown by the following equation, basically means that how much difference of the ratio of $\frac{^{18}O}{^{16}O}$ exists in perts per thousand in the sample compared to the reference. 
 
-# 6. $\delta^{18}O$ / $CO_2$ Mystery
+  \setlength{\leftskip}{3cm} 
+  
+  $\delta^{18}O = \left(\frac{\left(\frac{^{18}O}{^{16}O}\right)_{Sample}}{\left(\frac{^{18}O}{^{16}O}\right)_{Reference}} - 1\right) \times 1000$ \newline
+  
+  \setlength{\leftskip}{1cm}
+  
+  Oxygen isotope separation occurs because of the isotopic differences in vapour pressure and chemical reaction rates, which depends on temperature. The following geophysical processes causes these changes in $\delta^{18}O$ are:
+    
+\setlength{\leftskip}{2cm}
+  1. Evaporated water is lighter than the remaining liquid. Water containing $^{16}O$ has higher vapor pressure than water containing $^{18}O$, so it evaporates quickly. \newline \newline
+  2. Precipitated water molecules are heavier than those in the residual vapor. $H_2^{18}O$ condenses more readily than $H_2^{16}O$, so as water vapour is carried across to Greenland or to central Anatarctica, the residual becomes lighter.\newline \newline
+  3. Oceanic $\delta^{18}O$ in non-uniformly distributed. It means that the changes in the pattern of winds that carry vapor and change the source will also change $\delta^{18}O$. At present, the difference in surface water is $1.5$% from pole to equator.\newline \newline
+  4. Biological activity enriches the heavy isotope. The $\delta^{18}O$ in the calcium carbonate of shells is $40$% greater, on average, than in the water in which the organism lives.\newline 
+  
+\setlength{\leftskip}{1cm}
+  
+ Therefore, glacial ice becomes lighter, with $\delta^{18}O$ typically lower than seawater. In glacial ice containing more $^{16}O$, $\delta^{18}O$ is negative, where as in surface water containing more $^{18}O$, $\delta^{18}O$ is positive. However, when large volumes of ice are stored in ace-gage glaciers, then there can be considearable depletion of the light isotopes in the oceans.
+  In 1964 Dansgaard and colleageus derived a relationship relationship between temperature $T$ and $\delta^{18}O$ under some assumption:
+  
+  \setlength{\leftskip}{3cm} 
+  
+  $\delta^{18}O \equiv 0.7 T - 13.6$ 
+  
+  \setlength{\leftskip}{1cm}
+  
+  However, there can be other factors in the change of $\delta^{18}O$. Therefore, if we go back to earlier when the temperature was lower, $\delta^{18}O$ might not be lower which contradicts the above equation. When several measurements are made at the same latitude, the effect is argued to depend on the amount of precipitation and not on temperature.
+  Moreover, depending on the source, we will have to consider other issues. In planktic fossils, $\delta^{18}O$ is expected to reflect surface conditions, and be sensitive to temperature and salinity conditions. In benthic forams, $\delta^{18}O$ must be more sensitive to global ice, because there is little temperature variation on the sea floor. In other samples (e.g. ice, trapper air or calcite), $\delta^{18}O$ may represent the temperature, not ice volume.
+  Several attempts have been made to extract the underlying $\delta^{18}O$ signal that is common in the records. SPECMAP stack (Imbrie et al., 1984) was a combination of five $\delta^{18}O$ records from five cores: V30-40, RC11-120, V280238 and DSDP502b.
+  
+# Deuterium - Temperature Proxy
+  Hydrogen generally contains only one proton in its nucleus and is lighter with atomic weight 1. Deuterim ($D$ or $^2H$), on the other hand, is one of the heavy isotopes of hydrogen which contains one proton and one neutron in its nucleus and thus the atomic weight is 2. Bonds formed with deuterium tend to be much more stable than those with light hydrogen. The deuterated water is more sensitive to temperature than that of $^{18}O$. We can clearly see it in the "fractionation factor" which describes the equilibrium between liquid and vapour. The fractionation factor is defined to be the ratio of D/H in a liquid to the ratio of D/H in a vapor that is in equilibrium with that liquid. The fractionation factor for HDO is approximately 1.08 and it varies more rapidly with temperature compared to $H_2^{18}O$. Therefore, the condensation of the deuterised form of heavy water ($HDO$) is significantly more sensitive to temperature variation than is the $^{18}O$ form ($H_2^{18}O$). Therefore, deuterim is considered as a temperature proxy. A temperature scale was devised fro the Vostok ice core by assuming the equation:
+  
+  \setlength{\leftskip}{3cm} 
+  
+  $\Delta T = \frac{\Delta \delta D_{ICE} - \Delta \delta^{18}O_{SW}}{9}$ 
+  
+  \setlength{\leftskip}{1cm}
+  
+  where, the $\delta^{18}O_{SW}$ refers to the sea floor isotope record.
+  
+# Carbon-13
+  Carbon on the earth has two stable istopes, $^{12}C$ with an bundance of $98.9$% and $^{13}C$ with an abundance of $1.1$%. The ratio of these two isotopes is described by the quantity $\delta^{13}C$ and defined by the equation below. The reference value is often taken to be a sample known as the "Peedee belemnite" (PDB); its $\delta^{13}C$ value is very close to that of mean sea water.
+  
+   \setlength{\leftskip}{3cm} 
+  
+  $\delta^{13}C = \left(\frac{\left(\frac{^{13}C}{^{12}C}\right)_{Sample}}{\left(\frac{^{13}C}{^{12}C}\right)_{Reference}} - 1\right) \times 1000$ \newline
+  
+  \setlength{\leftskip}{1cm}
+  
+  The lighter isotope, $^{12}C$, is easily absorbed into the organic tissue of plants, leading to negative values for $^{13}C = -20$% to $-25$%. In regions where  photosynthesis is active, this reduces the dissolved inorganic carbon in seawater. In this process, $^{13}C$ gets enriched in surrounding water. Different regions of the world have different geographic variation due to the existing activities. Warm surface water has the highest $\delta^{13}C$, where as deep Pacific water has the lowest $\delta^{13}C$. Thus $\delta^{13}C$ can be used as a tracer for oceanic currents. 
+  There is only small separation of carbon istotopes found in the formation of caclcium carbonate shells. Thus the measurement of $\delta^{13}C$ informs about the composition of the ocean water at the time and location in which the shell grew.
+  $^{13}C$ is extremely important isotope for paleoclimate studies, because it responds to the presence of life. $\delta^{13}C$ can record climate change. During glacial periods, biological activity was reduced by advancing glaciers and colder temperature, and light carbon was released into the atmosphere and eventually mixed into the oceans. $\delta^{13}C$ from benthic (bottom dwelling) forams is typically $0.35$% lower during glacials than during interglacials. In contrast, planktic forms don't show such changes.
+  
+# Vostok
+  The ice core from the Vostok site in Antarctica (Petit et al., 1999) located at $78^oS$ and $107^oE$, covers the longest period of time of any ice record. It reached a depth of 3623 metres. A untuned but unbiased timescale was derived based on ice accumulation and glacial flow models. Many proxies of climate interest were measured in the Vostok core, including atmospheric methane, atmospheric oxygen, deuterium in the ice, dust content and sea salt. Atmospheric methane is produced by the biological activity of anaerobic bacteria and it's existence in paleoclimate data is presumed to reflect the area of the earth covered by swamps and wetlands. The observed dust (strong 100 Kyr cycle) in the Vostok dust record is beleived to reflect reduction in vegetation during those periods and accompanying increase in wind-blown erosion. Then, the sodium concentration reflects the presence of sea spray aerosols blowing over the Vostok region.
+ 
+# Atmospheric $\delta^{18}O$ and Dole Effect
+  The atmospheric oxygen has a $\delta^{18}O$ of $+23.5$% compared to that of mean ocean sea water due to the removal of lighter isotope $^{16}O$ from the atmosphere by biological activity. The difference is called the "Dole Effect" and it is assumed to be time-independent. 
 
-# 7. Sea Floor Records
+# $\delta^{18}O$ / $CO_2$ Mystery
+  The difference between ocean and atmospheric $\delta^{18}O$ is due to the biological activity. However, carbon dioxide, even though driven by biological processes, doesn't show similar spectra. The strong peaks in the oxygen signal forced by precession parameter is absent in the carbon dioxide record which is mysterious and still under investigation.
 
-# 8. Terrestrial Records
+# Other Sea Floor Records
+## Terrigenous component
+  The terrigenous component of sea floor sediment is the fraction which has possibly come from land, in the form of wind-blown dust. The most significant frequencies which have been found in the spectrum of detuned terrigenous component Site 721 are marked with the periods: 41, 24, 22 and 19 Kyr. These periods indicate that the signals were dominated by solar insolation.
+  
+## Foram size: the coarse, or "sand", component
+  In the sea floor core, the main component of the sand is frequently large forams. Therefore, the coarse component reflects an interesting change in the ecology of the oceans. A clear eccentricity signal was detected in a core that already showed a clear absence of eccentricity in the $\delta^{18}O$ component.
+  
+## Lysocline: carbonate isopleths
+  Pressure varies in different depths of the ocean and which consequently influences the solubility of the calcium carbonate. At a certain depth, the shells of fossil plankton begin to dissolve, and this boundary is called lysocline. It can be quantified by the percentage of calcium carbonate in the sediment, as a function of depth. One can plot the depth at which the 60% lysocline is found, as a function of age and this depends on the depth of the oceans at that age. The signal apeears to be dominated by a 100 Kyr cycle, as would be expected if the primary driving force were the depth of the ocean, determined by the amount of ice accumulated on land.
 
+#  Terrestrial Records
+
+## Devils Hole
+  Devils Hole is the memorable name given to a cave in Nevada. The $\delta^{18}O$ in calcite on the walls reflect the isotopic composition of the groundwater that feeds the cave. The calcite has been extremely well-dated by measuring the ratios of radioactive isotopes of uranium and thorium ($^{238}U$ decays to form $^{230}Th$ which decays with a half-life of 77 kyr; the ratio gives a measure of the age.) Higher values of $\delta^{18}O$ are believed to reflect warmer conditions. The similarity of the Devils Hole $\delta^{18}O$ variations to those from ocean and ice records makes it a well-dated record of global climate change over the period of 60-568 kyr. However, there are still ongoing controversy.
+
+## Loess
+  Loess is a fine yellowish sediment known and is from over a million square miles of land in China, Europe and the Americas are covered. The cycles found in spectral analysis of loess data matches with the cycles found in sea floor sediments. The loess is not deposited at a constant rate, but it is believed that the variation can be removed by studying the density of entrained magnetic minerals, whose rate of production is assumed to be constant. These can be measured by the magnetic susceptibility of the loess.
 
 \newpage
 \setlength{\leftskip}{0cm}
 
+\setlength{\leftskip}{0.5cm}
+
 #  **_Paper Review _**
+## Harmonic Analysis of Worldwide Temperature Proxies for 2000 Years
+   In this paper, a large number of temperature proxies are used to construct a global temeperature mean G7 over the last 2000 years. The main goal was to prove the sun to be a climate driver by checking the strongest cycles in the fourier spectrum. The sun and the earth are classic dissipative systems with energy and thus periodic cycles ranging from several years to more than 100,000 years have been observed. The physical mechanisms of climate cycles is not totally clear, but the indirect solar forcing caused by varying magnetic field of the Sun can be measured. Various studies also have found the milancovich cycles (eccentricity, obliquity and precession cycles). 
+   
+   This paper has used paleotemeperature reconstructions and instrumental temerature records for the construction of G7. Stack of different temperature proxies, tree rings, temperature anomaly have been used.
+   
+   For fourier transformation, the individual reconstructions are converted to anomalies around the mean. False alarm levels for the spectra were generated using Monte Carlo simulation. For unevenly spaced data, Lomb and Scargle method was used. They also used wavelet analysis.
+   
+   We can see that the peaks slightly resemble in different records. But the 190 year cycle is very obvious. The three strongest peaks found were 1003, 463 and 188 years.They also reconstructed the G7 using these three cycle which is a good approximation. To get more insight on the solar link, their wavelet analysis for the temperatures with the production rate of the cosmogenic nuclides was very helpful. The 190 year cycle was again very evident.
+   
+   This study was again a confirmation of the climate cycles induced by solar activity.
+
+\newpage
+\setlength{\leftskip}{0cm}
 
 \setlength{\leftskip}{0.5cm}
+
+#  **_References _**
+1) Muller, Richard A and MacDonald, Gordon J (2002). Ice ages and astronomical causes: data, spectral analysis and mechanisms 
+
+2) Lüdecke, H.-J., & Weiss, C.-O. (2017). Harmonic Analysis of Worldwide Temperature Proxies for 2000 Years. The Open Atmospheric Science Journal, 11(17), 44–53. https://doi.org/10.2174/1874282301711010044
