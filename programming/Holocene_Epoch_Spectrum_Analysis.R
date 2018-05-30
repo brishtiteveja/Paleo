@@ -136,6 +136,7 @@ mtext(side=1, padj = 1, text=round(period[idx],2), at=freq[idx])
 
 
 evt <- ts(ev, start=0.04, frequency=20, deltat=5)
+library(multitaper)
 s <- spec.mtm(ts(ev), demean=FALSE, detrend=FALSE, nw = 1, k=1)
 s$
   , 
