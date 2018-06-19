@@ -874,20 +874,34 @@ $`9.500001`
 [43] "Gulf of California (Baja)"                                                                                                                                                              
 
 $`10.500001`
- [1] "Paragloborotalia mayeri [subtropical]"            "Neogloboquadrina acostaensis [temperate]"        
- [3] "Neogloboquadrina  nympha"                         "Cassigerinella chipolensis"                      
- [5] "Globorotalia limbata"                             "Planorbulinella spp., Discospirina italica"      
- [7] "Discoaster hamatus"                               "Catinaster coalitus"                             
- [9] "Coccolithus miopelagicus (Pac.)"                  "Helicosphaera walbersdorfensis (common)"         
-[11] "Coccolithus miopelagicus (Atl.)"                  "Discoaster bellus"                               
-[13] "Catinaster calyculus --> C. coalitus dominance"   "Discoaster neohamatus"                           
-[15] "Helicosphaera stalis (common)"                    "Discoaster brouweri"                             
-[17] "Catinaster calyculus"                             "Cerebrocysta poulsenii, Cordosphaeridium minimum"
-[19] "Cannosphaeropsis passio"                          "Palaeocystdinium striatogranulosum"              
-[21] "Nitzschia heteropolica, Medialia splendida"       "Denticulopsis dimorpha"                          
-[23] "Asteromphalus kennettii"                          "Coscinodiscus tuberculatus"                      
-[25] "Synedra jouseana"                                 "Actinocyclus ellipticus f. lanceolata"           
-[27] "Carpocanopsis cristata"                           "Actiocyon, Hoplictis, Platybelodon in Cl 3"      
+ [1] "Paragloborotalia mayeri [subtropical]"           
+ [2] "Neogloboquadrina acostaensis [temperate]"        
+ [3] "Neogloboquadrina  nympha"                        
+ [4] "Cassigerinella chipolensis"                      
+ [5] "Globorotalia limbata"                            
+ [6] "Planorbulinella spp., Discospirina italica"      
+ [7] "Discoaster hamatus"                              
+ [8] "Catinaster coalitus"                             
+ [9] "Coccolithus miopelagicus (Pac.)"                 
+[10] "Helicosphaera walbersdorfensis (common)"         
+[11] "Coccolithus miopelagicus (Atl.)"                 
+[12] "Discoaster bellus"                               
+[13] "Catinaster calyculus --> C. coalitus dominance"  
+[14] "Discoaster neohamatus"                           
+[15] "Helicosphaera stalis (common)"                   
+[16] "Discoaster brouweri"                             
+[17] "Catinaster calyculus"                            
+[18] "Cerebrocysta poulsenii, Cordosphaeridium minimum"
+[19] "Cannosphaeropsis passio"                         
+[20] "Palaeocystdinium striatogranulosum"              
+[21] "Nitzschia heteropolica, Medialia splendida"      
+[22] "Denticulopsis dimorpha"                          
+[23] "Asteromphalus kennettii"                         
+[24] "Coscinodiscus tuberculatus"                      
+[25] "Synedra jouseana"                                
+[26] "Actinocyclus ellipticus f. lanceolata"           
+[27] "Carpocanopsis cristata"                          
+[28] "Actiocyon, Hoplictis, Platybelodon in Cl 3"      
 [29] "Mi-6"                                            
 
 $`11.500001`
@@ -1121,21 +1135,36 @@ $`15.500001`
 [37] "Ries (Germany)"                                                         
 
 $`16.500001`
- [1] "planktonic foram Globoconella miozea" "Praeorbulina glomerosa s.str."       
- [3] "Praeorbulina sicana"                  "Globorotalia archeomenardii"         
- [5] "Praeorbulina curva"                   "Globorotalia birnageae"              
- [7] "Globorotalia incognita"               "Globigerinoides diminutus"           
- [9] "Globorotalia miozea"                  "Borelis melo group"                  
-[11] "Heterostegina granulatatesta group"   "Hystrichokolporna cinctum"           
-[13] "Stoveracysta conerae"                 "Imperfectodinium septatum"           
-[15] "Impagidinium patulum"                 "Palaeocystdinium striatogranulosum"  
-[17] "Cousteaudinium aubryae"               "Denticulopsis praelauta"             
-[19] "Crucidenticula kanayae"               "Actinocyclus ingens"                 
-[21] "Denticulopsis maccollumii"            "Thalassiosira bukryi"                
-[23] "Cestodiscus peplum"                   "Coscinodiscus blysmos"               
-[25] "Carpocanopsis favosa"                 "Didymocyrtis prismatica"             
-[27] "C. moosi"                             "C. tricostata"                       
-[29] "A. (U.) oblonga, C. batei"            "Mi-2"                                
+ [1] "planktonic foram Globoconella miozea"
+ [2] "Praeorbulina glomerosa s.str."       
+ [3] "Praeorbulina sicana"                 
+ [4] "Globorotalia archeomenardii"         
+ [5] "Praeorbulina curva"                  
+ [6] "Globorotalia birnageae"              
+ [7] "Globorotalia incognita"              
+ [8] "Globigerinoides diminutus"           
+ [9] "Globorotalia miozea"                 
+[10] "Borelis melo group"                  
+[11] "Heterostegina granulatatesta group"  
+[12] "Hystrichokolporna cinctum"           
+[13] "Stoveracysta conerae"                
+[14] "Imperfectodinium septatum"           
+[15] "Impagidinium patulum"                
+[16] "Palaeocystdinium striatogranulosum"  
+[17] "Cousteaudinium aubryae"              
+[18] "Denticulopsis praelauta"             
+[19] "Crucidenticula kanayae"              
+[20] "Actinocyclus ingens"                 
+[21] "Denticulopsis maccollumii"           
+[22] "Thalassiosira bukryi"                
+[23] "Cestodiscus peplum"                  
+[24] "Coscinodiscus blysmos"               
+[25] "Carpocanopsis favosa"                
+[26] "Didymocyrtis prismatica"             
+[27] "C. moosi"                            
+[28] "C. tricostata"                       
+[29] "A. (U.) oblonga, C. batei"           
+[30] "Mi-2"                                
 [31] "Columbia River (NW USA)"             
 
 $`17.500001`
@@ -1468,24 +1497,42 @@ $`27.500001`
 [21] "Taiwan margin"                                          
 
 $`28.500001`
- [1] "*__*"                                          "Chiloguembelina cubensis (LCO)"               
- [3] "Turrilina alsatica LCO"                        "Bullalveolina bulloides"                      
- [5] "Cycloclypeus droogeri"                         "Nummulites fichteli"                          
- [7] "Sphenolithus ciperoensis"                      "Sphenolithus pseudoradians"                   
- [9] "Rhombodinium draco"                            "Phtanoperidinium spp."                        
-[11] "Rhombodinium draco, Corrundinium incompositum" "Distatodinium biffii"                         
-[13] "Rocella symmetrica"                            "Coscinodiscus lewis levis"                    
-[15] "Kozloviella minor"                             "Cestodiscus reticulatus"                      
-[17] "Co Rocella vigilans var. A"                    "Coscinodiscus lewisianus"                     
-[19] "Rocella vigilans var. B"                       "CO Azpeitia gombosi"                          
-[21] "Hemiaulus taurus"                              "Rhizosolenia sp. A"                           
-[23] "Coscinodiscus lewis levis"                     "Asteromphalus symmetricus"                    
-[25] "Coscinodiscus rhombicus"                       "Tristylospyris triceros"                      
-[27] "Dorcadospyris ateuchus"                        "H. montosa"                                   
-[29] "L. scrobiculata"                               "Meniscomys"                                   
-[31] "Hyracodontidae"                                "Blainvillimys blainvillei"                    
-[33] "Blainvillimys heimersheimensis"                "Pg40 MFS"                                     
-[35] "Oi-2x"                                         "Gulf of Aden (Yemen-Somalia)"                 
+ [1] "*__*"                                         
+ [2] "Chiloguembelina cubensis (LCO)"               
+ [3] "Turrilina alsatica LCO"                       
+ [4] "Bullalveolina bulloides"                      
+ [5] "Cycloclypeus droogeri"                        
+ [6] "Nummulites fichteli"                          
+ [7] "Sphenolithus ciperoensis"                     
+ [8] "Sphenolithus pseudoradians"                   
+ [9] "Rhombodinium draco"                           
+[10] "Phtanoperidinium spp."                        
+[11] "Rhombodinium draco, Corrundinium incompositum"
+[12] "Distatodinium biffii"                         
+[13] "Rocella symmetrica"                           
+[14] "Coscinodiscus lewis levis"                    
+[15] "Kozloviella minor"                            
+[16] "Cestodiscus reticulatus"                      
+[17] "Co Rocella vigilans var. A"                   
+[18] "Coscinodiscus lewisianus"                     
+[19] "Rocella vigilans var. B"                      
+[20] "CO Azpeitia gombosi"                          
+[21] "Hemiaulus taurus"                             
+[22] "Rhizosolenia sp. A"                           
+[23] "Coscinodiscus lewis levis"                    
+[24] "Asteromphalus symmetricus"                    
+[25] "Coscinodiscus rhombicus"                      
+[26] "Tristylospyris triceros"                      
+[27] "Dorcadospyris ateuchus"                       
+[28] "H. montosa"                                   
+[29] "L. scrobiculata"                              
+[30] "Meniscomys"                                   
+[31] "Hyracodontidae"                               
+[32] "Blainvillimys blainvillei"                    
+[33] "Blainvillimys heimersheimensis"               
+[34] "Pg40 MFS"                                     
+[35] "Oi-2x"                                        
+[36] "Gulf of Aden (Yemen-Somalia)"                 
 
 $`29.500001`
  [1] "planktonic foram Subbotina angiporoides"                                                            
@@ -2484,13 +2531,20 @@ $`62.500001`
 [34] "LDE"                                                                                                                                                                                                                                           
 
 $`63.500001`
- [1] "Globanomalina compressa"               "Praemurica inconstans"                
- [3] "Toweius pertusus (circular) (common)"  "Ellipsolithus macellus"               
- [5] "Prinsius martinii"                     "Senoniasphaera inornata"              
- [7] "Spiniferites cryptovesiculatus"        "Cerodinium striatum"                  
- [9] "Senoniasphaera inornata"               "Senoniasphaera inornata"              
-[11] "Buryella foremanae"                    "Pantolambda, Deltatherium, Mixodectes"
-[13] "Radiation of Plesiadapiforms"          "Pg10 SB"                              
+ [1] "Globanomalina compressa"              
+ [2] "Praemurica inconstans"                
+ [3] "Toweius pertusus (circular) (common)" 
+ [4] "Ellipsolithus macellus"               
+ [5] "Prinsius martinii"                    
+ [6] "Senoniasphaera inornata"              
+ [7] "Spiniferites cryptovesiculatus"       
+ [8] "Cerodinium striatum"                  
+ [9] "Senoniasphaera inornata"              
+[10] "Senoniasphaera inornata"              
+[11] "Buryella foremanae"                   
+[12] "Pantolambda, Deltatherium, Mixodectes"
+[13] "Radiation of Plesiadapiforms"         
+[14] "Pg10 SB"                              
 
 $`64.500001`
  [1] "Parasubbotina varianta"                                                                  
@@ -2583,12 +2637,18 @@ $`66.500001`
 [35] "Hainina"                                                                          
 
 $`67.500001`
- [1] "Pseudoguembelina hariaensis"             "Abathomphalus intermedius"              
- [3] "Micula prinsii"                          "Nephrolithus frequens"                  
- [5] "Ceratolithoides kamptneri"               "Nephrolithus frequens (oldest possible)"
- [7] "Palynodinium grallator"                  "Peckichara sp. 1"                       
- [9] "Hipuritella lapeirousei"                 "Praeradiolites haeninghausi"            
-[11] "C. major"                                "Tian Shan (w. China)"                   
+ [1] "Pseudoguembelina hariaensis"            
+ [2] "Abathomphalus intermedius"              
+ [3] "Micula prinsii"                         
+ [4] "Nephrolithus frequens"                  
+ [5] "Ceratolithoides kamptneri"              
+ [6] "Nephrolithus frequens (oldest possible)"
+ [7] "Palynodinium grallator"                 
+ [8] "Peckichara sp. 1"                       
+ [9] "Hipuritella lapeirousei"                
+[10] "Praeradiolites haeninghausi"            
+[11] "C. major"                               
+[12] "Tian Shan (w. China)"                   
 
 $`68.500001`
  [1] "Globotruncana linneiana"                                                   
@@ -2692,8 +2752,9 @@ $`72.500001`
 [26] "Maud Rise (S. Atl. off Antarctica)"                                                                                 
 
 $`73.500001`
-[1] "Globotruncana aegyptiaca"  "Pseudoguembelina excolata" "Heteromarginatus bugensis"
-[4] "Heteromarginatus bugensis" "Peckichara cancellata"     "Septorella ultima"        
+[1] "Globotruncana aegyptiaca"  "Pseudoguembelina excolata"
+[3] "Heteromarginatus bugensis" "Heteromarginatus bugensis"
+[5] "Peckichara cancellata"     "Septorella ultima"        
 [7] "Lappaj_rvi (Finland)"      "Manson (Iowa)"            
 
 $`74.500001`
@@ -2711,12 +2772,18 @@ $`74.500001`
 [12] "Maple Creek (Saskatchewan)"                                                                                            
 
 $`75.500001`
- [1] "Radotruncana calcarata"                          "Pseudotextularia elegans"                       
- [3] "Globotruncanella havanensis"                     "Arnaudiella grossouvrei"                        
- [5] "Fallotia jacquoti"                               "L. campaniensis"                                
- [7] "Reussella szajnochae"                            "Bolivinoides incrassata"                        
- [9] "Eiffellithus eximius"                            "Amblyochara media"                              
-[11] "Pentaceratops sternbergii (ceratopsid dinosaur)" "base Upper Campanian Event"                     
+ [1] "Radotruncana calcarata"                         
+ [2] "Pseudotextularia elegans"                       
+ [3] "Globotruncanella havanensis"                    
+ [4] "Arnaudiella grossouvrei"                        
+ [5] "Fallotia jacquoti"                              
+ [6] "L. campaniensis"                                
+ [7] "Reussella szajnochae"                           
+ [8] "Bolivinoides incrassata"                        
+ [9] "Eiffellithus eximius"                           
+[10] "Amblyochara media"                              
+[11] "Pentaceratops sternbergii (ceratopsid dinosaur)"
+[12] "base Upper Campanian Event"                     
 
 $`76.500001`
 [1] "Radotruncana calcarata"                              
@@ -2730,10 +2797,14 @@ $`76.500001`
 [9] "K170 MFS"                                            
 
 $`77.500001`
-[1] "Archaeoglobigerina bosquensis"         "Globotruncana ventricosa (consistent)"
-[3] "Abrardia mosae"                        "Uniplanarius sissinghii"              
-[5] "Orastrum campanensis"                  "Orastrum campanensis"                 
-[7] "Peckichara pectinata"                  "K170 SB"                              
+[1] "Archaeoglobigerina bosquensis"        
+[2] "Globotruncana ventricosa (consistent)"
+[3] "Abrardia mosae"                       
+[4] "Uniplanarius sissinghii"              
+[5] "Orastrum campanensis"                 
+[6] "Orastrum campanensis"                 
+[7] "Peckichara pectinata"                 
+[8] "K170 SB"                              
 
 $`78.500001`
  [1] "dinoflagellate cyst Isabelidinium pellucidum"                    
@@ -2813,9 +2884,12 @@ $`82.500001`
 [10] "Kerguelen-Broken Ridge (Indian Ocean)"                                                                                  
 
 $`83.500001`
-[1] "dinoflagellate cyst  Nelsoniella aceras" "Ventilabrella eggeri"                   
-[3] "Marginotruncana coronata"                "Whiteinella baltica"                    
-[5] "Arkhangelskiella cymbiformis"            "Arkhangelskiella cymbiformis"           
+[1] "dinoflagellate cyst  Nelsoniella aceras"
+[2] "Ventilabrella eggeri"                   
+[3] "Marginotruncana coronata"               
+[4] "Whiteinella baltica"                    
+[5] "Arkhangelskiella cymbiformis"           
+[6] "Arkhangelskiella cymbiformis"           
 [7] "Palaeoperidinium cretaceum"             
 
 $`84.500001`
@@ -2919,7 +2993,8 @@ $`86.500001`
 [40] "Madagascar"                                                                                                                                                                                   
 
 $`87.500001`
-[1] "Florentinia? torulosa"       "Campbell Plateau (S margin)" "Oman margin (Oman and Iran)"
+[1] "Florentinia? torulosa"       "Campbell Plateau (S margin)"
+[3] "Oman margin (Oman and Iran)"
 
 $`88.500001`
  [1] "C. kleini, V. percostatus, C. frechi, P. m. mantelli, P. m. subrheanus, V. incurvatissimus, P. m. beyenburgi"
@@ -2998,8 +3073,10 @@ $`90.500001`
 [20] "Steen River (Alberta)"                                                                                                                                                                
 
 $`91.500001`
-[1] "Marginotruncana coronata"              "Lithastrinus septenarius (sensu lato)"
-[3] "A. lirioides, D. multicostata"         "Pewsey"                               
+[1] "Marginotruncana coronata"             
+[2] "Lithastrinus septenarius (sensu lato)"
+[3] "A. lirioides, D. multicostata"        
+[4] "Pewsey"                               
 [5] "Glynde"                               
 
 $`92.500001`
@@ -3167,10 +3244,11 @@ $`97.500001`
 [7] "Sphaerucaprina forojuliensis, Orthoptychus striatus,  N. gigantea, Schiosa carinatoformis, I. bicarinatus"
 
 $`98.500001`
- [1] "I. tenuis"               "Gartnerago segmentatum"  "Gartnerago segmentatum" 
- [4] "D. obesa"                "C. pulchrum"             "O. donzei"              
- [7] "Lower Cenom Event III"   "Lower Cenom Event II"    "Deep Bay (Saskatchewan)"
-[10] "S. Atl. (Guyana)"       
+ [1] "I. tenuis"               "Gartnerago segmentatum" 
+ [3] "Gartnerago segmentatum"  "D. obesa"               
+ [5] "C. pulchrum"             "O. donzei"              
+ [7] "Lower Cenom Event III"   "Lower Cenom Event II"   
+ [9] "Deep Bay (Saskatchewan)" "S. Atl. (Guyana)"       
 
 $`99.500001`
  [1] "crater Tycho formed by meteorite impact"                                                                                     
@@ -3254,13 +3332,20 @@ $`102.500001`
 [6] "Carpodinium granulatum"                                                  
 
 $`103.500001`
- [1] "bivalve Aucellina euglypha"       "Pseudothalmanninella ticinensis" 
- [3] "S. asperula"                      "Textularia chapmani"             
- [5] "Eiffellithus turriseiffelii"      "Eiffellithus turriseiffelii"     
- [7] "Litosphaeridium siphoniphorum"    "Apteodinium maculatum grande"    
- [9] "Psaligonyaulax deflandrei"        "D. obesa, A. horridus, T. veneta"
-[11] "S.hasi"                           "D. pyrenaica, D. delphinensis"   
-[13] "H. lamberti"                      "A.? darderi, E. rousseli"        
+ [1] "bivalve Aucellina euglypha"      
+ [2] "Pseudothalmanninella ticinensis" 
+ [3] "S. asperula"                     
+ [4] "Textularia chapmani"             
+ [5] "Eiffellithus turriseiffelii"     
+ [6] "Eiffellithus turriseiffelii"     
+ [7] "Litosphaeridium siphoniphorum"   
+ [8] "Apteodinium maculatum grande"    
+ [9] "Psaligonyaulax deflandrei"       
+[10] "D. obesa, A. horridus, T. veneta"
+[11] "S.hasi"                          
+[12] "D. pyrenaica, D. delphinensis"   
+[13] "H. lamberti"                     
+[14] "A.? darderi, E. rousseli"        
 
 $`104.500001`
 [1] "Eiffellithus monechiae"  "Systematophora cretacea"
@@ -3312,19 +3397,30 @@ $`107.500001`
 [17] "H. derooi"                                                     
 
 $`108.500001`
- [1] "bivalve  Mytiloides ipuanus"            "Simplorbitolina manasi"                
- [3] "Axopodorhabdus albianus"                "Ceratolithina hamata"                  
- [5] "Ceratolithina bicornuta, Owenia hillae" "Braloweria boletiformis"               
- [7] "Ellipsodinium rugulosum"                "C. choffati"                           
- [9] "R. gr. luermannae"                      "Arabian Sea (W India)"                 
+ [1] "bivalve  Mytiloides ipuanus"           
+ [2] "Simplorbitolina manasi"                
+ [3] "Axopodorhabdus albianus"               
+ [4] "Ceratolithina hamata"                  
+ [5] "Ceratolithina bicornuta, Owenia hillae"
+ [6] "Braloweria boletiformis"               
+ [7] "Ellipsodinium rugulosum"               
+ [8] "C. choffati"                           
+ [9] "R. gr. luermannae"                     
+[10] "Arabian Sea (W India)"                 
 
 $`109.500001`
- [1] "Hoeglundia carpenteri"                   "C. chapmani"                            
- [3] "C. pseudodiscors"                        "Quinqueloculina antiqua"                
- [5] "Axopodorhabdus albianus"                 "Atopodinium perforatum"                 
- [7] "H. lepina, D. undulata, T. tripolitanus" "T. carinata"                            
- [9] "K100 MFS"                                "Veevers (W. Aust.)"                     
-[11] "Mount Toondina (S. Aust.)"               "Marie Byrd Land (Antarc.)"              
+ [1] "Hoeglundia carpenteri"                  
+ [2] "C. chapmani"                            
+ [3] "C. pseudodiscors"                       
+ [4] "Quinqueloculina antiqua"                
+ [5] "Axopodorhabdus albianus"                
+ [6] "Atopodinium perforatum"                 
+ [7] "H. lepina, D. undulata, T. tripolitanus"
+ [8] "T. carinata"                            
+ [9] "K100 MFS"                               
+[10] "Veevers (W. Aust.)"                     
+[11] "Mount Toondina (S. Aust.)"              
+[12] "Marie Byrd Land (Antarc.)"              
 [13] "Central Atl. (Guinea)"                  
 
 $`110.500001`
@@ -3356,24 +3452,36 @@ $`110.500001`
 [26] "K90 MFS"                                                   
 
 $`111.500001`
-[1] "Ticinella primula"            "P. subfusiformis"             "P. prima"                    
-[4] "Pleurostomella praebulbosa"   "S. lata"                      "Cribrosphaerella ehrenbergii"
+[1] "Ticinella primula"            "P. subfusiformis"            
+[3] "P. prima"                     "Pleurostomella praebulbosa"  
+[5] "S. lata"                      "Cribrosphaerella ehrenbergii"
 [7] "Pterodinium aliferum"         "H. almerae"                  
 
 $`112.500001`
-[1] "Ticinella madecassiana"                      "Microhedbergella rischi"                    
-[3] "Hayesites albiensis"                         "Prediscosphaera columnata (circular)"       
-[5] "Farhania varolii"                            "Cerbia tabulata, Pseudoceratium polymorphum"
+[1] "Ticinella madecassiana"                     
+[2] "Microhedbergella rischi"                    
+[3] "Hayesites albiensis"                        
+[4] "Prediscosphaera columnata (circular)"       
+[5] "Farhania varolii"                           
+[6] "Cerbia tabulata, Pseudoceratium polymorphum"
 
 $`113.500001`
- [1] "GSSP (pending as of June 2016)"                 "Paraticinella rohri"                           
- [3] "Microhedbergella renilaevis"                    "Microhedbergella miniglobularis"               
- [5] "S. conulus"                                     "Plectorecurvoididae alternans"                 
- [7] "Prediscosphaera columnata"                      "Seribiscutum primitivum, Acaenolithus viriosus"
- [9] "Pseudoceratium polymorphum"                     "Gardodinium trabeculosum"                      
-[11] "Kleithriasphaeridium loffrense"                 "Mita gracilis"                                 
-[13] "M. elitzae"                                     "R. bekumensis"                                 
-[15] "C. aptensis"                                    "K90 SB"                                        
+ [1] "GSSP (pending as of June 2016)"                
+ [2] "Paraticinella rohri"                           
+ [3] "Microhedbergella renilaevis"                   
+ [4] "Microhedbergella miniglobularis"               
+ [5] "S. conulus"                                    
+ [6] "Plectorecurvoididae alternans"                 
+ [7] "Prediscosphaera columnata"                     
+ [8] "Seribiscutum primitivum, Acaenolithus viriosus"
+ [9] "Pseudoceratium polymorphum"                    
+[10] "Gardodinium trabeculosum"                      
+[11] "Kleithriasphaeridium loffrense"                
+[12] "Mita gracilis"                                 
+[13] "M. elitzae"                                    
+[14] "R. bekumensis"                                 
+[15] "C. aptensis"                                   
+[16] "K90 SB"                                        
 [17] "Whitsunday (NE Aust.)"                         
 
 $`114.500001`
@@ -3405,9 +3513,12 @@ $`115.500001`
 [1] "Micrantholithus hoschulzii"
 
 $`116.500001`
-[1] "Rhagodiscus asper"                         "Ovoidinium scabrosum"                     
-[3] "Sphaerostylus lanceola"                    "Pseudodictyomitra lodogaensis"            
-[5] "S. hasi"                                   "Pyreneean-Biscay margin of Iberia (Spain)"
+[1] "Rhagodiscus asper"                        
+[2] "Ovoidinium scabrosum"                     
+[3] "Sphaerostylus lanceola"                   
+[4] "Pseudodictyomitra lodogaensis"            
+[5] "S. hasi"                                  
+[6] "Pyreneean-Biscay margin of Iberia (Spain)"
 
 $`117.500001`
 [1] "macrofossil  Aucellina cf. radiatostriata Assemblage"
@@ -3430,11 +3541,16 @@ $`118.500001`
 [11] "S. jonesiana"                                                    
 
 $`119.500001`
- [1] "Gavelinella intermedia"                "D. plummeri, S. complanata praecursor"
- [3] "H. dinarica"                           "E. plicatus"                          
- [5] "K80 MFS"                               "Rotmistrovka (Ukraine)"               
- [7] "Oasis (Libya)"                         "B.P. Structure (Libya)"               
- [9] "Hikurangi Plateau (S. Pac.)"           "Nauru Basin (W. Pac.)"                
+ [1] "Gavelinella intermedia"               
+ [2] "D. plummeri, S. complanata praecursor"
+ [3] "H. dinarica"                          
+ [4] "E. plicatus"                          
+ [5] "K80 MFS"                              
+ [6] "Rotmistrovka (Ukraine)"               
+ [7] "Oasis (Libya)"                        
+ [8] "B.P. Structure (Libya)"               
+ [9] "Hikurangi Plateau (S. Pac.)"          
+[10] "Nauru Basin (W. Pac.)"                
 [11] "Sri Lanka (S coast)"                  
 
 $`120.500001`
@@ -3442,9 +3558,12 @@ $`120.500001`
 [3] "Subtilisphaera terrula"           "Mien (Sweden)"                   
 
 $`121.500001`
-[1] "Palorbitolina lenticularis"         "Gavelinella barremiana"            
-[3] "H. nonioninoides"                   "Nannoconus truitti (acme)"         
-[5] "Lithodinia stoveri"                 "? Ontong Java Plateau (W. Pacific)"
+[1] "Palorbitolina lenticularis"        
+[2] "Gavelinella barremiana"            
+[3] "H. nonioninoides"                  
+[4] "Nannoconus truitti (acme)"         
+[5] "Lithodinia stoveri"                
+[6] "? Ontong Java Plateau (W. Pacific)"
 
 $`122.500001`
  [1] "Leupoldina cabri"                                                                                  
@@ -3588,9 +3707,12 @@ $`127.500001`
 [23] "Central Atl. (Grand Banks)"                                              
 
 $`128.500001`
-[1] "Globigerinelloides blowi"                   "O. debelmasi"                              
-[3] "Gavelinella sigmoicosta"                    "Batioladinium longicornutum"               
-[5] "H. catenaeformis"                           "R. renevieri"                              
+[1] "Globigerinelloides blowi"                  
+[2] "O. debelmasi"                              
+[3] "Gavelinella sigmoicosta"                   
+[4] "Batioladinium longicornutum"               
+[5] "H. catenaeformis"                          
+[6] "R. renevieri"                              
 [7] "Naturaliste Plateau (W of Perth); N margin"
 
 $`129.500001`
@@ -3814,10 +3936,14 @@ $`135.500001`
 [13] "S Africa (Aguilhas) - Antarctica"                     
 
 $`136.500001`
-[1] "Pfenderina neocomiensis"                     "Citharina harpa, C. seitzi"                 
-[3] "Micrantholithus speetonensis"                "Zeugrhabdotus diplogrammus, Zeug. trivectis"
-[5] "Biorbifera johnewingii"                      "Druggidium apicopaucicum"                   
-[7] "Subtilisphaera perlucida"                    "V. reicheli"                                
+[1] "Pfenderina neocomiensis"                    
+[2] "Citharina harpa, C. seitzi"                 
+[3] "Micrantholithus speetonensis"               
+[4] "Zeugrhabdotus diplogrammus, Zeug. trivectis"
+[5] "Biorbifera johnewingii"                     
+[6] "Druggidium apicopaucicum"                   
+[7] "Subtilisphaera perlucida"                   
+[8] "V. reicheli"                                
 
 $`137.500001`
  [1] "D. (Marssonella) kummi"                                                       
@@ -3991,8 +4117,10 @@ $`142.500001`
 [16] "NW Australia (N margin of Exmouth Plateau)"                            
 
 $`143.500001`
-[1] "Rhaqodiscus nebulosus, Diadorhombus rectus" "Assipetra infracretacea"                   
-[3] "Markalius circumradiatus"                   "H. luci"                                   
+[1] "Rhaqodiscus nebulosus, Diadorhombus rectus"
+[2] "Assipetra infracretacea"                   
+[3] "Markalius circumradiatus"                  
+[4] "H. luci"                                   
 [5] "P. revili"                                 
 
 $`144.500001`
@@ -4075,9 +4203,12 @@ $`147.500001`
 [16] "Sorachi (Sakhalin)"                                                     
 
 $`148.500001`
-[1] "belemnite Belemnopsis aucklandica"               "Helenea chiastia (Microstaurus chiastius)"      
-[3] "Hexalithus noeliae"                              "Stephanolithion atmetos"                        
-[5] "Kleithriaspaeridium telaspinosum"                "Protobatioladinium lunare, Leptodinium mirabile"
+[1] "belemnite Belemnopsis aucklandica"              
+[2] "Helenea chiastia (Microstaurus chiastius)"      
+[3] "Hexalithus noeliae"                             
+[4] "Stephanolithion atmetos"                        
+[5] "Kleithriaspaeridium telaspinosum"               
+[6] "Protobatioladinium lunare, Leptodinium mirabile"
 
 $`149.500001`
  [1] "Anchispirocyclina maynci"                                      
@@ -4283,8 +4414,10 @@ $`161.500001`
 [6] "Progonocythere multipunctata"                                                  
 
 $`162.500001`
-[1] "Lenticulina polypora mg P., \"G.\" oxfordiana" "Frondicularia molleri"                        
-[3] "Emiluvia pessagnoi"                            "E. Africa (Dar Es Salaam)"                    
+[1] "Lenticulina polypora mg P., \"G.\" oxfordiana"
+[2] "Frondicularia molleri"                        
+[3] "Emiluvia pessagnoi"                           
+[4] "E. Africa (Dar Es Salaam)"                    
 
 $`163.500001`
  [1] "*__*"                                                                                           
@@ -4530,9 +4663,11 @@ $`170.500001`
 [28] "Central Atl. (USA-Mauritania)"                                                                       
 
 $`171.500001`
-[1] "Cyclagelosphaera margerelii" "Pseudoconus enigma"          "Triscutum sullivanii"       
-[4] "Lotharingius contractus"     "Crepidolithus impontus"      "Camptocythere obtusa"       
-[7] "Camptocythere modesta"       "Camptocythere obtusa"        "Camptocythere media"        
+[1] "Cyclagelosphaera margerelii" "Pseudoconus enigma"         
+[3] "Triscutum sullivanii"        "Lotharingius contractus"    
+[5] "Crepidolithus impontus"      "Camptocythere obtusa"       
+[7] "Camptocythere modesta"       "Camptocythere obtusa"       
+[9] "Camptocythere media"        
 
 $`172.500001`
 [1] "Lagenammina jurassica, Reophax metensis"                                                                                           
@@ -4593,7 +4728,8 @@ $`177.500001`
 [1] "belemnite Belemnopsis deborahae"
 
 $`178.500001`
-[1] "Discorhabdus criotus"    "Discorhabdus criotus"    "sphaeromorph acritarchs"
+[1] "Discorhabdus criotus"    "Discorhabdus criotus"   
+[3] "sphaeromorph acritarchs"
 
 $`179.500001`
 [1] "ammonite Catacoeloceras grangei (formerly Dactylioceras)"
@@ -4648,8 +4784,8 @@ $`183.500001`
 [16] "Enktyphocythere cf. arcuatocostata, Kinkelinella tenuicostati"                                       
 
 $`184.500001`
-[1] "Pseudocyclammina liasica" "Crepidolithus impontus"   "Lotharingius sigillatus" 
-[4] "Axopodorhabdus atavus"   
+[1] "Pseudocyclammina liasica" "Crepidolithus impontus"  
+[3] "Lotharingius sigillatus"  "Axopodorhabdus atavus"   
 
 $`185.500001`
 [1] "Planisepta compressa"                                   
@@ -4661,14 +4797,19 @@ $`185.500001`
 [7] "Trachycythere tubulosa, Trachycythere serratina"        
 
 $`186.500001`
-[1] "Paleomayncina termieri"                       "Orbitopsella dubari"                         
-[3] "Lotharingius hauffii"                         "Parhabdolithus liasicus liasicus"            
-[5] "Lotharingius hauffii"                         "Biscutum novum"                              
+[1] "Paleomayncina termieri"                      
+[2] "Orbitopsella dubari"                         
+[3] "Lotharingius hauffii"                        
+[4] "Parhabdolithus liasicus liasicus"            
+[5] "Lotharingius hauffii"                        
+[6] "Biscutum novum"                              
 [7] "Gammacythere ubiquita, Trachycythere horrida"
 
 $`187.500001`
-[1] "Bolivina liassica"                  "Bolivina liassica"                 
-[3] "Biscutum novum, Biscutum profundum" "Biscutum finchii"                  
+[1] "Bolivina liassica"                 
+[2] "Bolivina liassica"                 
+[3] "Biscutum novum, Biscutum profundum"
+[4] "Biscutum finchii"                  
 [5] "Pleurifera? vermiculata"           
 
 $`188.500001`
@@ -4688,14 +4829,18 @@ $`188.500001`
 [14] "J10 SB"                                                                                                              
 
 $`189.500001`
- [1] "bivalve Pseudaucella marshalli" "P. butterlini"                  "Orbitopsella primaeva"         
- [4] "Pseudopfenderina butterlini"    "Planisepta compressa"           "D. tenuistriata & D. varians"  
- [7] "Parhabdolithus robustus"        "Crepidolithus pliensbachensis"  "Parhabdolithus robustus"       
-[10] "Crepidolithus pliensbachensis"  "Pleurifera harpa"               "Trachycythere tubulosa"        
-[13] "Trachycythere horrida"          "Cloud Creek (Wyoming)"          "Viewfield (Saskatchewan)"      
+ [1] "bivalve Pseudaucella marshalli" "P. butterlini"                 
+ [3] "Orbitopsella primaeva"          "Pseudopfenderina butterlini"   
+ [5] "Planisepta compressa"           "D. tenuistriata & D. varians"  
+ [7] "Parhabdolithus robustus"        "Crepidolithus pliensbachensis" 
+ [9] "Parhabdolithus robustus"        "Crepidolithus pliensbachensis" 
+[11] "Pleurifera harpa"               "Trachycythere tubulosa"        
+[13] "Trachycythere horrida"          "Cloud Creek (Wyoming)"         
+[15] "Viewfield (Saskatchewan)"      
 
 $`190.500001`
-[1] "Similiscutum cruciulus" "Bussonius prinsii"      "Similiscutum cruciulus"
+[1] "Similiscutum cruciulus" "Bussonius prinsii"     
+[3] "Similiscutum cruciulus"
 
 $`191.500001`
  [1] "GSSP"                                                            
@@ -4733,8 +4878,10 @@ $`193.500001`
 [11] "Pleurifera plicata"                                                      
 
 $`194.500001`
-[1] "Orthogonoides hamiltoniae"                        "Parhabdolithus robustus"                         
-[3] "Liasidium variabile (common)"                     "Lyubimovella? frequences, Lophocythere normaniae"
+[1] "Orthogonoides hamiltoniae"                       
+[2] "Parhabdolithus robustus"                         
+[3] "Liasidium variabile (common)"                    
+[4] "Lyubimovella? frequences, Lophocythere normaniae"
 [5] "Lophodentina pumicosa"                           
 
 $`195.500001`
@@ -4748,8 +4895,9 @@ $`195.500001`
 [8] "Karakorum margin (Pakistan)"                                                                                               
 
 $`196.500001`
-[1] "Lituosepta recoarensis"          "Lenticulina quadricostata mg M." "Parhabdolithus marthae"         
-[4] "Parhabdolithus robustus"         "Lophodentina pumicosa"          
+[1] "Lituosepta recoarensis"          "Lenticulina quadricostata mg M."
+[3] "Parhabdolithus marthae"          "Parhabdolithus robustus"        
+[5] "Lophodentina pumicosa"          
 
 $`197.500001`
 [1] "\"Everticyclammina\" sp. A, \"Mesoendothyra\" sp."
@@ -4763,8 +4911,8 @@ $`197.500001`
 [9] "Lophodentina lacunosa"                            
 
 $`198.500001`
-[1] "N. issleri, D. fasciata" "Parhabdolithus marthae"  "Bairdia carinata"       
-[4] "Lophodentina convergens"
+[1] "N. issleri, D. fasciata" "Parhabdolithus marthae" 
+[3] "Bairdia carinata"        "Lophodentina convergens"
 
 $`199.500001`
  [1] "GSSP"                                                                            
@@ -4785,12 +4933,18 @@ $`199.500001`
 [16] "Riachao Ring (Brazil)"                                                           
 
 $`200.500001`
- [1] "Euestheria brodieana"                           "Involutina liassica"                           
- [3] "Lenticulina curva mg L., N. radiata"            "Lenticulina collenoti and Lenticulina striata" 
- [5] "Lenticulina tenuistriata"                       "Lenticulina curva mg L., N. radiata"           
- [7] "Lenticulina quadricosta mg M."                  "Valvaeodinium diacrorhaetium"                  
- [9] "Latochara durand-delgai"                        "Cytherelloidea buisensis"                      
-[11] "Klingerella praeluxuriosa, Ogmoconcha hagenovi" "Central Atlantic Magmatic Province (CAMP)"     
+ [1] "Euestheria brodieana"                          
+ [2] "Involutina liassica"                           
+ [3] "Lenticulina curva mg L., N. radiata"           
+ [4] "Lenticulina collenoti and Lenticulina striata" 
+ [5] "Lenticulina tenuistriata"                      
+ [6] "Lenticulina curva mg L., N. radiata"           
+ [7] "Lenticulina quadricosta mg M."                 
+ [8] "Valvaeodinium diacrorhaetium"                  
+ [9] "Latochara durand-delgai"                       
+[10] "Cytherelloidea buisensis"                      
+[11] "Klingerella praeluxuriosa, Ogmoconcha hagenovi"
+[12] "Central Atlantic Magmatic Province (CAMP)"     
 
 $`201.500001`
  [1] "GSSP"                                                                                                                              
@@ -4827,12 +4981,15 @@ $`201.500001`
 [32] "Protosuchus (crocodylomorph)"                                                                                                      
 
 $`202.500001`
-[1] "Misikella koessenensis, M. rhaetica" "Misikella ultima (Tethys)"          
-[3] "Ogmoconcha martini"                  "R. penshurtensis"                   
+[1] "Misikella koessenensis, M. rhaetica"
+[2] "Misikella ultima (Tethys)"          
+[3] "Ogmoconcha martini"                 
+[4] "R. penshurtensis"                   
 [5] "Protodiploxypinus ornatus"          
 
 $`203.500001`
-[1] "Praecitriduma mostleri"  "Citriduma asteroiodes"   "Globolaxtorum cristatum"
+[1] "Praecitriduma mostleri"  "Citriduma asteroiodes"  
+[3] "Globolaxtorum cristatum"
 
 $`204.500001`
 [1] "Misikella hernsteini"                                                 
@@ -4843,7 +5000,8 @@ $`204.500001`
 [6] "Ramparts; Angayucham (Alaska)"                                        
 
 $`205.500001`
-[1] "Misikella posthernsteini (N.Amer.)"       "Misikella posthernsteini (sensu stricto)"
+[1] "Misikella posthernsteini (N.Amer.)"      
+[2] "Misikella posthernsteini (sensu stricto)"
 
 $`206.500001`
 [1] "Gregoriusella polonica" "Gregoriusella polonica"
@@ -4876,8 +5034,10 @@ $`210.500001`
 [7] "R. rueggeri"                                                                                                                   
 
 $`211.500001`
-[1] "Misikella hernsteini"                 "Monotis ochotica, M. routheri"       
-[3] "Monotis richmondiana, M. denistriata" "Monotis rudis"                       
+[1] "Misikella hernsteini"                
+[2] "Monotis ochotica, M. routheri"       
+[3] "Monotis richmondiana, M. denistriata"
+[4] "Monotis rudis"                       
 
 $`212.500001`
 [1] "Monotis subcircularis"
@@ -4962,7 +5122,8 @@ $`218.500001`
 [3] "Crucirhabdus minutus, Archaeozygodiscus koessenensis"   
 
 $`219.500001`
-[1] "Eoconusphaera zlambachensis"   "Saint Martin (Manitoba, Can.)" "Cache Creek-2 (w. Canada)"    
+[1] "Eoconusphaera zlambachensis"   "Saint Martin (Manitoba, Can.)"
+[3] "Cache Creek-2 (w. Canada)"    
 
 $`220.500001`
 [1] "bivalve Manticula problematica"
@@ -4974,8 +5135,8 @@ $`221.500001`
 [4] "C. obvius"                                                      
 
 $`222.500001`
-[1] "Euestheria buravasi"          "Halobia pusilla, H. beneckei" "Halobia aotii"               
-[4] "Prinsiosphaera triassica"    
+[1] "Euestheria buravasi"          "Halobia pusilla, H. beneckei"
+[3] "Halobia aotii"                "Prinsiosphaera triassica"    
 
 $`224.500001`
 [1] "Paragondolella/ Metapolygnathus carpathica, Paragondolella polygnahiformis noah"
@@ -5289,10 +5450,14 @@ $`246.500001`
 [18] "Eocyclotosaurus (temnospondyl amphibian)"                                                                
 
 $`247.500001`
-[1] "Icriospathodus collinsoni"                    "Triassospathodus sosioensis"                 
-[3] "Triassospathodus homeri"                      "Triassospathodus triangularis"               
-[5] "Euestheria albertii mahlerselli"              "Triadispora crassa, Jugasporites conmilvinus"
-[7] "A. spiniger"                                  "J. punctispinosa"                            
+[1] "Icriospathodus collinsoni"                   
+[2] "Triassospathodus sosioensis"                 
+[3] "Triassospathodus homeri"                     
+[4] "Triassospathodus triangularis"               
+[5] "Euestheria albertii mahlerselli"             
+[6] "Triadispora crassa, Jugasporites conmilvinus"
+[7] "A. spiniger"                                 
+[8] "J. punctispinosa"                            
 [9] "A. robustus"                                 
 
 $`248.500001`
@@ -5385,25 +5550,30 @@ $`252.500001`
 [9] "Tr10 SB"                                             
 
 $`253.500001`
-[1] "undefined"                                "Pseudotirolites"                         
-[3] "Clarkina changxingensis"                  "Clarkina subcarinata"                    
-[5] "Falsisca zavjalovi, Tripemphigus minutus" "252.5"                                   
+[1] "undefined"                               
+[2] "Pseudotirolites"                         
+[3] "Clarkina changxingensis"                 
+[4] "Clarkina subcarinata"                    
+[5] "Falsisca zavjalovi, Tripemphigus minutus"
+[6] "252.5"                                   
 [7] "P40 MFS"                                 
 
 $`254.500001`
-[1] "GSSP"                  "undefined"             "Pseudostephanites"     "Clarkina wangi"       
+[1] "GSSP"                  "undefined"            
+[3] "Pseudostephanites"     "Clarkina wangi"       
 [5] "Palaeofusulina minima" "253.80000000000001"   
 
 $`255.500001`
 [1] "P30 MFS"
 
 $`257.500001`
-[1] "Paratirolites"       "Sangyangites"        "Clarkina orientalis" "256"                
-[5] "Emeishan (China)"   
+[1] "Paratirolites"       "Sangyangites"        "Clarkina orientalis"
+[4] "256"                 "Emeishan (China)"   
 
 $`258.500001`
-[1] "Araxoceras"              "Anderssonoceras"         "Clarkina transcaucasica"
-[4] "Clarkina guangyuanensis" "Clarkina leveni"        
+[1] "Araxoceras"              "Anderssonoceras"        
+[3] "Clarkina transcaucasica" "Clarkina guangyuanensis"
+[5] "Clarkina leveni"        
 
 $`259.500001`
 [1] "GSSP"                             "undefined"                       
@@ -5412,28 +5582,35 @@ $`259.500001`
 [7] "260.39999999999998"              
 
 $`260.500001`
-[1] "Roadoceras"                         "Clarkina postbitteri hongshuiensis"
-[3] "Jinogondolella granti"              "Lepidolina"                        
+[1] "Roadoceras"                        
+[2] "Clarkina postbitteri hongshuiensis"
+[3] "Jinogondolella granti"             
+[4] "Lepidolina"                        
 [5] "dicynodont Dicynodon"              
 
 $`261.500001`
 [1] "Jinogondolella xuanhanensis"
 
 $`262.500001`
-[1] "Jinogondolella prexuanhanensis"     "burrowing dicynodont Cistecephalus"
+[1] "Jinogondolella prexuanhanensis"    
+[2] "burrowing dicynodont Cistecephalus"
 [3] "262"                               
 
 $`263.500001`
 [1] "dicynodont Tropidostoma"
 
 $`264.500001`
-[1] "Timorites"                  "Jinogondolella altudaensis" "Jinogondolella shannoni"   
-[4] "263"                        "Cache Creek-1 (w. Canada)" 
+[1] "Timorites"                  "Jinogondolella altudaensis"
+[3] "Jinogondolella shannoni"    "263"                       
+[5] "Cache Creek-1 (w. Canada)" 
 
 $`265.500001`
-[1] "brachiopod Echinalosia ovalis"            "Jinogondolella postserrata"              
-[3] "Yabeina"                                  "herbivorous dinocephalian Tapinocephalus"
-[5] "265.80000000000001"                       "P20 MFS"                                 
+[1] "brachiopod Echinalosia ovalis"           
+[2] "Jinogondolella postserrata"              
+[3] "Yabeina"                                 
+[4] "herbivorous dinocephalian Tapinocephalus"
+[5] "265.80000000000001"                      
+[6] "P20 MFS"                                 
 
 $`266.500001`
 [1] "Neoschwagerina margaritae" "266.5"                    
@@ -5459,17 +5636,20 @@ $`271.500001`
 [1] "Late Himalayan margin (Northern India and Nepal)"
 
 $`272.500001`
-[1] "GSSP"                        "Demarezites"                 "Jinogondolella nankingensis"
-[4] "Mesogondolella lamberti"     "Neoschwagerina simplex"      "270.60000000000002"         
+[1] "GSSP"                        "Demarezites"                
+[3] "Jinogondolella nankingensis" "Mesogondolella lamberti"    
+[5] "Neoschwagerina simplex"      "270.60000000000002"         
 [7] "P20 SB"                     
 
 $`273.500001`
-[1] "caseid pelycosaur Angelosaurus" "Pelycosaur-dominated"           "271.30000000000001"            
-[4] "Oman margin (Oman and Iran)"   
+[1] "caseid pelycosaur Angelosaurus" "Pelycosaur-dominated"          
+[3] "271.30000000000001"             "Oman margin (Oman and Iran)"   
 
 $`274.500001`
-[1] "Pseudovidrioceras"                 "Neostreptognathodus sulcoplicatus"
-[3] "Cancellina"                        "272"                              
+[1] "Pseudovidrioceras"                
+[2] "Neostreptognathodus sulcoplicatus"
+[3] "Cancellina"                       
+[4] "272"                              
 
 $`275.500001`
 [1] "brachiopod Spiriferella supplanta"
@@ -5481,18 +5661,20 @@ $`277.500001`
 [1] "captorhinid Labidosaurus"
 
 $`278.500001`
-[1] "Propinacoceras"            "Neostreptognathodus prayi" "Misellina"                
-[4] "273.5"                    
+[1] "Propinacoceras"            "Neostreptognathodus prayi"
+[3] "Misellina"                 "273.5"                    
 
 $`279.500001`
-[1] "Ternovka (Ukraine)"     "Des Plaines (Illinois)" "Tarim (China)"         
+[1] "Ternovka (Ukraine)"     "Des Plaines (Illinois)"
+[3] "Tarim (China)"         
 
 $`280.500001`
 [1] "varanopid pelycosaur Mycterosaurus"
 
 $`281.500001`
-[1] "*__*"                      "Neostreptognathodus pnevi" "Brevaxina"                
-[4] "seymouriamorph Seymouria"  "275.60000000000002"       
+[1] "*__*"                      "Neostreptognathodus pnevi"
+[3] "Brevaxina"                 "seymouriamorph Seymouria" 
+[5] "275.60000000000002"       
 
 $`283.500001`
 [1] "Uraloceras"                    "Neostreptognathodus exculptus"
@@ -5501,56 +5683,64 @@ $`284.500001`
 [1] "brachiopod Attenuatella altilis"
 
 $`285.500001`
-[1] "Neostreptognathodus pequopensis" "Chalaroschwagerina"              "278"                            
+[1] "Neostreptognathodus pequopensis" "Chalaroschwagerina"             
+[3] "278"                            
 
 $`286.500001`
 [1] "Aktubinskia"
 
 $`287.500001`
-[1] "Artinskia"                "Sweetognathus clarki"     "Parafusulina solidissima"
-[4] "281.5"                   
+[1] "Artinskia"                "Sweetognathus clarki"    
+[3] "Parafusulina solidissima" "281.5"                   
 
 $`288.500001`
-[1] "brachiopod Plekonella campbelli" "Popanoceras"                     "Pseudofusulina juresanensis"    
+[1] "brachiopod Plekonella campbelli" "Popanoceras"                    
+[3] "Pseudofusulina juresanensis"    
 
 $`289.500001`
-[1] "Dobele (Latvia)"          "Clearwater East (Quebec)" "Clearwater West (Quebec)"
+[1] "Dobele (Latvia)"          "Clearwater East (Quebec)"
+[3] "Clearwater West (Quebec)"
 
 $`290.500001`
-[1] "*__*"                      "Sweetognathus aff. whitei" "Pseudofusulina pedissequa"
-[4] "284.39999999999998"       
+[1] "*__*"                      "Sweetognathus aff. whitei"
+[3] "Pseudofusulina pedissequa" "284.39999999999998"       
 
 $`291.500001`
 [1] "286.5"
 
 $`292.500001`
-[1] "Uraloceras, Metalegoceras, Properrinites" "Mesogondolella bisselli"                 
-[3] "Leeina urdalensis"                        "288"                                     
+[1] "Uraloceras, Metalegoceras, Properrinites"
+[2] "Mesogondolella bisselli"                 
+[3] "Leeina urdalensis"                       
+[4] "288"                                     
 [5] "289.60000000000002"                      
 
 $`293.500001`
-[1] "Sweetognathus binodosus" "Leeina vernueili"        "291"                    
-[4] "P10 MFS"                
+[1] "Sweetognathus binodosus" "Leeina vernueili"       
+[3] "291"                     "P10 MFS"                
 
 $`294.500001`
 [1] "Sakmarites"         "292"                "293.19999999999999"
 
 $`295.500001`
-[1] "*__*"                        "Sweetognathus aff. merrilli" "Sweetognathus uralensis"    
-[4] "Sweetognathus expansus"      "Sakmarella moelleri"         "294.60000000000002"         
+[1] "*__*"                        "Sweetognathus aff. merrilli"
+[3] "Sweetognathus uralensis"     "Sweetognathus expansus"     
+[5] "Sakmarella moelleri"         "294.60000000000002"         
 
 $`296.500001`
-[1] "Streptognathodus barskovi"    "Streptognathodus postfusus"   "Streptognathodus fusus"      
-[4] "Sphaeroschwagerina sphaerica" "Pseudoschwagerina uddeni"     "295.80000000000001"          
+[1] "Streptognathodus barskovi"    "Streptognathodus postfusus"  
+[3] "Streptognathodus fusus"       "Sphaeroschwagerina sphaerica"
+[5] "Pseudoschwagerina uddeni"     "295.80000000000001"          
 [7] "296.69999999999999"           "297.5"                       
 
 $`297.500001`
-[1] "Juresanites"                  "Streptognathodus constrictus" "Sphaeroschwagerina moelleri" 
-[4] "Globifusulina nux"           
+[1] "Juresanites"                  "Streptognathodus constrictus"
+[3] "Sphaeroschwagerina moelleri"  "Globifusulina nux"           
 
 $`298.500001`
-[1] "GSSP"                          "Svetlanoceras"                 "Streptognathodus isolatus"    
-[4] "Sphaeroschwagerina fusiformis" "299"                          
+[1] "GSSP"                          "Svetlanoceras"                
+[3] "Streptognathodus isolatus"     "Sphaeroschwagerina fusiformis"
+[5] "299"                          
 
 $`299.500001`
  [1] "Streptognathodus wabaunsensis"                    
@@ -5567,24 +5757,27 @@ $`299.500001`
 [12] "Cape Fold Belt (Argentina, S. Africa, Antarctica)"
 
 $`300.500001`
-[1] "Shumardites"               "Schellwienia, Dutkevichia" "300.5"                    
+[1] "Shumardites"               "Schellwienia, Dutkevichia"
+[3] "300.5"                    
 
 $`301.500001`
-[1] "pelycosaur Sphenacodon, (plus Dimetrodon FAD)" "301.80000000000001"                           
+[1] "pelycosaur Sphenacodon, (plus Dimetrodon FAD)"
+[2] "301.80000000000001"                           
 
 $`302.500001`
 [1] "Idiognathodus"
 
 $`303.500001`
-[1] "*__*"                    "Vidrioceras / Artinskia" "Idiognathodus simulator"
-[4] "Daixina"                 "303.5"                  
+[1] "*__*"                    "Vidrioceras / Artinskia"
+[3] "Idiognathodus simulator" "Daixina"                
+[5] "303.5"                  
 
 $`304.500001`
 [1] "304.69999999999999"
 
 $`305.500001`
-[1] "Idiognathodus sagittalis"  "Triticites"                "Fusulinella / Beedeina(?)"
-[4] "305.5"                    
+[1] "Idiognathodus sagittalis"  "Triticites"               
+[3] "Fusulinella / Beedeina(?)" "305.5"                    
 
 $`306.500001`
 [1] "*__*"               "Parashumardites"    "306.69999999999999"
@@ -5602,21 +5795,24 @@ $`312.500001`
 [1] "309"
 
 $`313.500001`
-[1] "Eowellerites"                 "Declinognathodus donetzianus" "Beedeina"                    
-[4] "ARCHAEDISCIDAE"              
+[1] "Eowellerites"                 "Declinognathodus donetzianus"
+[3] "Beedeina"                     "ARCHAEDISCIDAE"              
 
 $`314.500001`
-[1] "*__*"                         "Winslowoceras"                "Declinognathodus donetzianus"
-[4] "Aljutovella aljutovica"       "311.30000000000001"           "P10 SB"                      
+[1] "*__*"                         "Winslowoceras"               
+[3] "Declinognathodus donetzianus" "Aljutovella aljutovica"      
+[5] "311.30000000000001"           "P10 SB"                      
 
 $`316.500001`
-[1] "Neognathodus atokaensis" "Verella"                 "312.30000000000001"     
+[1] "Neognathodus atokaensis" "Verella"                
+[3] "312.30000000000001"     
 
 $`317.500001`
 [1] "lepospondyl amphibian Nectridae" "313.30000000000001"             
 
 $`318.500001`
-[1] "Idiognathodus, Declinognathodus marginodosus" "314.30000000000001"                          
+[1] "Idiognathodus, Declinognathodus marginodosus"
+[2] "314.30000000000001"                          
 
 $`319.500001`
 [1] "Serpent Mound (Ohio)"     "Crooked Creek (Missouri)"
@@ -5628,8 +5824,9 @@ $`321.500001`
 [1] "Pseudostaffella"    "315.60000000000002" "316"               
 
 $`322.500001`
-[1] "Millerella marblensis****" "Reticuloceras"             "Idiognathoides sinuatus"  
-[4] "Millerella marblensis****" "316.69999999999999"       
+[1] "Millerella marblensis****" "Reticuloceras"            
+[3] "Idiognathoides sinuatus"   "Millerella marblensis****"
+[5] "316.69999999999999"       
 
 $`323.500001`
 [1] "GSSP"                                                 
@@ -5642,17 +5839,22 @@ $`323.500001`
 [8] "317.5"                                                
 
 $`324.500001`
-[1] "Biseriella parva"                      "\"Millerella\" cooperi"               
-[3] "Adetognathus unicornis"                "Eosigmoilina explicata (= robertsoni)"
-[5] "Biseriella parva"                      "\"Millerella\" cooperi"               
+[1] "Biseriella parva"                     
+[2] "\"Millerella\" cooperi"               
+[3] "Adetognathus unicornis"               
+[4] "Eosigmoilina explicata (= robertsoni)"
+[5] "Biseriella parva"                     
+[6] "\"Millerella\" cooperi"               
 [7] "319.19999999999999"                   
 
 $`325.500001`
 [1] "Cravenoceras" "320.5"       
 
 $`326.500001`
-[1] "Eosigmoilina robertsoni and Brenckleina rugosa" "Cavusgnathus naviculus"                        
-[3] "Eosigmoilina robertsoni and Brenckleina rugosa" "321.69999999999999"                            
+[1] "Eosigmoilina robertsoni and Brenckleina rugosa"
+[2] "Cavusgnathus naviculus"                        
+[3] "Eosigmoilina robertsoni and Brenckleina rugosa"
+[4] "321.69999999999999"                            
 
 $`327.500001`
 [1] "Goniatites" "323"       
@@ -5665,8 +5867,9 @@ $`328.500001`
 [5] "Paleozoic Taimyr (northern) margin (Northern Russia)"
 
 $`329.500001`
-[1] "Eolasiodiscus donbassicus**" "Eumorphoceras"               "Lochriea cruciformis"       
-[4] "Eolasiodiscus donbassicus"   "Eolasiodiscus donbassicus**" "326.60000000000002"         
+[1] "Eolasiodiscus donbassicus**" "Eumorphoceras"              
+[3] "Lochriea cruciformis"        "Eolasiodiscus donbassicus"  
+[5] "Eolasiodiscus donbassicus**" "326.60000000000002"         
 
 $`330.500001`
 [1] "*__*"
@@ -5688,8 +5891,10 @@ $`334.500001`
 [5] "332.80000000000001"                                      
 
 $`335.500001`
-[1] "Endostaffella discoidea"                   "Hindeodus scitulus, Apatognathus scalenus"
-[3] "Endostaffella discoidea"                   "336"                                      
+[1] "Endostaffella discoidea"                  
+[2] "Hindeodus scitulus, Apatognathus scalenus"
+[3] "Endostaffella discoidea"                  
+[4] "336"                                      
 
 $`336.500001`
 [1] "Gnathodus bilineatus" "Howchinia gibba"     
@@ -5711,30 +5916,40 @@ $`343.500001`
 [2] "Saxo-Thuringian block (Bohemian Massif) (Germany)"
 
 $`344.500001`
-[1] "Globoendothyra baileyi"                     "Eoendothyranopsis scitula and E. spiroides"
-[3] "Endothyranopsis compressa"                  "Globoendothyra baileyi"                    
-[5] "Eoendothyranopsis scitula and E. spiroides" "344.5"                                     
-[7] "Aorounga (Chad)"                            "Gweni-Fada (Chad)"                         
+[1] "Globoendothyra baileyi"                    
+[2] "Eoendothyranopsis scitula and E. spiroides"
+[3] "Endothyranopsis compressa"                 
+[4] "Globoendothyra baileyi"                    
+[5] "Eoendothyranopsis scitula and E. spiroides"
+[6] "344.5"                                     
+[7] "Aorounga (Chad)"                           
+[8] "Gweni-Fada (Chad)"                         
 
 $`345.500001`
 [1] "Eostaffella s. l."
 
 $`346.500001`
-[1] "GSSP"                            "Tetrataxis and Pseudotaxis spp." "Goniatites"                     
-[4] "Gnathodus texanus"               "ARCHAEDISCIDAE"                  "Eoparastaffella simplex"        
+[1] "GSSP"                            "Tetrataxis and Pseudotaxis spp."
+[3] "Goniatites"                      "Gnathodus texanus"              
+[5] "ARCHAEDISCIDAE"                  "Eoparastaffella simplex"        
 [7] "Tetrataxis and Pseudotaxis spp."
 
 $`347.500001`
-[1] "Polygnathus mehli"                              "Gnathodus bulbosus"                            
-[3] "Eotaphrus burlingtonensis, Polygnathus mehli"   "Bactrognathus lanei"                           
-[5] "345.69999999999999"                             "Variscan margin of Baltica (Ireland to Poland)"
+[1] "Polygnathus mehli"                             
+[2] "Gnathodus bulbosus"                            
+[3] "Eotaphrus burlingtonensis, Polygnathus mehli"  
+[4] "Bactrognathus lanei"                           
+[5] "345.69999999999999"                            
+[6] "Variscan margin of Baltica (Ireland to Poland)"
 
 $`348.500001`
-[1] "Gnathodus homopunctatus"         "Doliognatus latus"               "Pseudopolygnathus multistriatus"
+[1] "Gnathodus homopunctatus"         "Doliognatus latus"              
+[3] "Pseudopolygnathus multistriatus"
 
 $`349.500001`
-[1] "Rectogranuliferella godini"   "Dzhaprakoceras"               "Polygnathus communis carinus"
-[4] "Eotextularia diversa"         "Rectogranuliferella godini"   "Yakutsk (e. Russia)"         
+[1] "Rectogranuliferella godini"   "Dzhaprakoceras"              
+[3] "Polygnathus communis carinus" "Eotextularia diversa"        
+[5] "Rectogranuliferella godini"   "Yakutsk (e. Russia)"         
 [7] "Panzhihua (China)"           
 
 $`350.500001`
@@ -5744,16 +5959,20 @@ $`351.500001`
 [1] "Scalliognathus anchoralis"       "Brookian margin (Arctic Alaska)"
 
 $`352.500001`
-[1] "Spinoendothyra costifera*" "Gnathodus punctatus"       "Dainella"                 
-[4] "Spinoendothyra"            "Spinoendothyra costifera*"
+[1] "Spinoendothyra costifera*" "Gnathodus punctatus"      
+[3] "Dainella"                  "Spinoendothyra"           
+[5] "Spinoendothyra costifera*"
 
 $`353.500001`
-[1] "Tuberendothyra tuberculata" "Pericyclus"                 "Siphonodella crenulata"    
-[4] "Tuberendothyra tuberculata" "Tuberendothyra tuberculata" "351"                       
+[1] "Tuberendothyra tuberculata" "Pericyclus"                
+[3] "Siphonodella crenulata"     "Tuberendothyra tuberculata"
+[5] "Tuberendothyra tuberculata" "351"                       
 
 $`354.500001`
-[1] "Septaglomospiranella compressa"          "Gnathodus delicatus"                    
-[3] "Palaeospiroplectammina tchernyshinensis" "Septaglomospiranella compressa"         
+[1] "Septaglomospiranella compressa"         
+[2] "Gnathodus delicatus"                    
+[3] "Palaeospiroplectammina tchernyshinensis"
+[4] "Septaglomospiranella compressa"         
 
 $`355.500001`
 [1] "Siphonodella crenulata"                                  
@@ -5804,20 +6023,25 @@ $`362.500001`
 [3] "II f"                                             
 
 $`363.500001`
-[1] "Platyclymenia"                   "366.39999999999998"              "IIe5"                           
-[4] "Annulata"                        "Woodleigh (Shark Bay, W. Aust.)" "Viluy traps (Siberia)"          
+[1] "Platyclymenia"                   "366.39999999999998"             
+[3] "IIe5"                            "Annulata"                       
+[5] "Woodleigh (Shark Bay, W. Aust.)" "Viluy traps (Siberia)"          
 
 $`364.500001`
-[1] "Clymenids"                                 "Pseudoclymenia"                           
-[3] "Pseudoclymenia"                            "Richterina (Fossirichterina) intercostata"
-[5] "367.5"                                     ""                                         
+[1] "Clymenids"                                
+[2] "Pseudoclymenia"                           
+[3] "Pseudoclymenia"                           
+[4] "Richterina (Fossirichterina) intercostata"
+[5] "367.5"                                    
+[6] ""                                         
 [7] "East Europe"                              
 
 $`365.500001`
 [1] "D30 SB"
 
 $`366.500001`
-[1] "Sporadoceratids" "Acrimeroceras"   "370"             "IIe4"            ""               
+[1] "Sporadoceratids" "Acrimeroceras"   "370"            
+[4] "IIe4"            ""               
 
 $`367.500001`
 [1] "Veryhachium polyaster, Cymatiosphaera cornifera, Duvernaysphaera kraeuselii, Stellinium comptum, Naevisphaeridium sprucegrovense, Maranhites britoii, Gorgonisphaeridium grosjeani, Spurimoyeria spp., Pratulasphaera fecunda, Villosacapsula ceratioides, Petrovina connata,Barathrisphaeridium paxillum, Baltisphaeridium basiconstrictum, Baltisphaeridium medium, Eisenackidium martensianum, Villosacapsula globosa, Winwaloeusia ranulaeforma, ? Palacanthus tripus, Puteoscortum polyankystrum, Senzeilla incurvata, Solatisphaera sapra,Puteoscortum williereae, Ephelopalla gorkae"
@@ -5851,8 +6075,8 @@ $`372.500001`
 [15] "Paleozoic eastern margin of Baltica (Russia)"                                                                                                                                                                                                                                                                                                                                                                                  
 
 $`374.500001`
-[1] "Rabienella(?) barrandei" "Waldeckella cicatricosa" "IId2"                   
-[4] "Lower Kellwasser"       
+[1] "Rabienella(?) barrandei" "Waldeckella cicatricosa"
+[3] "IId2"                    "Lower Kellwasser"       
 
 $`375.500001`
 [1] "Barathrisphaeridium paxillum, Baltisphaeridium basiconstrictum, Baltisphaeridium medium, Eisenackidium martensianum, Villosacapsula globosa, Winwaloeusia ranulaeforma, ? Palacanthus tripus, Puteoscortum polyankystrum, Senzeilla incurvata, Solatisphaera sapra, Maranhites mosesii, Elektoriskos dolos, Ephelopalla elongata, Ephelopalla media, Gorgonisphaeridium ohioense"
@@ -5886,8 +6110,9 @@ $`379.500001`
 [7] "Kaluga (w. Russia)"                                                                                                                                   
 
 $`380.500001`
-[1] "Koenenitidae"              "Franklinella (F.) torleyi" "382"                      
-[4] "IIc1"                      "Middlesex"                 "Timan"                    
+[1] "Koenenitidae"              "Franklinella (F.) torleyi"
+[3] "382"                       "IIc1"                     
+[5] "Middlesex"                 "Timan"                    
 
 $`381.500001`
 [1] "384"  "IIb4" "IIb3"
@@ -5905,8 +6130,8 @@ $`382.500001`
 [10] "Paleozoic margin of northwestern Iberia (Spain)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 
 $`383.500001`
-[1] "385.5"              "385.89999999999998" "386.19999999999999" "IIb1"              
-[5] "IIa2"              
+[1] "385.5"              "385.89999999999998" "386.19999999999999"
+[4] "IIb1"               "IIa2"              
 
 $`384.500001`
  [1] "Agoniatitids, Maenioceratids"                                                        
@@ -5921,9 +6146,12 @@ $`384.500001`
 [10] "Cordilleran margin (N. Canada)"                                                      
 
 $`385.500001`
-[1] "Pharciceratids"                          "388.39999999999998"                     
-[3] "IIa - UT"                                "IIa1"                                   
-[5] "Taghanic"                                "Late Paleozoic margin of northern Iran."
+[1] "Pharciceratids"                         
+[2] "388.39999999999998"                     
+[3] "IIa - UT"                               
+[4] "IIa1"                                   
+[5] "Taghanic"                               
+[6] "Late Paleozoic margin of northern Iran."
 
 $`386.500001`
 [1] "Tretopilula anomala, Tretopilula sagena, Crucidia camirense, Lomatolopas cellulosa"
@@ -5949,11 +6177,13 @@ $`387.500001`
 [10] "392.30000000000001"                                                                                                                                                                                                                                                     
 
 $`388.500001`
-[1] "Agoniatitids"               "Tortodus kock. kockelianus" "392.80000000000001"        
-[4] "393.30000000000001"         "If1"                        "Kacak"                     
+[1] "Agoniatitids"               "Tortodus kock. kockelianus"
+[3] "392.80000000000001"         "393.30000000000001"        
+[5] "If1"                        "Kacak"                     
 
 $`389.500001`
-[1] "Hapsidopalla exornata" "Hapsidopalla exornata" "395"                   "Id"                   
+[1] "Hapsidopalla exornata" "Hapsidopalla exornata"
+[3] "395"                   "Id"                   
 
 $`390.500001`
 [1] "395.39999999999998" "Ic3"               
@@ -5980,7 +6210,8 @@ $`394.500001`
 [1] "Elbow (Saskatchewan)"
 
 $`395.500001`
-[1] "Sellanarcestes"  "399.5"           "Ic1"             "I c"             "Brent (Ontario)"
+[1] "Sellanarcestes"  "399.5"           "Ic1"            
+[4] "I c"             "Brent (Ontario)"
 
 $`396.500001`
 [1] "D20 MFS"
@@ -5995,8 +6226,10 @@ $`398.500001`
 [7] "Ib5"                                                                                                                                                                                 
 
 $`399.500001`
-[1] "volcanic resurfacing and extensive tectonism" "401.19999999999999"                          
-[3] "Nicholson (NW Terr.)"                         "La Moinerie (Quebec)"                        
+[1] "volcanic resurfacing and extensive tectonism"
+[2] "401.19999999999999"                          
+[3] "Nicholson (NW Terr.)"                        
+[4] "La Moinerie (Quebec)"                        
 
 $`400.500001`
 [1] "Ib4"
@@ -6050,8 +6283,8 @@ $`410.500001`
 [6] "410"                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
 $`411.500001`
-[1] "Eognathodids (conodont family)" "Eognathodids"                   "411.5"                         
-[4] "Ia"                            
+[1] "Eognathodids (conodont family)" "Eognathodids"                  
+[3] "411.5"                          "Ia"                            
 
 $`413.500001`
 [1] "Neomonograptus hercinicus"                                                                                                                                                                                                                                                                                                                                                                    
@@ -6085,19 +6318,23 @@ $`419.500001`
 [11] "Klonk"                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 $`420.500001`
-[1] "Monograptus ultimus"                        "Monograptus parultimus"                    
-[3] "Schizocystia pilosa, Schizocystia saharica" "Schizocystia pilosa, Schizocystia saharica"
+[1] "Monograptus ultimus"                       
+[2] "Monograptus parultimus"                    
+[3] "Schizocystia pilosa, Schizocystia saharica"
+[4] "Schizocystia pilosa, Schizocystia saharica"
 [5] "417.5"                                     
 
 $`422.500001`
-[1] "GSSP"                         "Klev (C), Mono. spineous (G)" "419"                         
-[4] "S20 MFS"                     
+[1] "GSSP"                         "Klev (C), Mono. spineous (G)"
+[3] "419"                          "S20 MFS"                     
 
 $`423.500001`
-[1] "Neocu. kozlowskii (G)" "Lau (C)"               "420.5"                 "Lau"                  
+[1] "Neocu. kozlowskii (G)" "Lau (C)"              
+[3] "420.5"                 "Lau"                  
 
 $`425.500001`
-[1] "GSSP"                                  "Linde (C), Saet. leintwardinensis (G)"
+[1] "GSSP"                                 
+[2] "Linde (C), Saet. leintwardinensis (G)"
 [3] "421"                                  
 
 $`426.500001`
@@ -6132,13 +6369,17 @@ $`436.500001`
 [1] "432"
 
 $`437.500001`
-[1] "Valgu (C)"                          "Valgu"                             
+[1] "Valgu (C)"                         
+[2] "Valgu"                             
 [3] "Farewell terrane (Interior Alaska)"
 
 $`438.500001`
-[1] "GSSP"                               "Stim. utilis (G)"                  
-[3] "Sandvika (C), Stim. sedgwickii (G)" "435"                               
-[5] "S10 MFS"                            "Late Aeronian"                     
+[1] "GSSP"                              
+[2] "Stim. utilis (G)"                  
+[3] "Sandvika (C), Stim. sedgwickii (G)"
+[4] "435"                               
+[5] "S10 MFS"                           
+[6] "Late Aeronian"                     
 
 $`439.500001`
 [1] "436.80000000000001"
@@ -6163,8 +6404,9 @@ $`443.500001`
 [8] "Nan Ling margin (SE side of China craton)"                      
 
 $`444.500001`
-[1] "Metabolograptus persculptus" "Hirnantian Lowstand Event"   "Langoyene Drowning Event"   
-[4] "HICE"                        "Pilot (NW Terr.)"           
+[1] "Metabolograptus persculptus" "Hirnantian Lowstand Event"  
+[3] "Langoyene Drowning Event"    "HICE"                       
+[5] "Pilot (NW Terr.)"           
 
 $`445.500001`
 [1] "GSSP"                                                     
@@ -6174,24 +6416,32 @@ $`445.500001`
 [5] "Terminal Husbergoya Lowstand Event"                       
 
 $`446.500001`
-[1] "447.30000000000001"          "Husbergoya Drowning Event"   "Spannslokket Drowning Event"
+[1] "447.30000000000001"          "Husbergoya Drowning Event"  
+[3] "Spannslokket Drowning Event"
 
 $`447.500001`
-[1] "Paraorthograptus pacificus" "448"                        "449"                       
-[4] "Grimsoya Regressive Event"  "Whitewater"                
+[1] "Paraorthograptus pacificus" "448"                       
+[3] "449"                        "Grimsoya Regressive Event" 
+[5] "Whitewater"                
 
 $`448.500001`
-[1] "Climacograptus? uncinatus, Anticostia  uniformis" "450"                                             
-[3] "Linearis Drowning-3 Event"                        "Waynesville"                                     
+[1] "Climacograptus? uncinatus, Anticostia  uniformis"
+[2] "450"                                             
+[3] "Linearis Drowning-3 Event"                       
+[4] "Waynesville"                                     
 
 $`449.500001`
-[1] "Dicellograptus gravis"     "Linearis Drowning-2 Event" "Fairview"                 
-[4] "Calvin (Michigan)"         "Slate Islands (Ontario)"  
+[1] "Dicellograptus gravis"     "Linearis Drowning-2 Event"
+[3] "Fairview"                  "Calvin (Michigan)"        
+[5] "Slate Islands (Ontario)"  
 
 $`450.500001`
-[1] "Dicranograptus kirki, Leptograptus  eastonensis" "452"                                            
-[3] "O40 MFS"                                         "Linearis Drowning-1 Event"                      
-[5] "Solvang Lowstand Event"                          "Kope"                                           
+[1] "Dicranograptus kirki, Leptograptus  eastonensis"
+[2] "452"                                            
+[3] "O40 MFS"                                        
+[4] "Linearis Drowning-1 Event"                      
+[5] "Solvang Lowstand Event"                         
+[6] "Kope"                                           
 
 $`451.500001`
 [1] "Diplacanthograptus spiniferus, Dicellograptus  flexuosus"
@@ -6235,10 +6485,12 @@ $`461.500001`
 [3] "Mid-Darriwilian"                                               
 
 $`462.500001`
-[1] "464"                     "Skarlov Lowstand"        "Helskjer Drowning Event"
+[1] "464"                     "Skarlov Lowstand"       
+[3] "Helskjer Drowning Event"
 
 $`463.500001`
-[1] "Pseudoclimacograptus decoratus" "O30 MFS"                        "Stein Lowstand Event"          
+[1] "Pseudoclimacograptus decoratus" "O30 MFS"                       
+[3] "Stein Lowstand Event"          
 
 $`464.500001`
 [1] "Basal Llanvirn Drowning Event"
@@ -6247,7 +6499,8 @@ $`465.500001`
 [1] "Undulograptus intersitus" "C4"                      
 
 $`466.500001`
-[1] "467"                     "O30 SB"                  "Middle Ordovician suite"
+[1] "467"                     "O30 SB"                 
+[3] "Middle Ordovician suite"
 
 $`467.500001`
 [1] "GSSP"                                                                                    
@@ -6261,27 +6514,35 @@ $`468.500001`
 [3] "Komstad Regressive Event"                                                                                                       
 
 $`469.500001`
-[1] "GSSP"                           "Isograptus victoriae victoriae" "Gardlosa Drowning Event"       
-[4] "Neugrund (Estonia)"             "Grandby (Sweden)"               "Ames (Oklahoma)"               
+[1] "GSSP"                           "Isograptus victoriae victoriae"
+[3] "Gardlosa Drowning Event"        "Neugrund (Estonia)"            
+[5] "Grandby (Sweden)"               "Ames (Oklahoma)"               
 [7] "Maritimes (NE Canada)"         
 
 $`470.500001`
-[1] "Isograptus victoriae lunatus" "471"                          "471.80000000000001"          
-[4] "Basal Whiterock Lowstand"     "C3"                          
+[1] "Isograptus victoriae lunatus" "471"                         
+[3] "471.80000000000001"           "Basal Whiterock Lowstand"    
+[5] "C3"                          
 
 $`471.500001`
-[1] "Isograptus primulus"         "473"                         "Cuyania terrane (Argentina)"
+[1] "Isograptus primulus"         "473"                        
+[3] "Cuyania terrane (Argentina)"
 
 $`472.500001`
-[1] "Didymograptus protobifidus, Acrograptus gracilis" "Pendeograptus fruticosus [3st]"                  
-[3] "Expansograptus  adamantinus"                      "Tetragraptus approximatus"                       
+[1] "Didymograptus protobifidus, Acrograptus gracilis"
+[2] "Pendeograptus fruticosus [3st]"                  
+[3] "Expansograptus  adamantinus"                     
+[4] "Tetragraptus approximatus"                       
 
 $`473.500001`
-[1] "Evae Drowning Event"                             "Paleozoic margin of northwestern Iberia (Spain)"
+[1] "Evae Drowning Event"                            
+[2] "Paleozoic margin of northwestern Iberia (Spain)"
 
 $`474.500001`
-[1] "475"                                          "Billingen Transgressive Event"               
-[3] "C2"                                           "Paleozoic eastern margin of Baltica (Russia)"
+[1] "475"                                         
+[2] "Billingen Transgressive Event"               
+[3] "C2"                                          
+[4] "Paleozoic eastern margin of Baltica (Russia)"
 
 $`475.500001`
 [1] "Pendeograptus fruticosus, P. pendens, Etagraptus harti"
@@ -6294,7 +6555,8 @@ $`477.500001`
 [1] "GSSP"                           "Tetragraptus approximatus  gp."
 
 $`478.500001`
-[1] "481"                     "O20 MFS"                 "Copiosus Drowning Event"
+[1] "481"                     "O20 MFS"                
+[3] "Copiosus Drowning Event"
 
 $`479.500001`
 [1] "483.80000000000001"        "Hagastrand Drowning Event"
@@ -6319,8 +6581,9 @@ $`484.500001`
 [2] "488.30000000000001"                                                                   
 
 $`485.500001`
-[1] "GSSP"                       "Cordylodus lindstromi"      "Cordylodus caboti"         
-[4] "Iapetognathus flutivagus"   "489"                        "O10 MFS"                   
+[1] "GSSP"                       "Cordylodus lindstromi"     
+[3] "Cordylodus caboti"          "Iapetognathus flutivagus"  
+[5] "489"                        "O10 MFS"                   
 [7] "Acerocare Regressive Event"
 
 $`486.500001`
@@ -6390,21 +6653,25 @@ $`502.500001`
 [1] "Ptychagnostus punctuosus" "Cm20 MFS"                
 
 $`504.500001`
-[1] "GSSP"                                  "Ptychagnostus atavus"                 
-[3] "506"                                   "Rock Elm (Wisconsin)"                 
+[1] "GSSP"                                 
+[2] "Ptychagnostus atavus"                 
+[3] "506"                                  
+[4] "Rock Elm (Wisconsin)"                 
 [5] "Caledonian margin of Baltica (Norway)"
 
 $`505.500001`
 [1] "Ptychagnostus gibbus" "507"                  "507.5"               
 
 $`507.500001`
-[1] "Burgess Shale (western Canada)" "509"                            "Glikson (W. Aust.)"            
+[1] "Burgess Shale (western Canada)" "509"                           
+[3] "Glikson (W. Aust.)"            
 
 $`508.500001`
 [1] "*__*"                   "Oryctocephalus indicus"
 
 $`509.500001`
-[1] "Redlichiid & Olenellid Trilobite extinctions" "Kalkarindji (Antrim) (Aust.)"                
+[1] "Redlichiid & Olenellid Trilobite extinctions"
+[2] "Kalkarindji (Antrim) (Aust.)"                
 
 $`510.500001`
 [1] "Ovatoryctocara granulata" "511.5"                   
@@ -6413,14 +6680,17 @@ $`511.500001`
 [1] "Acidiscus, Cephalopyge"         "Archaeocyathid mass extinction"
 
 $`512.500001`
-[1] "514"                                "Cm20 SB"                           
+[1] "514"                               
+[2] "Cm20 SB"                           
 [3] "Idermeg terrane (eastern Mongolia)"
 
 $`513.500001`
-[1] "*__*"                       "Archaeocyathid radiation"   "Arthricocephalus chauveaui"
+[1] "*__*"                       "Archaeocyathid radiation"  
+[3] "Arthricocephalus chauveaui"
 
 $`514.500001`
-[1] "Serrodiscus, Hebediscus, Triangulaspis" "515.5"                                 
+[1] "Serrodiscus, Hebediscus, Triangulaspis"
+[2] "515.5"                                 
 [3] "Lawn Hill (Queensland)"                
 
 $`515.500001`
@@ -6433,12 +6703,15 @@ $`517.500001`
 [1] "518.79999999999995"
 
 $`519.500001`
-[1] "*__*"                                   "First occurrence of TRILOBITES"        
-[3] "Arthropod radiation"                    "521"                                   
+[1] "*__*"                                  
+[2] "First occurrence of TRILOBITES"        
+[3] "Arthropod radiation"                   
+[4] "521"                                   
 [5] "Tasman orogen (Tasmania and Australia)"
 
 $`523.500001`
-[1] "Small Shelly Fossil (SSFs) mass extinction" "524"                                       
+[1] "Small Shelly Fossil (SSFs) mass extinction"
+[2] "524"                                       
 
 $`525.500001`
 [1] "First occurrence of ARCHAEOCYATHS"
@@ -6448,8 +6721,8 @@ $`526.500001`
 [2] "Cuyania terrane (Argentina)"                         
 
 $`529.500001`
-[1] "*__*"                       "Watsonella crosbyi"         "528"                       
-[4] "Wichita Mountains (S. USA)"
+[1] "*__*"                       "Watsonella crosbyi"        
+[3] "528"                        "Wichita Mountains (S. USA)"
 
 $`532.500001`
 [1] "South China \"Marker B\"" "533"                     
@@ -6464,7 +6737,8 @@ $`536.500001`
 [1] "536"
 
 $`537.500001`
-[1] "SMALL SHELLY FAUNA; South China \"Marker A\"" "538"                                         
+[1] "SMALL SHELLY FAUNA; South China \"Marker A\""
+[2] "538"                                         
 
 $`539.500001`
 [1] "540"
@@ -6503,11 +6777,13 @@ $`554.500001`
 [1] "Southern margin of Congo craton (Namibia)"
 
 $`559.500001`
-[1] "S__ksj_rvi (Finland)"              "Belaya River (se. Siberia)"       
+[1] "S__ksj_rvi (Finland)"             
+[2] "Belaya River (se. Siberia)"       
 [3] "Timanian orogen (Northern Russia)"
 
 $`569.500001`
-[1] "Spider (nw. Aust.)"       "Ouarzazate (NW Afr.)"     "Crimson Creek (Tasmania)"
+[1] "Spider (nw. Aust.)"       "Ouarzazate (NW Afr.)"    
+[3] "Crimson Creek (Tasmania)"
 
 $`573.500001`
 [1] "Dzabkhan (or Zavkhan, or Zavhan) Basin (southwestern Mongolia)"
@@ -6522,8 +6798,10 @@ $`579.500001`
 [1] "Araras margin of Amazonia (Brazil)"
 
 $`589.500001`
-[1] "Acraman (S. Aust.)"                               "Sao Francisco craton, E side (Brazil)"           
-[3] "Northern margin of West African craton (Morocco)" "Tasman orogen (Tasmania and Australia)"          
+[1] "Acraman (S. Aust.)"                              
+[2] "Sao Francisco craton, E side (Brazil)"           
+[3] "Northern margin of West African craton (Morocco)"
+[4] "Tasman orogen (Tasmania and Australia)"          
 
 $`590.500001`
 [1] "Middle Central-Iapetus  (N.Amer.)"
