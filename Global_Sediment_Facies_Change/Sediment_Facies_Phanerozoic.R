@@ -8,10 +8,10 @@ AGE_SLIDE <- 1
 
 setwd("~/Dropbox/TSCreator/TSCreator development/Developers/Andy/Datapacks")
 dp_fname <- "Phan_GTS2016_for_7.1_HaqJur_ForamMikrotax_28July2017.xls"
+
 dfxl <- read_excel(dp_fname)
 
 # second column
-c <- list()
 c <- colnames(dfxl)
 df2c <- dfxl[[c[2]]]
 
@@ -295,6 +295,7 @@ summary(columns['event'])
 # regional stage cols
 regional_units <- c()
 regional_unit_row_nums <- c()
+
 for(c_i in c[3:12]) {
   regional_unit <- dfxl[[c_i]][630]
   regional_units <- c(regional_units, regional_unit)

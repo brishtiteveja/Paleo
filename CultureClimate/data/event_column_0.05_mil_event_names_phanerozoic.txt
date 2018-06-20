@@ -1,0 +1,386 @@
+$`0.025001`
+[1] "Gamal Nasser" "Ba'ath Rule" 
+
+$`0.075001`
+[1] "Israel independence"       
+[2] "Israel independence"       
+[3] "Republic of Turkey founded"
+[4] "Separate States"           
+[5] "Pakistan independence"     
+[6] "India independence"        
+[7] "Mao Zedong wins civil war" 
+[8] "Xinhai Revolution"         
+
+$`0.125001`
+[1] "Suez Canal opens"
+
+$`0.175001`
+[1] "Opium War"                        
+[2] "Marquesan"                        
+[3] "Hawaiian, Maori, Tahitian, Tongan"
+
+$`0.225001`
+[1] "Napoleon conquest in 1798."
+
+$`0.375001`
+[1] "Manchu invasion" "Easter Island"  
+[3] "Plains horsemen"
+
+$`0.425001`
+[1] "Late Postclassic"
+
+$`0.475001`
+[1] "Ottoman expansion"              
+[2] "Polvoron"                       
+[3] "Spanish conquests 1521-1535 AD."
+
+$`0.525001`
+[1] "Constantinople taken by Islam"
+[2] "Constantinople taken by Islam"
+
+$`0.575001`
+[1] "Forbidden City completed"
+[2] "Indian Ocean Expeditions"
+[3] "Civano"                  
+[4] "Late Postclassic"        
+[5] "Middle Postclassic"      
+
+$`0.625001`
+[1] "Tamerlane"                
+[2] "Last Mongol emperor flees"
+[3] "Polvoron"                 
+
+$`0.675001`
+[1] "Civano" "Soho"  
+
+$`0.725001`
+[1] "Acre retaken by Islam"    
+[2] "Mongols sack Baghdad"     
+[3] "Baghdad sacked by Mongols"
+[4] "Kublai Khan"              
+[5] "Mongol (Kublai Khan)"     
+
+$`0.775001`
+[1] "Mongols sweep into Iran"       
+[2] "Genghis Khan"                  
+[3] "Mongol (Genghis Khan) conquest"
+[4] "Hawaiian"                      
+[5] "Soho"                          
+[6] "Santan"                        
+[7] "Middle Postclassic"            
+[8] "Early Postclassic"             
+
+$`0.825001`
+[1] "Seljuk Moslem conquest"
+
+$`0.875001`
+[1] "Manchurian conquest" "Maori"              
+[3] "Colonial period"    
+
+$`0.925001`
+[1] "Jerusalem taken by Crusaders"   
+[2] "Seljuq sultinate"               
+[3] "Seljuq nomads take over Baghdad"
+[4] "Santan"                         
+
+$`0.975001`
+[1] "Late Pithouse period" "Early Postclassic"   
+[3] "Epiclassic"          
+
+$`1.075001`
+[1] "Terminal Classic"
+
+$`1.125001`
+[1] "Pioneer period"
+
+$`1.175001`
+[1] "Colonial period"  "Terminal Classic"
+[3] "Late Classic"    
+
+$`1.225001`
+[1] "Islam center shifts from Syria to Iraq"
+[2] "Islam center shifts from Syria to Iraq"
+[3] "Islam center shifts from Syria to Iraq"
+
+$`1.275001`
+[1] "Epiclassic"    "Early classic"
+
+$`1.375001`
+[1] "Arabians conquer Alexandria"         
+[2] "Muslim Arabs overthrow Sasanian rule"
+[3] "Emigration of Muhammad"              
+[4] "Tahitian"                            
+[5] "Late Classic"                        
+[6] "Early Classic"                       
+[7] "1.4 ka"                              
+
+$`1.425001`
+[1] "Late Pithouse period"  "Early Pithouse period"
+
+$`1.475001`
+[1] "Easter Island"                                    
+[2] "Late Basketmaker"                                 
+[3] "Late Classic (Southerm Mexican Highland Classic)" 
+[4] "Early Classic (Southerm Mexican Highland Classic)"
+
+$`1.525001`
+[1] "battle of Arvarayr"
+
+$`1.575001`
+[1] "Early classic"
+
+$`1.625001`
+[1] "Sasanians partition Armenia"
+[2] "Protoclassic"               
+
+$`1.675001`
+[1] "Constantine establishs rule from Byzantium (Istanbul) capital"
+[2] "Contact with Iron Age Farmers"                                
+[3] "Emperor Constantine converts to Christianity"                 
+[4] "Emperor Constantine converts to Christianity"                 
+[5] "Armenia adopts Christianity as state religion"                
+[6] "Emperor Constantine converts to Christianity"                 
+[7] "Marquesan"                                                    
+
+$`1.725001`
+[1] "Early Classic (Southerm Mexican Highland Classic)"
+
+$`1.825001`
+[1] "Early Classic"
+
+$`1.925001`
+[1] "Nero crowns Trdat king of Armenia"
+
+$`1.975001`
+[1] "Tshitolian"                                   
+[2] "Gangetic India (Northern Block Polished Ware)"
+[3] "Tongan, Samoan"                               
+[4] "Late Basketmaker"                             
+[5] "Early Pithouse period"                        
+[6] "Pioneer period"                               
+[7] "Early Basketmaker (White Dog phase)"          
+
+$`2.025001`
+[1] "Death of Cleopatra VII (absorbed into Roman empire)."
+[2] "Augustus becomes emperor of Rome"                    
+[3] "Protoclassic"                                        
+
+$`2.075001`
+[1] "Rome overthrows the rule of Tigranes II the Great"
+[2] "Tigranes II The Great of Armenia"                 
+
+$`2.125001`
+[1] "Mauryan Empire"
+
+$`2.225001`
+[1] "Qin Shihuangdi" "Great Wall"    
+
+$`2.275001`
+[1] "Ashoka"
+
+$`2.325001`
+[1] "Conquest by Alexander the Great."                             
+[2] "Nectanebol II, last native Egyptian king, flees. Persian rule"
+[3] "Alexander the Great dies"                                     
+[4] "Armenian Dynasty of the Orontids"                             
+[5] "Alexander the Great"                                          
+[6] "Mauryan Empire"                                               
+
+$`2.475001`
+[1] "Battle of Thermopylae"                        
+[2] "Gangetic India (Northern Block Polished Ware)"
+[3] "Grand Canal"                                  
+[4] "Confucius"                                    
+
+$`2.525001`
+[1] "Cyrus the Great"
+
+$`2.575001`
+[1] "Collapse of Urartu"
+
+$`2.625001`
+[1] "Destruction of the Assyrian capital Nineveh"
+[2] "Medes (from Persia) destroy Assur"          
+[3] "Destruction of the Assyrian capital Nineveh"
+[4] "Medes (from Persia) destroy Assur"          
+
+$`2.675001`
+[1] "Psammetikhos I consolidates rule over Egypt"
+
+$`2.725001`
+[1] "Sargon II invades Urartu."
+
+$`2.775001`
+[1] "Nomadic Quanrong invasion"
+[2] "2.8 ka"                   
+
+$`2.875001`
+[1] "King Aramu begins his reign over Urartu."
+
+$`2.975001`
+[1] "Micronesian arrival"                
+[2] "Early Basketmaker (White Dog phase)"
+[3] "Trincheras"                         
+
+$`3.025001`
+[1] "Zhou people conquest"
+
+$`3.075001`
+[1] "Ramesses XI dies"
+
+$`3.175001`
+[1] "Hittite kingdom overwhelmed by the \"Peoples of the Sea\""
+[2] "Wadi Suq period"                                          
+
+$`3.225001`
+[1] "Tukulti-Ninurta I" "Iron working"     
+
+$`3.275001`
+[1] "Rameses II (The Great)" "Battle of Kadesh"      
+
+$`3.325001`
+[1] "Tutankhamun"
+
+$`3.375001`
+[1] "Akhetaten (Amhotep IV)"        
+[2] "King Suppiluliumus I (Hittite)"
+
+$`3.425001`
+[1] "Santorini (Thera) erupted"
+
+$`3.475001`
+[1] "Egypt Conquers Megiddo"                
+[2] "Egypt Conquers Megiddo"                
+[3] "Parattarna"                            
+[4] "Ashur-uballit I founds Assyrian Empire"
+[5] "Aryan migration into region"           
+[6] "Aryan migration into region"           
+[7] "Vedas composition begins"              
+
+$`3.525001`
+[1] "Amosis I"           "Middle Bronze II c"
+
+$`3.625001`
+[1] "Middle Bronze II c"                         
+[2] "Middle Bronze II b"                         
+[3] "Alishar Becomes Part of the Hittite Kingdom"
+
+$`3.675001`
+[1] "Wadi Suq period"       "Early Dilmun (Barbar)"
+
+$`3.77500099999999`
+[1] "Hyksos conquer Egypt"                  
+[2] "Sobeknofru, first female pharoah, dies"
+[3] "Middle Bronze II b"                    
+[4] "Middle Bronze II a"                    
+[5] "Hammurapi inherits kingship of Babylon"
+
+$`3.82500099999999`
+[1] "Shamshi-Adad I"
+
+$`3.87500099999999`
+[1] "Localization era begins"
+
+$`3.97500099999999`
+[1] "Menthotpe I regains Double Crown"                             
+[2] "EB4 (Early Bronze 4/ Intermediate Bronze/Middle Bronze Age 1)"
+[3] "Fall of Ur to the Amorites."                                  
+[4] "Umm-an-Nar Period"                                            
+
+$`4.07500099999999`
+[1] "Ur-Nammu founds the third dynasty of Ur."
+
+$`4.17500099999999`
+[1] "Death of Pepi II; disintegration of Memphite regime"
+[2] "4.2 ka climate event"                               
+[3] "Early Dilmun (Barbar)"                              
+[4] "4.2 ka"                                             
+
+$`4.27500099999999`
+[1] "EB3 (Early Bronze 3)" "Naram-Suen"          
+
+$`4.32500099999999`
+[1] "Sargon"
+
+$`4.47500099999999`
+[1] "Alishar Grows in Size" "Mes-Ane-pada"         
+
+$`4.52500099999999`
+[1] "Khufu (Cheops)"
+
+$`4.57500099999999`
+[1] "Large new urban centers"        
+[2] "Widespread abandonment of sites"
+[3] "Kot Diji Phase"                 
+
+$`4.62500099999999`
+[1] "Sanakhte or Nebka, establishes 3rd Dynasty"
+[2] "EB3 (Early Bronze 3)"                      
+[3] "EB2 (Early Bronze 2)"                      
+
+$`4.77500099999999`
+[1] "Kot Diji Phase" "Hakra Phase"    "Ravi Phase"    
+
+$`4.97500099999999`
+[1] "Umm-an-Nar period"   "Amri Phase"         
+[3] "Farming communities"
+
+$`5.02500099999999`
+[1] "EB2 (Early Bronze 2)" "EB1 (Early Bronze 1)"
+
+$`5.12500099999999`
+[1] "Unification; Menes (Scorpion King?)"
+
+$`5.27500099999999`
+[1] "Dynasty 0"
+
+$`5.47500099999999`
+[1] "Gerzeans (agriculture)" "EB1 (Early Bronze 1)"  
+[3] "Ravi Phase"             "Balakot Phase"         
+
+$`5.57500099999999`
+[1] "Amri Phase"  "Hakra Phase"
+
+$`5.87500099999999`
+[1] "5.9 ka"
+
+$`5.97500099999999`
+[1] "Balakot Phase"
+
+$`6.27500099999999`
+[1] "Developed farming communities"
+
+$`6.47500099999998`
+[1] "Badari (semi-nomadic)"
+
+$`6.97500099999998`
+[1] "Alishar"                 
+[2] "Painted ceramics, Hemudu"
+
+$`7.37500099999998`
+[1] "Organized, permanent settlements focused around agriculture"
+
+$`7.47500099999998`
+[1] "Blombos Cave"
+
+$`8.07500099999998`
+[1] "8.2 ka"
+
+$`8.47500099999999`
+[1] "Small agricultural villages"
+
+$`8.97500099999999`
+[1] "Farming begins, Indus Stage 1"
+
+$`9.375001`
+[1] "9.4 ka"
+
+$`9.97500100000001`
+[1] "Capsian Cultural complex in inland northern Africa."
+
+$`10.275001`
+[1] "10.3 ka"
+
+$`11.075001`
+[1] "11.1 ka"
+
