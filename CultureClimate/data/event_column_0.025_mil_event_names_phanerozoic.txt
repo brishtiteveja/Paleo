@@ -1,0 +1,166 @@
+$`0.037501`
+[1] "Gamal Nasser" "Ba'ath Rule" 
+
+$`0.062501`
+[1] "Israel independence"       "Israel independence"      
+[3] "Pakistan independence"     "India independence"       
+[5] "Mao Zedong wins civil war"
+
+$`0.087501`
+[1] "Republic of Turkey founded" "Separate States"           
+[3] "Xinhai Revolution"         
+
+$`0.137501`
+[1] "Suez Canal opens"
+
+$`0.162501`
+[1] "Opium War" "Marquesan"
+
+$`0.187501`
+[1] "Hawaiian, Maori, Tahitian, Tongan"
+
+$`0.212501`
+[1] "Napoleon conquest in 1798."
+
+$`0.387501`
+[1] "Manchu invasion" "Easter Island"   "Plains horsemen"
+
+$`0.437501`
+[1] "Late Postclassic"
+
+$`0.462501`
+[1] "Ottoman expansion"
+
+$`0.487501`
+[1] "Polvoron"                        "Spanish conquests 1521-1535 AD."
+
+$`0.537501`
+[1] "Constantinople taken by Islam" "Constantinople taken by Islam"
+
+$`0.587501`
+[1] "Forbidden City completed" "Indian Ocean Expeditions"
+[3] "Civano"                   "Late Postclassic"        
+[5] "Middle Postclassic"      
+
+$`0.612501`
+[1] "Polvoron"
+
+$`0.637501`
+[1] "Tamerlane"                 "Last Mongol emperor flees"
+
+$`0.687501`
+[1] "Civano" "Soho"  
+
+$`0.712501`
+[1] "Acre retaken by Islam" "Mongol (Kublai Khan)" 
+
+$`0.737501`
+[1] "Mongols sack Baghdad"      "Baghdad sacked by Mongols"
+[3] "Kublai Khan"              
+
+$`0.762501`
+[1] "Mongol (Genghis Khan) conquest"
+
+$`0.787501`
+[1] "Mongols sweep into Iran" "Genghis Khan"           
+[3] "Hawaiian"                "Soho"                   
+[5] "Santan"                  "Middle Postclassic"     
+[7] "Early Postclassic"      
+
+$`0.837501`
+[1] "Seljuk Moslem conquest"
+
+$`0.862501`
+[1] "Manchurian conquest"
+
+$`0.887501000000001`
+[1] "Maori"           "Colonial period"
+
+$`0.912501`
+[1] "Jerusalem taken by Crusaders" "Seljuq sultinate"            
+
+$`0.937501000000001`
+[1] "Seljuq nomads take over Baghdad" "Santan"                         
+
+$`0.987501000000001`
+[1] "Late Pithouse period" "Early Postclassic"    "Epiclassic"          
+
+$`1.087501`
+[1] "Terminal Classic"
+
+$`1.137501`
+[1] "Pioneer period"
+
+$`1.162501`
+[1] "Colonial period"
+
+$`1.187501`
+[1] "Terminal Classic" "Late Classic"    
+
+$`1.237501`
+[1] "Islam center shifts from Syria to Iraq"
+[2] "Islam center shifts from Syria to Iraq"
+[3] "Islam center shifts from Syria to Iraq"
+
+$`1.287501`
+[1] "Epiclassic"    "Early classic"
+
+$`1.362501`
+[1] "Arabians conquer Alexandria"         
+[2] "Muslim Arabs overthrow Sasanian rule"
+
+$`1.387501`
+[1] "Emigration of Muhammad" "Tahitian"              
+[3] "Late Classic"           "Early Classic"         
+[5] "1.4 ka"                
+
+$`1.437501`
+[1] "Late Pithouse period"  "Early Pithouse period"
+
+$`1.487501`
+[1] "Easter Island"                                    
+[2] "Late Basketmaker"                                 
+[3] "Late Classic (Southerm Mexican Highland Classic)" 
+[4] "Early Classic (Southerm Mexican Highland Classic)"
+
+$`1.537501`
+[1] "battle of Arvarayr"
+
+$`1.587501`
+[1] "Early classic"
+
+$`1.612501`
+[1] "Sasanians partition Armenia"
+
+$`1.637501`
+[1] "Protoclassic"
+
+$`1.662501`
+[1] "Constantine establishs rule from Byzantium (Istanbul) capital"
+
+$`1.687501`
+[1] "Contact with Iron Age Farmers"                
+[2] "Emperor Constantine converts to Christianity" 
+[3] "Emperor Constantine converts to Christianity" 
+[4] "Armenia adopts Christianity as state religion"
+[5] "Emperor Constantine converts to Christianity" 
+[6] "Marquesan"                                    
+
+$`1.737501`
+[1] "Early Classic (Southerm Mexican Highland Classic)"
+
+$`1.837501`
+[1] "Early Classic"
+
+$`1.937501`
+[1] "Nero crowns Trdat king of Armenia"
+
+$`1.987501`
+[1] "Tshitolian"                                   
+[2] "Gangetic India (Northern Block Polished Ware)"
+[3] "Tongan, Samoan"                               
+[4] "Late Basketmaker"                             
+[5] "Early Pithouse period"                        
+[6] "Pioneer period"                               
+[7] "Early Basketmaker (White Dog phase)"          
+
