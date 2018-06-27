@@ -1,38 +1,28 @@
 $`0.025001`
-[1] "TOP"              "Republic of Iraq"
-[3] "Republic"         "TOP"             
-[5] "TOP"              "TOP"             
+[1] "TOP"              "Republic of Iraq" "Republic"        
+[4] "TOP"              "TOP"              "TOP"             
 
 $`0.075001`
- [1] "TOP"                      
- [2] "Independent States"       
- [3] "Republic"                 
- [4] "Hashemite Kingdom of Iraq"
- [5] "British Mandate"          
- [6] "TOP"                      
- [7] "Pahlavi Dynasty"          
- [8] "Republic"                 
- [9] "-"                        
-[10] "Republic"                 
-[11] "Republic"                 
-[12] "Republic"                 
+ [1] "TOP"                       "Independent States"       
+ [3] "Republic"                  "Hashemite Kingdom of Iraq"
+ [5] "British Mandate"           "TOP"                      
+ [7] "Pahlavi Dynasty"           "Republic"                 
+ [9] "-"                         "Republic"                 
+[11] "Republic"                  "Republic"                 
 [13] "TOP"                      
 
 $`0.125001`
- [1] "Unified nation" "TOP"            "TOP"           
- [4] "Reservations"   "TOP"            "TOP"           
- [7] "TOP"            "TOP"            "TOP"           
-[10] "TOP"            "TOP"            "TOP"           
+ [1] "Unified nation" "TOP"            "TOP"            "Reservations"  
+ [5] "TOP"            "TOP"            "TOP"            "TOP"           
+ [9] "TOP"            "TOP"            "TOP"            "TOP"           
 
 $`0.175001`
-[1] "Independent States" "Independent"       
-[3] "TOP"                "TOP"               
-[5] "Industrial Age"     "TOP"               
+[1] "Independent States" "Independent"        "TOP"               
+[4] "TOP"                "Industrial Age"     "TOP"               
 [7] "TOP"                "TOP"               
 
 $`0.225001`
-[1] "Qajar Dynasty" "TOP"           "TOP"          
-[4] "TOP"          
+[1] "Qajar Dynasty" "TOP"           "TOP"           "TOP"          
 
 $`0.275001`
 [1] "TOP"             "al-Saud dynasty"
@@ -50,42 +40,24 @@ $`0.425001`
 [1] "TOP" "TOP" "TOP"
 
 $`0.475001`
- [1] "TOP"                          
- [2] "TOP"                          
- [3] "Ottoman Empire"               
- [4] "Ottoman rule"                 
- [5] "Safavid Rule"                 
- [6] "Safavid dynasty"              
- [7] "TOP"                          
- [8] "Ottoman rule"                 
- [9] "TOP"                          
-[10] "-"                            
-[11] "Russian empire"               
-[12] "Russian empire"               
-[13] "Russian empire"               
-[14] "TOP"                          
-[15] "TOP"                          
-[16] "TOP"                          
-[17] "TOP"                          
-[18] "TOP"                          
-[19] "TOP"                          
-[20] "TOP"                          
-[21] "TOP"                          
-[22] "TOP"                          
-[23] "New Spain"                    
-[24] "TOP"                          
-[25] "TOP"                          
-[26] "TOP"                          
-[27] "Top"                          
-[28] "TOP"                          
-[29] "TOP"                          
-[30] "TOP"                          
-[31] "TOP"                          
-[32] "Spanish and Portuguese influx"
-[33] "TOP"                          
-[34] "TOP"                          
-[35] "TOP"                          
-[36] "TOP"                          
+ [1] "TOP"                           "TOP"                          
+ [3] "Ottoman Empire"                "Ottoman rule"                 
+ [5] "Safavid Rule"                  "Safavid dynasty"              
+ [7] "TOP"                           "Ottoman rule"                 
+ [9] "TOP"                           "-"                            
+[11] "Russian empire"                "Russian empire"               
+[13] "Russian empire"                "TOP"                          
+[15] "TOP"                           "TOP"                          
+[17] "TOP"                           "TOP"                          
+[19] "TOP"                           "TOP"                          
+[21] "TOP"                           "TOP"                          
+[23] "New Spain"                     "TOP"                          
+[25] "TOP"                           "TOP"                          
+[27] "Top"                           "TOP"                          
+[29] "TOP"                           "TOP"                          
+[31] "TOP"                           "Spanish and Portuguese influx"
+[33] "TOP"                           "TOP"                          
+[35] "TOP"                           "TOP"                          
 
 $`0.525001`
  [1] "Ottoman"                           
@@ -101,25 +73,21 @@ $`0.525001`
 [11] "TOP"                               
 
 $`0.575001`
-[1] "Qara Quyunlu Dynasty" "Qara Quyunlu Dynasty"
-[3] "TOP"                  "Aztec"               
-[5] "Aztec Empire"        
+[1] "Qara Quyunlu Dynasty" "Qara Quyunlu Dynasty" "TOP"                 
+[4] "Aztec"                "Aztec Empire"        
 
 $`0.625001`
-[1] "TOP"          "Timurid Rule" "TOP"         
-[4] "Ming dynasty" "Ming dynasty" "TOP"         
+[1] "TOP"          "Timurid Rule" "TOP"          "Ming dynasty"
+[5] "Ming dynasty" "TOP"         
 
 $`0.675001`
 [1] "Jalayirid Dynasty"                                          
 [2] "Muzaffarid Dynasty(in South)/ Jalayirid Rule (in Northwest)"
 
 $`0.725001`
-[1] "Mamluk rule"                  
-[2] "Mamluk rule/ Ilkhanid Period" 
-[3] "Ilkhanid Period"              
-[4] "Mamluk rule"                  
-[5] "Yuan, Ming and Qing Dynasties"
-[6] "Mongol (Yuan)"                
+[1] "Mamluk rule"                   "Mamluk rule/ Ilkhanid Period" 
+[3] "Ilkhanid Period"               "Mamluk rule"                  
+[5] "Yuan, Ming and Qing Dynasties" "Mongol (Yuan)"                
 [7] "Late Anasazi"                 
 
 $`0.775001`
@@ -140,12 +108,9 @@ $`0.875001`
 [6] "Andean Regional States (Late Intermediate Period (LIP))"
 
 $`0.925001`
-[1] "Crusader Kingdom"          
-[2] "Byzantine & Sultinate"     
-[3] "Seljuq Sulanate"           
-[4] "Seljuq / Khwarazmshah rule"
-[5] "Norman"                    
-[6] "Late Hohokam"              
+[1] "Crusader Kingdom"           "Byzantine & Sultinate"     
+[3] "Seljuq Sulanate"            "Seljuq / Khwarazmshah rule"
+[5] "Norman"                     "Late Hohokam"              
 
 $`0.975001`
 [1] "TOP"                                                        
@@ -198,10 +163,8 @@ $`1.225001`
 [10] "TOP"                                   
 
 $`1.275001`
-[1] "Uighur kingdom"            
-[2] "Toltec"                    
-[3] "Central Mexico Postclassic"
-[4] "TOP"                       
+[1] "Uighur kingdom"             "Toltec"                    
+[3] "Central Mexico Postclassic" "TOP"                       
 [5] "TOP"                       
 
 $`1.325001`
@@ -222,10 +185,8 @@ $`1.375001`
 [6] "Rule of the Rightly Guided Caliphs"
 
 $`1.425001`
-[1] "Lombard kingdom"             
-[2] "Turkish khanate"             
-[3] "Sui, Tang and Song Dynasties"
-[4] "Sui and Tang Dynasties"      
+[1] "Lombard kingdom"              "Turkish khanate"             
+[3] "Sui, Tang and Song Dynasties" "Sui and Tang Dynasties"      
 [5] "Sui and Tang Dynasties"      
 
 $`1.475001`
@@ -281,17 +242,15 @@ $`1.725001`
 [1] "Southern Mexican Highland Classic"
 
 $`1.775001`
-[1] "Sasanian rule"       "Sasanian rule"      
-[3] "Sasanian empire"     "-"                  
-[5] "-"                   "-"                  
+[1] "Sasanian rule"       "Sasanian rule"       "Sasanian empire"    
+[4] "-"                   "-"                   "-"                  
 [7] "Huatabampo"          "West Mexico Classic"
 
 $`1.825001`
 [1] "TOP"          "Mayan"        "Classic Maya"
 
 $`1.925001`
-[1] "Roman rule"                  
-[2] "Moche (Mochica, Early Chimu)"
+[1] "Roman rule"                   "Moche (Mochica, Early Chimu)"
 
 $`1.975001`
  [1] "AD"                                                                                 
@@ -312,617 +271,4 @@ $`2.025001`
 [3] "Roman Empire"                         
 [4] "Roman Iron Age"                       
 [5] "Gulf Coast Classic (Classic Veracruz)"
-
-$`2.075001`
- [1] "Roman rule"                   
- [2] "TOP"                          
- [3] "Roman"                        
- [4] "Roman Iron Age"               
- [5] "Roman Iron Age"               
- [6] "Roman Iron Age"               
- [7] "Romano-Celtic (Proto-Celtic)" 
- [8] "Roman"                        
- [9] "Romano-British (Proto-Celtic)"
-[10] "TOP"                          
-[11] "Thule"                        
-[12] "Thule"                        
-[13] "Hopewell (mound builders)"    
-[14] "TOP"                          
-
-$`2.125001`
-[1] "Roman rule"                          
-[2] "Parthian rule"                       
-[3] "TOP"                                 
-[4] "Central Mexico Classic (Teotihuacan)"
-
-$`2.175001`
-[1] "Nazca through Inca kingdoms"                  
-[2] "Andean Regional Development"                  
-[3] "Coastal Andean Late Formative (Early Horizon)"
-[4] "Nazca (Nasca)"                                
-
-$`2.225001`
-[1] "Parthian empire"             
-[2] "Qin (Chin) and Han Dynasties"
-[3] "Han Dynasty"                 
-[4] "Qin (Chin) Dynasty"          
-[5] "Han Dynasty"                 
-[6] "Qin (Chin) Dynasty"          
-
-$`2.275001`
-[1] "TOP"         "TOP"         "TOP"        
-[4] "TOP"         "Basketmaker"
-
-$`2.325001`
- [1] "TOP"                                    
- [2] "Ptolemaic"                              
- [3] "Central African Iron Age"               
- [4] "Hellenistic"                            
- [5] "Seleucid empire (Hellenistic rule)"     
- [6] "Seleucid empire (Hellenistic rule)"     
- [7] "Hellenistic period"                     
- [8] "Hellenistic rule"                       
- [9] "Seleucid Dynasty"                       
-[10] "Hellenistic rule (Macedonian dynasties)"
-[11] "Hellenistic rule (Seleucid period)"     
-
-$`2.375001`
-[1] "Fijian"                                                        
-[2] "Celtic (La T\x8fne) culture (West Central European Iron Age)"
-[3] "Northeast Middle Woodland"                                     
-
-$`2.475001`
- [1] "West African Iron Age"                                                                                   
- [2] "TOP"                                                                                                     
- [3] "Classical period"                                                                                        
- [4] "-"                                                                                                       
- [5] "Warring States Period"                                                                                   
- [6] "Warring States Period"                                                                                   
- [7] "TOP"                                                                                                     
- [8] "Yayoi"                                                                                                   
- [9] "Mainland Southeast Asia Late Prehistoric"                                                                
-[10] "TOP"                                                                                                     
-[11] "Island Southeast Asia Late Prehistoric (Indo-Malasyaian Archipelago Early Metal Phase, Sa Huynh-Kalanay)"
-[12] "Somoan"                                                                                                  
-[13] "Melanesian"                                                                                              
-[14] "Celtic"                                                                                                  
-[15] "Scandinavian Iron Age (Roman Iron Age, Migration Period)"                                                
-[16] "TOP"                                                                                                     
-[17] "TOP"                                                                                                     
-[18] "Harder"                                                                                                  
-[19] "TOP"                                                                                                     
-[20] "Plains Woodland"                                                                                         
-[21] "Central Coast Regional Chiefdoms"                                                                        
-[22] "South Andean Ceramic"                                                                                    
-
-$`2.525001`
-[1] "Amuq Phases P-V"          
-[2] "Persian rule"             
-[3] "Achaemenid (Persian) rule"
-[4] "Roman Republic"           
-[5] "Persian rule"             
-[6] "Persian rule"             
-[7] "Achaemenid dynasty"       
-[8] "TOP"                      
-
-$`2.575001`
-[1] "TOP"                                  
-[2] "Late Iron Age III"                    
-[3] "Late Iron Age III"                    
-[4] "Adena"                                
-[5] "Highland Mesoamerican Late Preclassic"
-
-$`2.675001`
-[1] "Late Period"                        
-[2] "Lydian kingdom"                     
-[3] "West-Central European Late Iron Age"
-[4] "TOP"                                
-
-$`2.725001`
-[1] "Assyrian control of Megiddo"
-[2] "Archaic period"             
-[3] "Iron Age III Tradition"     
-
-$`2.775001`
- [1] "Assyrian then Babylonian rule"                        
- [2] "Phrygian kingdom"                                     
- [3] "Early Rome"                                           
- [4] "Iron Age"                                             
- [5] "East-cental European Iron Age"                        
- [6] "West-Central European Early Iron Age (Hallastatt C/D)"
- [7] "Central European Early Iron Age"                      
- [8] "Northeastern European Iron Age (Dacian)"              
- [9] "TOP"                                                  
-[10] "Chavin"                                               
-
-$`2.875001`
-[1] "Geometric period"
-
-$`2.925001`
-[1] "Neo-Assyrian / Neo-Babylonian period"
-
-$`2.975001`
- [1] "TOP"                                                                    
- [2] "Aramaean (Jewish) kingdom"                                              
- [3] "Isrealite control of southern Levant"                                   
- [4] "Iron Age II Tradition"                                                  
- [5] "Early Nomad (Karasuk)"                                                  
- [6] "Jomon (Final)"                                                          
- [7] "Micronesian"                                                            
- [8] "TOP"                                                                    
- [9] "TOP"                                                                    
-[10] "TOP"                                                                    
-[11] "Norton"                                                                 
-[12] "Initial Shield Woodland"                                                
-[13] "Woodland"                                                               
-[14] "Cosumnes"                                                               
-[15] "Late Southern California"                                               
-[16] "Basketmaker II"                                                         
-[17] "High Plains Late Archaic"                                               
-[18] "Eastern North America Early Woodland"                                   
-[19] "Trincheras"                                                             
-[20] "Early Caribbean (Saladoid, Early Ceramic, Troumassoid, Early Ostionoid)"
-[21] "Late Northwest South American Littoral"                                 
-[22] "Coastal Andean Late Formative (Early Horizon)"                          
-
-$`3.025001`
-[1] "Iron Age"      "Zhou Dynasty"  "Zhou  Dynasty"
-
-$`3.075001`
-[1] "--"                    "TOP"                  
-[3] "Late Iron Age II"      "Late Iron Age II"     
-[5] "South Indian Iron Age" "TOP"                  
-
-$`3.125001`
-[1] "Greek Dark Ages" "TOP"            
-
-$`3.175001`
-[1] "Iron Age"                           
-[2] "Amuq Phases N-O"                    
-[3] "Villages appear in Levant highlands"
-[4] "Villages appear in Levant highlands"
-[5] "Iron Age"                           
-
-$`3.225001`
-[1] "Cental Indian Iron Age (Central Indian Megalithic)"
-
-$`3.275001`
-[1] "TOP"                                        
-[2] "Western European Late Bronze Age (Urnfield)"
-
-$`3.325001`
-[1] "Late Iron Age I"       "Late Arabian Littoral"
-[3] "Late Iron Age I"      
-
-$`3.375001`
-[1] "Minoan (Crete) - Postpalatial"
-[2] "Olmec"                        
-[3] "Olmec"                        
-
-$`3.475001`
-[1] "TOP"                                
-[2] "Egyptian Control of Megiddo"        
-[3] "Egyptian Control of Megiddo"        
-[4] "Middle Assyrian / Babylonian period"
-[5] "Jomon (Late)"                       
-[6] "Lapita"                             
-[7] "Lapita"                             
-[8] "Early Chibcha (Columbia)"           
-[9] "Highland Andean Formative"          
-
-$`3.525001`
-[1] "New Kingdom"                                           
-[2] "Megiddo shows evidence of interntionalism"             
-[3] "Iranian Iron Age (Middle Elamite, Neo-Elamite, Median)"
-[4] "Iron Age I Tradition"                                  
-
-$`3.575001`
- [1] "Late Bronze Age"                       
- [2] "Mycenaean Period"                      
- [3] "Late Bronze Age"                       
- [4] "Mitanni period/ Kassite Interregnum"   
- [5] "Bronze Age"                            
- [6] "Late Xiajiadian"                       
- [7] "Shang and Zhou Dynasties"              
- [8] "Shang Dynasty"                         
- [9] "Shang Dynasty"                         
-[10] "Late Xiajiadian (Xiajiadian Shangceng)"
-[11] "TOP"                                   
-[12] "Nicoya"                                
-
-$`3.675001`
-[1] "Hittite kingdoms"            
-[2] "Minoan (Crete) - Neopalatial"
-
-$`3.77500099999999`
-[1] "--"                                                                    
-[2] "TOP"                                                                   
-[3] "Late Harappan"                                                         
-[4] "Western European Earlier Bronze Age (Tumulus Culture)"                 
-[5] "Northeastern European Bronze Age (Komarov, Trzciniec, Textile Pottery)"
-[6] "Scandinavian Bronze Age"                                               
-[7] "Late Sierra Nevada"                                                    
-[8] "Preclassic Maya"                                                       
-
-$`3.87500099999999`
-[1] "Vedic (Ganges Neolithic)"
-
-$`3.97500099999999`
- [1] "Middle Kingdom"                        
- [2] "Dry Sahara desert"                     
- [3] "North African Protohistoric"           
- [4] "West African Neolithic"                
- [5] "Middle Bronze Age"                     
- [6] "TOP"                                   
- [7] "Amuq Phases K-M"                       
- [8] "Canaanite and Amorite dynasties"       
- [9] "Middle Helladic culture"               
-[10] "Minoan (Crete) - Protopalatial"        
-[11] "Middle Bronze Age"                     
-[12] "Assyrian / Babylonian period"          
-[13] "Old Assyrian / Babylonian period"      
-[14] "TOP"                                   
-[15] "Mumun"                                 
-[16] "Mumum (New Guinea)"                    
-[17] "TOP"                                   
-[18] "TOP"                                   
-[19] "Wessex culture in British Isles"       
-[20] "Andronovo"                             
-[21] "Scythian"                              
-[22] "TOP"                                   
-[23] "Tarya Neolithic"                       
-[24] "Eastern Arctic Small Tool"             
-[25] "Kodiak (Kachemak)"                     
-[26] "TOP"                                   
-[27] "TOP"                                   
-[28] "Highland Mesoamerican Early Preclassic"
-[29] "Highland Mesoamerican Early Preclassic"
-[30] "Highland Mesoamerican Early Preclassic"
-[31] "Highland Mesoamerican Early Preclassic"
-
-$`4.07500099999999`
-[1] "Ur III"                        
-[2] "Top"                           
-[3] "Top"                           
-[4] "Xia Dynasty?"                  
-[5] "Formative"                     
-[6] "Coastal Andean Early Formative"
-
-$`4.17500099999999`
-[1] "Late"                                 
-[2] "--"                                   
-[3] "4.2 ka Cool (Ultra-Dry) event"        
-[4] "TOP"                                  
-[5] "TOP"                                  
-[6] "Late Arabian Pastoral"                
-[7] "Early Xiajiadian (Xiajiadian Xiaceng)"
-
-$`4.32500099999999`
-[1] "Akkadian" "Longshan" "Longshan"
-
-$`4.47500099999999`
-[1] "Ganges Neolithic (Ganges Neolithic _ Chalcolithic)"                                               
-[2] "TOP"                                                                                              
-[3] "Jomon (IMiddle)"                                                                                  
-[4] "Bell Beaker people"                                                                               
-[5] "TOP"                                                                                              
-[6] "Bell Beaker people"                                                                               
-[7] "Ertbolle"                                                                                         
-[8] "Highland Andean Late Archaic (Late Preceramic, Terminal Late Archaic, Late Archaic, Transitional)"
-
-$`4.52500099999999`
-[1] "Early Dynastic III Mesopotamia (Sumerian)"
-
-$`4.57500099999999`
-[1] "Mature Harappan"
-
-$`4.62500099999999`
-[1] "Old Kindom (pyramids)"                   
-[2] "Historic period"                         
-[3] "Early Dynastic II Mesopotamia (Sumerian)"
-
-$`4.67500099999999`
-[1] "European Early Bronze Age"
-[2] "Arctic Small Tool"        
-[3] "Western Arctic Small Tool"
-
-$`4.72500099999999`
-[1] "Amuq Phases H-J"
-
-$`4.87500099999999`
-[1] "Central African Neolithic"              
-[2] "Sumerian"                               
-[3] "Early Dynastic I Mesopotamia (Sumerian)"
-
-$`4.97500099999999`
- [1] "East African Neolithic"                   
- [2] "Early Helladic culture (Early Bronze age)"
- [3] "Minoan (Crete) - Prepalatial"             
- [4] "Copper and Bronze Age"                    
- [5] "Iranian Bronze Age"                       
- [6] "Central Indian Chalcolithic"              
- [7] "South Indian Chalcolithic"                
- [8] "Old Itel'men"                             
- [9] "Tucaunon"                                 
-[10] "Late East Brazilian Uplands"              
-
-$`5.07500099999999`
-[1] "Early Bronze Age"                
-[2] "Bronze Age"                      
-[3] "Southeastern European Bronze Age"
-
-$`5.12500099999999`
-[1] "Egyptian Dynasties" "Early Dynastic"    
-[3] "Dry Sahara desert" 
-
-$`5.17500099999999`
-[1] "Khartoum Neolithic"                       
-[2] "Harappan"                                 
-[3] "Early Harappan (early Indus Chalcolithic)"
-
-$`5.27500099999999`
-[1] "Bronze Age"
-
-$`5.47500099999999`
- [1] "Historic period"                       
- [2] "Early Bronze Age"                      
- [3] "TOP"                                   
- [4] "Kura-Araxes culture"                   
- [5] "TOP"                                   
- [6] "TOP"                                   
- [7] "Southeast China Late Neolithic"        
- [8] "Southeast China Late Neolithic"        
- [9] "Middle Northwest Coast"                
-[10] "Late Northwest South American Littoral"
-[11] "Late Northwest South American Littoral"
-
-$`5.57500099999999`
-[1] "Kongmeose"            "Caucasian Bronze Age"
-
-$`5.67500099999999`
-[1] "Southeastern European Late Chalcolithic"
-
-$`5.72500099999999`
-[1] "Middle Arabian Pastoral"
-
-$`5.77500099999999`
-[1] "Late Chalcolithic Mesopotamia"
-
-$`5.87500099999999`
-[1] "Late Iranian Chalcolithic"
-
-$`5.97500099999999`
- [1] "Uruk period"                                        
- [2] "Eastern Central Asia Neolithic and Bronze"          
- [3] "TOP"                                                
- [4] "Hallstatt cultures"                                 
- [5] "Corded Ware culture"                                
- [6] "European Megalithic"                                
- [7] "Corded Ware culture (Battle Axe, Globular Amphorae)"
- [8] "Scandinavian Neolithic"                             
- [9] "Archaic"                                            
-[10] "Aleutian"                                           
-[11] "Shield Archaic"                                     
-[12] "Northern"                                           
-[13] "Late Archaic"                                       
-[14] "TOP"                                                
-[15] "Eastern North America Late Archaic"                 
-
-$`6.17500099999999`
-[1] "TOP"                                     
-[2] "TOP"                                     
-[3] "Dawenkou"                                
-[4] "Top"                                     
-[5] "Southeastern European Early Chalcolithic"
-
-$`6.22500099999999`
-[1] "Ubaid 4"
-
-$`6.27500099999999`
-[1] "Indus Stage 2"   "Magellan-Fuegan"
-
-$`6.42500099999999`
-[1] "Ubaid 3"
-
-$`6.47500099999998`
- [1] "Naqadan Culture"                                         
- [2] "Rapid drying of Sahara"                                  
- [3] "Chalcolithic"                                            
- [4] "Southeast Asia Neolithic and Bronze"                     
- [5] "Chalcolithic (Copper Age)"                               
- [6] "Eurasian Steppe Nomad (Yamnaya, Katacombnaya)"           
- [7] "Linear Pottery culture (Linearbandkeramik (LBK) culture)"
- [8] "Linear Pottery culture (Linearbandkeramik (LBK) culture)"
- [9] "Linear Pottery culture (Linearbandkeramik (LBK) culture)"
-[10] "Eurasian Steppe Nomad"                                   
-
-$`6.67500099999998`
-[1] "Ubaid 2"
-
-$`6.77500099999998`
-[1] "Middle Iranian Chalcolithic"
-[2] "Impressed Ware"             
-
-$`6.82500099999998`
-[1] "Neolithic (Impressed Ware pottery)"
-[2] "Neolithic (Impressed Ware pottery)"
-
-$`6.87500099999998`
-[1] "Ubaid 1"
-
-$`6.97500099999998`
- [1] "Ubaid culture"                
- [2] "Ubaid culture"                
- [3] "TOP"                          
- [4] "Neolithic"                    
- [5] "Calcolithic (Copper Age)"     
- [6] "Middle Arabian Littoral"      
- [7] "Top"                          
- [8] "Late Neolithic"               
- [9] "Honshan"                      
-[10] "Yangshao"                     
-[11] "Jomon (Early)"                
-[12] "Late Australian"              
-[13] "Northwest Microblade"         
-[14] "Archaic"                      
-[15] "Highland Mesoamerican Archaic"
-[16] "Highland Mesoamerican Archaic"
-[17] "Highland Mesoamerican Archaic"
-[18] "Highland Mesoamerican Archaic"
-[19] "Lowland Mesoamerican Archaic" 
-[20] "Archaic"                      
-[21] "Highland Andean Early Archaic"
-[22] "Coastal  Andean Early Archaic"
-[23] "Early Parana-Pampean"         
-[24] "Early Amazonian"              
-[25] "Sambaqui"                     
-
-$`7.07500099999998`
-[1] "Ubaid"   "Ubaid 0"
-
-$`7.47500099999998`
-[1] "Saharo-Sudanese Neolithic"                
-[2] "Southern Mediterranean Neolithic"         
-[3] "Iranian Chalcolithic"                     
-[4] "Early Iranian Chalcolithic"               
-[5] "Early Indus (PreHarappan, Early Harappan)"
-
-$`7.67500099999998`
-[1] "Halafian"
-
-$`7.87500099999998`
-[1] "Amuq Phases C-G"
-
-$`7.97500099999998`
- [1] "Neolithic"                                                 
- [2] "Saharo-Sudanese Neolithic"                                 
- [3] "Saharo-Sudanese Neolithic"                                 
- [4] "Ceramic Neolithic (Late or Pottery Neolithic)"             
- [5] "Ceramic Neolithic"                                         
- [6] "Chulumn (Pissalmun, Comb-Pattern)"                         
- [7] "Neolithic"                                                 
- [8] "Southeastern European Neolithic (Karanovo, Sesklo)"        
- [9] "Kelteminar"                                                
-[10] "Siberian Neolithic and Bronze"                             
-[11] "Baikal Neolithic and Bronze"                               
-[12] "Kamchatka Mesolithic"                                      
-[13] "Ocean Bay"                                                 
-[14] "Late Tundra"                                               
-[15] "Middle Archaic"                                            
-[16] "Cascade"                                                   
-[17] "Windmiller (Early Horizon)"                                
-[18] "Early Southern California"                                 
-[19] "TOP"                                                       
-[20] "Middle Desert Archaic (Southwest Archaic, Western Archaic)"
-[21] "TOP"                                                       
-[22] "High Plains Early and Middle Archaic"                      
-[23] "Eastern North America Middle Archaic"                      
-[24] "Coahuilan"                                                 
-
-$`8.07500099999998`
-[1] "Wet Sahara (no desert)" "Halafian"              
-
-$`8.17500099999998`
-[1] "Middle"                      
-[2] "8.2 ka Cool event (Dry)"     
-[3] "Samarra and Hassuna cultures"
-
-$`8.27500099999998`
-[1] "Bashendi pastorism"
-
-$`8.47500099999999`
-[1] "Early Khartoum"                                 
-[2] "Halaf culture"                                  
-[3] "Ceramic phase of Iranian Neolithic"             
-[4] "Peilingang, Yangshao, Hongshan, Daxi, Majiabang"
-[5] "TOP"                                            
-[6] "Peilingang (central)"                           
-
-$`8.77500099999999`
-[1] "Amuq Phases A-B"
-
-$`8.97500099999999`
-[1] "Mesolithic-Neolithic transition"            
-[2] "Neolithic"                                  
-[3] "Neolithic (pre-pottery)"                    
-[4] "Neolithic"                                  
-[5] "Indus Neolithic"                            
-[6] "Southeast China Early Neolithic (Dapenkeng)"
-[7] "Southeast China Early Neolithic (Dapenkeng)"
-[8] "Plains Archaic"                             
-[9] "Early Northwest South American Littoral"    
-
-$`9.475001`
-[1] "TOP"                                          
-[2] "Western European Mesolithic"                  
-[3] "Western European Mesolithic"                  
-[4] "Early Northwest Coast (Pebble Tool Tradition)"
-
-$`9.575001`
-[1] "Early Archaic"             
-[2] "Early Mesoamerican Archaic"
-[3] "Early Mesoamerican Archaic"
-[4] "Early Mesoamerican Archaic"
-[5] "Early Mesoamerican Archaic"
-
-$`9.97500100000001`
- [1] "Neolithic of Capsian"                        
- [2] "Wilton"                                      
- [3] "Jomon (Initial)"                             
- [4] "Hoabinhian"                                  
- [5] "New Guinea Neolithic"                        
- [6] "TOP"                                         
- [7] "Early Archaic"                               
- [8] "Early Sierra Nevada (Early Archaic Cascades)"
- [9] "Archaic Oregon Coast"                        
-[10] "San Dieguito"                                
-[11] "Early Desert Archaic"                        
-[12] "Eastern North America Early Archaic"         
-
-$`10.275001`
-[1] "Mesolithic (Epipaleolithic)"
-[2] "Mesolithic"                 
-
-$`10.475001`
-[1] "Masara"                                    
-[2] "Wet Sahara (no desert)"                    
-[3] "Aceramic Neolithic (Pre-Pottery Neolithic)"
-[4] "Aceramic Neolithic (Pre-Pottery Neolithic)"
-[5] "Aceramic Neolithic (Pre-Pottery Neolithic)"
-[6] "Holocene Stone Age of Northeast Asia"      
-
-$`10.775001`
-[1] "TOP"
-
-$`10.975001`
- [1] "Mesolithic"                                        
- [2] "Early Arabian Pastoral"                            
- [3] "Early Arabian Littoral"                            
- [4] "Mesolithic"                                        
- [5] "Eastern European Mesolithic (Epipaleolithic)"      
- [6] "Northern Mediterranean Mesolithic (Epipaleolithic)"
- [7] "TOP"                                               
- [8] "Paleo-Arctic"                                      
- [9] "Paleo-Arctic"                                      
-[10] "Paleo-Arctic"                                      
-[11] "Paleo-Arctic"                                      
-[12] "Paleo-Arctic"                                      
-[13] "Late Paleo-Indian (Folsom)"                        
-[14] "Old Amazonian Collecting-Hunting"                  
-[15] "Early East Brazilian Uplands"                      
-
-$`11.475001`
-[1] "Pre-Pottery Neolithic"                  
-[2] "Iranian Neolithic"                      
-[3] "Aceramic phase of the Iranian Neolithic"
-
-$`11.775001`
-[1] "Early"      "Mesolithic"
-
-$`11.975001`
-[1] "Beginnings of Agriculture"     
-[2] "Early Neolithic (Homo sapiens)"
-[3] "Jomon (Incipient)"             
-[4] "Paleo-Indian (Neolithic)"      
-[5] "Amur Neolithic and Bronze"     
 
