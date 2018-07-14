@@ -1,0 +1,285 @@
+$`0.012501`
+[1] "Republic"
+
+$`0.037501`
+[1] "TOP"              "Republic of Iraq" "TOP"             
+[4] "TOP"              "TOP"             
+
+$`0.062501`
+[1] "TOP"                       "Independent States"       
+[3] "Hashemite Kingdom of Iraq" "Pahlavi Dynasty"          
+
+$`0.087501`
+[1] "Republic"        "British Mandate" "TOP"             "Republic"       
+[5] "-"               "Republic"        "Republic"        "Republic"       
+[9] "TOP"            
+
+$`0.137501`
+ [1] "Unified nation" "TOP"            "TOP"            "Reservations"  
+ [5] "TOP"            "TOP"            "TOP"            "TOP"           
+ [9] "TOP"            "TOP"            "TOP"            "TOP"           
+
+$`0.162501`
+[1] "Independent States" "Independent"       
+
+$`0.187501`
+[1] "TOP"            "TOP"            "Industrial Age" "TOP"           
+[5] "TOP"            "TOP"           
+
+$`0.212501`
+[1] "Qajar Dynasty" "TOP"          
+
+$`0.237501`
+[1] "TOP" "TOP"
+
+$`0.262501`
+[1] "al-Saud dynasty"
+
+$`0.287501`
+[1] "TOP"
+
+$`0.312501`
+[1] "Manchu (Qing)"
+
+$`0.337501`
+[1] "TOP"
+
+$`0.362501`
+[1] "Qing dynasty"
+
+$`0.387501`
+[1] "Qing dynasty"           "Feudal (Edo, Tokugawa)" "TOP"                   
+[4] "Eskimo, Athapaskan"     "Inuit, Athapaskan"      "European influence"    
+
+$`0.437501`
+[1] "TOP" "TOP" "TOP"
+
+$`0.462501`
+[1] "Ottoman rule"                  "Spanish and Portuguese influx"
+[3] "TOP"                          
+
+$`0.487501`
+ [1] "TOP"             "TOP"             "Ottoman Empire"  "Safavid Rule"   
+ [5] "Safavid dynasty" "TOP"             "Ottoman rule"    "TOP"            
+ [9] "-"               "Russian empire"  "Russian empire"  "Russian empire" 
+[13] "TOP"             "TOP"             "TOP"             "TOP"            
+[17] "TOP"             "TOP"             "TOP"             "TOP"            
+[21] "TOP"             "New Spain"       "TOP"             "TOP"            
+[25] "TOP"             "Top"             "TOP"             "TOP"            
+[29] "TOP"             "TOP"             "TOP"             "TOP"            
+[33] "TOP"            
+
+$`0.512501`
+[1] "Renaissance"                        "Tudor, Stuart, Hanoverian, Windsor"
+
+$`0.537501`
+[1] "Ottoman"            "Ottoman Empire"     "Ottoman Empire"    
+[4] "Aq Quyunlu Dynasty" "Aq Quyunlu Dynasty" "TOP"               
+[7] "TOP"                "TOP"                "TOP"               
+
+$`0.587501`
+[1] "Qara Quyunlu Dynasty" "Qara Quyunlu Dynasty" "TOP"                 
+[4] "Aztec"                "Aztec Empire"        
+
+$`0.612501`
+[1] "Timurid Rule"
+
+$`0.637501`
+[1] "TOP"          "TOP"          "Ming dynasty" "Ming dynasty" "TOP"         
+
+$`0.662501`
+[1] "Jalayirid Dynasty"                                          
+[2] "Muzaffarid Dynasty(in South)/ Jalayirid Rule (in Northwest)"
+
+$`0.712501`
+[1] "Mamluk rule"                   "Yuan, Ming and Qing Dynasties"
+[3] "Mongol (Yuan)"                
+
+$`0.737501`
+[1] "Mamluk rule/ Ilkhanid Period" "Ilkhanid Period"             
+[3] "Mamluk rule"                  "Late Anasazi"                
+
+$`0.762501`
+[1] "Mongol (Yuan)"
+
+$`0.787501`
+[1] "Mongol rulers"         "Mongol (Golden Horde)" "Mongol rule"          
+[4] "Mongol rule"           "Mongol rule"           "Inca"                 
+
+$`0.837501`
+[1] "Plantagenet"
+
+$`0.862501`
+[1] "Jin dynasty"
+
+$`0.887501000000001`
+[1] "TOP"                                                    
+[2] "Scandinavian regional kingdoms"                         
+[3] "Scandinavian regional kingdoms"                         
+[4] "Aymara Kingdom (Lake Titicaca)"                         
+[5] "Andean Regional States (Late Intermediate Period (LIP))"
+
+$`0.912501`
+[1] "Crusader Kingdom"      "Byzantine & Sultinate"
+
+$`0.937501000000001`
+[1] "Seljuq Sulanate"            "Seljuq / Khwarazmshah rule"
+[3] "Norman"                     "Late Hohokam"              
+
+$`0.987501000000001`
+[1] "TOP"                                                        
+[2] "Late Prehistoric"                                           
+[3] "Northern Plains Village"                                    
+[4] "Fort Ancient"                                               
+[5] "Proto-Iroquois (Algonquian and Iroquoian language cultures)"
+[6] "Late Caribbean"                                             
+
+$`1.037501`
+[1] "Song dynasty"                                               
+[2] "Holy Roman Empire"                                          
+[3] "Capetian, Valois, and Bourbon (France); Iberian kingdoms"   
+[4] "Late Mogollon"                                              
+[5] "Northeast Late Woodland"                                    
+[6] "Oneota"                                                     
+[7] "Postclassic Southern Mexican Highlands (Postclassic Oaxaca)"
+[8] "Chimu"                                                      
+
+$`1.062501`
+[1] "TOP"           "Buyid Dynasty" "Buyid Rule"   
+
+$`1.087501`
+[1] "Samanid Dynasty (Khorasan)"          
+[2] "Liao dynasty"                        
+[3] "TOP"                                 
+[4] "Central Plains Village"              
+[5] "Mississippian (Middle Mississippian)"
+[6] "West Mexico Postclassic"             
+[7] "Postclassic Maya"                    
+
+$`1.137501`
+[1] "Saffarid Dynasty"
+
+$`1.187501`
+[1] "Tahirid Dynasty"         "Chiriqui"               
+[3] "Manteno"                 "Late Chibcha (Columbia)"
+[5] "TOP"                     "Huari (or Wari)"        
+
+$`1.212501`
+[1] "Viking culture" "Viking culture"
+
+$`1.237501`
+[1] "West African Regional Development"     
+[2] "TOP"                                   
+[3] "Papal and city states"                 
+[4] "Abbasid caliphate"                     
+[5] "Abbasid rule"                          
+[6] "Abbasid caliphate"                     
+[7] "Carolingian (France); Umayyad (Iberia)"
+[8] "TOP"                                   
+
+$`1.262501`
+[1] "Uighur kingdom"
+
+$`1.287501`
+[1] "Toltec"                     "Central Mexico Postclassic"
+[3] "TOP"                        "TOP"                       
+
+$`1.337501`
+[1] "Islamic"                            
+[2] "Umayyad caliphate"                  
+[3] "Umayyad rule"                       
+[4] "Umayyad caliphate"                  
+[5] "Late Woodland"                      
+[6] "Early Anasazi"                      
+[7] "Eastern North America Late Woodland"
+
+$`1.362501`
+[1] "Spread of Islam"                    "Islamic"                           
+[3] "Caliphate rule"                     "TOP"                               
+[5] "Islamic rule"                       "Rule of the Rightly Guided Caliphs"
+
+$`1.412501`
+[1] "Sui, Tang and Song Dynasties" "Sui and Tang Dynasties"      
+[3] "Sui and Tang Dynasties"      
+
+$`1.437501`
+[1] "Lombard kingdom" "Turkish khanate"
+
+$`1.487501`
+ [1] "-"                                                                                            
+ [2] "TOP"                                                                                          
+ [3] "TOP"                                                                                          
+ [4] "TOP"                                                                                          
+ [5] "Rapanui or Rapa Nui"                                                                          
+ [6] "Medieval"                                                                                     
+ [7] "Vendel culture"                                                                               
+ [8] "Vendel culture"                                                                               
+ [9] "TOP"                                                                                          
+[10] "Late Northwest Coast (Developed Northwest Coast, Late Pacific, Late Prehistoric, Late Marine)"
+[11] "Hotchkiss (Late Horizon, Augustine Pattern)"                                                  
+[12] "High Plains Late Prehistoric (Avonlea, Late Woodland, Old Women's)"                           
+[13] "Ecuadorian Highlands"                                                                         
+[14] "Paya"                                                                                         
+[15] "Tupi"                                                                                         
+[16] "Late Parana-Pampean"                                                                          
+
+$`1.512501`
+[1] "Kingdom of Ostrogoths"                   
+[2] "Merovingian (France); Visigoths (Iberia)"
+[3] "Top"                                     
+
+$`1.587501`
+[1] "Juan-juan empire"                    
+[2] "Anglo-Saxon"                         
+[3] "Fremont"                             
+[4] "Late Desert Archaic (Proto-Numic)"   
+[5] "Patayan (Hakataya, Proto-Yuman)"     
+[6] "TOP"                                 
+[7] "Tiwanaku (Tiahuanaco, Lake Titicaca)"
+
+$`1.612501`
+[1] "Wei dynasty"
+
+$`1.662501`
+[1] "Byzantine Period"
+
+$`1.687501`
+ [1] "Cape Africa Iron Age"                
+ [2] "Byzantine"                           
+ [3] "Byzantine Empire"                    
+ [4] "Byzantine Empire"                    
+ [5] "Byzantine Empire"                    
+ [6] "Western Roman Empire"                
+ [7] "Jin, Song, Qi, Liang, Chen dynasties"
+ [8] "Dark Ages"                           
+ [9] "Byzantium"                           
+[10] "TOP"                                 
+[11] "TOP"                                 
+
+$`1.737501`
+[1] "Southern Mexican Highland Classic"
+
+$`1.787501`
+[1] "Sasanian rule"       "Sasanian rule"       "Sasanian empire"    
+[4] "-"                   "-"                   "-"                  
+[7] "Huatabampo"          "West Mexico Classic"
+
+$`1.837501`
+[1] "TOP"          "Mayan"        "Classic Maya"
+
+$`1.937501`
+[1] "Roman rule"                   "Moche (Mochica, Early Chimu)"
+
+$`1.987501`
+ [1] "AD"                                                                                 
+ [2] "South African Early Iron Age in Zambia"                                             
+ [3] "TOP"                                                                                
+ [4] "Polynesian expansion"                                                               
+ [5] "Siberian Protohistoric"                                                             
+ [6] "Proto-Athapaskan (Late Northern Archaic, Late Taltheilei in East, Athapaskan, Dene)"
+ [7] "Formative Oregon Coast"                                                             
+ [8] "Early Hohokam"                                                                      
+ [9] "Early Mogollon"                                                                     
+[10] "Gran Cocle"                                                                         
+[11] "Late Amazonian"                                                                     
+
