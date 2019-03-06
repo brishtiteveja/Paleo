@@ -1,0 +1,623 @@
+---
+title: "EAPS509-Final Project"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/ML-Data Mining/programming")
+```
+
+
+
+## Greenland NGRIP delta-Oxy-18 data 
+ For this analysis, we will use delta-Oxy-18-data compiled by Seierstad et al(2014)[5]. We will later look at the Holocene stage event frequency. We will only focus on the delta-Oxy-18-data of the Holocene stage for now.
+```{r}
+# Set the directory where the ngrip data is located
+#data_dir <- ('/Users/ananda/Documents/Workspace/PurdueUniversity/RA/TSCreator/DataMining/programming/')
+data_dir <- ('/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/ML-Data Mining/programming/')
+fn <- paste(data_dir, 'NGRIP_Oxy18_Holocene_Stage_Data.txt', sep='')
+ngrip_dat <- read.csv(fn, sep='\t')
+grip_age <- ngrip_dat$ngrip_age
+grip_oxy <- ngrip_dat$ngrip_oxy18
+plot(grip_age, grip_oxy, type='l', xlab='Age(Ka)', ylab='delta-Oxy18(%)', main='NGRIP delta-Oxy18 vs Holocene Stage Ages')
+points(grip_age, grip_oxy, cex=0.01, col='red')
+```
+
+# Additional data download
+```{r download and processing function}
+download_data <- function(data_file_name, url)
+{  
+  if (!(data_file_name %in% dir()))    
+    download.file(url, data_file_name)
+}
+process_data <- function(data_file_name, col_num, sep=" ") 
+{  
+  # read the data file  
+  f <- file(data_file_name, 'r')  
+  # read all the lines from the file  
+  data <- readLines(f)    
+  # get the line for the column names  
+  data_cols <- data[col_num]  
+  start_num <- col_num + 1
+  # cut out the data portion  
+  data_cols <- strsplit(data_cols, sep)[[1]] 
+  data_cols <- data_cols[data_cols != ""]  
+  data <- data[start_num:length(data)]
+  data_frame <- data.frame()
+  # generate the data frame after string processing, basically collecting the column data  
+  for(l in data) 
+  { 
+    if (sep != "\t") {
+      chars <- strsplit(l, " ")[[1]]    
+      chars <- chars[chars != ""]    
+    } else if (sep == "\t") {
+      chars <- strsplit(l, sep)[[1]]
+    }
+    chars <- as.double(chars) 
+    data_frame <- rbind(data_frame, chars) 
+  }    
+  
+   # set the column name  
+   colnames(data_frame) <- data_cols    
+   return(data_frame)
+}
+
+process_bun_data <- function(data_file_name, col_num, end_line, sep=" ") 
+{  
+  # read the data file  
+  f <- file(data_file_name, 'r')  
+  # read all the lines from the file  
+  data <- readLines(f)    
+  # get the line for the column names  
+  data_cols <- data[col_num]  
+  start_num <- col_num + 1
+  # cut out the data portion  
+  data_cols <- strsplit(data_cols, sep)[[1]] 
+  data_cols <- data_cols[data_cols != ""]  
+  data <- data[start_num+1:end_line]
+  data_frame <- data.frame()
+  # generate the data frame after string processing, basically collecting the column data  
+
+  ranges <- list()
+  excols <- list()
+  ranges[[1]] <- c(-499,-399) # exclude 2, 3, 4, 5, 9-th col
+  excols[[1]] <- c(-1,  2,  2,  4, 5, -1, -1, -1, 9)
+  
+  ranges[[2]] <- c(-398, 754) # exclude 5, 9-th col
+  excols[[2]] <- c(-1, -1, -1, -1, 5, -1, -1, -1, 9) 
+  
+  ranges[[3]] <- c(755, 995)  # exclude 5-th col
+  excols[[5]] <- c(-1, -1, -1, -1, 5, -1, -1, -1, -1) 
+  
+  ranges[[4]] <- c(996, 2003) # no exclusion
+  excols[[6]] <- c(-1, -1, -1, -1, -1, -1, -1, -1, -1) 
+
+  l <- data[1]
+  for(l in data) 
+  { 
+    if (sep != "\t") {
+      chars <- strsplit(l, " ")[[1]]    
+      chars <- chars[chars != ""]    
+    } else if (sep == "\t") {
+      chars <- strsplit(l, sep)[[1]]
+    }
+    
+    yr <- as.double(chars[1])
+    if (is.na(yr) || yr > 2003)
+      break
+    i <- 1
+    for(r in ranges) 
+    {
+       if (yr >= r[1] && yr <= r[2]) 
+       {
+         j <- 0
+         ecols <- excols[[i]]
+         for (ec in ecols)
+         {
+            if (ec != -1)
+              chars <- append(chars, "-Inf", j) 
+            j <- j + 1
+         }  
+         if (length(chars) == 8)
+            chars <- append(chars, "-Inf", 9) 
+         break
+       } else {
+         break
+       }
+       i <- i + 1
+    }
+    
+    chars <- as.double(chars) 
+    data_frame <- rbind(data_frame, chars) 
+  }    
+  
+   colnames(data_frame) <- data_cols
+   # set the column name  
+   return(data_frame)
+}
+
+```
+
+```{r download and process}
+cur_dir <- getwd()
+t_dir <- "/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/ML-Data Mining/databases/external_data/"
+setwd(t_dir)
+
+# Stei solar activity reconstruction data download
+stei_ftp_data_url <- "ftp://ftp.ncdc.noaa.gov/pub/data/paleo/climate_forcing/solar_variability/steinhilber2012.txt"
+stei_data_file_name <- "steinhilber2012.txt"
+download_data(stei_data_file_name, stei_ftp_data_url)
+col_num <- 157
+stei_df <- process_data(stei_data_file_name, col_num)
+plot(-stei_df$Year, stei_df$`1.PC`, type='l', col='blue', xlab='Year BC/AD', ylab='T ANN(°C)', main="Steinhilber F, Abreu JA, Beer J, et al.: temperature anomaly")
+
+
+# Pet data download
+pet_data_file_name <- "deutnat.txt"
+pet_ftp_data_url <- "ftp://ftp.ncdc.noaa.gov/pub/data/paleo/icecore/antarctica/vostok/deutnat.txt"
+download_data(pet_data_file_name, pet_ftp_data_url)
+col_num <- 111
+pet_df <- process_data(pet_data_file_name, col_num, sep="\t")
+
+#plot(pet_df$`Ice age (GT4)`, pet_df$deltaTS, type='l')
+
+pet_df_holocene <- subset(pet_df, pet_df$`Ice age (GT4)` <= 12000)
+plot(-pet_df_holocene$`Ice age (GT4)`, pet_df_holocene$deltaTS, type='l', col='blue', xlab='Year BC/AD', ylab='delta-T(°C)', main="Petit et al. 2017: temperature anomaly [°C] from δD of ice-cores")
+
+# Bun data download
+bun_data_file_name <- "buentgen2011europe.txt"
+bun_ftp_data_url <-"ftp://ftp.ncdc.noaa.gov/pub/data/paleo/treering/reconstructions/europe/buentgen2011europe.txt"
+download_data(bun_data_file_name, bun_ftp_data_url)
+col_num <- 106
+end_line <- 2600
+bun_df <- process_bun_data(bun_data_file_name, col_num, end_line, sep=" ")
+plot(bun_df$Year, bun_df$TempJJA - mean(bun_df$TempJJA), type='l', col='blue', xlab="Year", ylab="T ANN(°C)", main="Büntgen et al.2017: temperature anomaly")
+
+setwd(cur_dir)
+```
+
+```{r spectral power analysis for pet,stei, bun data}
+  spec.pgram(bun_df$TempJJA,kernel('daniell',3),log='no',taper=0,fast=F)
+
+```
+
+## Investigation of NGRIP delta-Oxy-18 data
+In geochemistry, paleoclimatology and paleoceanography delta-O-18 is a measure of the ratio of stable isotopes oxygen-18 (18O) and oxygen-16 (16O). It is commonly used as a measure of the temperature of precipitation, as a measure of groundwater/mineral interactions, and as an indicator of processes that show isotopic fractionation, like methanogenesis. In paleosciences, \( ^{18}O:^{16}O \) data from corals, foraminifera and ice cores are used as a proxy for temperature. The definition is, in "per mil" (‰, parts per thousand):
+\(
+   \delta^{18}O = \left(
+                        \frac{
+                              \left(  
+                                    \frac{
+                                        ^{18}O
+                                         }{
+                                        ^{16}O}
+                              \right)_{sample}
+                             }
+                            {
+                              \left(
+                                    \frac{
+                                        ^{18}O
+                                         }{
+                                        ^{16}O
+                                         }
+                              \right)_{standard}
+                            }
+                  -1 \right) * 1000% 
+\)
+
+We have delta-Oxy-18 data for every 20 years for the holocene stage(0~12Ka) here. We can see the summary of the data below. The histogram also shows the frequency of delta-Oxy-18 data.
+```{r}
+str(grip_age)
+summary(grip_age)
+str(grip_oxy)
+summary(grip_oxy)
+hist(grip_oxy, breaks=10, xlab='delta-oxy-18', main='Histogram of delta-Oxy-18')
+```
+
+## Moving average of delta-Oxy-18 Data
+We are taking every 100 year moving average to smooth the curve below. We can see a relatively steady value for past 10 thousands years.
+```{r}
+boxnumber<-5 # Every 100 year average data
+boxcar<-c(1,1,1,1,1)/boxnumber
+
+# using convolve the avg value is not centered
+#grip_oxy_avg <- convolve(grip_oxy, boxcar, type='filter')
+#grip_age_2 <- grip_age[(boxnumber/2+1):(length(grip_age)-(boxnumber/2-1))]
+
+# filter centres the value
+grip_oxy_avg <- filter(grip_oxy, boxcar)
+
+plot(grip_age, grip_oxy, type='l', xlab='Age(Ka)', ylab='delta-Oxy-18', main='NGRIP delta-Oxy-18 vs Holocene Stage Ages')
+lines(grip_age, grip_oxy_avg, col='red')
+```
+
+Let's plot after getting a zero mean vector by subtracting the mean value.
+```{r}
+# zero mean
+grip_oxy.dm = grip_oxy - mean(grip_oxy)
+plot(grip_age, grip_oxy.dm, type='l', xlab='Age(Ka)', ylab='delta-Oxy-18', main='NGRIP delta-Oxy-18 vs Holocene Stage Ages', ylim=c(-7,7))
+grip_oxy_avg.dm = grip_oxy_avg - mean(grip_oxy)
+lines(grip_age, grip_oxy_avg.dm, col='red')
+
+
+```
+
+## Extrapolation of temperature
+The stable isotope ratio, (O18/O16), is the main reference parameter, since its variability is determined mainly by the cloud temperature at the moment of snow formation and thus has direct climatic relevance, assuming unchanged temperature and humidity at the original moisture source areas. On the greenland Ice Sheet, the present mean annual delta-Oxy18 ( the per mil deviation of O18/)16 ratio in the sample from the O18/O16 value in standard mean ocean water) of the snow is related closely to the mean annual surface temperature, T in degree Celsius, by the formula (Johnsen et al 1997)
+\( \delta = 0.67 T - 0.137 \)
+\(T = (\delta + 0.137) / 0.67 \)
+
+The GRIP calibration curve in Figure2(Johnsen et al 1997) is based on a slightly improved model for the temperature profile calculations by accounting fully for the thermal properties of the firn layer. This resulted in slight changes in the 8 - T relationship published earlier [Johnsenet al., 1995a],from 1.7 to 2.0øC/%o at -35%0 and from 3.5 to 3.1øC/%oat -42%0. 
+
+
+```{r}
+par(mar=c(5,5,5,5))
+deltaOxyToTemp <- function(delta) {
+  alpha <- -211.4
+  beta <- -11.88
+  gamma <- -0.1925
+  Temp <- alpha + beta * delta + gamma * delta^2
+  return(Temp)
+}
+
+Temp <- deltaOxyToTemp(grip_oxy)
+
+par(mar=c(5, 4, 4, 8) + 0.2) 
+plot(grip_age, Temp, type='l', xlab='Age(Ka)', ylab='Temperature(°C)', main='Relationship between Temperature and GRIP delta-Oxy-18')
+
+T_avg <- filter(Temp, boxcar)
+lines(grip_age, T_avg, col='red')
+
+#par(new=TRUE, mar=c(5, 4, 4, 8) + 0.2)
+plot(grip_age, grip_oxy, type='l')#, xaxt="n", yaxt="n", xlab="", ylab="")
+lines(grip_age, grip_oxy_avg, col='green')
+#axis(side = 4)
+#mtext(side = 4, line = 3, 'delta-Oxy-18(green)')
+#grip_oxy_avg.dm = grip_oxy_avg - mean(grip_oxy)
+#lines(grip_age, grip_oxy_avg.dm, col='red')
+```
+
+We see a relatively steady temperature during Holocene stage. The paleo temperature curve can be seen from here
+https://en.wikipedia.org/wiki/Geologic_temperature_record#/media/File:All_palaeotemps.svg
+
+From the equation, T = 16.5 - 4.3 \delta + 0.14 \delta^2, we know that we have a linear relationship between temperature and delta-oxy-18. We can verify that the correlation coefficient is -1.
+```{r}
+plot(Temp, grip_oxy, xlab= 'Temperature(°C)', ylab='delta-Oxy-18')
+cor(Temp, grip_oxy)
+
+lm.fit = lm(grip_oxy ~ Temp)
+summary(lm.fit)
+
+abline(lm.fit$coefficients, col="red", lwd=2)
+```
+
+## Holocene Stage Global/Cultural Change Data Preprocessing
+
+## Data loading
+```{r}
+#data_dir <- ('/Users/ananda/Documents/Workspace/PurdueUniversity/RA/TSCreator/DataMining/programming/')
+#data_dir <- ('/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Data Mining/programming/')
+
+# Number of events every 100 year
+fn_100 <- paste(data_dir, 'event_frequency_per_100_yr_dat.txt', sep='')
+ev_f_100 <- read.csv(fn_100, sep=' ')
+
+# Number of events every 50 year
+fn_50 <- paste(data_dir, 'event_frequency_per_50_yr_dat.txt', sep='')
+ev_f_50 <- read.csv(fn_50, sep=' ')
+
+fn_20 <- paste(data_dir, 'event_frequency_per_20_yr_dat.txt', sep='')
+ev_f_20 <- read.csv(fn_20, sep=' ')
+```
+
+Plotting the event frequency data for different sized year bin(100, 50, 20). We can see that there are more events in recent times. As we squeeze the bin size(years), naturally the number of events per bin drops.
+```{r}
+# Plotting the events of every 100 years
+plot(ev_f_100$ages_100, ev_f_100$events_100, main='Number of events per 100 years during Holocene stage',
+      xlab='Age(Ka)', ylab='Number of events', type='l', ylim=c(0,50))
+points(ev_f_100$ages_100, ev_f_100$events_100, cex=0.1, col='red')
+
+# Plotting the events of every 50 years
+plot(ev_f_50$ages_50, ev_f_50$events_50, main='Number of events per 50 years during Holocene stage',
+      xlab='Age(Ka)', ylab='Number of events', type='l', ylim=c(0,50))
+points(ev_f_50$ages_50, ev_f_50$events_50, cex=0.1, col='red')
+
+# Plotting the events of every 20 years
+plot(ev_f_20$ages_20, ev_f_20$events_20, main='Number of events per 20 years during Holocene stage',
+      xlab='Age(Ka)', ylab='Number of events', type='l', ylim=c(0,50))
+points(ev_f_20$ages_20, ev_f_20$events_20, cex=0.1, col='red')
+```
+
+Now we will try to plot the event frequency curve and the GRIP delta-oxy-18 curve together to see whether we can find any correlation.
+
+```{r}
+ev_f_100$events_100_mavg <- filter(ev_f_100$events_100, boxcar)
+plot(ev_f_100$ages_100, ev_f_100$events_100, ylab="Number of Events", main='Event frequency per 100 years during Holocene stage',
+      xlab='Age(Ka)', type='l', ylim=c(0,60))
+points(ev_f_100$ages_100, ev_f_100$events_100, cex=0.1, col='red')
+lines(ev_f_100$ages_100, ev_f_100$events_100_mavg, col='orange')
+
+par(new=TRUE)
+plot(grip_age, grip_oxy, type='l', col='blue', xaxt='n', yaxt='n', xlab='', ylab='', ylim=c(-43,-28))
+axis(side = 4)
+mtext(side = 4, line = 3, 'delta-Oxy-18(%)')
+grip_oxy.mavg = filter(grip_oxy, boxcar)
+lines(grip_age, grip_oxy.mavg, type='l', col='red')
+
+
+legend("topright", col=c("black", "orange", "blue", "red"), lty=c(1, 1, 1, 1), c("Event frequency", "Rolling avg of event frequency", "delta Oxy-18(%)", "Rolling avg of delta Oxy-18(%)"), bg="white", cex=.6)
+```
+
+From now on, we will focus on the 100 yr event frequency data only. As culturally speaking, 100 year is a good approximation for a human generation. We can again plot with temperature instead.
+
+```{r}
+ev_f_100$events_100_mavg <- filter(ev_f_100$events_100, boxcar)
+par(mar=c(5,5,5,5))
+plot(ev_f_100$ages_100, ev_f_100$events_100, ylab="Number of Events", main='Event frequency vs temperature',
+      xlab='Age(Ka)', type='l', ylim=c(0,60))
+points(ev_f_100$ages_100, ev_f_100$events_100, cex=0.1, col='red')
+lines(ev_f_100$ages_100, ev_f_100$events_100_mavg, col='orange')
+
+par(new=TRUE, mar=c(5,5,5,5))
+plot(grip_age, Temp, type='l', col='blue', xaxt='n', yaxt='n', xlab='', ylab='', ylim=c(-50,-23))
+axis(side=4)
+mtext(side = 4, line = 3, 'Temperature(C)')
+T.mavg = filter(Temp, boxcar)
+lines(grip_age, T.mavg, type='l', col='red')
+
+legend("topright", col=c("black", "orange", "blue", "red"), lty=c(1, 1, 1, 1), c("Normalized event frequency", "Rolling avg of event frequency", "Temperatue(°C)", "Rolling avg of temperature(°C)"), bg="white", cex=.18)
+```
+
+```{r Plotly Event_Freq vs delta-Oxy-18}
+library(plotly)
+trace1 <- list(
+  x = c(pet_df_holocene$`Ice age (GT4)`/1000),#c(grip_age),
+  y = c(pet_df_holocene$deltaTS), #c(Temp),
+  line = list(color = "rgb(221, 42, 145)"), 
+  marker = list(
+    color = "rgb(0, 0, 155)", 
+    size = 2
+  ), 
+  mode = "lines+markers", 
+  name = "delta-T(°C) (Vostok)", 
+  opacity = 1, 
+  type = "scatter", 
+  uid = "e27bd3", 
+  xaxis = "x", 
+  yaxis = "y" 
+)
+trace2 <- list(
+  x = c(ev_f_100$ages_100),
+  y = c(ev_f_100$events_100), 
+  line = list(color = "rgb(36, 32, 29)"), 
+  marker = list(
+    color = "rgb(228, 103, 9)", 
+    size = 5
+  ), 
+  mode = "lines+markers", 
+  name = "Number of Events", 
+  type = "scatter", 
+  uid = "efd000", 
+  yaxis = "y2" 
+)
+Temp.m <- Temp - mean(Temp)
+trace3 <- list(
+  x = c(grip_age),
+  y = c(Temp.m),
+  line = list(color = "green"), 
+  marker = list(
+    color = "black", 
+    size = 2
+  ), 
+  mode = "lines+markers", 
+  name = "delta-T (°C) (GRIP)", 
+  opacity = 1, 
+  type = "scatter", 
+  uid = "e27bd3", 
+  xaxis = "x", 
+  yaxis = "y" 
+)
+data <- list(trace1, trace2)
+layout <- list(
+  autosize = TRUE, 
+  hovermode = "closest", 
+  showlegend = TRUE, 
+  xaxis = list(
+    autorange = TRUE, 
+    #range = c(-0.745097129104, 11.4882190132), 
+    title = "Age(Ka)", 
+    type = "linear",
+    showgrid = FALSE
+  ), 
+  yaxis = list(
+    autorange = TRUE, 
+    #domain = c(0, 1), 
+    #range = c(-5, 5),#c(-50, -20), 
+    title = "delta-T(°C)", 
+    type = "linear",
+    showgrid = FALSE
+  ), 
+  yaxis2 = list(
+    anchor = "x", 
+    autorange = TRUE, 
+    overlaying = "y", 
+    #range = c(-25.3091876767, 55.9930010303), 
+    side = "right", 
+    type = "linear",
+    showgrid = FALSE,
+    showline = TRUE
+  )
+)
+p <- plot_ly()
+p <- add_trace(p, x=trace1$x, y=trace1$y, line=trace1$line, marker=trace1$marker, mode=trace1$mode, name=trace1$name, opacity=trace1$opacity, type=trace1$type, uid=trace1$uid, xaxis=trace1$xaxis, xsrc=trace1$xsrc, yaxis=trace1$yaxis, ysrc=trace1$ysrc)
+p <- add_trace(p, x=trace2$x, y=trace2$y, line=trace2$line, marker=trace2$marker, mode=trace2$mode, name=trace2$name, type=trace2$type, uid=trace2$uid, xsrc=trace2$xsrc, yaxis=trace2$yaxis, ysrc=trace2$ysrc)
+p <- add_trace(p, x=trace3$x, y=trace3$y, line=trace3$line, marker=trace3$marker, mode=trace3$mode, name=trace3$name, type=trace3$type, uid=trace3$uid, xsrc=trace3$xsrc, yaxis=trace3$yaxis, ysrc=trace3$ysrc)
+p <- layout(p, autosize=layout$autosize, hovermode=layout$hovermode, showlegend=layout$showlegend, xaxis=layout$xaxis, yaxis=layout$yaxis, yaxis2=layout$yaxis2)
+p
+
+```
+
+Let's look at the rough correlation by aggregating between temperature and event frequency(moving averaged).
+
+
+```{r}
+ev <-  ev_f_100$events_100
+# Aggregate temperature for every 100 years as we have temperature data for every 20 years
+T_ag <- aggregate(Temp, by=list(0:(length(Temp)-1) %/% 5), mean) 
+T_agr <- T_ag$x[1:length(ev)]
+
+plot(T_agr, ev, ylab='Number of Events every 100 years', xlab='Average temperature of every 100 years')
+cov(T_agr, ev, use='complete.obs')
+cor(T_agr, ev, use='complete.obs')
+
+abline(v=-32.7, lty=2)
+mtext(at=c(-32, 10), "T=-32.7")
+```
+
+When the value of correlation coefficient(r) is close to zero, generally between -0.1 and +0.1, the variables are said to have no linear relationship or a very weak linear relationship. In our case from below, we got r=-0.078. However, we can roughly visualize a strong correlation for dataset in the left side of the vertical line(T=16.657). Lets subset the data.
+
+```{r}
+T_agr2 = T_agr[T_agr >= -32.7]
+tn = length(T_agr2)
+ev2 = ev[1:tn]
+plot(T_agr2, ev2, ylab='Number of Events every 100 years', xlab='Average temperature of every 100 years')
+
+```
+
+``` {r}
+r <- cor(T_agr2, ev2, use='complete.obs')
+r
+library(gtools)
+r_c <- running(T_agr2, ev2, fun=cor, width=5)
+ccf(T_agr2, ev2, na.action=na.pass, lag.max = 50)
+```
+
+``` {r t test}
+# t- test 
+#To test whether the association is merely apparent, and might have arisen by chance use the t test in the following calculation:
+# Null Hypothesis: true difference in means is equal to 0 
+# Alternative hypothesis: true difference in means is not equal to 0
+n = length(T_agr2)
+t.test(T_agr2, ev2)
+
+```
+
+Now we got r=-0.625, which means there may be some negative correlation between temperature and number of events. Can we do some linear/curve fitting?
+We also performed Welch's two sample t-test to see whether 
+
+```{r}
+# linear fit
+fit = lm(ev2 ~ T_agr2)
+
+par(mfrow=c(1,2))
+#qplot(T_agr2, ev2, geom=c('point', 'smooth'), span= 0.1, method='loess', xlab='Temperature(°C)', ylab='Number of Events')
+#qplot(T_agr2, ev2, geom=c('point', 'smooth'), span= 0.3, method='loess', xlab='Temperature(°C)', ylab='Number of Events')
+#qplot(T_agr2, ev2, geom=c('point', 'smooth'), span= 0.5, method='loess', xlab='Temperature(°C)', ylab='Number of Events')
+library(ggplot2)
+ggplot(data.frame(T_agr2, ev2), aes(T_agr2, ev2), xlab='Temperature(°C)', ylab='Number of Events') + geom_point() + geom_smooth(span=0.5)
+ggplot(data.frame(T_agr2, ev2), aes(T_agr2, ev2), xlab='Temperature(°C)', ylab='Number of Events') + geom_point() + geom_smooth(span=0.3)
+ggplot(data.frame(T_agr2, ev2), aes(T_agr2, ev2), xlab='Temperature(°C)', ylab='Number of Events') + geom_point() + geom_smooth(span=0.2)
+ggplot(data.frame(T_agr2, ev2), aes(T_agr2, ev2), xlab='Temperature(°C)', ylab='Number of Events') + geom_point() + geom_smooth(span=0.1)
+ggplot(data.frame(T_agr2, ev2), aes(T_agr2, ev2), xlab='Temperature(°C)', ylab='Number of Events') + geom_point() + geom_smooth(span=0.05)
+```
+
+```{r linear fitting}
+plot(T_agr2, ev2, ylab='Number of Events every 100 years', xlab='Average temperature of every 100 years(°C)')
+abline(fit$coefficients, col='red')
+
+# quadratic fit
+fit2 = lm(ev2 ~ T_agr2 + poly(T_agr2,2))
+
+lines(sort(T_agr2[1:93]), fitted(fit2)[order(T_agr2[1:93])], col='blue', cex=0.5)
+
+# cubic fit
+fit3 = lm(ev2 ~ T_agr2 + poly(T_agr2,3))
+lines(sort(T_agr2[1:93]), fit3$fitted.values[order(T_agr2[1:93])], col='green', cex=0.5)
+
+legend("topleft", col=c("red", "blue", "green"), lty=c(1, 1, 1), c("linear", "quadratic", "cubic"), bg="white", cex=.6)
+
+par(mfrow=c(2,2))
+summary(fit)
+plot(fit)
+
+summary(fit2)
+plot(fit2)
+
+summary(fit3)
+plot(fit3)
+```
+
+We can see that the quadratic fit gives better R-2 value than the linear fit, but higher order polynomial (cubic) doesn't fit any better.
+
+## Autocorrelation / lagged correlation
+Autocorrelations or lagged correlations are used to assess whether a time series is dependent on its past. For a time series x of length n we consider the n-1 pairs of observations one time unit apart. The first such pair is (x[2],x[1]), and the next is (x[3],x[2]). Each such pair is of the form (x[t],x[t-1]) where t is the observation index, which we vary from 2 to n in this case. The **lag-1** autocorrelation of x can be estimated as the sample correlation of these (x[t], x[t-1]) pairs.
+```{r}
+Box.test(grip_oxy, lag=20, type='Ljung-Box')
+acf(grip_oxy, ci.type='ma')
+#par(mfrow=c(2,2))
+Box.test(ev_f_100$events_100, lag=20, type='Ljung-Box')
+acf(ev_f_100$events_100, ci.type="ma")
+#pacf(ev_f_100$events_100, ci.type="ma")
+
+```
+ 
+ We can see notifiable autocorrelation after lag=5 within the confidence interval band.
+ 
+ #```
+Vertical lines are drawn at F=24, 37, 48 where we can see peak in the amplitude spectrum. Therefore, we can see some dominant cycles 12Ky/24 = 500 yr,  12Ky/37 = 324 yr, 12Ky/48=250 yr.  The logarithmic scale plot shows the peaks and troughs more clearly.
+
+Estimating the autocovariance function from the periodogram:
+```{r}
+par(mfrow=c(1,2))
+N <- length(ev)
+Cov_est <- Re(fft(ev,inverse=TRUE))/N
+lag <- seq(from=0, to=12, by=1/12)
+plot(lag,Cov_est[1:(length(lag))],ylab='Covariance',type='l',main='Covariance')
+acf(ev,type='covariance',lag.max=12*12,main='Covariance', ci.type='ma')
+```
+
+The spectrum is noisy. It is possible to construct 1-2α confidence intervals for a periodogram value, according to 2 I/ [χ^2_2(α)] < f < 2 I/ [χ^2_2(1-α)]. (This is a chi-square with 2 degrees of freedom)
+Note, that the confidence interval is not a function of N.  If we collect more data, we will not be able to estimate the periodogram any better!  The periodogram is unbiased, but it is inconsistent.  (Remember, consistency means that not only is the estimate asymptotically unbiased, but consistency also means that the estimate get better as N get larger.)
+
+To consistently estimate the periodogram, one has two choices: 1) smooth periodogram by averaging over small windows, and 2) splitting the data into sections, calucating a periodogram for each section, and then averaging.
+
+```{r}
+par(mfrow=c(3,3))
+window_1 <- kernel('daniell',3)
+window_2 <- kernel('daniell',6)
+window_3 <- kernel('daniell',c(2,2))
+plot(window_1)
+spec.pgram(CC,kernel=window_1,log='no',taper=0,fast=F,detrend=T)
+plot(window_2)
+spec.pgram(CC,kernel=window_2,log='no',taper=0,fast=F,detrend=T)
+plot(window_3)
+spec.pgram(CC,kernel=window_3,log='no',taper=0,fast=F,detrend=T)
+```
+
+When there is a very strong periodoc signal, it is commonly the case that is upsets the estimation at other frequencies.  This effect is called 'leakage,'  essentially, some of the signal leaks out to other frequencies.  The harmonics are one example of this, but it can happen throughout the entire spectrum.  It is often desirable to filter out strong periodicities.  We will do this by subtracting a 200 yr moving average from the series.  This should reduce the effect of all cycles with periods less than or equal to a year.  Note, that it will also dampen any cycles that are slighly longer than one year as well, (if such exist). 
+####################
+# Filtering
+```{r}
+par(mfrow=c(2,2))
+k = kernel("modified.daniell", 1) #-- 12 month filter
+plot(k)
+CC_filter = kernapply(CC,k)
+plot.ts(CC_filter, xlab='Age(Ka)', ylab='event frequency')
+spec.pgram(CC_filter,kernel('daniell',3),log='no',taper=0,fast=F)
+```
+
+## Conclusion
+In this analysis, we have explored how GRIP oxy-18/ Temperature might have influenced the change in human civilization. We found some periodicity in the global cultural change which aligns with similar discoveries in the literature.
+
+
+## References
+1. Epstein, S.; Buchsbaum, R.; Lowenstam, H.; Urey, H. (1953). "Revised carbonate-water isotopic temperature scale". Geol. Soc. Am. Bull. 64: 1315–1325. doi:10.1130/0016-7606(1953)64[1315:rcits]2.0.co;2.
+2. Lisiecki, L. E.; Raymo, M. E. (January 2005). "A Pliocene-Pleistocene stack of 57 globally distributed benthic \(\delta\)18O records" (PDF). Paleoceanography. 20: PA1003. Bibcode:2005PalOc..20.1003L. doi:10.1029/2004PA001071.
+3. Lisiecki, L. E.; Raymo, M. E. (May 2005). "Correction to "A Pliocene-Pleistocene stack of 57 globally distributed benthic \(\delta\)18O records"". Paleoceanography. 20 (2): PA2007. Bibcode:2005PalOc..20.2007L. doi:10.1029/2005PA001164.
+data: doi:10.1594/PANGAEA.704257.
+4. Lüdecke, H.-J., & Weiss, C.-O. (2017). Harmonic Analysis of Worldwide Temperature Proxies for 2000 Years. The Open Atmospheric Science Journal, 11(17), 44–53. https://doi.org/10.2174/1874282301711010044
+5. Steinhilber, F., Abreu, J. A., Beer, J., Brunner, I., Christl, M., Fischer, H., … Wilhelms, F. (2012). 9,400 Years of Cosmic Radiation and Solar Activity From Ice Cores and Tree Rings. Proceedings of the National Academy of Sciences, 109(16), 5967–5971. https://doi.org/10.1073/pnas.1118965109
+6. Seierstad, I. K., Abbott, P. M., Bigler, M., Blunier, T., Bourne, A. J., Brook, E., … Vinther, B. M. (2014). Consistently dated records from the Greenland GRIP, GISP2 and NGRIP ice cores for the past 104ka reveal regional millennial-scale \(\delta\)18O gradients with possible Heinrich event imprint. Quaternary Science Reviews, 106, 29–46. https://doi.org/10.1016/j.quascirev.2014.10.032
