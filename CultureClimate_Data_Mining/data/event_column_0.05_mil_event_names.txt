@@ -1,0 +1,149 @@
+$`0.025001`
+[1] "Gamal Nasser" "Ba'ath Rule" 
+
+$`0.075001`
+[1] "Israel independence"        "Israel independence"       
+[3] "Republic of Turkey founded" "Separate States"           
+[5] "Pakistan independence"      "India independence"        
+[7] "Mao Zedong wins civil war"  "Xinhai Revolution"         
+
+$`0.125001`
+[1] "Suez Canal opens"
+
+$`0.175001`
+[1] "Opium War"                        
+[2] "Marquesan"                        
+[3] "Hawaiian, Maori, Tahitian, Tongan"
+
+$`0.225001`
+[1] "Napoleon conquest in 1798."
+
+$`0.375001`
+[1] "Manchu invasion" "Easter Island"   "Plains horsemen"
+
+$`0.425001`
+[1] "Late Postclassic"
+
+$`0.475001`
+[1] "Ottoman expansion"              
+[2] "Polvoron"                       
+[3] "Spanish conquests 1521-1535 AD."
+
+$`0.525001`
+[1] "Constantinople taken by Islam" "Constantinople taken by Islam"
+
+$`0.575001`
+[1] "Forbidden City completed" "Indian Ocean Expeditions"
+[3] "Civano"                   "Late Postclassic"        
+[5] "Middle Postclassic"      
+
+$`0.625001`
+[1] "Tamerlane"                 "Last Mongol emperor flees"
+[3] "Polvoron"                 
+
+$`0.675001`
+[1] "Civano" "Soho"  
+
+$`0.725001`
+[1] "Acre retaken by Islam"     "Mongols sack Baghdad"     
+[3] "Baghdad sacked by Mongols" "Kublai Khan"              
+[5] "Mongol (Kublai Khan)"     
+
+$`0.775001`
+[1] "Mongols sweep into Iran"       
+[2] "Genghis Khan"                  
+[3] "Mongol (Genghis Khan) conquest"
+[4] "Hawaiian"                      
+[5] "Soho"                          
+[6] "Santan"                        
+[7] "Middle Postclassic"            
+[8] "Early Postclassic"             
+
+$`0.825001`
+[1] "Seljuk Moslem conquest"
+
+$`0.875001`
+[1] "Manchurian conquest" "Maori"              
+[3] "Colonial period"    
+
+$`0.925001`
+[1] "Jerusalem taken by Crusaders"   
+[2] "Seljuq sultinate"               
+[3] "Seljuq nomads take over Baghdad"
+[4] "Santan"                         
+
+$`0.975001`
+[1] "Late Pithouse period" "Early Postclassic"   
+[3] "Epiclassic"          
+
+$`1.075001`
+[1] "Terminal Classic"
+
+$`1.125001`
+[1] "Pioneer period"
+
+$`1.175001`
+[1] "Colonial period"  "Terminal Classic" "Late Classic"    
+
+$`1.225001`
+[1] "Islam center shifts from Syria to Iraq"
+[2] "Islam center shifts from Syria to Iraq"
+[3] "Islam center shifts from Syria to Iraq"
+
+$`1.275001`
+[1] "Epiclassic"    "Early classic"
+
+$`1.375001`
+[1] "Arabians conquer Alexandria"         
+[2] "Muslim Arabs overthrow Sasanian rule"
+[3] "Emigration of Muhammad"              
+[4] "Tahitian"                            
+[5] "Late Classic"                        
+[6] "Early Classic"                       
+[7] "1.4 ka"                              
+
+$`1.425001`
+[1] "Late Pithouse period"  "Early Pithouse period"
+
+$`1.475001`
+[1] "Easter Island"                                    
+[2] "Late Basketmaker"                                 
+[3] "Late Classic (Southerm Mexican Highland Classic)" 
+[4] "Early Classic (Southerm Mexican Highland Classic)"
+
+$`1.525001`
+[1] "battle of Arvarayr"
+
+$`1.575001`
+[1] "Early classic"
+
+$`1.625001`
+[1] "Sasanians partition Armenia" "Protoclassic"               
+
+$`1.675001`
+[1] "Constantine establishs rule from Byzantium (Istanbul) capital"
+[2] "Contact with Iron Age Farmers"                                
+[3] "Emperor Constantine converts to Christianity"                 
+[4] "Emperor Constantine converts to Christianity"                 
+[5] "Armenia adopts Christianity as state religion"                
+[6] "Emperor Constantine converts to Christianity"                 
+[7] "Marquesan"                                                    
+
+$`1.725001`
+[1] "Early Classic (Southerm Mexican Highland Classic)"
+
+$`1.825001`
+[1] "Early Classic"
+
+$`1.925001`
+[1] "Nero crowns Trdat king of Armenia"
+
+$`1.975001`
+[1] "Tshitolian"                                   
+[2] "Gangetic India (Northern Block Polished Ware)"
+[3] "Tongan, Samoan"                               
+[4] "Late Basketmaker"                             
+[5] "Early Pithouse period"                        
+[6] "Pioneer period"                               
+[7] "Early Basketmaker (White Dog phase)"          
+

@@ -4,7 +4,7 @@
 
 
 # Number of events every 50 year
-data_dir <- ('/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/ML-Data Mining/programming/')
+data_dir <- ('~/Documents/projects/ML-Data Mining/programming/')
 fn_50 <- paste(data_dir, 'event_frequency_per_50_yr_dat.txt', sep='')
 ev_f_50 <- read.csv(fn_50, sep=' ')
 
