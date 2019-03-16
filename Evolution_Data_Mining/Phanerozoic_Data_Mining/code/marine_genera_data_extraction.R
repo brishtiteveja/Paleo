@@ -27,7 +27,7 @@ c <- colnames(dfxl) # column header
 df2c <- dfxl[[c[2]]] # second column
 
 ages_from_col3 <- na.omit(as.numeric(as.character(na.omit(dfxl[[c[3]]]))))
-AGE_SLIDE <- 1 #0.050 # every 50,000 years # fraction of 1 myr
+AGE_SLIDE <- 0.5 #1 #0.050 # every 50,000 years # fraction of 1 myr
 STARTING_AGE <- floor(min(ages_from_col3)) - AGE_SLIDE/2
 ENDING_AGE <- ceiling(max(ages_from_col3)) + AGE_SLIDE/2
 
@@ -613,9 +613,19 @@ datatable(dff)
 plot(-dff$age, dff$`N.turnover`, t='l')
 plot(-dff$age, dff$`raw.speciation.probability`, t='l')
 plot(-dff$age, dff$`raw.extinction.probability`, t='l')
+plot(-dff$age, dff$HMM.speciation.state.probability, t='l')
+plot(-dff$age, dff$HMM.extinction.state.probability, t='l')
+plot(-dff$age, dff$HMM.turnover.probability, t='l')
+
+# correlation
+cor(dff$raw.speciation.probability, dff$HMM.speciation.state.probability)
+cor(dff$raw.extinction.probability, dff$HMM.extinction.state.probability)
+cor(dff$raw.turnover.probability, dff$HMM.turnover.probability)
+cor(dff$N.turnover, dff$HMM.turnover.probability)
 
 # every 0.05 myr 
 # 0.25 myr moving average
+par(mfrow=c(1,1))
 library(zoo)
 m=0.25/AGE_SLIDE
 plot(rollmean(-dff$age,m), rollmean(dff$`raw.turnover.probability`,m), t='l')
@@ -635,82 +645,61 @@ plot(rollmean(-dff$age,m), rollmean(dff$`raw.turnover.probability`,m), t='l')
 m=25.00/AGE_SLIDE
 plot(rollmean(-dff$age,m), rollmean(dff$`raw.turnover.probability`,m), t='l')
 
+#png('turnover.png')
+par(mfrow=c(9,1))
+par(mar=c(1,4,1,1))
+plot(-dff$age, dff$N.speciations, t='l', col='green', 
+     xlab='Ma', ylab='N speciation')
+plot(-dff$age, dff$raw.speciation.probability, t='l', col='green',
+     xlab='Ma', ylab='Raw spec. prob')
+plot(-dff$age, dff$HMM.speciation.state.probability, t='l', col='green',
+     xlab='Ma', ylab='HMM spec. prob')
+plot(-dff$age, dff$N.extinctions, t='l', col='red', 
+     xlab='Ma', ylab='N extinction')
+plot(-dff$age, dff$raw.extinction.probability, t='l', col='red',
+     xlab='Ma', ylab='Raw exti. prob')
+plot(-dff$age, dff$HMM.extinction.state.probability, t='l', col='red',
+     xlab='Ma', ylab='HMM exti. prob')
+plot(-dff$age, dff$N.turnover, t='l', col='black',
+     xlab='Ma', ylab='N turnover')
+plot(-dff$age, dff$raw.turnover.probability, t='l', col='black',
+     xlab='Ma', ylab='Raw turn. prob')
+plot(-dff$age, dff$HMM.turnover.probability, t='l', col='black',
+     xlab='Ma', ylab='HMM turn. prob')
+
+
 # spectral
-mtm(data.frame(age = dff$age, turnover = dff$`N turnover`), detrend = T)
-mtm(data.frame(age = dff$age, turnover = dff$`raw turnover probability`), detrend = T)
+library(astrochron)
+mtm(data.frame(age = dff$age, turnover = dff$`N.turnover`), detrend = T)
+
+dat = data.frame(age = dff$age, turnover = dff$`raw.turnover.probability`)
+# a) mtm - conventional mtm-AR1 approach
+mtm(dat, detrend = T)
+# b) lowspec ar1 - lowspec analysis of ar1 surrogate needed
+lowspec(dat, detrend=T) #, tbw=2, padfac=1, pl=2, sigID=F, output=1)
+
+# c) periodogram - conventional ar1 with 25% cosine tapered periodogram, 
+# background : 1=ar1 , 2=pwrlaw
+periodogram(cosTaper(dat, demean=T, detrend=T), demean=F, 
+                    background=1, fNyq=F, padfac=1, output=1)
+
+# d) mtmML96 - robust red noise mtm
+mtmML96(dat)
+
+# e) periodogram power law 25% cosine tapered periodogram, background 2
+periodogram(cosTaper(dat, demean=T, detrend=T), demean=F, 
+                    background=2, fNyq=F, padfac=1, output=1)
+
+
+# f) mtmPL - power law fit to mtm spectrum
+mtmPL(dat)
+
+# g) lowspec - power law 
+
 
 eha(data.frame(age = dff$age, turnover = dff$`N turnover`), win=20.001, step=.1, pad=4000, genplot=4, palette=5, pl=2, ydir=-1, 
     tbw=2, output=2)
 
-# R code to compute basic hidden Markov model from user-supplied vectors of:
-#   count of speciations or extinctions at each pseudolevel ("counts"), and
-#   count of species extant at each pseudolevel ("pn")
-
-# Function to initialize Pi matrix required by "dthmm"
-# Initialized using random numbers from normal distribution
-# Assume that values on diagonal ~0.4
-# Rows must sum to 1
-setPi <- function(m) {  
-  Pi <- matrix(data=NA, nrow=m, ncol=m, byrow=T)  
-  for(p in 1:m){
-    Pi[p,p] <- rnorm(1, mean=0.4, sd=0.1) 
-    Pi[p,-p] <- (1-Pi[p,p])/(m-1)
-  }
-  return(Pi)
-}
-
-# Function to initialize delta and pm vectors required by "dthmm"
-# Initialized using random numbers from normal distribution
-# Delta must sum to 1
-setDPm <- function(m) {                 
-  DPm <- vector(mode="numeric", length=m)
-  DPm[1] <- rnorm(1, mean=0.4, sd=0.1)
-  DPm[-1] <- (1-DPm[1])/(m-1)
-  return(DPm)
-}
-# Fit hidden Markov model
-# "m" is the number of discrete states in the model – this must be set by the user
-# "counts" is the user-supplied vector of speciations or extinctions at each pseudolevel
-# "pn" is the user-supplied vector of species extant at each pseudolevel
-# Note: by default, the output states are not ordered by magnitude
-library(HiddenMarkov)
-# 4 state speciation
-m <- 4                          # specify number of states in the model
-
-counts <- df$`N speciations`
-pn <- df$`N species (speciation)`
-x <- dthmm(counts, Pi=setPi(m), delta= setDPm(m), pm= list(prob=setDPm(m)), 
-           pn=list(size=pn), distn="binom", discrete=TRUE)
-y <- BaumWelch(x)               # estimated parameters of the HMM
-n.param <- (m*(m-1))+2*m-1      # number of parameters in the model
-log.lik.y <- logLik(y)          # log likelihood of model y
-AIC.y <- 2*n.param-2*log.lik.y  # Akaike’s Information Criterion for model y
-
-# Predict most likely sequence of states given observations and model y
-v <- Viterbi(y)                 # predicted sequence of HMM states at each pseudolevel
-
-df$`HMM speciation state` <- v
-df$`HMM speciation state probability` <- y$pm$prob[v]
-
-# 3 state extinction
-m <- 3                          # specify number of states in the model
-
-counts <- df$`N extinctions`
-pn <- df$`N species (extinction)`
-x <- dthmm(counts, Pi=setPi(m), delta= setDPm(m), pm= list(prob=setDPm(m)), 
-           pn=list(size=pn), distn="binom", discrete=TRUE)
-y <- BaumWelch(x)               # estimated parameters of the HMM
-n.param <- (m*(m-1))+2*m-1      # number of parameters in the model
-log.lik.y <- logLik(y)          # log likelihood of model y
-AIC.y <- 2*n.param-2*log.lik.y  # Akaike’s Information Criterion for model y
-
-# Predict most likely sequence of states given observations and model y
-v <- Viterbi(y)                 # predicted sequence of HMM states at each pseudolevel
-
-df$`HMM extinction state` <- v
-df$`HMM extinction state probability` <- y$pm$prob[v]
-
-df$`HMM turnover probability` <- df$`HMM speciation state probability` + df$`HMM extinction state probability`
 
 head(df)
 library(DT)

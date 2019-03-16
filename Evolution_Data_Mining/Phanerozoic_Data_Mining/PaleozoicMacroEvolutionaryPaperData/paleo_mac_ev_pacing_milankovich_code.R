@@ -119,6 +119,7 @@ head(combined_df)
 head(df1)
 tail(df1)
 
+
 # Dataset S2
 # R code to compute basic hidden Markov model from user-supplied vectors of:
 #   count of speciations or extinctions at each pseudolevel ("counts"), and
@@ -240,7 +241,29 @@ plot(-x, y2, t='l', col='red', xlim=xlim)
 y3 <- rollmean(df1$`HMM turnover probability`, m)
 plot(-x, y3, t='l', xlim=xlim)
 
+#
+dat =getData("graptolite")
 
+# a) mtm - conventional mtm-AR1 approach
+mtm(dat, detrend = T)
+# b) lowspec ar1 - lowspec analysis of ar1 surrogate needed
+lowspec(dat, detrend=T) #, tbw=2, padfac=1, pl=2, sigID=F, output=1)
+
+# c) periodogram - conventional ar1 with 25% cosine tapered periodogram, 
+# background : 1=ar1 , 2=pwrlaw
+periodogram(cosTaper(dat, demean=T, detrend=T), demean=F, 
+            background=1, fNyq=F, padfac=1, output=1)
+
+# d) mtmML96 - robust red noise mtm
+mtmML96(dat)
+
+# e) periodogram power law 25% cosine tapered periodogram, background 2
+periodogram(cosTaper(dat, demean=T, detrend=T), demean=F, 
+            background=2, fNyq=F, padfac=1, output=1)
+
+
+# f) mtmPL - power law fit to mtm spectrum
+mtmPL(dat)
 
 # Dataset S3
 # R code to generate surrogate simulations in order to assess suitability of 
