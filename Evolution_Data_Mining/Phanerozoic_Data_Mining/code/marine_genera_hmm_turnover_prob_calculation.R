@@ -4,6 +4,14 @@ dp_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/P
 setwd(dp_dir)
 dp_fname <- 'MarineGenera_13Jan13.xls'
 
+dff_backup <- dff
+AGE_SLIDE <- 0.5 # 100Ka
+AGE_DIFF = NA
+if (floor(AGE_SLIDE) == 0) {
+  AGE_DIFF = paste(AGE_SLIDE * 1000, "K", sep="")
+} else {
+  AGE_DIFF = paste(AGE_SLIDE, "M", sep="")
+}
 pfname <- paste(getwd(),"/marine_genera_event_extraction", "/marine_genera_speciation_extinction_age_slide_", AGE_DIFF, ".csv", sep="")
 pfname
 
@@ -11,6 +19,7 @@ pfname
 dff <- read.csv(file=pfname)
 
 head(dff)
+datatable(dff)
 
 # Calculate HMM turnover probability
 # Find the best value for hidden state m
@@ -50,15 +59,18 @@ setDPm <- function(m) {
 library(HiddenMarkov)
 
 
+# be careful with whether loading from file or generation
+#counts <- as.numeric(dff$N.speciations)
+#pn <- as.numeric(dff$N.species.speciation.)
+counts <- as.numeric(dff$N.speciations)
+head(counts)
+pn <- as.numeric(dff$N.species.speciation)
+head(pn)
+
 # Find the best state for speciation
 mlist <- seq(2, 10)
 AICv <- c()
-
 for (m in mlist) {
-  #m <- 4                          # specify number of states in the model
-
-  counts <- dff$N.speciations
-  pn <- dff$N.species.speciation.
   x <- dthmm(counts, Pi=setPi(m), delta= setDPm(m), pm= list(prob=setDPm(m)), 
            pn=list(size=pn), distn="binom", discrete=TRUE)
   y <- BaumWelch(x)               # estimated parameters of the HMM
@@ -78,9 +90,11 @@ m.speciation <- which.min(AICv) + 1
 
 # Use the best hidden state to get HMM series
 m <- m.speciation                          # specify number of states in the model
-#m <- 4
+m <- 3
 counts <- dff$N.speciations
-pn <- dff$N.species.speciation.
+head(counts)
+pn <- dff$N.species.speciation
+head(pn)
 x <- dthmm(counts, Pi=setPi(m), delta= setDPm(m), pm= list(prob=setDPm(m)), 
            pn=list(size=pn), distn="binom", discrete=TRUE)
 y <- BaumWelch(x)               # estimated parameters of the HMM
@@ -91,15 +105,17 @@ v <- Viterbi(y)                 # predicted sequence of HMM states at each pseud
 dff$`HMM.speciation.state` <- v
 dff$`HMM.speciation.state.probability` <- y$pm$prob[v]
 
-# Find the best state for extinction
-mlist <- seq(2, 10)
-AICv <- c()
+counts <- dff$N.extinctions
+head(counts)
+pn <- dff$N.species.extinction
+head(pn)
 
+# Find the best state for extinction
+mlist <- seq(3, 10)
+AICv <- c()
 for (m in mlist) {
   #m <- 4                          # specify number of states in the model
   
-  counts <- dff$N.extinctions
-  pn <- dff$N.species.extinction.
   x <- dthmm(counts, Pi=setPi(m), delta= setDPm(m), pm= list(prob=setDPm(m)), 
              pn=list(size=pn), distn="binom", discrete=TRUE)
   y <- BaumWelch(x)               # estimated parameters of the HMM
@@ -115,15 +131,15 @@ plot(mlist, AICv, t='l',
      xlab='Hidden state, m',
      ylab='AIC',
      main='Model comparison for extinction')
-m.extinction <- which.min(AICv) + 1
+m.extinction <- which.min(AICv) + 2
 m.extinction
 
 
-# 8 state extinction
+# 3 state extinction
 m <- m.extinction                          # specify number of states in the model
 
 counts <- dff$N.extinctions
-pn <- dff$N.species.extinction.
+pn <- dff$N.species.extinction
 x <- dthmm(counts, Pi=setPi(m), delta= setDPm(m), pm= list(prob=setDPm(m)), 
            pn=list(size=pn), distn="binom", discrete=TRUE)
 y <- BaumWelch(x)               # estimated parameters of the HMM
@@ -138,6 +154,22 @@ dff$`HMM.turnover.probability` <- dff$`HMM.speciation.state.probability` + dff$`
 
 library(DT)
 datatable(dff)
+
+AGE_DIFF = NA
+if (floor(AGE_SLIDE) == 0) {
+  AGE_DIFF = paste(AGE_SLIDE * 1000, "K", sep="")
+} else {
+  AGE_DIFF = paste(AGE_SLIDE, "M", sep="")
+}
+
+pfname <- paste(getwd(),"/marine_genera_event_extraction", "/cenozoic_marine_genera_speciation_extinction_age_slide_", AGE_DIFF, ".csv", sep="")
+pfname
+write.csv(dff, file=pfname, col.names = TRUE)
+
+
+# Read the marine genera bin wise evolution frequency/turnover data
+dff <- read.csv(file=pfname)
+head(dff)
 
 # R code to generate surrogate simulations in order to assess suitability of 
 #   spectral analysis procedures provided in Astrochron
@@ -231,10 +263,16 @@ turnProb = data.frame(age=dff$age, turnProb=dff$HMM.turnover.probability)
 specLow=lowspec(turnProb, detrend=T, tbw=2, padfac=1, pl=2, sigID=F, output=1)
 
 # Conduct MTM-PL analysis
-specPL1=mtmPL(turnProb, detrend=T, tbw=2, padfac=1, pl=2, sigID=F, output=1)
+specPL1
+  
+mtmAR1(turnProb, detrend=T, tbw=2, padfac=1, pl=2)#, sigID=F, output=1)
+
+  
+mtmPL(turnProb, detrend=T, tbw=2, padfac=1, pl=2, sigID=F, output=1)
 
 # Conduct Periodogram-AR1 analysis
-specAR1=periodogram(cosTaper(turnProb, demean=T, detrend=T), demean=F, 
+specAR1=
+  periodogram(cosTaper(turnProb, demean=T, detrend=T), demean=F, 
                     background=1, fNyq=F, padfac=1, output=1)
 # Conduct Periodogram-PL analysis
 specPL2=periodogram(cosTaper(turnProb, demean=T, detrend=T), demean=F, 

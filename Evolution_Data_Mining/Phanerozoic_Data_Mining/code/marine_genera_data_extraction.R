@@ -1,14 +1,14 @@
-## Spectrum Analysis
-# Demean and Detrend data
+## spectrum analysis
+# demean and detrend data
 #```{r}
 
 library(readxl)
 library(plotly)
 library(dplyr)
 
-period_names <- c('Cambrian',      'Ordovician',   'Silurian',  'Devonian', 
-                  'Carboniferous', 'Permian',      'Triassic',  'Jurassic', 
-                  'Cretaceous',    'Paleogene',    'Neogene',   'Quaternary')
+period_names <- c('cambrian',      'ordovician',   'silurian',  'devonian', 
+                  'carboniferous', 'permian',      'triassic',  'jurassic', 
+                  'cretaceous',    'paleogene',    'neogene',   'quaternary')
 
 period_ages  <- c(541.00,           485.37,         443.83,      419.20,
                   358.94,           298.88,         251.90,      201.36,
@@ -16,32 +16,35 @@ period_ages  <- c(541.00,           485.37,         443.83,      419.20,
 
 
 # project directory
-proj_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Phanerozoic_Data_Mining'
+proj_dir <- '/users/andy/dropbox/tscreator/tscreator development/developers/andy/projects/phanerozoic_data_mining'
 # datapack directory
-dp_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Phanerozoic_Data_Mining/Datapack/'
+dp_dir <- '/users/andy/dropbox/tscreator/tscreator development/developers/andy/projects/phanerozoic_data_mining/datapack/'
 setwd(dp_dir)
-dp_fname <- 'MarineGenera_13Jan13.xls'
+dp_fname <- 'marinegenera_13jan13.xls'
 
 dfxl <- read_excel(dp_fname)
 c <- colnames(dfxl) # column header
 df2c <- dfxl[[c[2]]] # second column
 
 ages_from_col3 <- na.omit(as.numeric(as.character(na.omit(dfxl[[c[3]]]))))
-AGE_SLIDE <- 0.5 #1 #0.050 # every 50,000 years # fraction of 1 myr
-STARTING_AGE <- floor(min(ages_from_col3)) - AGE_SLIDE/2
-ENDING_AGE <- ceiling(max(ages_from_col3)) + AGE_SLIDE/2
+age_slide <- 0.1 #1 #0.050 # every 50,000 years # fraction of 1 myr
+starting_age <- floor(min(ages_from_col3)) - age_slide/2
+cenozoic_base <- 66.04
+ending_age <- ceiling(max(ages_from_col3)) + age_slide/2
+#ending_age <- ceiling(cenozoic_base)
+ending_age
 
 # second column
 c <- list()
 c <- colnames(dfxl)
 df2c <- dfxl[[c[2]]]
 
-# Check column formats on : https://engineering.purdue.edu/Stratigraphy/tscreator/download/TSC_ColumnFormats_Examples_Sept2017.txt
+# check column formats on : https://engineering.purdue.edu/stratigraphy/tscreator/download/tsc_columnformats_examples_sept2017.txt
 column_type <- c('event')
 
 columns <- list()
 for (ct in column_type) {
-  msg <- paste("Processing ", ct, " column.\n",
+  msg <- paste("processing ", ct, " column.\n",
                "----------------------------------------------------------------------",
                sep="")
   print(msg)
@@ -61,8 +64,8 @@ for (ct in column_type) {
       
       r_i <- r
       column <- list()
-      type <- NA
-      while(TRUE) {
+      type <- na
+      while(true) {
         age <- dfxl[[c[3]]][r_i]
         if (is.na(age)) {
           if (is.na(dfxl[[c[1]]][r_i]))
@@ -149,14 +152,14 @@ get_parent_hierarchy <- function(col_name) {
     }
   }
   
-  return(NA)
+  return(na)
 }
 
 get_main_column_name <- function(col_name) {
   parent = get_parent_hierarchy(col_name)
   
   if(is.na(parent) || is.na(parent[["main column"]])) {
-    return(NA)
+    return(na)
   }
   
   mc = parent[["main column"]]
@@ -168,7 +171,7 @@ get_sub_column_name <- function(col_name) {
   parent = get_parent_hierarchy(col_name)
   
   if(is.na(parent) || is.na(parent[["sub column"]])) {
-    return(NA)
+    return(na)
   }
   
   sc = parent[["sub column"]]
@@ -179,7 +182,7 @@ get_sub_column_name <- function(col_name) {
 get_sub_sub_column_name <- function(col_name) {
   parent = get_parent_hierarchy(col_name)
   if(is.na(parent) || is.na(parent[["sub sub column"]])) {
-    return(NA)
+    return(na)
   }
   
   ssc = parent[["sub sub column"]]
@@ -188,18 +191,18 @@ get_sub_sub_column_name <- function(col_name) {
 }
 
 not_column <- function(col_name) {
-  if (col_name == "_METACOLUMN_OFF" || col_name == "_METACOLUMN_ON" 
+  if (col_name == "_metacolumn_off" || col_name == "_metacolumn_on" 
       || col_name == "pass" ||
-      substring(col_name, 2, 18) == "For details click")
-    return(TRUE)
+      substring(col_name, 2, 18) == "for details click")
+    return(true)
   else if (col_name == 'off' || col_name == 'on') {
-    return(TRUE)
+    return(true)
   } else {
     # # column width
     m <- regexec("^[0-9]+$",col_name)
     ml <- regmatches(col_name, m)
     if (length(ml[[1]]) == 1) {
-      return(TRUE)
+      return(true)
     }
     
     # color code
@@ -207,14 +210,14 @@ not_column <- function(col_name) {
     ml <- regmatches(col_name, m)
     
     if (length(ml[[1]]) != 0) {
-      return(TRUE)  
+      return(true)  
     }
     
-    return(FALSE)
+    return(false)
   }
 }
 
-# Main Columns
+# main columns
 # 
 
 column_names_by_category <- list()
@@ -232,7 +235,7 @@ extract_column_names_by_category <- function() {
       nc <- length(dfxl[r,])
       sub_col_ns <- as.character(dfxl[r, 3 : nc])
       naix <- which(is.na(sub_col_ns))
-      naix <- c(naix, which(sub_col_ns == "NA"))
+      naix <- c(naix, which(sub_col_ns == "na"))
       
       for(n in 1:nc) {
         if (n %in% naix) {
@@ -240,7 +243,7 @@ extract_column_names_by_category <- function() {
         } else {
           sub_col_name <- sub_col_ns[n]
           if(!is.na(sub_col_name) && 
-             (sub_col_name != "_METACOLUMN_OFF" || sub_col_name != "_METACOLUMN_ON" || 
+             (sub_col_name != "_metacolumn_off" || sub_col_name != "_metacolumn_on" || 
               sub_col_name != "pass")) {
               sub_columns <- c(sub_columns, sub_col_name)
           }
@@ -254,7 +257,7 @@ extract_column_names_by_category <- function() {
   return(column_names_by_category)
 }
 
-# Extract column names
+# extract column names
 # main_column ~ group in marine genera
 # sub_column ~ sub group
 # sub_sub_column ~ column
@@ -268,7 +271,7 @@ for (nsc in 1:n_sub_sub_column) {
 }
 
 
-# Create column hierarchy. Put the sub and sub sub columns under
+# create column hierarchy. put the sub and sub sub columns under
 main_columns <- main_column_names
 main_column_list <- list()
 main_column_info_rows <- which(dfxl[[c[2]]] == ':')
@@ -287,7 +290,7 @@ for (r in main_column_info_rows) {
        !not_column(sub_column_n)) {
       sub_columns[[sub_column_n]] <- list()
       
-      # Get sub sub column row number
+      # get sub sub column row number
       sr <- which(dfxl[[c[1]]] == sub_column_n)
       if (length(sr) == 0 && dfxl[[c[2]]][sr] != ":") {
         sub_columns[[sub_column_n]] <- sub_column_n
@@ -303,7 +306,7 @@ for (r in main_column_info_rows) {
            !not_column(sub_sub_column_n)) {
           sub_sub_columns[[sub_sub_column_n]] <- list()
           
-          # Get sub sub sub column row number
+          # get sub sub sub column row number
           ssr <- which(dfxl[[c[1]]] == sub_sub_column_n)
           if (length(ssr) == 0 || dfxl[[c[2]]][ssr] != ":") {
             sub_sub_columns[[sub_sub_column_n]] <- sub_sub_column_n
@@ -318,7 +321,7 @@ for (r in main_column_info_rows) {
           #   if (!is.null(sub_sub_sub_column_n) && !is.na(sub_sub_sub_column_n) &&
           #       !not_column((sub_sub_sub_column_n))) {
           #     print(sub_sub_sub_column_n)
-          #     # Assuming there's no more level
+          #     # assuming there's no more level
           #     sub_sub_sub_columns[[sub_sub_sub_column_n]] <- sub_sub_sub_column_n
           #   }
           #  }
@@ -335,7 +338,7 @@ for (r in main_column_info_rows) {
 }
 
 
-# Get column wise event numbers
+# get column wise event numbers
 dir <- proj_dir 
 
 events_by_col <- list()
@@ -346,23 +349,23 @@ event_names_by_col_by_main_columns <- list()
 ev_df_by_main_columns <- list()
     
 for(col_type in column_type) {
-  msg <- paste("Processing ", col_type, " column events.\n",
+  msg <- paste("processing ", col_type, " column events.\n",
                "----------------------------------------------------------------------",
                sep="")
   print(msg)
   ncol <- length(columns[[col_type]])
   
-  msg <-paste("Total number of " , col_type , " columns = ", ncol, sep ="") 
+  msg <-paste("total number of " , col_type , " columns = ", ncol, sep ="") 
   print(msg)
   
   if (ncol == 0) {
-    msg <- paste("No column data or not extracted yet.")
+    msg <- paste("no column data or not extracted yet.")
     next
   }
   
-  start_age <- STARTING_AGE
-  end_age <- ENDING_AGE
-  age_diff <- AGE_SLIDE
+  start_age <- starting_age
+  end_age <- ending_age
+  age_diff <- age_slide
   
   events <- list()
   event_names <- list()
@@ -403,7 +406,7 @@ for(col_type in column_type) {
           # adding to the main_column 
           main_column <- get_main_column_name(col$name)
           if(is.na(main_column)) {
-            #print(paste("Something is wrong with column ", col, " for main_column ", main_column, sep=""))
+            #print(paste("something is wrong with column ", col, " for main_column ", main_column, sep=""))
           } else {
             evs_by_main_columns[[main_column]] <- as.numeric(evs_by_main_columns[[main_column]]) + 1
             ev_names_by_main_columns[[main_column]] <- c(ev_names_by_main_columns[[main_column]], n)
@@ -428,27 +431,27 @@ for(col_type in column_type) {
   
   age <- as.numeric(names(events))
   freq <- as.numeric(unlist(events))
-  freq_LAD <- c()
-  freq_FAD <- c()
+  freq_lad <- c()
+  freq_fad <- c()
   for(key in names(events)) {
     et <- event_types[[key]]
     if(is.null(et)) {
-      FAD = 0
-      LAD = 0
+      fad = 0
+      lad = 0
     } else {
-      FAD = length(et[et=="FAD"])
-      LAD = length(et[et=="LAD"])
+      fad = length(et[et=="fad"])
+      lad = length(et[et=="lad"])
     }
-    freq_FAD <- c(freq_FAD, FAD)
-    freq_LAD <- c(freq_LAD, LAD)
+    freq_fad <- c(freq_fad, fad)
+    freq_lad <- c(freq_lad, lad)
   }
 
-  ev_df <- data.frame(age = age, freq = freq, freq_FAD = freq_FAD, freq_LAD = freq_LAD)
+  ev_df <- data.frame(age = age, freq = freq, freq_fad = freq_fad, freq_lad = freq_lad)
   
-  data_dir <- paste(dir, '/Datapack/marine_genera_event_extraction/', sep="")
-  event_names_fn <- paste(col_type, '_column_', AGE_SLIDE, '_mil_event_names.txt', sep="")
+  data_dir <- paste(dir, '/datapack/marine_genera_event_extraction/', sep="")
+  event_names_fn <- paste(col_type, '_column_', age_slide, '_mil_event_names.txt', sep="")
   fn0 <- paste(data_dir, event_names_fn, sep="")
-  msg <- paste("Writing event names in ", fn0, sep="")
+  msg <- paste("writing event names in ", fn0, sep="")
   print(msg)
   
   # printing event names to file
@@ -456,48 +459,48 @@ for(col_type in column_type) {
   print(event_names)
   sink()
   
-  event_freq_datapack_file_name <- paste(col_type, '_column_every_', AGE_SLIDE,'_mil_event_frequencies_datapack.txt', sep="")
+  event_freq_datapack_file_name <- paste(col_type, '_column_every_', age_slide,'_mil_event_frequencies_datapack.txt', sep="")
   fn <- paste(data_dir, event_freq_datapack_file_name, sep="")
-  msg <- paste("Writing datapack ", fn, sep="")
+  msg <- paste("writing datapack ", fn, sep="")
   print(msg)
   
   sink(fn)
-  str <- 'format version:	1.3\nage units:	Ma\n'
-  writeLines(str)
-  str <- paste(col_type, ' Column ', AGE_SLIDE, ' Million Year Event Frequencies\tpoint\t150\t255/245/230', sep="")
-  writeLines(str)
+  str <- 'format version:	1.3\nage units:	ma\n'
+  writelines(str)
+  str <- paste(col_type, ' column ', age_slide, ' million year event frequencies\tpoint\t150\t255/245/230', sep="")
+  writelines(str)
   nf <- length(freq)
   for (l in 1:nf) {
     a <- age[l]
     f <- freq[l]
     ln <- paste("\t", a, "\t", f, sep='')
-    writeLines(ln)
+    writelines(ln)
   }
   
-  # write FAD frequencies
+  # write fad frequencies
   str="\n"
-  writeLines(str)
-  str <- paste(col_type, ' Column ', AGE_SLIDE, ' Million Year FAD Frequencies\tpoint\t150\t255/245/230', sep="")
-  writeLines(str)
-  nf <- length(freq_FAD)
+  writelines(str)
+  str <- paste(col_type, ' column ', age_slide, ' million year fad frequencies\tpoint\t150\t255/245/230', sep="")
+  writelines(str)
+  nf <- length(freq_fad)
   for (l in 1:nf) {
     a <- age[l]
-    f <- freq_FAD[l]
+    f <- freq_fad[l]
     ln <- paste("\t", a, "\t", f, sep='')
-    writeLines(ln)
+    writelines(ln)
   }
   
-  # write LAD frequencies
+  # write lad frequencies
   str="\n"
-  writeLines(str)
-  str <- paste(col_type, ' Column ', AGE_SLIDE, ' Million Year LAD Frequencies\tpoint\t150\t255/245/230', sep="")
-  writeLines(str)
-  nf <- length(freq_LAD)
+  writelines(str)
+  str <- paste(col_type, ' column ', age_slide, ' million year lad frequencies\tpoint\t150\t255/245/230', sep="")
+  writelines(str)
+  nf <- length(freq_lad)
   for (l in 1:nf) {
     a <- age[l]
-    f <- freq_LAD[l]
+    f <- freq_lad[l]
     ln <- paste("\t", a, "\t", f, sep='')
-    writeLines(ln)
+    writelines(ln)
   }
   sink()
   #file.show(fn)
@@ -528,63 +531,74 @@ for(col_type in column_type) {
 
 df = data.frame(ev_df_by_col$event)
 
-# At each pseudolevel, we count the number of speciations or
-# extinctions—encoded as counts in the code (Dataset S2)—and
-# the total number of species extant. For extinction calculations,
+# at each pseudolevel, we count the number of speciations or
+# extinctions—encoded as counts in the code (dataset s2)—and
+# the total number of species extant. for extinction calculations,
 # the count of extant species includes the extinguishers (which
 # form part of the pool of species that are exposed to extinction
-# risk) but not originators. Conversely, for speciation calculations,
+# risk) but not originators. conversely, for speciation calculations,
 # the count of extant species includes the originators but not the
 # extinguishers. 
-# N_FAD[i] : Number of species exists through speciation at period i 
+# n_fad[i] : number of species exists through speciation at period i 
 # subtract the number of extinctions happened in current period i
-# Add the number of speciations happened in current period i
-# N_FAD[i] = N_FAD[i-1] - LAD[i] + FAD[i]
+# add the number of speciations happened in current period i
+# n_fad[i] = n_fad[i-1] - lad[i] + fad[i]
 
-N_FAD <- rev(df$freq_FAD) # rev(df1$`N speciations`)  
-r_LAD <- rev(df$freq_LAD) # rev(df1$`N extinctions`) 
-r_FAD <- rev(df$freq_FAD) # rev(df1$`N speciations`)
+n_fad <- rev(df$freq_fad) # rev(df1$`n speciations`)  
+r_lad <- rev(df$freq_lad) # rev(df1$`n extinctions`) 
+r_fad <- rev(df$freq_fad) # rev(df1$`n speciations`)
 
-#N_FAD[1] <- 0
-for(i in 2:length(N_FAD)) {
-  N_FAD[i] = N_FAD[i-1] - r_LAD[i] + r_FAD[i]
+#n_fad[1] <- 0
+for(i in 2:length(n_fad)) {
+  n_fad[i] = n_fad[i-1] - r_lad[i] + r_fad[i]
 }
 
-# N_LAD[i] : Number of species exists at period i after extinction events in period (i-1)
+# n_lad[i] : number of species exists at period i after extinction events in period (i-1)
 # subtract the number of extinctions happened in previous period (i-1)
-# Add the number of speciations happened in previous period (i-1)
-# N_LAD[i] = N_LAD[i-1] - LAD[i-1] + FAD[i-1]
+# add the number of speciations happened in previous period (i-1)
+# n_lad[i] = n_lad[i-1] - lad[i-1] + fad[i-1]
 
-N_LAD <- rev(df$freq_LAD) # rev(df1$`N extinctions`)
-r_LAD <- rev(df$freq_LAD) # rev(df1$`N extinctions`) 
-r_FAD <- rev(df$freq_FAD) # rev(df1$`N speciations`)  
+n_lad <- rev(df$freq_lad) # rev(df1$`n extinctions`)
+r_lad <- rev(df$freq_lad) # rev(df1$`n extinctions`) 
+r_fad <- rev(df$freq_fad) # rev(df1$`n speciations`)  
 
-#N_LAD[1] <- 0
-for(i in 2:length(N_FAD)) {
-  N_LAD[i] = N_LAD[i-1] - r_LAD[i-1] + r_FAD[i-1]
+#n_lad[1] <- 0
+for(i in 2:length(n_fad)) {
+  n_lad[i] = n_lad[i-1] - r_lad[i-1] + r_fad[i-1]
 }
 
-N_FAD_LAD = data.frame(N_FAD=rev(N_FAD), N_LAD=rev(N_LAD))
-tail(N_FAD_LAD)
+n_fad_lad = data.frame(n_fad=rev(n_fad), n_lad=rev(n_lad))
+tail(n_fad_lad)
 
-df <- cbind(df, N_FAD_LAD)
+df <- cbind(df, n_fad_lad)
 #df[is.na(df)] <- 0
+
+
 
 
 # changing column names
 df$`N.speciations` <- df$freq_FAD
 df$`N.extinctions` <- df$freq_LAD
 df$`N.turnover` <- df$freq_FAD+ df$freq_LAD
-df$`N.species(speciation)` <- df$N_FAD
-df$`N.species(extinction)` <- df$N_LAD
+df$`N.species.speciation` <- df$N_FAD
+df$`N.species.extinction` <- df$N_LAD
 df$`raw.speciation.probability` <- df$freq_FAD/df$N_FAD
 df$`raw.extinction.probability` <- df$freq_LAD/df$N_LAD
 df[is.na(df)] <- 0
 
 # Extract only Phanerozoic
-df <- df[df$age > 0 & df$age <= 541.5, ]
+df_P <- df[df$age > 0 & df$age <= 541.5, ]
 
-dff <- df[,-c(2,3,4,5,6)]
+# Extract only Cenozoic
+df_C <- df[df$age > 0 & df$age <= CENOZOIC_BASE, ]
+tail(df_C)
+
+# Change the dff here depending on the time period being focused on
+dff <- df
+dff <- df_P
+dff <- df_C
+
+dff <- dff[,-c(2,3,4,5,6)]
 dff$`raw.turnover.probability` <- dff$`raw.speciation.probability` + dff$`raw.extinction.probability`
 which(is.na(dff))
 head(dff)
@@ -597,7 +611,7 @@ if (floor(AGE_SLIDE) == 0) {
   AGE_DIFF = paste(AGE_SLIDE, "M", sep="")
 }
 
-pfname <- paste(getwd(),"/marine_genera_event_extraction", "/marine_genera_speciation_extinction_age_slide_", AGE_DIFF, ".csv", sep="")
+pfname <- paste(getwd(),"/marine_genera_event_extraction", "/cenozoic_marine_genera_speciation_extinction_age_slide_", AGE_DIFF, ".csv", sep="")
 pfname
 write.csv(dff, file=pfname, col.names = TRUE)
 
@@ -611,6 +625,7 @@ datatable(dff)
 
 # plotting
 plot(-dff$age, dff$`N.turnover`, t='l')
+plot(-dff$age, dff$N.species.speciation, t='l')
 plot(-dff$age, dff$`raw.speciation.probability`, t='l')
 plot(-dff$age, dff$`raw.extinction.probability`, t='l')
 plot(-dff$age, dff$HMM.speciation.state.probability, t='l')

@@ -1,7 +1,9 @@
 #data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/EvolutionaryTree/Fordham and Zehady shared/180724'
 data_dir <- '/Users/andy/Documents/TSCreator/EvolutionaryTree/Fordham and Zehady shared/180724'
 setwd(data_dir)
-dp_fname <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourMorphogroup.xls'
+#dp_fname <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourMorphogroup.xls'
+dp_fname <- 'qryTSCAze_BiospeciesAze_ColourMorphogroup.xls'
+
 library(readxl)
 sheets <- excel_sheets(dp_fname)
 sheets
@@ -57,13 +59,17 @@ living_df
 dim(living_df)
 
 
-min_age <- min(fad_lad_df$LAD, fad_lad_df$FAD)
-mn_a <- floor(min_age)
-max_age <- max(fad_lad_df$LAD, fad_lad_df$FAD)
-mx_a <- ceiling(max_age)
+slide_window <- 0.1
 
-slide_window <- 1
+min_age <- min(fad_lad_df$LAD, fad_lad_df$FAD)
+mn_a <- floor(min_age) - slide_window/2
+max_age <- max(fad_lad_df$LAD, fad_lad_df$FAD)
+mx_a <- ceiling(max_age) + slide_window/2
+
+
 age_seq <- seq(mn_a, mx_a, by=slide_window)
+age_seq
+
 ages <- list()
 LAD_cnts <- list()
 FAD_cnts <- list()
@@ -107,6 +113,8 @@ ages_ap <- FAD_LAD_per_df$age[2:N]
 extinction_rate <- FAD_LAD_per_df_ap$LAD/sum(FAD_LAD_per_df_ap$LAD) * 100
 speciation_rate <- FAD_LAD_per_df_ap$FAD/sum(FAD_LAD_per_df_ap$FAD) * 100
 
+par(mfrow=c(1,1))
+par(mar=c(4,4,4,4))
 plot(FAD_LAD_per_df_ap$age, 
      FAD_LAD_per_df_ap$LAD_cnt + FAD_LAD_per_df_ap$FAD_cnt, 
      t='l', lwd=1,
@@ -114,7 +122,7 @@ plot(FAD_LAD_per_df_ap$age,
      lty=2,
      xlab='Age (Ma)',
      ylab='Number of events', #'event rate(%)',
-     ylim=c(0,42),
+     #ylim=c(0,42),
      main='Speciation and extinction events of planktonic foraminifera during Cenozoic era')
 
 lines(FAD_LAD_per_df_ap$age, FAD_LAD_per_df_ap$LAD_cnt, #ages, extinction_rate, 
@@ -125,6 +133,137 @@ lines(FAD_LAD_per_df_ap$age, FAD_LAD_per_df_ap$FAD_cnt, #ages, speciation_rate,
       lwd=2,
       col=3)
 legend('topright', legend=c('speciation + extinction', 'extinction', 'speciation'), col=c(1,2,3), lty=c(2,1,1))
+
+
+df = data.frame(FAD_LAD_per_df_ap)
+
+# At each pseudolevel, we count the number of speciations or
+# extinctions—encoded as counts in the code (Dataset S2)—and
+# the total number of species extant. For extinction calculations,
+# the count of extant species includes the extinguishers (which
+# form part of the pool of species that are exposed to extinction
+# risk) but not originators. Conversely, for speciation calculations,
+# the count of extant species includes the originators but not the
+# extinguishers. 
+# N_FAD[i] : Number of species exists through speciation at period i 
+# subtract the number of extinctions happened in current period i
+# Add the number of speciations happened in current period i
+# N_FAD[i] = N_FAD[i-1] - LAD[i] + FAD[i]
+
+N_FAD <- rev(df$FAD_cnt) # rev(df1$`N speciations`)  
+r_LAD <- rev(df$LAD_cnt) # rev(df1$`N extinctions`) 
+r_FAD <- rev(df$FAD_cnt) # rev(df1$`N speciations`)
+
+#N_FAD[1] <- 0
+for(i in 2:length(N_FAD)) {
+  N_FAD[i] = N_FAD[i-1] - r_LAD[i] + r_FAD[i]
+}
+
+# N_LAD[i] : Number of species exists at period i after extinction events in period (i-1)
+# subtract the number of extinctions happened in previous period (i-1)
+# Add the number of speciations happened in previous period (i-1)
+# N_LAD[i] = N_LAD[i-1] - LAD[i-1] + FAD[i-1]
+
+N_LAD <- rev(df$FAD_cnt) # rev(df1$`N extinctions`)
+r_LAD <- rev(df$LAD_cnt) # rev(df1$`N extinctions`) 
+r_FAD <- rev(df$FAD_cnt) # rev(df1$`N speciations`)  
+
+#N_LAD[1] <- 0
+for(i in 2:length(N_FAD)) {
+  N_LAD[i] = N_LAD[i-1] - r_LAD[i-1] + r_FAD[i-1]
+}
+
+N_FAD_LAD = data.frame(N_FAD=rev(N_FAD), N_LAD=rev(N_LAD))
+tail(N_FAD_LAD)
+
+df <- cbind(df, N_FAD_LAD)
+#df[is.na(df)] <- 0
+head(df)
+
+# changing column names
+df$`N.speciations` <- df$FAD_cnt
+df$`N.extinctions` <- df$LAD_cnt
+df$`N.turnover` <- df$FAD_cnt + df$LAD_cnt
+df$`N.species.speciation` <- df$N_FAD
+df$`N.species.extinction` <- df$N_LAD
+df$`raw.speciation.probability` <- df$FAD_cnt/df$N_FAD
+df$`raw.extinction.probability` <- df$LAD_cnt/df$N_LAD
+df[is.na(df)] <- 0
+
+
+# Extract only Cenozoic
+CENOZOIC_BASE <- 67
+df_C <- df[df$age > 0 & df$age <= CENOZOIC_BASE, ]
+tail(df_C)
+
+# Change the dff here depending on the time period being focused on
+dff <- df
+dff <- df_C
+
+dff <- dff[,-c(2,3,4,5,6)]
+dff$`raw.turnover.probability` <- dff$`raw.speciation.probability` + dff$`raw.extinction.probability`
+which(is.na(dff))
+head(dff)
+tail(dff)
+
+
+# HMM 
+m <- 3
+counts <- dff$N.speciations
+head(counts)
+pn <- dff$N.species.speciation
+head(pn)
+x <- dthmm(counts, Pi=setPi(m), delta= setDPm(m), pm= list(prob=setDPm(m)), 
+           pn=list(size=pn), distn="binom", discrete=TRUE)
+y <- BaumWelch(x)               # estimated parameters of the HMM
+
+# Predict most likely sequence of states given observations and model y
+v <- Viterbi(y)                 # predicted sequence of HMM states at each pseudolevel
+
+dff$`HMM.speciation.state` <- v
+dff$`HMM.speciation.state.probability` <- y$pm$prob[v]
+
+
+m <- 3 # 3 state extinction
+counts <- dff$N.extinctions
+pn <- dff$N.species.extinction
+x <- dthmm(counts, Pi=setPi(m), delta= setDPm(m), pm= list(prob=setDPm(m)), 
+           pn=list(size=pn), distn="binom", discrete=TRUE)
+y <- BaumWelch(x)               # estimated parameters of the HMM
+
+# Predict most likely sequence of states given observations and model y
+v <- Viterbi(y)                 # predicted sequence of HMM states at each pseudolevel
+
+dff$`HMM.extinction.state` <- v
+dff$`HMM.extinction.state.probability` <- y$pm$prob[v]
+
+dff$`HMM.turnover.probability` <- dff$`HMM.speciation.state.probability` + dff$`HMM.extinction.state.probability`
+
+head(dff)
+library(DT)
+datatable(dff)
+
+
+par(mfrow=c(9,1))
+par(mar=c(1,4,1,1))
+plot(-dff$age, dff$N.speciations, t='l', col='green', 
+     xlab='Ma', ylab='N speciation')
+plot(-dff$age, dff$raw.speciation.probability, t='l', col='green',
+     xlab='Ma', ylab='Raw spec. prob')
+plot(-dff$age, dff$HMM.speciation.state.probability, t='l', col='green',
+     xlab='Ma', ylab='HMM spec. prob')
+plot(-dff$age, dff$N.extinctions, t='l', col='red', 
+     xlab='Ma', ylab='N extinction')
+plot(-dff$age, dff$raw.extinction.probability, t='l', col='red',
+     xlab='Ma', ylab='Raw exti. prob')
+plot(-dff$age, dff$HMM.extinction.state.probability, t='l', col='red',
+     xlab='Ma', ylab='HMM exti. prob')
+plot(-dff$age, dff$N.turnover, t='l', col='black',
+     xlab='Ma', ylab='N turnover')
+plot(-dff$age, dff$raw.turnover.probability, t='l', col='black',
+     xlab='Ma', ylab='Raw turn. prob')
+plot(-dff$age, dff$HMM.turnover.probability, t='l', col='black',
+     xlab='Ma', ylab='HMM turn. prob')
 
 
 # Cenozoic-Campanian Marine Oxygen-18 Composite (per-mil PDB)
