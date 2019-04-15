@@ -1,9 +1,9 @@
 X0 <- ev_df_by_col$event[ev_df_by_col$event$age < 70,]
-X1 <- FAD_LAD_per_df[FAD_LAD_per_df$age <= 70,] # cenozoic planktonic foraminifera
-X2 <- oxy_18_avg_df[oxy_18_avg_df$age < 70, ]
-X3 <- msl_avg_dff[msl_avg_dff$age < 70, ]
-X4 <- carbon_13_avg_dff[carbon_13_avg_dff$age < 70, ]
-X5 <- sr87_86_avg_dff[sr87_86_avg_dff$age < 70, ]
+X1 <- FAD_LAD_per_df[FAD_LAD_per_df$age < 70,] # cenozoic planktonic foraminifera
+X2 <- oxy_18_avg_df[oxy_18_avg_df$age < 70, ] # salinity and temperature
+X3 <- msl_avg_dff[msl_avg_dff$age < 70, ] 
+X4 <- carbon_13_avg_dff[carbon_13_avg_dff$age < 70, ] # indicates proportion of carbon of biogenic origin
+X5 <- sr87_86_avg_dff[sr87_86_avg_dff$age < 70, ] # continental erosion, plate tectonics https://www.le.ac.uk/gl/art/gl209/lecture2/lect2-6.html
 
 X0 <- na.trim(X0)
 X1 <- na.trim(X1)
@@ -13,16 +13,20 @@ X4 <- na.trim(X4)
 X5 <- na.trim(X5)
 
 X <- data.frame(age=X2$age, 
-                ev_marine=X0$freq,
+                #ev_marine=X0$freq,
                 ev=X1$total, 
                 oxy_18=-X2$oxy_18_avg,
                 carbon_13=X4$c13_avg,
                 sr87_86=X5$sr87_86,
                 sl=X3$msl_avg)
+
+
 head(X)
 tail(X)
 plot(X)
 
+# compute correlation
+cor(X[,-1])
 plot(X$age, X$ev, t='l')
 points(X$age, X$ev, cex=0.5)
 par(new=T)
@@ -139,3 +143,5 @@ if(dev.interactive()) { ## use it
   x <- seq(1, length(V[,2])); y <- V[,2]
   plot(x,y); identifyPch(x,y) # how fast to get all?
 }
+
+dev.off()

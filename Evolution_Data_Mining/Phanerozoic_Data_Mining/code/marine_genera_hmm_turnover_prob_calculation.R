@@ -5,7 +5,7 @@ setwd(dp_dir)
 dp_fname <- 'MarineGenera_13Jan13.xls'
 
 dff_backup <- dff
-AGE_SLIDE <- 0.5 # 100Ka
+AGE_SLIDE <- 0.5 # 500Ka
 AGE_DIFF = NA
 if (floor(AGE_SLIDE) == 0) {
   AGE_DIFF = paste(AGE_SLIDE * 1000, "K", sep="")
@@ -20,6 +20,87 @@ dff <- read.csv(file=pfname)
 
 head(dff)
 datatable(dff)
+colnames(dff)
+
+turnProb = data.frame(age=dff$age, turnProb=dff$HMM.turnover.probability)
+spec = mtm(turnProb, output=1)
+spec$Period = 1/spec$Frequency
+spec <- spec[order(spec$Harmonic_CL, decreasing = T),]
+head(spec, 50)
+turnPwr=eha(turnProb, win=30.001, fmin=0, fmax=1.5, #step=0.2,
+              pad=4000, 
+              genplot=4, palette=5, pl=2, ydir=-1, 
+              tbw=2, output=2)
+
+# Extract only Cenozoic
+CENOZOIC_BASE <- 67
+df_C <- df[df$age > 0 & df$age <= CENOZOIC_BASE, ]
+tail(df_C)
+library(astrochron)
+turnProb_C = data.frame(age=df_C$age, turnProb=df_C$HMM.turnover.probability)
+spec_C = mtm(turnProb_C, output=1)
+spec_C$Period = 1/spec_C$Frequency
+spec_C <- spec_C[order(spec_C$Harmonic_CL, decreasing = T),]
+head(spec_C, 50)
+turnPwr_C=eha(turnProb_C, win=20, fmin=0, fmax=1, #step=0.2,
+            pad=4000, 
+            genplot=4, palette=5, pl=2, ydir=-1, 
+            tbw=2, output=2)
+
+MESOZOIC_BASE <- 252
+df_M <- df[df$age > CENOZOIC_BASE & df$age <= MESOZOIC_BASE, ]
+head(df_M)
+tail(df_M)
+turnProb_M = data.frame(age=df_C$age, turnProb=df_C$HMM.turnover.probability)
+spec_M = mtm(turnProb_M, output=1)
+spec_M$Period = 1/spec_M$Frequency
+spec_M <- spec_M[order(spec_M$Harmonic_CL, decreasing = T),]
+head(spec_M, 60)
+
+turnPwr_M=eha(turnProb_M, win=20.001, fmin=0, fmax=1, #step=0.2,
+            pad=4000, 
+            genplot=4, palette=5, pl=2, ydir=-1, 
+            tbw=2, output=2)
+
+PALEOZOIC_BASE <- 541
+df_P <- df[df$age > MESOZOIC_BASE & df$age <= PALEOZOIC_BASE, ]
+head(df_P)
+tail(df_P)
+turnProb_P = data.frame(age=df_P$age, turnProb=df_P$HMM.turnover.probability)
+spec_P = mtm(turnProb_P, output=1)
+spec_P$Period = 1/spec_P$Frequency
+spec_P <- spec_P[order(spec_P$Harmonic_CL, decreasing = T),]
+head(spec_P, 50)
+
+turnPwr_P=eha(turnProb_P, win=20.001, fmin=0, fmax=1, #step=0.2,
+              pad=4000, 
+              genplot=4, palette=5, pl=2, ydir=-1, 
+              tbw=2, output=2)
+
+# Change the dff here depending on the time period being focused on
+dff <- df_C
+
+#png('turnover.png')
+par(mfrow=c(9,1))
+par(mar=c(1,4,1,1))
+plot(-dff$age, dff$N.speciations, t='l', col='green', 
+     xlab='Ma', ylab='N speciation')
+plot(-dff$age, dff$raw.speciation.probability, t='l', col='green',
+     xlab='Ma', ylab='Raw spec. prob')
+plot(-dff$age, dff$HMM.speciation.state.probability, t='l', col='green',
+     xlab='Ma', ylab='HMM spec. prob')
+plot(-dff$age, dff$N.extinctions, t='l', col='red', 
+     xlab='Ma', ylab='N extinction')
+plot(-dff$age, dff$raw.extinction.probability, t='l', col='red',
+     xlab='Ma', ylab='Raw exti. prob')
+plot(-dff$age, dff$HMM.extinction.state.probability, t='l', col='red',
+     xlab='Ma', ylab='HMM exti. prob')
+plot(-dff$age, dff$N.turnover, t='l', col='black',
+     xlab='Ma', ylab='N turnover')
+plot(-dff$age, dff$raw.turnover.probability, t='l', col='black',
+     xlab='Ma', ylab='Raw turn. prob')
+plot(-dff$age, dff$HMM.turnover.probability, t='l', col='black',
+     xlab='Ma', ylab='HMM turn. prob')
 
 # Calculate HMM turnover probability
 # Find the best value for hidden state m
@@ -90,7 +171,7 @@ m.speciation <- which.min(AICv) + 1
 
 # Use the best hidden state to get HMM series
 m <- m.speciation                          # specify number of states in the model
-m <- 3
+m <- 5 # 5 for 100K interval
 counts <- dff$N.speciations
 head(counts)
 pn <- dff$N.species.speciation
@@ -111,7 +192,7 @@ pn <- dff$N.species.extinction
 head(pn)
 
 # Find the best state for extinction
-mlist <- seq(3, 10)
+mlist <- seq(2, 10)
 AICv <- c()
 for (m in mlist) {
   #m <- 4                          # specify number of states in the model
@@ -131,11 +212,12 @@ plot(mlist, AICv, t='l',
      xlab='Hidden state, m',
      ylab='AIC',
      main='Model comparison for extinction')
-m.extinction <- which.min(AICv) + 2
+m.extinction <- which.min(AICv) + 1
 m.extinction
 
 
 # 3 state extinction
+# 5 state extinction for 100K interval of marine genera events
 m <- m.extinction                          # specify number of states in the model
 
 counts <- dff$N.extinctions
@@ -170,6 +252,7 @@ write.csv(dff, file=pfname, col.names = TRUE)
 # Read the marine genera bin wise evolution frequency/turnover data
 dff <- read.csv(file=pfname)
 head(dff)
+colnames(dff)
 
 # R code to generate surrogate simulations in order to assess suitability of 
 #   spectral analysis procedures provided in Astrochron
@@ -183,8 +266,9 @@ ar1_ttable = ar1_noise_model$ttable
 rho = ar1_ttable[1,1] 
 rho
 npts = dim(dff)[1]
-dt = 0.5
+dt = 0.1
 
+par(mar=c(4,4,4,4))
 # Conduct simulations using AR1 surrogates, and the Periodogram-AR1 approach
 testBackground(npts=npts, dt=dt, noiseType="ar1", coeff= 0.3082017, 
                method="periodogramAR1", detrend=T,iter=2000)

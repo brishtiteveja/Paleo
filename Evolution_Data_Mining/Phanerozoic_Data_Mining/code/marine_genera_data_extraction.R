@@ -64,8 +64,8 @@ for (ct in column_type) {
       
       r_i <- r
       column <- list()
-      type <- na
-      while(true) {
+      type <- NA
+      while(TRUE) {
         age <- dfxl[[c[3]]][r_i]
         if (is.na(age)) {
           if (is.na(dfxl[[c[1]]][r_i]))
@@ -152,14 +152,14 @@ get_parent_hierarchy <- function(col_name) {
     }
   }
   
-  return(na)
+  return(NA)
 }
 
 get_main_column_name <- function(col_name) {
   parent = get_parent_hierarchy(col_name)
   
   if(is.na(parent) || is.na(parent[["main column"]])) {
-    return(na)
+    return(NA)
   }
   
   mc = parent[["main column"]]
@@ -171,7 +171,7 @@ get_sub_column_name <- function(col_name) {
   parent = get_parent_hierarchy(col_name)
   
   if(is.na(parent) || is.na(parent[["sub column"]])) {
-    return(na)
+    return(NA)
   }
   
   sc = parent[["sub column"]]
@@ -182,7 +182,7 @@ get_sub_column_name <- function(col_name) {
 get_sub_sub_column_name <- function(col_name) {
   parent = get_parent_hierarchy(col_name)
   if(is.na(parent) || is.na(parent[["sub sub column"]])) {
-    return(na)
+    return(NA)
   }
   
   ssc = parent[["sub sub column"]]
@@ -191,18 +191,19 @@ get_sub_sub_column_name <- function(col_name) {
 }
 
 not_column <- function(col_name) {
-  if (col_name == "_metacolumn_off" || col_name == "_metacolumn_on" 
+  if (col_name == "_metacolumn_off" || col_name == "_metacolumn_on" || 
+    col_name == "_METACOLUMN_OFF" || col_name == "_METACOLUMN_ON" 
       || col_name == "pass" ||
       substring(col_name, 2, 18) == "for details click")
-    return(true)
+    return(TRUE)
   else if (col_name == 'off' || col_name == 'on') {
-    return(true)
+    return(TRUE)
   } else {
     # # column width
     m <- regexec("^[0-9]+$",col_name)
     ml <- regmatches(col_name, m)
     if (length(ml[[1]]) == 1) {
-      return(true)
+      return(TRUE)
     }
     
     # color code
@@ -210,10 +211,10 @@ not_column <- function(col_name) {
     ml <- regmatches(col_name, m)
     
     if (length(ml[[1]]) != 0) {
-      return(true)  
+      return(TRUE)  
     }
     
-    return(false)
+    return(FALSE)
   }
 }
 
@@ -439,8 +440,8 @@ for(col_type in column_type) {
       fad = 0
       lad = 0
     } else {
-      fad = length(et[et=="fad"])
-      lad = length(et[et=="lad"])
+      fad = length(et[et=="FAD"])
+      lad = length(et[et=="LAD"])
     }
     freq_fad <- c(freq_fad, fad)
     freq_lad <- c(freq_lad, lad)
@@ -466,41 +467,41 @@ for(col_type in column_type) {
   
   sink(fn)
   str <- 'format version:	1.3\nage units:	ma\n'
-  writelines(str)
+  writeLines(str)
   str <- paste(col_type, ' column ', age_slide, ' million year event frequencies\tpoint\t150\t255/245/230', sep="")
-  writelines(str)
+  writeLines(str)
   nf <- length(freq)
   for (l in 1:nf) {
     a <- age[l]
     f <- freq[l]
     ln <- paste("\t", a, "\t", f, sep='')
-    writelines(ln)
+    writeLines(ln)
   }
   
   # write fad frequencies
   str="\n"
-  writelines(str)
+  writeLines(str)
   str <- paste(col_type, ' column ', age_slide, ' million year fad frequencies\tpoint\t150\t255/245/230', sep="")
-  writelines(str)
+  writeLines(str)
   nf <- length(freq_fad)
   for (l in 1:nf) {
     a <- age[l]
     f <- freq_fad[l]
     ln <- paste("\t", a, "\t", f, sep='')
-    writelines(ln)
+    writeLines(ln)
   }
   
   # write lad frequencies
   str="\n"
-  writelines(str)
+  writeLines(str)
   str <- paste(col_type, ' column ', age_slide, ' million year lad frequencies\tpoint\t150\t255/245/230', sep="")
-  writelines(str)
+  writeLines(str)
   nf <- length(freq_lad)
   for (l in 1:nf) {
     a <- age[l]
     f <- freq_lad[l]
     ln <- paste("\t", a, "\t", f, sep='')
-    writelines(ln)
+    writeLines(ln)
   }
   sink()
   #file.show(fn)
@@ -530,6 +531,8 @@ for(col_type in column_type) {
 }
 
 df = data.frame(ev_df_by_col$event)
+library(DT)
+datatable(df)
 
 # at each pseudolevel, we count the number of speciations or
 # extinctions—encoded as counts in the code (dataset s2)—and
@@ -577,19 +580,20 @@ df <- cbind(df, n_fad_lad)
 
 
 # changing column names
-df$`N.speciations` <- df$freq_FAD
-df$`N.extinctions` <- df$freq_LAD
-df$`N.turnover` <- df$freq_FAD+ df$freq_LAD
-df$`N.species.speciation` <- df$N_FAD
-df$`N.species.extinction` <- df$N_LAD
-df$`raw.speciation.probability` <- df$freq_FAD/df$N_FAD
-df$`raw.extinction.probability` <- df$freq_LAD/df$N_LAD
+df$`N.speciations` <- df$freq_fad
+df$`N.extinctions` <- df$freq_lad
+df$`N.turnover` <- df$freq_fad + df$freq_lad
+df$`N.species.speciation` <- df$n_fad
+df$`N.species.extinction` <- df$n_lad
+df$`raw.speciation.probability` <- df$freq_fad/df$n_fad
+df$`raw.extinction.probability` <- df$freq_lad/df$n_lad
 df[is.na(df)] <- 0
 
 # Extract only Phanerozoic
 df_P <- df[df$age > 0 & df$age <= 541.5, ]
 
 # Extract only Cenozoic
+CENOZOIC_BASE = 67
 df_C <- df[df$age > 0 & df$age <= CENOZOIC_BASE, ]
 tail(df_C)
 
@@ -599,11 +603,13 @@ dff <- df_P
 dff <- df_C
 
 dff <- dff[,-c(2,3,4,5,6)]
+colnames(dff)
 dff$`raw.turnover.probability` <- dff$`raw.speciation.probability` + dff$`raw.extinction.probability`
 which(is.na(dff))
 head(dff)
 tail(dff)
 
+AGE_SLIDE = age_slide
 AGE_DIFF = NA
 if (floor(AGE_SLIDE) == 0) {
   AGE_DIFF = paste(AGE_SLIDE * 1000, "K", sep="")
@@ -611,7 +617,7 @@ if (floor(AGE_SLIDE) == 0) {
   AGE_DIFF = paste(AGE_SLIDE, "M", sep="")
 }
 
-pfname <- paste(getwd(),"/marine_genera_event_extraction", "/cenozoic_marine_genera_speciation_extinction_age_slide_", AGE_DIFF, ".csv", sep="")
+pfname <- paste(getwd(),"/marine_genera_event_extraction", "/marine_genera_speciation_extinction_age_slide_", AGE_DIFF, ".csv", sep="")
 pfname
 write.csv(dff, file=pfname, col.names = TRUE)
 
@@ -626,6 +632,7 @@ datatable(dff)
 # plotting
 plot(-dff$age, dff$`N.turnover`, t='l')
 plot(-dff$age, dff$N.species.speciation, t='l')
+plot(-dff$age, dff$N.species.extinction, t='l')
 plot(-dff$age, dff$`raw.speciation.probability`, t='l')
 plot(-dff$age, dff$`raw.extinction.probability`, t='l')
 plot(-dff$age, dff$HMM.speciation.state.probability, t='l')
@@ -642,6 +649,7 @@ cor(dff$N.turnover, dff$HMM.turnover.probability)
 # 0.25 myr moving average
 par(mfrow=c(1,1))
 library(zoo)
+AGE_SLIDE <- age_slide
 m=0.25/AGE_SLIDE
 plot(rollmean(-dff$age,m), rollmean(dff$`raw.turnover.probability`,m), t='l')
 # 0.50 myr moving average

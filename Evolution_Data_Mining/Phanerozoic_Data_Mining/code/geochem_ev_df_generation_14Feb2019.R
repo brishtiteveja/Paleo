@@ -40,7 +40,7 @@ a_r2
 #----------------------------------------------------------------------------------
 
 # Cenozoic-Campanian Marine Oxygen-18 Composite (per-mil PDB)
-data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Datapacks'
+data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Datapacks'
 setwd(data_dir)
 dp_fname <- 'Phan_GTS2016_for_7.1_HaqJur_ForamMikrotax_28July2017.xls'
 library(readxl)
@@ -115,12 +115,13 @@ plot(ages, oxy_18_avg, col=2, axes = F, xlab='', ylab='')
 # Phanerozoic C-13 data extraction
 ages <- dfxl$`1.3`
 carbon_13 <- dfxl$X__1
+head(carbon_13)
 carbon_13_info <- dfxl$X__2
 start_r <- 32996
 end_r <- 38049
 carbon_ages <- as.numeric(ages[start_r:end_r])
 carbon_13 <- as.numeric(carbon_13[start_r:end_r])
-
+head(carbon_ages)
 
 carbon_13_df <- data.frame(age=carbon_ages, c13=carbon_13)
 
@@ -220,7 +221,7 @@ par(new=T)
 plot(sr87_86_avg_dff$age, sr87_86_avg_dff$sr87_86, t='l', col=2, axes=F, xlab="", ylab="")
 
 # Sea Level Data extraction
-dir <- ("~/Dropbox/TSCreator/TSCreator development/Developers/Andy/Datapacks/")
+dir <- ("~/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Datapacks/")
 dp_fname <- paste(dir, "Phan_GTS2016_for_7.1_HaqJur_ForamMikrotax_28July2017.xls", sep="")
 library(readxl)
 dfxl <- read_excel(dp_fname)
@@ -298,3 +299,19 @@ msl_avg_df <- data.frame(age=unlist(ages),
 msl_avg_dff <- data.frame(na.approx(msl_avg_df))
 
 
+# Prokoph data
+# Cenozoic-Campanian Marine Oxygen-18 Composite (per-mil PDB)
+data_dir <- '/Users/andy/Documents/projects/ML-Data Mining/Evolution_Data_Mining/Phanerozoic_Data_Mining/Datapack'
+setwd(data_dir)
+dp_fname <- 'prokoph_data_table_2.xlsx'
+library(readxl)
+sheets <- excel_sheets(dp_fname)
+sheets
+dfxl <- read_excel(dp_fname) #, sheet=sheets[1], range = "A13:F1987")
+c <- colnames(dfxl) # column header
+c
+prokoph_df <- data.frame(dfxl)
+head(prokoph_df)
+tail(prokoph_df)
+
+plot(prokoph_df, t='l')
