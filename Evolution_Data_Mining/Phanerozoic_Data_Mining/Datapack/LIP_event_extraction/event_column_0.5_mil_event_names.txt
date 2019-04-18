@@ -1,0 +1,157 @@
+$`16.5`
+[1] "Columbia River (NW USA)"
+
+$`25`
+[1] "western and central Europe"  "northern and central Africa"
+
+$`31`
+[1] "Afar (Ethiopia)"
+
+$`33`
+[1] "Sierra Madre Occidental (Mex.)"
+
+$`57`
+[1] "North Atlantic Volcanic Province"
+
+$`66`
+[1] "Deccan (c. India)"
+
+$`68`
+[1] "Tian Shan (w. China)"
+
+$`70`
+[1] "Carmacks (w. Canada)"
+
+$`73`
+[1] "Sierra Leone Rise (c. S. Atl. off Africa)" "Maud Rise (S. Atl. off Antarctica)"       
+
+$`83`
+[1] "Kerguelen-Broken Ridge (Indian Ocean)"
+
+$`87`
+[1] "Madagascar"
+
+$`90`
+[1] "Caribbean-Colombia"
+
+$`95`
+[1] "Alpha Ridge and Queen Elizabeth Islands (Arctic)"
+
+$`96`
+[1] "Wallaby Plateau (SE. Indian Ocean)"
+
+$`100`
+[1] "Hess Rise (N. Pac.)"                "Naturaliste Plateau (off SW Aust.)"
+
+$`110`
+[1] "Marie Byrd Land (Antarc.)"
+
+$`113.5`
+[1] "Whitsunday (NE Aust.)"
+
+$`117.5`
+[1] "Magellan Rise (c. Pac.)"
+
+$`118`
+[1] "Kerguelen-Rajmahal (Indian Ocean)"
+
+$`120`
+[1] "Hikurangi Plateau (S. Pac.)" "Nauru Basin (W. Pac.)"      
+
+$`123`
+[1] "Ontong Java Plateau (W. Pac.)" "Manihiki Plateau (c. Pac.)"   
+[3] "Pinon (Ecuador)"              
+
+$`130`
+[1] "High Arctic"                     "Mid-Pacific Mountains (N. Pac.)"
+
+$`132`
+[1] "Comei (se. Tibet)"
+
+$`134`
+[1] "Parana-Etendeka (S. Amer.-Afr.)"
+
+$`136`
+[1] "Gascoyne Margin (W Aust.)"
+
+$`138`
+[1] "Trap (Greenland)"
+
+$`145`
+[1] "Shatsky Rise (W. Pac.)"
+
+$`148`
+[1] "Sorachi (Sakhalin)"
+
+$`160`
+[1] "Argo Basin Margin (NW Aust.)"
+
+$`183`
+[1] "Karoo-Ferrar (Africa-Ant.)"
+
+$`201`
+[1] "Central Atlantic Magmatic Province (CAMP)"
+
+$`205`
+[1] "Ramparts; Angayucham (Alaska)"
+
+$`220`
+[1] "Cache Creek-2 (w. Canada)"
+
+$`230`
+[1] "Wrangellia (Alaska, w. Canada)"
+
+$`251`
+[1] "Siberian Traps"               "Brisbane-Duaringa (e. Aust.)"
+
+$`258`
+[1] "Emeishan (China)"
+
+$`265`
+[1] "Cache Creek-1 (w. Canada)"
+
+$`268`
+[1] "Himalaya"
+
+$`280`
+[1] "Tarim (China)"
+
+$`300`
+[1] "Jutland (n. Europe)" "Europe-NW Africa"   
+
+$`350`
+[1] "Yakutsk (e. Russia)" "Panzhihua (China)"  
+
+$`363.5`
+[1] "Viluy traps (Siberia)"
+
+$`365`
+[1] "East Europe"
+
+$`408`
+[1] "Kyrgyzatin (central Asia)"
+
+$`470`
+[1] "Maritimes (NE Canada)"
+
+$`510`
+[1] "Kalkarindji (Antrim) (Aust.)"
+
+$`530`
+[1] "Wichita Mountains (S. USA)"
+
+$`550`
+[1] "Volyn (e. Europe)"
+
+$`560`
+[1] "Belaya River (se. Siberia)"
+
+$`570`
+[1] "Ouarzazate (NW Afr.)"     "Crimson Creek (Tasmania)"
+
+$`575`
+[1] "Late Central-Iapetus (N.Amer.)"
+
+$`590.5`
+[1] "Middle Central-Iapetus  (N.Amer.)"
+

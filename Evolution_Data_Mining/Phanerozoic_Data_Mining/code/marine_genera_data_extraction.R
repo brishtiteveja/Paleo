@@ -617,6 +617,7 @@ if (floor(AGE_SLIDE) == 0) {
   AGE_DIFF = paste(AGE_SLIDE, "M", sep="")
 }
 
+AGE_DIFF = '1M'
 pfname <- paste(getwd(),"/marine_genera_event_extraction", "/marine_genera_speciation_extinction_age_slide_", AGE_DIFF, ".csv", sep="")
 pfname
 write.csv(dff, file=pfname, col.names = TRUE)
@@ -625,12 +626,16 @@ write.csv(dff, file=pfname, col.names = TRUE)
 # Read the marine genera bin wise evolution frequency/turnover data
 dff <- read.csv(file=pfname)
 head(dff)
+genera_df <- dff
 
 library(DT)
 datatable(dff)
 
 # plotting
-plot(-dff$age, dff$`N.turnover`, t='l')
+plot(dff$age, dff$`N.turnover`, t='l',
+     xlab='age (Ma)', ylab='Total number of speciation and extinction events',
+     main='Marine genera species turnover')
+
 plot(-dff$age, dff$N.species.speciation, t='l')
 plot(-dff$age, dff$N.species.extinction, t='l')
 plot(-dff$age, dff$`raw.speciation.probability`, t='l')

@@ -1,0 +1,46 @@
+format version:	1.3
+age units:	ma
+
+event column 0.1 million year event frequencies	point	150	255/245/230
+	0	0
+	0.1	0
+	0.2	0
+	0.3	0
+	0.4	0
+	0.5	0
+	0.6	0
+	0.7	0
+	0.8	0
+	0.9	0
+	1	0
+	1.1	0
+
+
+event column 0.1 million year fad frequencies	point	150	255/245/230
+	0	0
+	0.1	0
+	0.2	0
+	0.3	0
+	0.4	0
+	0.5	0
+	0.6	0
+	0.7	0
+	0.8	0
+	0.9	0
+	1	0
+	1.1	0
+
+
+event column 0.1 million year lad frequencies	point	150	255/245/230
+	0	0
+	0.1	0
+	0.2	0
+	0.3	0
+	0.4	0
+	0.5	0
+	0.6	0
+	0.7	0
+	0.8	0
+	0.9	0
+	1	0
+	1.1	0

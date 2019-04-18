@@ -1,0 +1,290 @@
+$`0`
+ [1] "? Younger Dryas onset (N. Amer.)"    "Kaalij_rv (Estonia)"                
+ [3] "Morasko (Poland)"                    "Ilumets_ (Estonia)"                 
+ [5] "Sobolev (se. Russia)"                "Macha (Siberia)"                    
+ [7] "Sikhote Alin (se. Russia)"           "Tunguska (Siberia)"                 
+ [9] "Wabar (Saudi Arabia)"                "Lonar (India)"                      
+[11] "Henbury (N. Terr.)"                  "Tenoumer (Mauritania)"              
+[13] "Amguid (Algeria)"                    "Tswaing (formerly Pretoria Saltpan)"
+[15] "Haviland (Kansas)"                   "Barringer (Arizona)"                
+[17] "Odessa (Texas)"                      "Campo Del Cielo (Argentina)"        
+[19] "Rio Cuarto (Argentina)"             
+
+$`0.5`
+[1] "Wolfe Creek (nw. Aust.)" "Dalgaranga (W. Aust.)"   "Boxhole (N. Terr.)"     
+[4] "Kalkkop"                
+
+$`1`
+[1] "Australasian tektite strewnfield" "Zhamanshin (Kazakhstan)"         
+[3] "Bosumtwi (Ghana)"                 "Monturaqui (Chile)"              
+
+$`1.5`
+[1] "New Quebec (Quebec)"
+
+$`3`
+[1] "Talemzane (Algeria)"    "Aouelloul (Mauritania)"
+
+$`3.5`
+[1] "El'gygtgyn (ne. Russia)" "Roter Kamm (Nambia)"    
+
+$`5`
+[1] "Kara-Kul (Tajikistan)" "Bigach (Kazakhstan)"   "Karla (Urals, Russia)"
+
+$`15`
+[1] "Ries (Germany)"      "Steinheim (Germany)"
+
+$`35`
+[1] "Crawford (s. Aust.)" "Flaxman (s. Aust.)" 
+
+$`35.5`
+[1] "Chesapeake Bay (Virginia, USA)" "Popigai (Siberia)"             
+
+$`36.5`
+[1] "Mistastin (Labrador)"
+
+$`37`
+[1] "Wanapitei (Ontario)"
+
+$`39`
+[1] "Haughton (Nunavut)"
+
+$`40`
+[1] "Beyenchime-Salaatin (Siberia)" "Logancha (Siberia)"           
+
+$`43.5`
+[1] "Logoisk (Belarus)"
+
+$`45`
+[1] "Shunak (Kazakhstan)"
+
+$`46`
+[1] "Chiyli (Kazakhstan)"       "Ragozinka (Urals, Russia)"
+
+$`49`
+[1] "Kamensk (Russia)" "Gusev (Russia)"   "Avak (Alaska)"   
+
+$`50`
+[1] "Goat Paddock (nw. Aust.)"
+
+$`50.5`
+[1] "Montagnais (Nova Scotia, Can.)"
+
+$`58`
+[1] "Marquez (Texas)"
+
+$`60`
+[1] "Connolly Basin (W. Aust.)"
+
+$`65`
+[1] "Boltysh (Ukraine)"     "Eagle Butte (Alberta)" "Vista Alegre (Brazil)"
+
+$`65.5`
+[1] "Chicxulub (Yucatan, Mex.)"
+
+$`70`
+[1] "Chukcha (Siberia)"     "Tin Bider (Algeria)"   "Ouarkziz (Algeria)"   
+[4] "Vargeao Dome (Brazil)"
+
+$`70.5`
+[1] "Kara (n. Urals, Russia)"
+
+$`73.5`
+[1] "Lappaj_rvi (Finland)"
+
+$`74`
+[1] "Manson (Iowa)"
+
+$`75`
+[1] "Maple Creek (Saskatchewan)"
+
+$`80`
+[1] "Zeleny Gai (Ukraine)"
+
+$`81`
+[1] "Wetumpka (Alabama)"
+
+$`89`
+[1] "Dellen (Sweden)"
+
+$`91`
+[1] "Steen River (Alberta)"
+
+$`97`
+[1] "Kentland (Indiana)"
+
+$`99`
+[1] "Deep Bay (Saskatchewan)"
+
+$`100`
+[1] "Sierra Madera (Texas)"
+
+$`110`
+[1] "Veevers (W. Aust.)"        "Mount Toondina (S. Aust.)"
+
+$`115`
+[1] "Carswell (Saskatchewan)"
+
+$`120`
+[1] "Rotmistrovka (Ukraine)" "Oasis (Libya)"          "B.P. Structure (Libya)"
+
+$`121`
+[1] "Mien (Sweden)"
+
+$`122`
+[1] "? Ontong Java Plateau (W. Pacific)"
+
+$`128`
+[1] "Tookoonooka (w. Queensland, Aust..)"
+
+$`140`
+[1] "Arkenu 1 (Libya)" "Arkenu 2 (LIbya)"
+
+$`142`
+[1] "MjËlnir (offshore n. Norway)"
+
+$`142.5`
+[1] "Gosses Bluff (N. Terr.)"
+
+$`145`
+[1] "Morokweng (S. Afr.)"
+
+$`150`
+[1] "Tabun-Khara-Obo (Mongolia)" "Liverpool (n. N. Terr.)"   
+
+$`160`
+[1] "Vepriai"
+
+$`165`
+[1] "Zapadnaya (Ukraine)"
+
+$`167`
+[1] "Puchezh-Katunki (Urals, Russia)"
+
+$`169`
+[1] "Obolon' (Ukraine)"
+
+$`170`
+[1] "Upheaval Dome (Utah)"
+
+$`180`
+[1] "Kgagodi (Botswana)"
+
+$`190`
+[1] "Cloud Creek (Wyoming)"    "Viewfield (Saskatchewan)"
+
+$`200`
+[1] "Red Wing (N. Dakota)"    "Wells Creek (Tennessee)" "Riachao Ring (Brazil)"  
+
+$`214`
+[1] "Manicouagan (Quebec, Can.)" "Rochechouart (France)"     
+
+$`220`
+[1] "Saint Martin (Manitoba, Can.)"
+
+$`230`
+[1] "Karikkoselk_ (Finland)"
+
+$`244.5`
+[1] "Araguainha (Brazil)"
+
+$`250`
+[1] "Kursk (w. Russia)"  "Gow (Saskatchewan)"
+
+$`280`
+[1] "Ternovka (Ukraine)"     "Des Plaines (Illinois)"
+
+$`290`
+[1] "Dobele (Latvia)"          "Clearwater East (Quebec)" "Clearwater West (Quebec)"
+
+$`300`
+[1] "Mishina Gora (Russia)"      "Decaturville (Missouri)"    "Middlesboro (Kentucky)"    
+[4] "Ile Rouleau (Quebec)"       "Serra da Cangalha (Brazil)"
+
+$`320`
+[1] "Serpent Mound (Ohio)"     "Crooked Creek (Missouri)"
+
+$`342`
+[1] "Charlevoix (Quebec, Can.)"
+
+$`345`
+[1] "Aorounga (Chad)"   "Gweni-Fada (Chad)"
+
+$`351`
+[1] "West Hawk (Manitoba)"
+
+$`360`
+[1] "Piccaninny (nw. Aust.)"  "Flynn Creek (Tennessee)"
+
+$`364`
+[1] "Woodleigh (Shark Bay, W. Aust.)"
+
+$`377`
+[1] "Siljan (Sweden)"
+
+$`378`
+[1] "Ilyinets (Ukraine)"
+
+$`380`
+[1] "Kaluga (w. Russia)"
+
+$`395`
+[1] "Elbow (Saskatchewan)"
+
+$`396`
+[1] "Brent (Ontario)"
+
+$`400`
+[1] "Nicholson (NW Terr.)" "La Moinerie (Quebec)"
+
+$`430`
+[1] "Couture (Quebec)" "Glasford"        
+
+$`445`
+[1] "Pilot (NW Terr.)"
+
+$`450`
+[1] "Calvin (Michigan)"       "Slate Islands (Ontario)"
+
+$`455`
+[1] "K_rdla (Estonia)" "Tv_ren (Sweden)" 
+
+$`458`
+[1] "Lockne (Sweden)"
+
+$`467`
+[1] "Middle Ordovician suite"
+
+$`470`
+[1] "Neugrund (Estonia)" "Grandby (Sweden)"   "Ames (Oklahoma)"   
+
+$`500`
+[1] "Mizarai (Lithuania)"      "Gardnos (Norway)"         "Glover Bluff (Wisconsin)"
+[4] "Presqu'ile (Quebec)"      "Newporte (N. Dakota)"    
+
+$`505`
+[1] "Rock Elm (Wisconsin)"
+
+$`508`
+[1] "Glikson (W. Aust.)"
+
+$`515`
+[1] "Lawn Hill (Queensland)"
+
+$`545`
+[1] "Foelsche (N. Terr.)"
+
+$`550`
+[1] "Kelly West (N. Terr.)" "Holleford (Ontario)"  
+
+$`560`
+[1] "S__ksj_rvi (Finland)"
+
+$`570`
+[1] "Spider (nw. Aust.)"
+
+$`590`
+[1] "Acraman (S. Aust.)"
+
+$`600`
+[1] "S_derfj_rden (Finland)" "Saarij_rvi (Finland)"  
+
