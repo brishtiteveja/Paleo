@@ -11,8 +11,7 @@ $`0.125001`
 [1] "Suez Canal opens"
 
 $`0.175001`
-[1] "Opium War"                        
-[2] "Marquesan"                        
+[1] "Opium War"                         "Marquesan"                        
 [3] "Hawaiian, Maori, Tahitian, Tongan"
 
 $`0.225001`
@@ -25,8 +24,7 @@ $`0.425001`
 [1] "Late Postclassic"
 
 $`0.475001`
-[1] "Ottoman expansion"              
-[2] "Polvoron"                       
+[1] "Ottoman expansion"               "Polvoron"                       
 [3] "Spanish conquests 1521-1535 AD."
 
 $`0.525001`
@@ -50,31 +48,23 @@ $`0.725001`
 [5] "Mongol (Kublai Khan)"     
 
 $`0.775001`
-[1] "Mongols sweep into Iran"       
-[2] "Genghis Khan"                  
-[3] "Mongol (Genghis Khan) conquest"
-[4] "Hawaiian"                      
-[5] "Soho"                          
-[6] "Santan"                        
-[7] "Middle Postclassic"            
-[8] "Early Postclassic"             
+[1] "Mongols sweep into Iran"        "Genghis Khan"                  
+[3] "Mongol (Genghis Khan) conquest" "Hawaiian"                      
+[5] "Soho"                           "Santan"                        
+[7] "Middle Postclassic"             "Early Postclassic"             
 
 $`0.825001`
 [1] "Seljuk Moslem conquest"
 
 $`0.875001`
-[1] "Manchurian conquest" "Maori"              
-[3] "Colonial period"    
+[1] "Manchurian conquest" "Maori"               "Colonial period"    
 
 $`0.925001`
-[1] "Jerusalem taken by Crusaders"   
-[2] "Seljuq sultinate"               
-[3] "Seljuq nomads take over Baghdad"
-[4] "Santan"                         
+[1] "Jerusalem taken by Crusaders"    "Seljuq sultinate"               
+[3] "Seljuq nomads take over Baghdad" "Santan"                         
 
 $`0.975001`
-[1] "Late Pithouse period" "Early Postclassic"   
-[3] "Epiclassic"          
+[1] "Late Pithouse period" "Early Postclassic"    "Epiclassic"          
 
 $`1.075001`
 [1] "Terminal Classic"

@@ -54,21 +54,26 @@ X <- data.frame(age=X2$age,
                 genera_ts=X0$N.turnover, 
                 genera_prokoph=X5$Marine.genera,
                 oxy_18=-X2$oxy_18_avg,
-                carbon_13=X4$c13_avg,
-                sr87_86=X5$sr87_86,
-                s34=X5$δ34S,
+                carbon_13=X3$c13_avg,
+                sr87_86=X4$sr87_86,
+                s34=X5$`δ34S`,
                 LIP=X6$LIP_avg_cnt,
+                LIP_volume1=X5$LIP.volumes.vs.1.103.km3.,
+                LIP_volume2=X5$LIP.volumes.vs.1.103.km3.__1,
                 impact=X7$impact_avg_cnt,
                 passive_margin=X8$margin_oc_avg_cnt,
-                sl=X3$msl_avg)
+                sl=X9$msl_avg)
 
+datatable(X)
 
 head(X)
 tail(X)
-plot(X)
+plot(X, t='l')
 
 # compute correlation
-cor(X[,-1])
+X_cor = cor(X[,-1])
+datatable(X_cor)
+
 plot(X$age, X$ev, t='l')
 points(X$age, X$ev, cex=0.5)
 par(new=T)
@@ -80,26 +85,20 @@ points(X$age, X$sl, col="green", cex=0.5)
 
 
 # unnormalized data
-Xm = as.matrix(X[,2:3])
-Xm = t(Xm)
-
+dim(X)
+Xm = as.matrix(X[,2:13])
+Xm
+#Xm = t(Xm)
+head(Xm,n=12)
 # Y: normalized data
 # Y = X_norm
 Y = Xm
 #Y[1,] = (Y[1,] - mean(Y[1,]))/sd(Y[1,])
 #Y[2,] = (Y[2,] - mean(Y[2,]))/sd(Y[2,])
 
-for(i in 1:dim(Xm)[1]) {
-  Y[i,] = (Y[i,] - mean(Y[i,]))/sd(Y[i,])
+for(i in 1:dim(Y)[2]) {
+  Y[,i] = (Y[,i] - mean(Y[,i]))/sd(Y[,i])
 }
-hist(Xm[1,])
-hist(Y[1,])
-hist(Xm[2,])
-hist(Y[2,])
-plot(Y[1,], Y[2,])
-plot(X$age, Y[1,], t='l')
-par(new=T)
-plot(X$age, Y[2,], t='l', col=2, axes=F, xlab="", ylab="")
 
 XXt = Xm %*% t(Xm)
 XtX = t(Xm) %*% Xm
@@ -108,8 +107,10 @@ YYt = Y %*% t(Y)
 YtY = t(Y) %*% Y
 
 # C: covariance matrix
-C = XXt
-C_norm = YYt
+n = dim(Y)[2]
+n
+C = XtX/(n-1)
+C_norm = YtY/(n-1)
 
 # Eigen value decomposition
 E=eigen(C_norm)
@@ -119,6 +120,7 @@ round(Ev,5)
 # EV : eigen vector ~ empirical orthogal vector
 EV = E$vectors
 
+
 # EtE = I
 round(t(EV) %*% EV)
 
@@ -127,10 +129,10 @@ round(t(EV) %*% EV)
 # z_ij = principal component
 # Xm = EZ
 #Z = t(EV) %*% Xm
-Z = t(EV) %*% Y
+Z = t(EV) %*% t(Y)
 Z_norm = diag(Ev^(-1/2)) %*% Z
 round(Z %*% t(Z))
-round(Z_norm %*% t(Z_norm))
+round((Z_norm %*% t(Z_norm)) / (n-1))
 
 # Variance explained
 l1 = Ev[1]/sum(Ev) 
@@ -138,9 +140,12 @@ l1 * 100
 l2 = Ev[2]/sum(Ev)
 l2 * 100
 
+var = Ev / sum(Ev)
+var * 100
+plot(var, t='b')
 
 # SVD : Singular value decomposition
-SS = svd(Xm)
+SS = svd(Y)
 # U: left singular vector contains state vectors per time
 U = SS$u
 S = SS$d
@@ -166,24 +171,6 @@ Z_EOF = t(E) %*% Y
 #Z_SVD = Sm %*% 
   
 
-identifyPch <- function(x, y = NULL, n = length(x), plot = FALSE, pch = 19, ...)
-{
-  xy <- xy.coords(x, y); x <- xy$x; y <- xy$y
-  sel <- rep(FALSE, length(x))
-  while(sum(sel) < n) {
-    ans <- identify(x[!sel], y[!sel], labels = which(!sel), n = 1, plot = plot, ...)
-    if(!length(ans)) break
-    ans <- which(!sel)[ans]
-    points(x[ans], y[ans], pch = pch)
-    sel[ans] <- TRUE
-  }
-  ## return indices of selected points
-  print(which(sel))
-}
-
-if(dev.interactive()) { ## use it
-  x <- seq(1, length(V[,2])); y <- V[,2]
-  plot(x,y); identifyPch(x,y) # how fast to get all?
-}
-
-dev.off()
+pca1 <- princomp(Y, scores = TRUE, cor=TRUE)
+summary(pca1)
+loadings(pca1)

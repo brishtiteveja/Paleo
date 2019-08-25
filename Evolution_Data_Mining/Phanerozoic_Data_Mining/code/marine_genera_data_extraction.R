@@ -700,7 +700,15 @@ plot(-dff$age, dff$HMM.turnover.probability, t='l', col='black',
 library(astrochron)
 mtm(data.frame(age = dff$age, turnover = dff$`N.turnover`), detrend = T)
 
-dat = data.frame(age = dff$age, turnover = dff$`raw.turnover.probability`)
+dat = data.frame(age = dff$age, turnover = dff$N.turnover )#`raw.turnover.probability`)
+mtm(dat, detrend=T)
+cenozoic_dat = dat[dat$age < 67, ]
+mtm(cenozoic_dat, detrend=T)
+mesozoic_dat = dat[dat$age >=67 & dat$age <252, ]
+mtm(mesozoic_dat, detrend=T)
+paleozoic_dat = dat[dat$age >= 252 & dat$age < 541, ]
+mtm(paleozoic_dat, detrend=T)
+
 # a) mtm - conventional mtm-AR1 approach
 mtm(dat, detrend = T)
 # b) lowspec ar1 - lowspec analysis of ar1 surrogate needed

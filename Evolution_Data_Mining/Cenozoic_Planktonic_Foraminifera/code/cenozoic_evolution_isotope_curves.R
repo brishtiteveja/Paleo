@@ -24,11 +24,11 @@ name_col2
 
 name_col <- dfxl$`1.3`
 name_col
-age_col <- dfxl$X__1
+age_col <- dfxl$...3#dfxl$X__1
 age_col
-type_col <- dfxl$X__2
+type_col <- dfxl$...4#dfxl$X__2
 type_col
-branch_to_col <- dfxl$X__3
+branch_to_col <- dfxl$...5#dfxl$X__3
 branch_to_col
 LAD_ix <- which(type_col == 'TOP')
 LAD_ix
@@ -383,12 +383,14 @@ turnProb=getData("graptolite")
 # Load the library Astrochron
 library(astrochron)
 
+dff = cenozoic_dat
 turnProb = data.frame(age=dff$age, 
-                      turnProb=dff$HMM.turnover.probability,
+                      #turnProb=dff$HMM.turnover.probability,
                       #turnProb=dff$raw.turnover.probability
+                      turnProb=dff$turnover
                       )
 
-turnPwr=eha(turnProb[turnProb$age <=61,], win=25, fmin=0, fmax=1.3, #step=0.2,
+turnPwr=eha(turnProb, win=5, fmin=0, fmax=1.3, #step=0.2,
             pad=4000, 
             genplot=4, palette=5, pl=2, ydir=-1, 
             tbw=2, output=2)
@@ -657,17 +659,19 @@ Mspec <- mtm(evolution_model, demean = T, detrend = T,
              #xmax = 0.1,
              output = 1, pl=2)
 Mspecdf <- data.frame(Mspec)
-Mspecdf <- Mspecdf[order(Mspecdf$AR1_CL, decreasing = T),]
+Mspecdf <- Mspecdf[order(Mspecdf$Harmonic_CL, decreasing = T),]
 time_window <- max(x) - min(x)
 N <- length(evolution_model$evolution)
 Mspecdf$period <- (1/Mspecdf$Frequency) #* (time_window / N)
-head(Mspecdf, n = 50)
+head(Mspecdf, n = 15)
 
 
 # using redfit
 library(dplR)
-x=as.numeric(dff$raw.turnover.probability) #temp_sliding_50y) #(temp_recon)
-t=as.numeric(dff$age) #yr_sliding_50y) #(yr)
+#x=as.numeric(dff$raw.turnover.probability) #temp_sliding_50y) #(temp_recon)
+x=as.numeric(df$total)
+#t=as.numeric(dff$age) #yr_sliding_50y) #(yr)
+t=as.numeric(df$age)
 par(mfrow=c(1,1))
 plot(t,x, t='l')
 redf.dat.evol <- redfit(x=x, nsim = 1000, mctest=TRUE)

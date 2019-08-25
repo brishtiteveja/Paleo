@@ -40,7 +40,7 @@ a_r2
 #----------------------------------------------------------------------------------
 
 # Cenozoic-Campanian Marine Oxygen-18 Composite (per-mil PDB)
-data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Datapacks'
+data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/Datapacks'
 setwd(data_dir)
 dp_fname <- 'Phan_GTS2016_for_7.1_HaqJur_ForamMikrotax_28July2017.xls'
 library(readxl)

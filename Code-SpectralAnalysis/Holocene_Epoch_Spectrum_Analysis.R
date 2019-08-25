@@ -6,9 +6,9 @@ library(plotly)
 library(dplyr)
 
 # project directory
-proj_dir <- '~/Documents/projects/ML-Data Mining/CultureClimate/'
+proj_dir <- '~/Documents/projects/ML-Data Mining/CultureClimate_Data_Mining/'
 # datapack directory
-dp_dir <- '~/Documents/projects/ML-Data Mining/datapacks/'
+dp_dir <- '~/Documents/projects/ML-Data Mining/CultureClimate_Data_Mining/datapacks/'
 setwd(dp_dir)
 dp_fname <- 'HumanCulture MidEastIntervals wGreenland-Ice cleaned 19Jan2016.xls'
 
@@ -552,15 +552,29 @@ plot(A, EV,  type='h',  lwd=3, col=i, ylim=c(y_min, y_max), xlim=c(x_min, x_max)
      main=paste(regional_columns[i]))
 axis(1, at=pretty(A), labels = rev(-pretty(A)))
 
-# lines(Xage*1000, events_by_regions_mat[,2], type='h', col=2)
-# lines(Xage*1000, events_by_regions_mat[,3], type='h', col=3)
-# lines(Xage*1000, events_by_regions_mat[,4], type='h', col=4)
-# lines(Xage*1000, events_by_regions_mat[,5], type='h', col=5)
-# lines(Xage*1000, events_by_regions_mat[,6], type='h', col=6)
-# lines(Xage*1000, events_by_regions_mat[,7], type='h', col=7)
-# lines(Xage*1000, events_by_regions_mat[,8], type='h', col=8)
-# lines(Xage*1000, events_by_regions_mat[,9], type='h', col=9)
-# lines(Xage*1000, events_by_regions_mat[,10], type='h', col=10)
+# draw in a single plot
+lcol = seq(1:10)
+ltype = seq(1:10)
+Xage = as.double(rownames(events_by_regions_mat)) * 1000
+plot(Xage, events_by_regions_mat[,1], type='l',  col=lcol[1], lty=ltype[1],
+     ylim = c(0,10),
+     xlab='Year (AD)',
+     ylab='Number of turnovers',
+     main='Regional cultural turnovers for last 2000 years')
+lines(Xage, events_by_regions_mat[,2], type='l', col=lcol[2], lty=ltype[2])
+lines(Xage, events_by_regions_mat[,3], type='l', col=lcol[3], lty=ltype[3])
+lines(Xage, events_by_regions_mat[,4], type='l', col=lcol[4], lty=ltype[4])
+lines(Xage, events_by_regions_mat[,5], type='l', col=lcol[5], lty=ltype[5])
+lines(Xage, events_by_regions_mat[,6], type='l', col=lcol[6], lty=ltype[6])
+lines(Xage, events_by_regions_mat[,7], type='l', col=lcol[7], lty=ltype[7])
+lines(Xage, events_by_regions_mat[,8], type='l', col=lcol[8], lty=ltype[8])
+lines(Xage, events_by_regions_mat[,9], type='l', col=lcol[9], lty=ltype[9])
+lines(Xage, events_by_regions_mat[,10], type='l', col=lcol[10], lty=ltype[10])
+
+legend('topright', legend=colnames(events_by_regions_mat),
+                   col=lcol,
+                   lty=ltype,
+                   cex=0.5)
 
 
 head(events_by_regions_mat)
@@ -667,7 +681,9 @@ plot(-eva * 1000, ev, xlab='Age(AD)',
      xlim=c(x_min, x_max), ylim=c(y_min, y_max), 
      main=paste(title))
 abline(h=0, lty=2)
-#points(-eva * 1000, ev, col='red', pch=20)
+points(-eva * 1000, ev, col='red', pch=20)
+lines(-eva * 1000, ev, col='red', pch=20)
+
 axis(side=2, at=seq(-5, 40, by=5), 
      col='black', col.axis='black',lwd=2)
 mtext(side=2,text='Number of cultural turnovers',line=2, lwd=3, col='black', 

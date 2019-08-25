@@ -237,7 +237,7 @@ dff$`HMM.turnover.probability` <- dff$`HMM.speciation.state.probability` + dff$`
 library(DT)
 datatable(dff)
 
-AGE_DIFF = NA
+AGE_DIFF = 0.1
 if (floor(AGE_SLIDE) == 0) {
   AGE_DIFF = paste(AGE_SLIDE * 1000, "K", sep="")
 } else {

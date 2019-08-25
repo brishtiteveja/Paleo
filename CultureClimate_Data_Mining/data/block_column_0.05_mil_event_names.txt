@@ -12,10 +12,9 @@ $`0.075001`
 [13] "TOP"                      
 
 $`0.125001`
- [1] "Unified nation" "TOP"            "TOP"           
- [4] "Reservations"   "TOP"            "TOP"           
- [7] "TOP"            "TOP"            "TOP"           
-[10] "TOP"            "TOP"            "TOP"           
+ [1] "Unified nation" "TOP"            "TOP"            "Reservations"  
+ [5] "TOP"            "TOP"            "TOP"            "TOP"           
+ [9] "TOP"            "TOP"            "TOP"            "TOP"           
 
 $`0.175001`
 [1] "Independent States" "Independent"        "TOP"               
@@ -41,42 +40,24 @@ $`0.425001`
 [1] "TOP" "TOP" "TOP"
 
 $`0.475001`
- [1] "TOP"                          
- [2] "TOP"                          
- [3] "Ottoman Empire"               
- [4] "Ottoman rule"                 
- [5] "Safavid Rule"                 
- [6] "Safavid dynasty"              
- [7] "TOP"                          
- [8] "Ottoman rule"                 
- [9] "TOP"                          
-[10] "-"                            
-[11] "Russian empire"               
-[12] "Russian empire"               
-[13] "Russian empire"               
-[14] "TOP"                          
-[15] "TOP"                          
-[16] "TOP"                          
-[17] "TOP"                          
-[18] "TOP"                          
-[19] "TOP"                          
-[20] "TOP"                          
-[21] "TOP"                          
-[22] "TOP"                          
-[23] "New Spain"                    
-[24] "TOP"                          
-[25] "TOP"                          
-[26] "TOP"                          
-[27] "Top"                          
-[28] "TOP"                          
-[29] "TOP"                          
-[30] "TOP"                          
-[31] "TOP"                          
-[32] "Spanish and Portuguese influx"
-[33] "TOP"                          
-[34] "TOP"                          
-[35] "TOP"                          
-[36] "TOP"                          
+ [1] "TOP"                           "TOP"                          
+ [3] "Ottoman Empire"                "Ottoman rule"                 
+ [5] "Safavid Rule"                  "Safavid dynasty"              
+ [7] "TOP"                           "Ottoman rule"                 
+ [9] "TOP"                           "-"                            
+[11] "Russian empire"                "Russian empire"               
+[13] "Russian empire"                "TOP"                          
+[15] "TOP"                           "TOP"                          
+[17] "TOP"                           "TOP"                          
+[19] "TOP"                           "TOP"                          
+[21] "TOP"                           "TOP"                          
+[23] "New Spain"                     "TOP"                          
+[25] "TOP"                           "TOP"                          
+[27] "Top"                           "TOP"                          
+[29] "TOP"                           "TOP"                          
+[31] "TOP"                           "Spanish and Portuguese influx"
+[33] "TOP"                           "TOP"                          
+[35] "TOP"                           "TOP"                          
 
 $`0.525001`
  [1] "Ottoman"                           
@@ -92,9 +73,8 @@ $`0.525001`
 [11] "TOP"                               
 
 $`0.575001`
-[1] "Qara Quyunlu Dynasty" "Qara Quyunlu Dynasty"
-[3] "TOP"                  "Aztec"               
-[5] "Aztec Empire"        
+[1] "Qara Quyunlu Dynasty" "Qara Quyunlu Dynasty" "TOP"                 
+[4] "Aztec"                "Aztec Empire"        
 
 $`0.625001`
 [1] "TOP"          "Timurid Rule" "TOP"          "Ming dynasty"
@@ -111,9 +91,8 @@ $`0.725001`
 [7] "Late Anasazi"                 
 
 $`0.775001`
-[1] "Mongol rulers"         "Mongol (Golden Horde)"
-[3] "Mongol (Yuan)"         "Mongol rule"          
-[5] "Mongol rule"           "Mongol rule"          
+[1] "Mongol rulers"         "Mongol (Golden Horde)" "Mongol (Yuan)"        
+[4] "Mongol rule"           "Mongol rule"           "Mongol rule"          
 [7] "Inca"                 
 
 $`0.825001`
@@ -197,12 +176,9 @@ $`1.325001`
 [7] "Eastern North America Late Woodland"
 
 $`1.375001`
-[1] "Spread of Islam"                   
-[2] "Islamic"                           
-[3] "Caliphate rule"                    
-[4] "TOP"                               
-[5] "Islamic rule"                      
-[6] "Rule of the Rightly Guided Caliphs"
+[1] "Spread of Islam"                    "Islamic"                           
+[3] "Caliphate rule"                     "TOP"                               
+[5] "Islamic rule"                       "Rule of the Rightly Guided Caliphs"
 
 $`1.425001`
 [1] "Lombard kingdom"              "Turkish khanate"             
@@ -262,9 +238,8 @@ $`1.725001`
 [1] "Southern Mexican Highland Classic"
 
 $`1.775001`
-[1] "Sasanian rule"       "Sasanian rule"      
-[3] "Sasanian empire"     "-"                  
-[5] "-"                   "-"                  
+[1] "Sasanian rule"       "Sasanian rule"       "Sasanian empire"    
+[4] "-"                   "-"                   "-"                  
 [7] "Huatabampo"          "West Mexico Classic"
 
 $`1.825001`

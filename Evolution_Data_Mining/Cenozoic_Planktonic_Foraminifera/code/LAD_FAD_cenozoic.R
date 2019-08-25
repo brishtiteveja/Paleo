@@ -1,4 +1,5 @@
-data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/EvolutionaryTree/Fordham and Zehady shared/180724'
+data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/EvolutionaryTree/Fordham and Zehady shared/180724'
+data_dir <- '/Users/andy/Documents/TSCreator/EvolutionaryTree/Fordham and Zehady shared/180724'
 setwd(data_dir)
 dp_fname <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourMorphogroup.xls'
 library(readxl)
@@ -49,8 +50,10 @@ min_age <- min(fad_lad_df$LAD, fad_lad_df$FAD)
 mn_a <- floor(min_age)
 max_age <- max(fad_lad_df$LAD, fad_lad_df$FAD)
 mx_a <- ceiling(max_age)
+mx_a <- 25
 
-slide_window <- 1
+window_size <- 1
+slide_window <- 0.1
 age_seq <- seq(mn_a, mx_a, by=slide_window)
 ages <- list()
 LAD_cnts <- list()
@@ -60,7 +63,7 @@ FAD_names <- list()
 n <- length(age_seq) - 1
 for(k in 1:n) {
   start_age <- age_seq[k]
-  end_age <- age_seq[k+1]
+  end_age <- start_age + window_size
   mid_age <- (start_age + end_age)/2
   ixl <- which(fad_lad_df$LAD >= start_age 
               & fad_lad_df$LAD < end_age)
@@ -95,6 +98,7 @@ ages_ap <- FAD_LAD_per_df$age[2:N]
 extinction_rate <- FAD_LAD_per_df_ap$LAD/sum(FAD_LAD_per_df_ap$LAD) * 100
 speciation_rate <- FAD_LAD_per_df_ap$FAD/sum(FAD_LAD_per_df_ap$FAD) * 100
 
+par(mfrow=c(1,1))
 plot(FAD_LAD_per_df_ap$age, 
      FAD_LAD_per_df_ap$LAD_cnt + FAD_LAD_per_df_ap$FAD_cnt, 
      t='l', lwd=1,
@@ -103,7 +107,10 @@ plot(FAD_LAD_per_df_ap$age,
      xlab='Age (Ma)',
      ylab='Number of events', #'event rate(%)',
      ylim=c(0,42),
-     main='Speciation and extinction events of planktonic foraminifera during Cenozoic era')
+     main=paste('Speciation and extinction events of planktonic foraminifera\n',
+                '(window size = ', window_size, 'Ma,\n',
+                'slide =', slide_window , 'Ma)' ) 
+     )
 
 lines(FAD_LAD_per_df_ap$age, FAD_LAD_per_df_ap$LAD_cnt, #ages, extinction_rate, 
       lwd=2,
@@ -112,11 +119,31 @@ lines(FAD_LAD_per_df_ap$age, FAD_LAD_per_df_ap$LAD_cnt, #ages, extinction_rate,
 lines(FAD_LAD_per_df_ap$age, FAD_LAD_per_df_ap$FAD_cnt, #ages, speciation_rate, 
       lwd=2,
       col=3)
-legend('topright', legend=c('speciation + extinction', 'extinction', 'speciation'), col=c(1,2,3), lty=c(2,1,1))
+legend('topright', legend=c('speciation + extinction', 'extinction', 'speciation'), 
+       col=c(1,2,3), lty=c(2,1,1),
+       cex=0.75)
 
+PF_FAD_LAD_per_df_ap <- FAD_LAD_per_df_ap
+
+# Using multitaper
+library(astrochron)
+#chr_model <- linterp(chr_df, dt=1)
+x <- FAD_LAD_per_df_ap$age
+y <- FAD_LAD_per_df_ap$total
+evolution_model <- linterp(data.frame(year=x, evolution=y), dt=0.1)
+Mspec <- mtm(evolution_model, demean = T, detrend = T, 
+             #ntap = 5, tbw = 3, #ar1 = T,
+             #xmin = 0,
+             #xmax = 0.1,
+             output = 1, pl=2)
+Mspecdf$period <- (1/Mspecdf$Frequency) # * (time_window / N))
+Mspecdf <- Mspecdf[order(Mspecdf$period, decreasing = T),]
+Mspecdf2 <- subset(Mspecdf, (Mspecdf$Harmonic_CL >=80 & Mspecdf$AR1_CL >= 80) | 
+                     (Mspecdf$Harmonic_CL >=95) )
+datatable(Mspecdf2[,c(1:4, 9)])
 
 # Cenozoic-Campanian Marine Oxygen-18 Composite (per-mil PDB)
-data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Datapacks'
+data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/Datapacks'
 setwd(data_dir)
 dp_fname <- 'Phan_GTS2016_for_7.1_HaqJur_ForamMikrotax_28July2017.xls'
 library(readxl)

@@ -6,9 +6,9 @@ library(plotly)
 library(dplyr)
 
 # project directory
-proj_dir <- '~/Documents/projects/ML-Data Mining/CultureClimate/'
+proj_dir <- '~/Documents/projects/ML-Data Mining/CultureClimate_Data_Mining/'
 # datapack directory
-dp_dir <- '~/Documents/projects/ML-Data Mining/datapacks/'
+dp_dir <- '~/Documents/projects/ML-Data Mining/CultureClimate_Data_Mining/datapacks/'
 setwd(dp_dir)
 dp_fname <- 'HumanCulture MidEastIntervals wGreenland-Ice cleaned 19Jan2016.xls'
 
@@ -453,6 +453,7 @@ event_events_by_regions_mat <- matrix(unlist(ev_c_r), byrow = FALSE,
                                       dimnames=list(names(events_by_regions), regional_columns))
 
 events_by_regions_mat <- block_events_by_regions_mat + event_events_by_regions_mat
+head(events_by_regions_mat)
 
 # plot by regions
 Xage <- as.numeric(rownames(events_by_regions_mat)) * 1000
