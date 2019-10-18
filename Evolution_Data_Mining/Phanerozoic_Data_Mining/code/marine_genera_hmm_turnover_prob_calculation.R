@@ -1,6 +1,6 @@
-proj_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Phanerozoic_Data_Mining'
+proj_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/Phanerozoic_Data_Mining'
 # datapack directory
-dp_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Phanerozoic_Data_Mining/Datapack/'
+dp_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/Phanerozoic_Data_Mining/Datapack/'
 setwd(dp_dir)
 dp_fname <- 'MarineGenera_13Jan13.xls'
 

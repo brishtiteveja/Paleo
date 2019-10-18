@@ -1,0 +1,114 @@
+J/A+A/532/A89 La2010: orbital solution for long term Earth motion (Laskar+ 2011)
+================================================================================
+La2010: A new orbital solution for the long term motion of the Earth.
+    Laskar J., Fienga A., Gastineau M., Manche H.
+   <Astron. Astrophys. 532, A89 (2011)>
+   =2011A&A...532A..89L
+================================================================================
+ADC_Keywords: Earth ; Solar system
+Keywords: chaos - methods: numerical - celestial mechanics - ephemerides -
+          planets and satellites: dynamical evolution and stability - Earth
+
+Abstract:
+    We present here a new solution for the astronomical computation of 
+    the orbital motion of the Earth spanning from 0 to -250Myr. The main
+    improvement with respect to our previous numerical solution La2004 
+    is an improved adjustment of the parameters and initial conditions
+    through a fit over 1Myr to a special version of the highly accurate
+    numerical ephemeris INPOP08 (Integration Numerique Planetaire de
+    l'Observatoire de Paris). The precession equations have also been
+    entirely revised and are no longer averaged over the orbital motion 
+    of the Earth and Moon.
+
+    This new orbital solution is now valid over more than 50Myr in the
+    past or into the future with proper phases of the eccentricity
+    variations.
+
+    Owing to the chaotic behavior, the precision of the solution decreases
+    rapidly beyond this time span, and we discuss the behavior of various
+    solutions beyond 50Myr. For paleoclimate calibrations, we provide
+    several different solutions that are all compatible with the most
+    precise planetary ephemeris. We have thus reached the time where
+    geological data are now required to discriminate between planetary
+    orbital solutions beyond 50Myr.
+
+Description:
+    Solution for the Earth orbit. Several solutions La2010a,b,c,d are
+    given. Their differences reflects the uncertainty in the solutions
+    that are not valid beyond 50Myr. Nevertheless all solutions are given
+    over 250Myr for reference.
+
+    All Astronomical Solutions for Earth Paleoclimates are available at 
+     http://www.imcce.fr/Equipes/ASD/insola/earth/earth.html 
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName   Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe         80        .   This file
+l10a_k3.dat    88    50000   Keplerian elements of the Earth for the solution
+                               La2010a every 5kyr
+l10a_k3l.dat   88   250000   Keplerian elements of the Earth for the solution
+                               La2010a every 1kyr
+l10a_e3.dat    23    50000   Eccentricity of the Earth for the solution
+                               La2010a every 5kyr
+l10a_e3l.dat   23   250000   Eccentricity of the Earth for the solution
+                               La2010a every 1kyr
+l10b_k3.dat    88    50000   Keplerian elements of the Earth for the solution
+                               La2010b every 5kyr
+l10b_k3l.dat   88   250000   Keplerian elements of the Earth for the solution
+                               La2010b every 1kyr
+l10b_e3.dat    23    50000   Eccentricity of the Earth for the solution
+                               La2010b every 5kyr
+l10b_e3l.dat   23   250000   Eccentricity of the Earth for the solution
+                               La2010b every 1kyr
+l10c_k3.dat    88    50000   Keplerian elements of the Earth for the solution
+                               La2010c every 5kyr
+l10c_k3l.dat   88   250000   Keplerian elements of the Earth for the solution
+                               La2010c every 1kyr
+l10c_e3.dat    23    50000   Eccentricity of the Earth for the solution
+                               La2010c every 5kyr
+l10c_e3l.dat   23   250000   Eccentricity of the Earth for the solution
+                               La2010c every 1kyr
+l10d_k3.dat    88    50000   Keplerian elements of the Earth for the solution
+                               La2010d every 5kyr
+l10d_k3l.dat   88   250000   Keplerian elements of the Earth for the solution
+                               La2010d every 1kyr
+l10d_e3.dat    23    50000   Eccentricity of the Earth for the solution
+                               La2010d every 5kyr
+l10d_e3l.dat   23   250000   Eccentricity of the Earth for the solution
+                               La2010d every 1kyr
+--------------------------------------------------------------------------------
+
+See also:
+  VI/63 : Earth Orbit, Precession and Insolation -20Myr to +10Myr (Laskar+ 1993)
+
+Byte-by-byte Description of file: l10*_k3.dat l10*_k3l.dat
+--------------------------------------------------------------------------------
+   Bytes Format  Units   Label   Explanations
+--------------------------------------------------------------------------------
+   1- 10  I10    kyr     t       [-249999/0] Time from J2000.0
+  13- 23  F11.9  AU      a       Semi-major axis (1)
+  25- 36  F12.9  rad     l       Mean longitude (expressed in radians) (1)
+  38- 49  F12.9  ---     k       e*cos({varpi}) (1)
+  51- 62  F12.9  ---     h       e*sin({varpi}) (1)
+  64- 75  F12.9  ---     q       sin(i/2)cos({Omega}) (1)
+  77- 88  F12.9  ---     p       sin(i/2)sin({Omega}) (1)
+--------------------------------------------------------------------------------
+Note (1): The classical elliptical elements a, e, i, l, {varpi}, {Omega}
+           are taken in the invariant reference frame.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: l10*_e3.dat l10*_e3l.dat
+--------------------------------------------------------------------------------
+   Bytes Format  Units   Label   Explanations
+--------------------------------------------------------------------------------
+   1- 10  I10    kyr     t       [-249999/0] Time from J2000.0
+  13- 23  F11.9  ---     e       Earth eccentricity
+--------------------------------------------------------------------------------
+
+Acknowledgements:
+    Jacques Laskar, laskar(at)imcce.fr
+
+================================================================================
+(End)       Jacques Laskar [CNRS, France], Patricia Vannier [CDS]  18-Jul-2011

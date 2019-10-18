@@ -1,0 +1,707 @@
+format version:	1.3					
+date:	31/7/12					
+						
+Cenozoic Macroperforate  Planktic Foram Morphospecies of Aze & others (2011):  coloured by genus	range	100	255/255/255			"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of  Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Versio"
+	Acarinina africana	55.74645833	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina africana	55.81	frequent			
+	Acarinina alticonica	46.31769231	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina alticonica	53.82142857	frequent			
+	Acarinina angulosa	45.72	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina angulosa	56.53	frequent			
+	Acarinina aspensis	48.01115385	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina aspensis	50.2	frequent			
+	Acarinina boudreauxi	43.3075	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina boudreauxi	49.39	frequent			
+	Acarinina bullbrooki	40.4	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina bullbrooki	48.31	frequent			
+	Acarinina coalingensis	49.795	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina coalingensis	57.79	frequent			
+	Acarinina collactea	30.28	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina collactea	35.89	common			
+	Acarinina collactea	50.2	frequent			
+	Acarinina cuneicamerata	43.54	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina cuneicamerata	50.2	frequent			
+	Acarinina echinata	31.89777778	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina echinata	34.03	rare			
+	Acarinina echinata	35.74107692	common			
+	Acarinina echinata	42.78333333	frequent			
+	Acarinina esnaensis	51.16866667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina esnaensis	57.56	frequent			
+	Acarinina esnehensis	50.2	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina esnehensis	56.815	frequent			
+	Acarinina interposita	50.2	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina interposita	54.61	frequent			
+	Acarinina mcgowrani	37.99	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina mcgowrani	48.6475	frequent			
+	Acarinina mckannai	57.56	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina mckannai	60.41888889	frequent			
+	Acarinina medizzai	35.89	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina medizzai	42.091	frequent			
+	Acarinina nitida	57.56	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina nitida	60.52	frequent			
+	Acarinina pentacamerata	46.31769231	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina pentacamerata	52.54	frequent			
+	Acarinina praetopilensis	39.97	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina praetopilensis	48.01115385	frequent			
+	Acarinina primitiva	38.77841629	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina primitiva	50.67	frequent			
+	Acarinina pseudosubsphaerica	41.89	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina pseudosubsphaerica	50.2	frequent			
+	Acarinina pseudotopilensis	46.56673077	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina pseudotopilensis	55.96	frequent			
+	Acarinina punctocarinata	40.4	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina punctocarinata	46.31769231	frequent			
+	Acarinina quetra	50.2	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina quetra	54.61	frequent			
+	Acarinina rohri	38.18710407	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina rohri	42.359	frequent			
+	Acarinina sibaiyaensis	55.74645833	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina sibaiyaensis	55.96	frequent			
+	Acarinina soldadoensis	48.31	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina soldadoensis	57.79	frequent			
+	Acarinina strabocella	60.11555556	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina strabocella	61.97	frequent			
+	Acarinina subsphaerica	54.846	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina subsphaerica	58.39666667	common			
+	Acarinina subsphaerica	60.52	frequent			
+	Acarinina topilensis	40.228	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina topilensis	42.78333333	frequent			
+	Acarinina wilcoxensis	50.79466667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Acarinina wilcoxensis	56.53	frequent			
+	Astrorotalia palmerae	46.86557692	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Astrorotalia palmerae	49.0525	frequent			
+	Beella digitata	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Beella digitata	5.016356164	frequent			
+	Beella megastoma	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Beella megastoma	0.281538462	frequent			
+	Beella praedigitata	0.8	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Beella praedigitata	12.4	frequent			
+	Catapsydrax africanus	34.68	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Catapsydrax africanus	38.97552036	frequent			
+	Catapsydrax dissimilis	17.54	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Catapsydrax dissimilis	37.60818182	frequent			
+	Catapsydrax globiformis	34.68	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Catapsydrax globiformis	40.314	frequent			
+	Catapsydrax howei	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Catapsydrax howei	43.81125	frequent			
+	Catapsydrax parvulus	9.83	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Catapsydrax parvulus	17.27166667	frequent			
+	Catapsydrax stainforthi	16.98133333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Catapsydrax stainforthi	27.26142857	frequent			
+	Catapsydrax unicavus	17.54	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Catapsydrax unicavus	55.55583333	frequent			
+	Clavatorella bermudezi	12.40398305	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Clavatorella bermudezi	15.73	frequent			
+	Clavigerinella akersi	42.26966667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Clavigerinella akersi	43.85	common			
+	Clavigerinella akersi	45.48566416	frequent			
+	Clavigerinella akersi	46.53684615	common			
+	Clavigerinella caucasica	43.89452381	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Clavigerinella caucasica	44.03278195	frequent			
+	Clavigerinella colombiana	42.895	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Clavigerinella colombiana	43.85	common			
+	Clavigerinella colombiana	45.48566416	frequent			
+	Clavigerinella colombiana	46.71615385	common			
+	Clavigerinella eocanica	34.29	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Clavigerinella eocanica	47.41346154	frequent			
+	Clavigerinella jarvisi	42.895	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Clavigerinella jarvisi	43.85	common			
+	Clavigerinella jarvisi	45.48566416	frequent			
+	Clavigerinella jarvisi	46.56673077	common			
+	Cribrohantkenina inflata	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Cribrohantkenina inflata	36.46272727	frequent			
+	Dentoglobigerina altispira	3.13	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina altispira	22.924	frequent			
+	Dentoglobigerina baroemoenensis	3.3	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina baroemoenensis	32.1	frequent			
+	Dentoglobigerina binaiensis	19.09	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina binaiensis	25.31184211	frequent			
+	Dentoglobigerina galavisi	26.59052632	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina galavisi	38.97552036	frequent			
+	Dentoglobigerina globosa	3.866774194	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina globosa	26.47736842	frequent			
+	Dentoglobigerina globularis	19.3	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina globularis	34.29	frequent			
+	Dentoglobigerina larmeui	10.208	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina larmeui	26.70368421	frequent			
+	Dentoglobigerina prasaepis	23.03247627	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina prasaepis	33.47647059	frequent			
+	Dentoglobigerina pseudovenezuelana	26.81684211	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina pseudovenezuelana	36.84454545	frequent			
+	Dentoglobigerina rohri	23.55142139	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina rohri	29.91333333	frequent			
+	Dentoglobigerina sellii	23.34308887	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina sellii	33.58235294	frequent			
+	Dentoglobigerina sp	33.05294118	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina sp	34.1275	frequent			
+	Dentoglobigerina tapuriensis	24.79504098	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina tapuriensis	33.9	frequent			
+	Dentoglobigerina venezuelana	3.3	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Dentoglobigerina venezuelana	33.37058824	frequent			
+	Eoglobigerina edita	62.56125	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Eoglobigerina edita	62.6	common			
+	Eoglobigerina edita	65.95516484	frequent			
+	Eoglobigerina eobulloides	64.58365385	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Eoglobigerina eobulloides	66.02	frequent			
+	Eoglobigerina eobulloides	66.04	conjectured			
+	Eoglobigerina spiralis	62.29	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Eoglobigerina spiralis	62.6	frequent			
+	Eoglobigerina spiralis	62.925	common			
+	Fohsella birnageae	16.38	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella birnageae	17.127	frequent			
+	Fohsella fohsi	11.79	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella fohsi	13.677	frequent			
+	Fohsella lenguaensis	6.960290328	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella lenguaensis	13.79380952	frequent			
+	Fohsella lobata	11.79	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella lobata	13.63885714	frequent			
+	Fohsella paralenguaensis	9.087740385	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella paralenguaensis	13.75328571	frequent			
+	Fohsella peripheroacuta	13.677	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella peripheroacuta	14.03896215	frequent			
+	Fohsella peripheroronda	13.83619048	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella peripheroronda	21.48419878	frequent			
+	Fohsella praefohsi	13.56257143	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella praefohsi	13.83619048	frequent			
+	Fohsella robusta	11.79	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Fohsella robusta	13.56257143	frequent			
+	Globanomalina archeocompressa	63.75555556	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina archeocompressa	66.02	frequent			
+	Globanomalina australiformis	43.54	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina australiformis	55.89333333	frequent			
+	Globanomalina chapmani	54.31428571	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina chapmani	61.13	frequent			
+	Globanomalina compressa	62.07666667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina compressa	63.9	frequent			
+	Globanomalina ehrenbergi	60.52	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina ehrenbergi	62.445	frequent			
+	Globanomalina imitata	55.89333333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina imitata	57.1	conjectured			
+	Globanomalina imitata	62.67222222	frequent			
+	Globanomalina luxorensis	54.61	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina luxorensis	56.53	frequent			
+	Globanomalina ovalis	55.77822917	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina ovalis	57.79	frequent			
+	Globanomalina planocompressa	62.67222222	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina planocompressa	63.25	conjectured			
+	Globanomalina planocompressa	65.90307692	frequent			
+	Globanomalina planoconica	50.435	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina planoconica	57.56	frequent			
+	Globanomalina pseudomenardii	57.1	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globanomalina pseudomenardii	60.73	frequent			
+	Globigerina angulisuturalis	20.94	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina angulisuturalis	29.18	frequent			
+	Globigerina bulloides	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina bulloides	14.24	frequent			
+	Globigerina ciperoensis	22.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina ciperoensis	31.29111111	frequent			
+	Globigerina druryi	0.563076923	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina druryi	21.12	frequent			
+	Globigerina eamesi	2.091403302	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina eamesi	25.90869856	frequent			
+	Globigerina falconensis	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina falconensis	18.17728395	frequent			
+	Globigerina officinalis	22.96	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina officinalis	43.11833333	frequent			
+	Globigerina praebulloides	4.813178082	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina praebulloides	34.15675	frequent			
+	Globigerina umbilicata	0.563076923	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerina umbilicata	2.577341772	frequent			
+	Globigerinatheka barri	36.36727273	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka barri	43.54	frequent			
+	Globigerinatheka curryi	41.31055556	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka curryi	43.50125	frequent			
+	Globigerinatheka euganea	40.142	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka euganea	42.359	frequent			
+	Globigerinatheka index	34.68	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka index	43.385	frequent			
+	Globigerinatheka korotkovi	35.66661538	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka korotkovi	43.7725	frequent			
+	Globigerinatheka kugleri	39.77033613	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka kugleri	43.85	frequent			
+	Globigerinatheka luterbacheri	34.68	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka luterbacheri	40.228	frequent			
+	Globigerinatheka mexicana	36.08090909	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka mexicana	43.85	frequent			
+	Globigerinatheka semiinvoluta	35.89	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka semiinvoluta	38.48276018	frequent			
+	Globigerinatheka subconglobata	39.57067227	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka subconglobata	44.8412406	frequent			
+	Globigerinatheka subconglobata	45.29819549	common			
+	Globigerinatheka tropicalis	34.03	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinatheka tropicalis	39.0740724	frequent			
+	Globigerinella adamsi	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinella adamsi	0.0142	frequent			
+	Globigerinella calida	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinella calida	4.4	frequent			
+	Globigerinella obesa	15.66795455	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinella obesa	31.29111111	frequent			
+	Globigerinella praesiphonifera	11.36083333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinella praesiphonifera	22.44	frequent			
+	Globigerinella siphonifera	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinella siphonifera	13.36333333	frequent			
+	Globigerinoides altiapertura	16.38	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides altiapertura	21.88244929	frequent			
+	Globigerinoides bisphericus	15.66795455	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides bisphericus	18.56701075	frequent			
+	Globigerinoides conglobatus	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides conglobatus	6.209714286	frequent			
+	Globigerinoides diminutus	14.24	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides diminutus	17.54	frequent			
+	Globigerinoides extremus	1.98	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides extremus	8.896781674	frequent			
+	Globigerinoides fistulosus	1.88	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides fistulosus	3.33	frequent			
+	Globigerinoides mitra	12.40398305	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides mitra	18.32425806	frequent			
+	Globigerinoides obliquus	1.3	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides obliquus	21.32489858	frequent			
+	Globigerinoides parawoodi	16.38	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides parawoodi	21.12	frequent			
+	Globigerinoides primordius	19.3	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides primordius	26.02473684	frequent			
+	Globigerinoides ruber	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides ruber	15.1	frequent			
+	Globigerinoides sacculifer	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides sacculifer	10.9	frequent			
+	Globigerinoides seigliei	5.321123288	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides seigliei	9.2434375	frequent			
+	Globigerinoides subquadratus	11.54	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides subquadratus	22.2806998	frequent			
+	Globigerinoides trilobus	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globigerinoides trilobus	21.96209939	frequent			
+	Globoconella conoidea	5.827845528	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoconella conoidea	16.38	frequent			
+	Globoconella conomiozea	5.59125	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoconella conomiozea	6.14	frequent			
+	Globoconella inflata	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoconella inflata	2.671012658	frequent			
+	Globoconella miozea	10.208	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoconella miozea	16.69	frequent			
+	Globoconella pliozea	4.177096774	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoconella pliozea	5.067150685	frequent			
+	Globoconella puncticulata	2.39	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoconella puncticulata	4.61	frequent			
+	Globoconella sphericomiozea	4.55	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoconella sphericomiozea	5.455333333	frequent			
+	Globoconella terminalis	5.016356164	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoconella terminalis	5.72	frequent			
+	Globoquadrina conglomerata	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoquadrina conglomerata	4.37	frequent			
+	Globoquadrina dehiscens	5.924878049	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoquadrina dehiscens	22.44	frequent			
+	Globorotalia flexuosa	6.38E-02	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotalia flexuosa	0.401	frequent			
+	Globorotalia merotumida	5.941268293	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotalia merotumida	9.956	frequent			
+	Globorotalia plesiotumida	3.77	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotalia plesiotumida	8.58	frequent			
+	Globorotalia tumida	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotalia tumida	5.72	frequent			
+	Globorotalia ungulata	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotalia ungulata	4.914767123	frequent			
+	Globorotalia zealandica	16.38	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotalia zealandica	17.54	frequent			
+	Globorotaloides eovariabilis	15.96	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotaloides eovariabilis	44.5483208	frequent			
+	Globorotaloides hexagonus	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotaloides hexagonus	17.54	frequent			
+	Globorotaloides quadrocameratus	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotaloides quadrocameratus	55.68291667	frequent			
+	Globorotaloides testarugosa	21.88244929	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotaloides testarugosa	32.62941176	frequent			
+	Globorotaloides variabilis	4.813178082	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globorotaloides variabilis	17.27166667	frequent			
+	Globoturborotalita anguliofficinalis	23.03247627	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita anguliofficinalis	34.84753846	frequent			
+	Globoturborotalita apertura	1.64	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita apertura	11.18	frequent			
+	Globoturborotalita bassriverensis	42.00166667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita bassriverensis	55.81	frequent			
+	Globoturborotalita bollii	2.39	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita bollii	13.36333333	frequent			
+	Globoturborotalita brazieri	15.1	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita brazieri	22.96	frequent			
+	Globoturborotalita connecta	16.83566667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita connecta	22.2806998	frequent			
+	Globoturborotalita decoraperta	2.75	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita decoraperta	11.49	frequent			
+	Globoturborotalita gnaucki	30.28	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita gnaucki	35.51769231	frequent			
+	Globoturborotalita kennetti	5.321123288	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita kennetti	8.932043269	frequent			
+	Globoturborotalita labiacrassata	16.34333333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita labiacrassata	30.41481481	frequent			
+	Globoturborotalita martini	30.28	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita martini	43.54	frequent			
+	Globoturborotalita nepenthes	4.37	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita nepenthes	11.63	frequent			
+	Globoturborotalita ouachitaensis	23.03247627	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita ouachitaensis	42.67166667	frequent			
+	Globoturborotalita rubescens	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita rubescens	3.6	frequent			
+	Globoturborotalita tenella	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita tenella	2.483670886	frequent			
+	Globoturborotalita woodi	2.3	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Globoturborotalita woodi	30.68444444	frequent			
+	Guembelitrioides nuttalli	41.89	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Guembelitrioides nuttalli	45.72	frequent			
+	Hantkenina alabamensis	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina alabamensis	39.77033613	frequent			
+	Hantkenina australis	38.08855204	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina australis	41.89	frequent			
+	Hantkenina compressa	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina compressa	40.97944444	frequent			
+	Hantkenina dumblei	38.97552036	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina dumblei	43.4625	frequent			
+	Hantkenina lehneri	41.145	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina lehneri	43.47025	frequent			
+	Hantkenina liebusi	39.6705042	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina liebusi	43.695	frequent			
+	Hantkenina mexicana	43.385	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina mexicana	43.85890476	frequent			
+	Hantkenina nanggulanensis	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina nanggulanensis	38.08855204	frequent			
+	Hantkenina primitiva	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina primitiva	39.97	frequent			
+	Hantkenina singanoae	43.85	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hantkenina singanoae	43.93904762	frequent			
+	Hedbergella [ancestor]	70.14	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hedbergella [ancestor]	71.75	frequent			
+	Hedbergella holmdelensis	66.02	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hedbergella holmdelensis	70.91903226	frequent			
+	Hedbergella monmouthensis	66.02	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hedbergella monmouthensis	69.90685714	frequent			
+	Hirsutella bermudezi	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella bermudezi	2.091403302	frequent			
+	Hirsutella challengeri	9.253817308	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella challengeri	15.15679545	frequent			
+	Hirsutella cibaoensis	4.49	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella cibaoensis	9.44	frequent			
+	Hirsutella evoluta	4.118387097	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella evoluta	4.813178082	frequent			
+	Hirsutella gigantea	8.831414027	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella gigantea	14.75765854	frequent			
+	Hirsutella hirsuta	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella hirsuta	4.353225806	frequent			
+	Hirsutella juanai	4.813178082	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella juanai	9.69	frequent			
+	Hirsutella margaritae	3.85	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella margaritae	6.032234146	frequent			
+	Hirsutella praemargaritae	5.827845528	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella praemargaritae	8.477703137	frequent			
+	Hirsutella praescitula	13.73	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella praescitula	18.26	frequent			
+	Hirsutella primitiva	4.813178082	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella primitiva	6.042341463	frequent			
+	Hirsutella scitula	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella scitula	14.78878049	frequent			
+	Hirsutella theyeri	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Hirsutella theyeri	4.61	frequent			
+	Igorina albeari	57.56	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Igorina albeari	61.33	frequent			
+	Igorina anapetes	43.23	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Igorina anapetes	44.78265664	frequent			
+	Igorina broedermanni	43.3075	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Igorina broedermanni	56.245	frequent			
+	Igorina lodoensis	50.3175	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Igorina lodoensis	56.815	frequent			
+	Igorina pusilla	61.33	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Igorina pusilla	62.29	frequent			
+	Igorina tadjikistanensis	55.96	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Igorina tadjikistanensis	61.86333333	frequent			
+	Menardella archeomenardii	13.87	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella archeomenardii	16.26	frequent			
+	Menardella exilis	2.09	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella exilis	4.45	frequent			
+	Menardella fimbriata	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella fimbriata	0.187692308	frequent			
+	Menardella limbata	2.39	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella limbata	10.64	frequent			
+	Menardella menardii	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella menardii	13.14130769	frequent			
+	Menardella miocenica	2.39	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella miocenica	3.77	frequent			
+	Menardella multicamerata	2.98	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella multicamerata	6.733220941	frequent			
+	Menardella pertenuis	1.8038	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella pertenuis	3.52	frequent			
+	Menardella praemenardii	13.13	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella praemenardii	14.07514896	frequent			
+	Menardella pseudomiocenica	2.3	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Menardella pseudomiocenica	7.77228728	frequent			
+	Morozovella acuta	55.3525	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella acuta	58.39666667	frequent			
+	Morozovella acutispira	57.79	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella acutispira	60.73	frequent			
+	Morozovella aequa	50.67	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella aequa	57.79	frequent			
+	Morozovella allisonensis	55.74645833	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella allisonensis	55.96	frequent			
+	Morozovella angulata	60.41888889	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella angulata	62.29	frequent			
+	Morozovella apanthesma	55.49229167	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella apanthesma	61.54333333	frequent			
+	Morozovella aragonensis	43.23	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella aragonensis	52.54	frequent			
+	Morozovella caucasica	43.66681818	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella caucasica	50.67	frequent			
+	Morozovella conicotruncata	59.81222222	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella conicotruncata	62.29	frequent			
+	Morozovella crater	43.4625	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella crater	54.11714286	frequent			
+	Morozovella edgari	54.61	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella edgari	55.49229167	frequent			
+	Morozovella formosa	50.67	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella formosa	54.61	frequent			
+	Morozovella gracilis	50.67	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella gracilis	55.38838235	frequent			
+	Morozovella lensiformis	50.435	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella lensiformis	54.61	frequent			
+	Morozovella marginodentata	51.66733333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella marginodentata	55.42875	frequent			
+	Morozovella occlusa	55.2	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella occlusa	60.6775	frequent			
+	Morozovella pasionensis	55.2	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella pasionensis	60.83	frequent			
+	Morozovella praeangulata	61.33	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella praeangulata	62.6	frequent			
+	Morozovella subbotinae	50.67	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella subbotinae	57.1	frequent			
+	Morozovella velascoensis	55.2	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovella velascoensis	61.33	frequent			
+	Morozovelloides bandyi	41.89	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovelloides bandyi	47.41346154	frequent			
+	Morozovelloides coronatus	40.056	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovelloides coronatus	44.78265664	frequent			
+	Morozovelloides crassatus	37.99	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovelloides crassatus	45.25132832	frequent			
+	Morozovelloides lehneri	40.056	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Morozovelloides lehneri	44.07964912	frequent			
+	Neogloboquadrina acostaensis	1.8038	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Neogloboquadrina acostaensis	9.83	frequent			
+	Neogloboquadrina continuosa	8.074608362	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Neogloboquadrina continuosa	22.44	frequent			
+	Neogloboquadrina dutertrei	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Neogloboquadrina dutertrei	7.167645117	frequent			
+	Neogloboquadrina humerosa	1.6	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Neogloboquadrina humerosa	8.560081633	frequent			
+	Neogloboquadrina pachyderma	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Neogloboquadrina pachyderma	10.8	frequent			
+	Orbulina suturalis	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Orbulina suturalis	15.1	frequent			
+	Orbulina universa	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Orbulina universa	14.94439024	frequent			
+	Orbulinoides beckmanni	39.97	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Orbulinoides beckmanni	40.4	frequent			
+	Paragloborotalia acrostoma	13.38666667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia acrostoma	22.44	frequent			
+	Paragloborotalia bella	13.87813187	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia bella	19.05251613	frequent			
+	Paragloborotalia griffinoides	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia griffinoides	55.885	frequent			
+	Paragloborotalia incognita	16.38	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia incognita	20.72351852	frequent			
+	Paragloborotalia kugleri	21.12	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia kugleri	22.96	frequent			
+	Paragloborotalia mayeri	10.46	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia mayeri	27.67571429	frequent			
+	Paragloborotalia nana	15.1	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia nana	46.81576923	frequent			
+	Paragloborotalia opima	26.93	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia opima	30.68444444	frequent			
+	Paragloborotalia pseudokugleri	22.69395833	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia pseudokugleri	25.21	frequent			
+	Paragloborotalia semivera	15.55436364	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia semivera	30.54962963	frequent			
+	Paragloborotalia siakensis	10.46	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Paragloborotalia siakensis	30.28	frequent			
+	Parasubbotina aff_pseudobulloides	65.77230769	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina aff_pseudobulloides	66.02	frequent			
+	Parasubbotina aff_pseudobulloides	66.03333333	conjectured			
+	Parasubbotina eoclava	43.54	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina eoclava	48.6475	frequent			
+	Parasubbotina griffinae	37.32181818	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina griffinae	47.71230769	frequent			
+	Parasubbotina inaequispira	44.78265664	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina inaequispira	55.96	frequent			
+	Parasubbotina prebetica	50.79466667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina prebetica	51.792	frequent			
+	Parasubbotina pseudobulloides	60.625	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina pseudobulloides	61.59666667	common			
+	Parasubbotina pseudobulloides	65.77230769	frequent			
+	Parasubbotina pseudowilsoni	40.4	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina pseudowilsoni	46.91538462	frequent			
+	Parasubbotina varianta	42.56	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina varianta	63.9	frequent			
+	Parasubbotina variospira	60.52	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Parasubbotina variospira	62.29	frequent			
+	Planoglobanomalina pseudoalgeriana	44.59518797	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Planoglobanomalina pseudoalgeriana	50.67	frequent			
+	Planorotalites capdevilensis	36.55818182	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Planorotalites capdevilensis	37.99	common			
+	Planorotalites capdevilensis	50.2	frequent			
+	Planorotalites pseudoscitula	45.72	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Planorotalites pseudoscitula	49.255	common			
+	Planorotalites pseudoscitula	57.1	frequent			
+	Praemurica inconstans	62.29	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praemurica inconstans	63.9	frequent			
+	Praemurica lozanoi	42.56	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praemurica lozanoi	50.91933333	frequent			
+	Praemurica lozanoi	62.13	conjectured			
+	Praemurica pseudoinconstans	62.5225	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praemurica pseudoinconstans	65.82461538	frequent			
+	Praemurica taurica	63.93304196	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praemurica taurica	66.01333333	frequent			
+	Praemurica taurica	66.02	conjectured			
+	Praemurica uncinata	62.07666667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praemurica uncinata	62.6	frequent			
+	Praeorbulina circularis	14.49470588	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praeorbulina circularis	15.96	frequent			
+	Praeorbulina curva	14.78878049	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praeorbulina curva	16.28	frequent			
+	Praeorbulina glomerosa	14.78878049	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praeorbulina glomerosa	16.27	frequent			
+	Praeorbulina sicanus	14.53	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Praeorbulina sicanus	16.38	frequent			
+	Protentella nicobarensis	4.202258065	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Protentella nicobarensis	29.16788889	frequent			
+	Protentella prolixa	10.46	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Protentella prolixa	29.18	frequent			
+	Protentelloides dalhousiei	22.96	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Protentelloides dalhousiei	25.21061722	frequent			
+	Protentelloides primitiva	22.96	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Protentelloides primitiva	25.90869856	frequent			
+	Pseudoglobigerinella bolivariana	42.67166667	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pseudoglobigerinella bolivariana	47.41346154	frequent			
+	Pseudohastigerina micra	32.31176471	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pseudohastigerina micra	33.9	common			
+	Pseudohastigerina micra	47.41346154	frequent			
+	Pseudohastigerina naguewichiensis	32.1	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pseudohastigerina naguewichiensis	35.89	frequent			
+	Pseudohastigerina sharkriverensis	39.27117647	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pseudohastigerina sharkriverensis	47.31384615	frequent			
+	Pseudohastigerina wilcoxensis	42.895	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pseudohastigerina wilcoxensis	55.81	frequent			
+	Pulleniatina finalis	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pulleniatina finalis	2.04	frequent			
+	Pulleniatina obliquiloculata	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pulleniatina obliquiloculata	5.7	frequent			
+	Pulleniatina praecursor	1.858228571	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pulleniatina praecursor	6.244066253	frequent			
+	Pulleniatina praespectabilis	4.49	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pulleniatina praespectabilis	5.219534247	frequent			
+	Pulleniatina primalis	3.66	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pulleniatina primalis	6.608081633	frequent			
+	Pulleniatina spectabilis	4.21	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Pulleniatina spectabilis	4.61	frequent			
+	Sphaeroidinella dehiscens	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Sphaeroidinella dehiscens	5.53	frequent			
+	Sphaeroidinellopsis disjuncta	12.40398305	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Sphaeroidinellopsis disjuncta	18.44563441	frequent			
+	Sphaeroidinellopsis kochi	4.53	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Sphaeroidinellopsis kochi	14.07916972	frequent			
+	Sphaeroidinellopsis paenedehiscens	2.3	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Sphaeroidinellopsis paenedehiscens	7.369192505	frequent			
+	Sphaeroidinellopsis seminulina	3.16	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Sphaeroidinellopsis seminulina	16.38	frequent			
+	Subbotina angiporoides	29.91333333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina angiporoides	41.89	frequent			
+	Subbotina cancellata	57.89111111	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina cancellata	62.88888889	frequent			
+	Subbotina corpulenta	32.20588235	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina corpulenta	46.56673077	frequent			
+	Subbotina crociapertura	39.97	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina crociapertura	45.72	frequent			
+	Subbotina eocaena	32.31176471	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina eocaena	50.5525	frequent			
+	Subbotina gortanii	26.59052632	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina gortanii	39.0740724	frequent			
+	Subbotina hagni	34.68	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina hagni	47.41346154	frequent			
+	Subbotina hornibrooki	53.03285714	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina hornibrooki	56.245	frequent			
+	Subbotina jacksonensis	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina jacksonensis	43.385	frequent			
+	Subbotina linaperta	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina linaperta	52.166	frequent			
+	Subbotina patagonica	44.5483208	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina patagonica	58.29555556	frequent			
+	Subbotina roesnaesensis	42.78333333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina roesnaesensis	56.245	frequent			
+	Subbotina senni	37.99	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina senni	50.435	frequent			
+	Subbotina sp1	32.73529412	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina sp1	34.42	frequent			
+	Subbotina sp2	26.59052632	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina sp2	34.03	frequent			
+	Subbotina triangularis	55.2	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina triangularis	62.4915	frequent			
+	Subbotina triloculinoides	57.79	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina triloculinoides	65.25	frequent			
+	Subbotina trivialis	62.4915	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina trivialis	65.95516484	frequent			
+	Subbotina utilisindex	30.28	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina utilisindex	35.59215385	frequent			
+	Subbotina velascoensis	55.2	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina velascoensis	60.73	frequent			
+	Subbotina yeguaensis	33.9	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Subbotina yeguaensis	50.2	frequent			
+	Truncorotalia cavernula	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia cavernula	0.893482143	frequent			
+	Truncorotalia crassaconica	3.73173913	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia crassaconica	4.43	frequent			
+	Truncorotalia crassaformis	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia crassaformis	5.827845528	frequent			
+	Truncorotalia crassula	0.893482143	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia crassula	5.655625	frequent			
+	Truncorotalia excelsa	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia excelsa	1.952484277	frequent			
+	Truncorotalia hessi	0.375384615	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia hessi	1.908867925	frequent			
+	Truncorotalia oceanica	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia oceanica	5.59125	frequent			
+	Truncorotalia pachytheca	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia pachytheca	1.908867925	frequent			
+	Truncorotalia ronda	1.006875	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia ronda	4.202258065	frequent			
+	Truncorotalia tenuitheca	1.348479437	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia tenuitheca	3.593423913	frequent			
+	Truncorotalia tosaensis	0.61	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia tosaensis	3.35	frequent			
+	Truncorotalia truncatulinoides	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia truncatulinoides	1.99509434	frequent			
+	Truncorotalia viola	1.465308442	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Truncorotalia viola	3.73173913	frequent			
+	Turborotalia altispiroides	37.22636364	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia altispiroides	40.64833333	frequent			
+	Turborotalia ampliapertura	30.28	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia ampliapertura	35.26638462	frequent			
+	Turborotalia cerroazulensis	34.03	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia cerroazulensis	41.47611111	frequent			
+	Turborotalia cocoaensis	34.03	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia cocoaensis	38.58131222	frequent			
+	Turborotalia cunialensis	34.03	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia cunialensis	34.42	frequent			
+	Turborotalia euapertura	30.21888889	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia euapertura	32.78823529	frequent			
+	Turborotalia frontosa	40.64833333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia frontosa	48.31	frequent			
+	Turborotalia increbescens	30.28	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia increbescens	39.17262443	frequent			
+	Turborotalia pomeroli	34.93130769	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia pomeroli	42.00166667	frequent			
+	Turborotalia possagnoensis	40.64833333	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalia possagnoensis	43.50125	frequent			
+	Turborotalita carcoselleensis	35.98545455	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalita carcoselleensis	43.85	frequent			
+	Turborotalita clarkei	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalita clarkei	1.694942857	frequent			
+	Turborotalita cristata	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalita cristata	4.55	frequent			
+	Turborotalita humilis	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalita humilis	5.812195122	frequent			
+	Turborotalita praequinqueloba	21.66068966	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalita praequinqueloba	36.08090909	frequent			
+	Turborotalita quinqueloba	0	TOP	"<b>Aze, T., Ezard, T. H. G., Purvis, A., Coxall, H. K., Stewart, D. R. M., Wade, B. S., & Pearson, P. N.  2016.  Phylogeny of Cenozoic macroperforate planktonic foraminifera of Aze & others (2011).   TimeScale Creator Evolutionary Tree.  Corrected Version"		
+	Turborotalita quinqueloba	24.8550843	frequent			

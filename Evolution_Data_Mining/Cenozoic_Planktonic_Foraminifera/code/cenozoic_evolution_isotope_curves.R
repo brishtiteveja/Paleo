@@ -1,8 +1,8 @@
 #data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/EvolutionaryTree/Fordham and Zehady shared/180724'
 data_dir <- '/Users/andy/Documents/TSCreator/EvolutionaryTree/Fordham and Zehady shared/180724'
 setwd(data_dir)
-#dp_fname <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourMorphogroup.xls'
-dp_fname <- 'qryTSCAze_BiospeciesAze_ColourMorphogroup.xls'
+dp_fname <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourMorphogroup.xls'
+#dp_fname <- 'qryTSCAze_BiospeciesAze_ColourMorphogroup.xls'
 
 library(readxl)
 sheets <- excel_sheets(dp_fname)
@@ -22,13 +22,14 @@ c2
 name_col2 <- dfxl2$`1.3`
 name_col2
 
+c
 name_col <- dfxl$`1.3`
 name_col
-age_col <- dfxl$...3#dfxl$X__1
+age_col <- dfxl$X__1
 age_col
-type_col <- dfxl$...4#dfxl$X__2
+type_col <- dfxl$X__2
 type_col
-branch_to_col <- dfxl$...5#dfxl$X__3
+branch_to_col <- dfxl$X__3
 branch_to_col
 LAD_ix <- which(type_col == 'TOP')
 LAD_ix
@@ -38,9 +39,82 @@ FAD_ix
 lad_df <- data.frame(LAD=age_col[LAD_ix], name=name_col[LAD_ix])
 lad_df <- lad_df[order(lad_df$LAD, decreasing = F),]
 lad_df
+
 fad_df <- data.frame(FAD=age_col[FAD_ix], name=branch_to_col[FAD_ix])
 fad_df <- fad_df[order(fad_df$FAD, decreasing = F),]
 fad_df
+
+dim(lad_df)
+unique_morphospecies <- sort(unique(as.character(fad_lad_df$name)))
+length(unique_morphospecies)
+splitted_str <- strsplit(unique_morphospecies, " ")
+genera_species_together <- unlist(splitted_str)
+length(genera_species_together)
+n <- length(genera_species_together)
+genera_ids <- seq(1, n, by=2)
+species_ids <- seq(2, n, by=2)  
+generas <- genera_species_together[genera_ids]
+length(generas)
+generas
+species <- genera_species_together[species_ids]
+length(species)
+species
+unique_generas <- unique(generas)
+length(unique_generas)
+unique_species <- unique(species)
+length(unique_species)
+
+families <- c(
+              "Truncorotaloididae", # "Acarinina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=1027637
+              "Truncorotaloididae", # "Astrorotalia" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721439        
+              "Globigerinidae", # "Beella"
+              "Globigerinidae", # "Catapsydrax" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721443      
+              "Globorotaliidae", # "Clavatorella" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721438       
+              "Hantkeninidae", # "Clavigerinella"      http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721423
+              "Hantkeninidae", # "Cribrohantkenina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721425
+              "Globoquadrinidae", # Dentoglobigerina http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721445
+              "Eoglobigerinidae", # "Eoglobigerina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721429
+              "Globorotaliidae", # "Fohsella" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=734639           
+              "Hedbergellidae", # "Globanomalina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721422      
+              "Globigerinidae", # "Globigerina"
+              "Globigerinidae", # "Globigerinatheka" http://www.marinespecies.org/foraminifera/aphia.php?p=taxlist
+              "Globigerinidae", #  Globigerinella
+              "Globigerinidae", # Globigerinoides
+              "Globorotaliidae", # Globoconella
+              "Catapsydracidae", # Globoquadrina
+              "Globorotaliidae", # Globorotalia
+              "Globigerinidae", # Globorotaloides
+              "Globigerinidae", # Globoturborotalita
+              "Catapsydracidae", # "Guembelitrioides" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=1035049
+              "Hantkeninidae", # "Hantkenina"    http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=720943      
+              "Hedbergellidae", # "Hedbergella"  http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721555
+              "Bittnerulidae", # Hirsutella
+              "Truncorotaloididae", # "Igorina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721433            
+              "Globorotaliidae", # Menardella
+              "Truncorotaloididae", # "Morozovella" http://www.marinespecies.org/foraminifera/aphia.php?p=taxlist
+              "Truncorotaloididae", # "Morozovelloides" http://www.marinespecies.org/foraminifera/aphia.php?p=taxlist
+              "Globorotaliidae", # "Neogloboquadrina"
+              "Globigerinidae", # "Orbulina"
+              "Globigerinidae", # "Orbulinoides"  http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=1035050
+              "Globigerinidae", # "Paragloborotalia" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721436
+              "Globigerinidae", # "Parasubbotina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=993553
+              "Hedbergellidae", # "Planoglobanomalina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=1034965
+              "Truncorotaloididae", # "Planorotalites" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=721434
+              "Truncorotaloididae" , # "Praemurica" http://www.marinespecies.org/foraminifera/aphia.php?p=taxlist         
+              "Globigerinidae", # "Praeorbulina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=722195
+              "Catapsydracidae", # Protentella http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=827109
+              "Catapsydracidae", # "Protentelloides"     http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=1063500
+              "Globigerinidae", # "Pseudoglobigerinella" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=1035066
+              "Hedbergellidae", # "Pseudohastigerina"   http://www.marinespecies.org/foraminifera/aphia.php?p=taxlist
+              "Pulleniatinidae", # Pulleniatina http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=1026619
+              "Globigerinidae", # Sphaeroidinella http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=418108
+              "Globigerinidae", # Sphaeroidinellopsis http://www.marinespecies.org/foraminifera/aphia.php?p=taxlist
+              "Catapsydracidae", # "Subbotina" http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=932735
+              "Globorotaliidae", # Truncorotalia http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=1322825
+              "Hedbergellidae", # "Turborotalia" http://www.marinespecies.org/foraminifera/aphia.php?p=taxlist       
+              "Globigerinidae" # Turborotalita http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=113461
+              ) 
+fam_df <- data.frame(family=families, genus=unique_generas)
 
 fad_lad_df <- fad_df
 fad_lad_df$LAD <- rep(-1, dim(fad_lad_df)[1])
@@ -50,8 +124,99 @@ for(n in fad_lad_df$name) {
   fad_lad_df$LAD[i] = lad_df$LAD[ix] 
   i <- i+1
 }
+fad_lad_df$Lifespan <- fad_lad_df$FAD - fad_lad_df$LAD
 head(fad_lad_df)
 dim(fad_lad_df)
+
+fam_by_genus_list <- list()
+c <- 1
+for (g in fam_df$genus) {
+  fam_by_genus_list[[g]] <- as.character(fam_df$family[c])
+  c = c + 1 
+}
+fam_by_genus_list
+
+fam_by_genus <- c()
+for (f in fad_lad_df$name) {
+  genus <- strsplit(as.character(f), " ")[[1]][1]
+  fam <- fam_by_genus_list[[genus]]
+  fam_by_genus <- c(fam_by_genus, fam)
+}
+fad_lad_df$Family <- fam_by_genus
+
+unique_families <- unique(as.character(fam_df$family))
+as.character(unique_families)
+length(unique_families)
+
+
+fad_lad_df_by_lifespan<-fad_lad_df[order(fad_lad_df$Lifespan, decreasing = F),]
+library(DT)
+datatable(fad_lad_df_by_lifespan)
+
+n <- aggregate(fad_lad_df_by_lifespan[,c(2,5)], by=list(fad_lad_df$Family), length)
+fam_species_cnt_df <- n[,c(1,3)]
+fam_species_cnt_df <- fam_species_cnt_df[order(fam_species_cnt_df$Family),]
+colnames(fam_species_cnt_df) <- c("Family", "# of Species")
+fam_species_cnt_df
+datatable(fam_species_cnt_df)
+
+m <- aggregate(fad_lad_df_by_lifespan[,c(4,5)], by=list(fad_lad_df$Family), mean)
+m <- m[, c(1,2)]
+fam_by_mean_lifespan <- m[order(m$Lifespan),]
+colnames(fam_by_mean_lifespan) <- c("Family", "Mean Lifespan")
+fam_by_mean_lifespan$`Mean Lifespan` <- round(fam_by_mean_lifespan$`Mean Lifespan`,2)
+datatable(fam_by_mean_lifespan)
+
+m <- aggregate(fad_lad_df_by_lifespan[,c(4,5)], by=list(fad_lad_df$Family), min)
+m <- m[, c(1,2)]
+fam_by_start_lifespan <- m[order(m$Lifespan),]
+colnames(fam_by_start_lifespan) <- c("Family", "Start of Lifespan")
+fam_by_start_lifespan$`Start of Lifespan` <- round(fam_by_start_lifespan$`Start of Lifespan`,2)
+datatable(fam_by_start_lifespan)
+
+m <- aggregate(fad_lad_df_by_lifespan[,c(4,5)], by=list(fad_lad_df$Family), max)
+m <- m[, c(1,2)]
+fam_by_end_lifespan <- m[order(m$Lifespan),]
+colnames(fam_by_end_lifespan) <- c("Family", "End of Lifespan")
+fam_by_end_lifespan$`End of Lifespan` <- round(fam_by_end_lifespan$`End of Lifespan`,2)
+datatable(fam_by_end_lifespan)
+
+fam_by_species_df <- fam_species_cnt_df
+fam_by_species_df$`Mean Lifespan` <- fam_by_mean_lifespan$`Mean Lifespan`
+fam_by_species_df$`Start of Lifespan` <- fam_by_start_lifespan$`Start of Lifespan`
+fam_by_species_df$`End of Lifespan` <- fam_by_end_lifespan$`End of Lifespan`
+datatable(fam_by_species_df)
+
+#histogram
+par(mfrow=c(2,1))
+hist(fad_lad_df$FAD, breaks = 70*10)
+boxplot(fad_lad_df$FAD)
+
+hist(fad_lad_df$LAD, breaks = 70 * 10)
+boxplot(fad_lad_df$LAD)
+
+
+par(mfrow=c(1,1))
+hist(fad_lad_df$Lifespan, breaks=50)
+boxplot(fad_lad_df$Lifespan)
+
+quantile(fad_lad_df$Lifespan)
+
+
+# max life span
+max_id <- which.max(fad_lad_df$Lifespan)
+max(fad_lad_df$Lifespan)
+fad_lad_df[max_id,]
+
+# min life span
+min_id <- which.min(fad_lad_df$Lifespan)
+min(fad_lad_df$Lifespan)
+fad_lad_df[min_id,]
+
+# mean life span
+mean(fad_lad_df$Lifespan)
+#median
+median(fad_lad_df$Lifespan)
 
 living_ix <- which(fad_lad_df$LAD == 0)
 living_df <- fad_lad_df[living_ix,]
@@ -59,17 +224,15 @@ living_df
 dim(living_df)
 
 
-slide_window <- 1 # 100Ka interval
-
 min_age <- min(fad_lad_df$LAD, fad_lad_df$FAD)
-mn_a <- floor(min_age) - slide_window/2
+mn_a <- floor(min_age)
 max_age <- max(fad_lad_df$LAD, fad_lad_df$FAD)
-mx_a <- ceiling(max_age) + slide_window/2
+mx_a <- ceiling(max_age)
+mx_a <- 34
 
-
-age_seq <- seq(mn_a, mx_a, by=slide_window)
-age_seq
-
+window_size <- 1
+slide_window <- 0.1
+age_seq <- seq(mn_a-window_size, mx_a+window_size, by=slide_window)
 ages <- list()
 LAD_cnts <- list()
 FAD_cnts <- list()
@@ -78,11 +241,11 @@ FAD_names <- list()
 n <- length(age_seq) - 1
 for(k in 1:n) {
   start_age <- age_seq[k]
-  end_age <- age_seq[k+1]
+  end_age <- start_age + window_size
   mid_age <- (start_age + end_age)/2
   ixl <- which(fad_lad_df$LAD >= start_age 
-              & fad_lad_df$LAD < end_age)
-
+               & fad_lad_df$LAD < end_age)
+  
   ixf <- which(fad_lad_df$FAD >= start_age 
                & fad_lad_df$FAD < end_age)
   
@@ -96,7 +259,8 @@ for(k in 1:n) {
   FAD_cnts[[k]] <- cnt_f
   LAD_names[[k]] <- ln_l
   FAD_names[[k]] <- ln_f
- }
+}
+
 
 FAD_LAD_per_df <- data.frame(age=unlist(ages), 
                          FAD_cnt = unlist(FAD_cnts), LAD_cnt = unlist(LAD_cnts))
@@ -111,8 +275,8 @@ FAD_LAD_per_df_ap <- FAD_LAD_per_df[2:N,]
 head(FAD_LAD_per_df_ap)
 
 ages_ap <- FAD_LAD_per_df$age[2:N]
-extinction_rate <- FAD_LAD_per_df_ap$LAD/sum(FAD_LAD_per_df_ap$LAD) * 100
-speciation_rate <- FAD_LAD_per_df_ap$FAD/sum(FAD_LAD_per_df_ap$FAD) * 100
+#extinction_rate <- FAD_LAD_per_df_ap$LAD/sum(FAD_LAD_per_df_ap$LAD) * 100
+#speciation_rate <- FAD_LAD_per_df_ap$FAD/sum(FAD_LAD_per_df_ap$FAD) * 100
 
 par(mfrow=c(1,1))
 par(mar=c(4,4,4,4))
@@ -136,7 +300,7 @@ lines(FAD_LAD_per_df_ap$age, FAD_LAD_per_df_ap$FAD_cnt, #ages, speciation_rate,
 legend('topright', legend=c('speciation + extinction', 'extinction', 'speciation'), col=c(1,2,3), lty=c(2,1,1))
 
 
-df = data.frame(FAD_LAD_per_df_ap)
+df = data.frame(FAD_LAD_per_df)
 
 # At each pseudolevel, we count the number of speciations or
 # extinctions—encoded as counts in the code (Dataset S2)—and
@@ -192,9 +356,10 @@ df$`raw.speciation.probability` <- df$FAD_cnt/df$N_FAD
 df$`raw.extinction.probability` <- df$LAD_cnt/df$N_LAD
 df[is.na(df)] <- 0
 
+datatable(df)
 
 # Extract only Cenozoic
-CENOZOIC_BASE <- 67
+CENOZOIC_BASE <- 80
 df_C <- df[df$age > 0 & df$age <= CENOZOIC_BASE, ]
 tail(df_C)
 
@@ -204,10 +369,17 @@ dff <- df_C
 
 dff <- dff[,-c(2,3,4,5,6)]
 dff$`raw.turnover.probability` <- dff$`raw.speciation.probability` + dff$`raw.extinction.probability`
+datatable(dff)
 which(is.na(dff))
 head(dff)
 tail(dff)
 
+# species diversity
+par(mar=c(1,4,1,1))
+plot(dff$age, dff$N.species.speciation, 
+     t='l', lwd=2,
+     xlim=c(0,35),
+     ylab='# of extant species')
 
 # HMM 
 

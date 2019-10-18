@@ -32,8 +32,16 @@ a_r
 a_f
 
 a = sample(1:10, 20, replace = T)
+a
 a_r2 = rollapply(zoo(a), width=c(5,3,2), FUN=sum, na.rm=TRUE, 
                          by=c(5,3,2), 
+                 align='left')
+a
+a_r2
+
+length(a)
+a_r2 = rollapply(zoo(a), width=c(4), FUN=sum, #na.rm=TRUE, 
+                 by=c(1), 
                  align='left')
 a
 a_r2
