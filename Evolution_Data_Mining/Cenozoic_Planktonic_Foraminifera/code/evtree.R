@@ -1,9 +1,13 @@
-data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/EvolutionaryTree/Fordham and Zehady shared/180724'
+#data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/EvolutionaryTree/Fordham and Zehady shared/180724'
 data_dir <- '/Users/andy/Documents/TSCreator/EvolutionaryTree/Fordham and Zehady shared/180724'
 setwd(data_dir)
-dp_fname <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourMorphogroup.xls'
+dp_fname1 <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourMorphogroup.xls'
 dp_fname2 <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourEcogroup.xls'
 dp_fname3 <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourGenus.xls'
+dp_fname4 <- 'qryTSCAze_BiospeciesAze_ColourMorphogroup.xls'
+dp_fname5 <- 'qryTSCAze_BiospeciesAze_ColourEcogroup.xls' 
+
+dp_fname <- dp_fname1
 
 library(readxl)
 # extract the FAD and LAD points from the tscreator datapack in excel format
@@ -40,7 +44,7 @@ branch_on_off <- dfxl$X__4
 # branch_on_off
 # 
 branch_label <- dfxl$X__5
-branch_label
+#branch_label
 # 
 branch_line_type <- dfxl$X__6
 # branch_line_type
@@ -161,6 +165,8 @@ for(n in fad_df$name) {
   i <- i+1
 }
 
+range_df$Lifespan = range_df$FAD - range_df$LAD
+
 # branch_age = FAD
 range_df$branch_age = range_df$FAD
 # add branch_age and branch_label info to the ranges in the range data frame
@@ -255,7 +261,7 @@ for(ci in no_blabel_children_ix) {
 }
 
 datatable(range_df)
-
+datatable(range_df[,c('name', 'branch_label')])
 
 # create evolutionary tree list which contains parent child range relationship
 parent <- name_col[FAD_ix]
