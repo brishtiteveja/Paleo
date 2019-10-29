@@ -96,6 +96,7 @@ root_bool <- lad_df$name %in% fad_df$name
 root_ix <- root_bool ==FALSE
 root <- lad_df[root_ix,]
 root$name <- as.character(root$name)
+root
 
 fl <- which(frequent_df$name == root$name)
 frequent_df[fl,]
@@ -403,7 +404,7 @@ getMinTreeDepth <- function(tree) {
   
   return(minDepth)
 }
-minDepth <- getMinTreeDepth(evtree[[root$child]])
+minDepth <- getMinTreeDepth(evtree[[root$name]])
 minDepth
 
 # get a tree node
@@ -518,11 +519,10 @@ getTreeNodeWithBranchLabel <- function(tree, branch_label) {
   return(res)
 }
 
-# get all child node names
-
 branch_label = "Morphogroup 7"
 tree = evtree[[root$name]]
 tree$name
 node = getTreeNodeWithBranchLabel(tree, branch_label)
 node$name
 evlist[[node$name]]
+
