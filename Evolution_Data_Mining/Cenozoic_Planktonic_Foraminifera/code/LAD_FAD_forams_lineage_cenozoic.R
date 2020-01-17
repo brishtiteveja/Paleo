@@ -566,7 +566,7 @@ library(astrochron)
 x <- FAD_LAD_per_df_ap$age
 y <- FAD_LAD_per_df_ap$total
 evolution_model <- linterp(data.frame(year=x, evolution=y), dt=0.1)
-Mspec <- mtm(evolution_model, demean = T, detrend = T, 
+Mspecdf <- mtm(evolution_model, demean = T, detrend = T, 
              #ntap = 5, tbw = 3, #ar1 = T,
              #xmin = 0,
              #xmax = 0.1,

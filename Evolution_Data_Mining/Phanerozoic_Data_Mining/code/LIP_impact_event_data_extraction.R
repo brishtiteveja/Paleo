@@ -1,5 +1,5 @@
 # LIP event data extraction
-data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Datapacks'
+data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/Datapacks'
 setwd(data_dir)
 dp_fname <- 'Phan_GTS2016_for_7.1_HaqJur_ForamMikrotax_28July2017.xls'
 library(readxl)
@@ -198,9 +198,10 @@ extract_column_names_by_category <- function() {
   rix <- which(df2c == ":")
   for (r in rix) {
     cn1 <- as.character(dfxl[r, 1])
-    if (cn1 %in% sub_columns) {
-      
-    } else {
+    # if (cn1 %in% sub_columns) {
+    #   
+    # } else 
+    {
       main_columns <- c(main_columns, cn1)
       nc <- length(dfxl[r,])
       sub_col_ns <- as.character(dfxl[r, 3 : nc])
@@ -252,7 +253,7 @@ LIP_event_col_names <- c('Super LIP Events',
 )
 
 ages_from_col3 <- na.omit(as.numeric(as.character(na.omit(dfxl[[c[3]]]))))
-age_slide <- 0.5 # every 500K years 
+age_slide <- 0.1 # every 500K years 
 #starting_age <- floor(min(ages_from_col3)) - age_slide/2
 starting_age <- 0 - age_slide/2
 cenozoic_base <- 66.04

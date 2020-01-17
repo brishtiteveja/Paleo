@@ -115,7 +115,7 @@ getTreeInNewickFormat1 <- function(tree) {
 
 getTreeInNewickFormat1(t)
 
-r <- getTreeInNewickFormat(evtree$`Hedbergella [ancestor]`)
+r <- getTreeInNewickFormat1(evtree$`Hedbergella [ancestor]`)
 txt <- paste(as.character(r), collapse=" ")
 txt
 write.csv(txt, file='tree.txt')
@@ -133,12 +133,8 @@ write.csv(txt, file='tree.txt')
 # convert tree in Newwick format
 getTreeInNewickFormat <- function(tree, parent) {
   if (is.null(tree$child)) {
-    if (is.null(parent$LAD)) {
-      d <- tree$LAD
-    } else {
-      # essentially lifespan
-      d <- tree$LAD - parent$LAD
-    }
+    # essentially lifespan
+    d <- tree$LAD - parent$LAD
     d <- abs(d)
     tname <- paste("'", tree$name, "'", sep="" )
     tr <- c(tname, ":", d)
@@ -209,9 +205,11 @@ getTreeInNewickFormat <- function(tree, parent) {
   } 
   
   if (is.null(parent)) {
-    d <- tree$LAD - tree$FAD
+    #d <- tree$LAD - tree$FAD
+    d <- max_child_FAD - tree$FAD
   } else {
-    d <- tree$LAD - parent$LAD
+    #d <- tree$LAD - parent$LAD
+    d <- max_child_FAD - parent$LAD
   }
   d <- abs(d)
   tname <- paste("'", tree$name, "'", sep="" )
@@ -226,15 +224,21 @@ getTreeInNewickFormat <- function(tree, parent) {
 
 tree <- t #evtree$`Hedbergella [ancestor]`$child[[1]]$child[[1]]$child[[1]]
 r <- getTreeInNewickFormat(tree, NULL)
-txt <- paste(as.character(r), collapse=" ")
+txt <- paste(as.character(r), collapse="")
 txt
 
 # subtree of Globanomalina compressa
-tree <- evtree$`Hedbergella [ancestor]`$child[[1]]$child[[1]]$child[[1]]
+tree <- evtree$`Hedbergella [ancestor]`
+ #  evtree$`Hedbergella [ancestor]`$child[[1]]$child[[2]]$child[[1]]$child[[1]]$child[[1]]$
+ # child[[1]]$child[[3]]$child[[1]]$child[[1]]$child[[2]]$child[[1]]$child[[1]]   #child[[2]]$child[[1]]$child[[1]]$name
+   #  child[[3]]$child[[1]]$child[[1]]$child[[1]]$name
+tree2 <- evtree$`Hedbergella [ancestor]`$child[[1]]$child[[1]]$child[[1]]
+tree <- tree2
 r <- getTreeInNewickFormat(tree, NULL)
 txt <- paste(as.character(r), collapse="")
 txt
 
+getPathToNode(tree, "Eoglobigerina spiralis", c())
 
 # convert newick to TSCreator evtree format
 txt

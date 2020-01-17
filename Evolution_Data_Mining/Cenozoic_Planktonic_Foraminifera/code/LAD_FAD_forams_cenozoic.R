@@ -128,6 +128,8 @@ dim(lad_df)
 
 # Extract information about genera and families for the forams
 unique_morphospecies <- sort(unique(as.character(fad_lad_df$name)))
+# does not include Hedbergella [ancestor]
+unique_morphospecies <- c(unique_morphospecies, "Hedbergella [ancestor]")
 length(unique_morphospecies)
 splitted_str <- strsplit(unique_morphospecies, " ")
 genera_species_together <- unlist(splitted_str)
@@ -198,6 +200,7 @@ families <- c(
   "Hedbergellidae", # "Turborotalia" http://www.marinespecies.org/foraminifera/aphia.php?p=taxlist       
   "Globigerinidae" # Turborotalita http://www.marinespecies.org/foraminifera/aphia.php?p=taxdetails&id=113461
 ) 
+length(families)
 fam_df <- data.frame(family=families, genus=unique_generas)
 head(fam_df)
 fad_lad_df <- fad_df
@@ -439,7 +442,10 @@ par(mar=c(3,4,1,1))
 x_m=max(rdf$x0)
 y_m=min(rdf$y0, rdf$y1)
 plot(0,0,cex=0.005, xlim=c(0,x_m), ylim=c(y_m, 0), xaxt='n', ylab='Age (Myr)')
-segments(rdf$x0, rdf$y0, rdf$x1, rdf$y1, col=rdf$Family)
+lgnd <- levels(rdf$Family)
+cl <- seq(1,nlevels(rdf$Family))
+segments(rdf$x0, rdf$y0, rdf$x1, rdf$y1, col=cl)
+legend("bottomright", legend=lgnd, col=cl, lty=1)
 
 x<--FAD_LAD_per_df$age
 y<-FAD_LAD_per_df$FAD_cnt
@@ -471,7 +477,11 @@ par(mar=c(3,4,1,1))
 x_m=max(rdf$x0)
 y_m=min(rdf$y0, rdf$y1)
 plot(0,0,cex=0.005, xlim=c(0,x_m), ylim=c(y_m,0), xaxt='n', ylab='Age (Myr)')
-segments(rdf$x0, rdf$y0, rdf$x1, rdf$y1, col=rdf$Family)
+#segments(rdf$x0, rdf$y0, rdf$x1, rdf$y1, col=rdf$Family)
+lgnd <- levels(rdf$Family)
+cl <- seq(1,nlevels(rdf$Family))
+segments(rdf$x0, rdf$y0, rdf$x1, rdf$y1, col=cl)
+legend("bottomright", legend=lgnd, col=cl, lty=1)
 
 x<--FAD_LAD_per_df$age
 y<-FAD_LAD_per_df$LAD_cnt

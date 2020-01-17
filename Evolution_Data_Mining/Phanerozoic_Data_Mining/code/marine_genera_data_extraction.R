@@ -16,18 +16,19 @@ period_ages  <- c(541.00,           485.37,         443.83,      419.20,
 
 
 # project directory
-proj_dir <- '/users/andy/dropbox/tscreator/tscreator development/developers/andy/projects/phanerozoic_data_mining'
+proj_dir <- '/Users/andy/Documents/projects/ML-Data Mining/Evolution_Data_Mining/Phanerozoic_Data_Mining/'
 # datapack directory
-dp_dir <- '/users/andy/dropbox/tscreator/tscreator development/developers/andy/projects/phanerozoic_data_mining/datapack/'
+dp_dir <- '/Users/andy/Documents/projects/ML-Data Mining/Evolution_Data_Mining/Phanerozoic_Data_Mining/Datapack'
 setwd(dp_dir)
 dp_fname <- 'marinegenera_13jan13.xls'
 
 dfxl <- read_excel(dp_fname)
 c <- colnames(dfxl) # column header
+c
 df2c <- dfxl[[c[2]]] # second column
 
 ages_from_col3 <- na.omit(as.numeric(as.character(na.omit(dfxl[[c[3]]]))))
-age_slide <- 0.1 #1 #0.050 # every 50,000 years # fraction of 1 myr
+age_slide <- 0.5 #1 #0.050 # every 50,000 years # fraction of 1 myr
 starting_age <- floor(min(ages_from_col3)) - age_slide/2
 cenozoic_base <- 66.04
 ending_age <- ceiling(max(ages_from_col3)) + age_slide/2
@@ -377,6 +378,7 @@ for(col_type in column_type) {
   while(start_age <= end_age) {
     next_age <- start_age + age_diff
     mid_age <- (start_age + next_age) / 2
+    print(mid_age)
     
     key <- as.character(mid_age)
     evs <- 0
@@ -449,7 +451,7 @@ for(col_type in column_type) {
 
   ev_df <- data.frame(age = age, freq = freq, freq_fad = freq_fad, freq_lad = freq_lad)
   
-  data_dir <- paste(dir, '/datapack/marine_genera_event_extraction/', sep="")
+  data_dir <- paste(dir, '/Datapack/marine_genera_event_extraction/', sep="")
   event_names_fn <- paste(col_type, '_column_', age_slide, '_mil_event_names.txt', sep="")
   fn0 <- paste(data_dir, event_names_fn, sep="")
   msg <- paste("writing event names in ", fn0, sep="")

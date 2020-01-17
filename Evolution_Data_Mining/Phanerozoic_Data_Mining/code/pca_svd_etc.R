@@ -3,11 +3,11 @@ X0 <- na.trim(X0)
 head(X0)
 tail(X0)
 dim(X0)
-#X1 <- FAD_LAD_per_df[FAD_LAD_per_df$age < 70,] # cenozoic planktonic foraminifera
-#X1 <- na.trim(X1)
-#head(X1)
-#tail(X1)
-#dim(X1)
+X1 <- PF_FAD_LAD_per_df_ap[PF_FAD_LAD_per_df_ap$age < 70,] # cenozoic planktonic foraminifera
+X1 <- na.trim(X1)
+head(X1)
+tail(X1)
+dim(X1)
 X2 <- oxy_18_avg_df[oxy_18_avg_df$age > 0 & oxy_18_avg_df$age < 70, ] # salinity and temperature
 X2 <- na.trim(X2)
 head(X2)
@@ -48,10 +48,22 @@ X9 <- na.trim(X9)
 head(X9)
 tail(X9)
 dim(X9)
+X10 <- PFL_FAD_LAD_per_df_ap[PFL_FAD_LAD_per_df_ap$age < 70,] # cenozoic planktonic foraminifera
+X10 <- na.trim(X10)
+head(X10)
+tail(X10)
+dim(X10)
+X11 <- NN_FAD_LAD_per_df_ap[NN_FAD_LAD_per_df_ap$age < 70,] # cenozoic planktonic foraminifera
+X11 <- na.trim(X11)
+head(X11)
+tail(X11)
+dim(X11)
+
+
 
 X <- data.frame(age=X2$age, 
                 #ev_marine=X0$freq,
-                genera_ts=X0$N.turnover, 
+                #genera_ts=X0$N.turnover, 
                 genera_prokoph=X5$Marine.genera,
                 oxy_18=-X2$oxy_18_avg,
                 carbon_13=X3$c13_avg,
@@ -74,6 +86,9 @@ plot(X, t='l')
 X_cor = cor(X[,-1])
 datatable(X_cor)
 
+dev.off()
+plot.new()
+par(mar=c(4,4,4,4))
 plot(X$age, X$ev, t='l')
 points(X$age, X$ev, cex=0.5)
 par(new=T)
@@ -86,7 +101,7 @@ points(X$age, X$sl, col="green", cex=0.5)
 
 # unnormalized data
 dim(X)
-Xm = as.matrix(X[,2:13])
+Xm = as.matrix(X[,2:12])
 Xm
 #Xm = t(Xm)
 head(Xm,n=12)
@@ -174,3 +189,4 @@ Z_EOF = t(E) %*% Y
 pca1 <- princomp(Y, scores = TRUE, cor=TRUE)
 summary(pca1)
 loadings(pca1)
+plot(pca1)

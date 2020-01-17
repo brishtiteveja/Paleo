@@ -70,7 +70,7 @@ plot(oxy_ages, -oxy_18,
      t='l', yaxt='n',
      xlab='age (Ma)',
      ylab='Oxygen-18 (per-mil PDB)',
-     xlim=c(0, max(FAD_LAD_per_df_ap$age)),
+     xlim=c(0, max(FAD_LAD_per_df$age)),
      main = 'Benthic oxygen-18 isotope curve during Cenozoic era'
 )
 yv <- pretty(-oxy_18)
@@ -343,8 +343,9 @@ plot(prokoph_df$Age.Ma., prokoph_df$δ34S,
      t='l', lwd=2,
      xlab='age (Ma)', ylab='Sulphur isotope (S-34)',
      main='Sulphur isotope curve')
+
 # Passive margin data extraction
-data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator development/Developers/Andy/Projects/Datapacks'
+data_dir <- '/Users/andy/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/Datapacks'
 setwd(data_dir)
 dp_fname <- 'Phan_GTS2016_for_7.1_HaqJur_ForamMikrotax_28July2017.xls'
 library(readxl)
@@ -543,9 +544,10 @@ extract_column_names_by_category <- function() {
   rix <- which(df2c == ":")
   for (r in rix) {
     cn1 <- as.character(dfxl[r, 1])
-    if (cn1 %in% sub_columns) {
-      
-    } else {
+    # if (cn1 %in% sub_columns) {
+    #   
+    # } else 
+    {
       main_columns <- c(main_columns, cn1)
       nc <- length(dfxl[r,])
       sub_col_ns <- as.character(dfxl[r, 3 : nc])
@@ -585,6 +587,73 @@ for (nsc in 1:n_sub_sub_column) {
   sub_sub_column_names <- c(sub_sub_column_names, columns[["event"]][[nsc]][["name"]])
 }
 
+# create column hierarchy. put the sub and sub sub columns under
+main_columns <- main_column_names
+main_column_list <- list()
+main_column_info_rows <- which(dfxl[[c[2]]] == ':')
+
+for (r in main_column_info_rows) {
+  main_column <- dfxl[[c[1]]][r]
+  if (main_column %in% main_columns) {
+    main_column_list[[main_column]] <- list()
+  } else {
+    next
+  }
+  sub_columns <- list()
+  for (rc in c[3:12]) {
+    sub_column_n <- dfxl[[rc]][r]
+    if(!is.null(sub_column_n) && !is.na(sub_column_n) && 
+       !not_column(sub_column_n)) {
+      sub_columns[[sub_column_n]] <- list()
+      
+      # get sub sub column row number
+      sr <- which(dfxl[[c[1]]] == sub_column_n)
+      if (length(sr) == 0 && length(dfxl[[c[2]]][sr]) != 0 && dfxl[[c[2]]][sr] != ":") {
+        sub_columns[[sub_column_n]] <- sub_column_n
+        next
+      } else {
+        sub_sub_columns <- list()
+      }
+      
+      for (src in c[3:12]) {
+        for(ssr in sr) {
+          sub_sub_column_n <- dfxl[[src]][ssr]
+          if(!is.null(sub_sub_column_n) && !is.na(sub_sub_column_n) &&
+             !not_column(sub_sub_column_n)) {
+            sub_sub_columns[[sub_sub_column_n]] <- list()
+            
+            # get sub sub sub column row number
+            ssr <- which(dfxl[[c[1]]] == sub_sub_column_n)
+            if (length(ssr) == 0 || dfxl[[c[2]]][ssr] != ":") {
+              sub_sub_columns[[sub_sub_column_n]] <- sub_sub_column_n
+              next
+            } else {
+              sub_sub_sub_columns <- list()
+            }
+            
+            # for(ssrc in c[3:12]) {
+            #  for(sssr in ssr) {
+            #   sub_sub_sub_column_n <- dfxl[[ssrc]][sssr]
+            #   if (!is.null(sub_sub_sub_column_n) && !is.na(sub_sub_sub_column_n) &&
+            #       !not_column((sub_sub_sub_column_n))) {
+            #     print(sub_sub_sub_column_n)
+            #     # assuming there's no more level
+            #     sub_sub_sub_columns[[sub_sub_sub_column_n]] <- sub_sub_sub_column_n
+            #   }
+            #  }
+            # }
+            
+            sub_sub_columns[[sub_sub_column_n]] <- sub_sub_sub_columns
+          }
+        }
+        sub_columns[[sub_column_n]] <- sub_sub_columns
+      }
+    }
+  }
+  main_column_list[[main_column]] <- sub_columns
+}
+
+
 modern_passive_margin_col_names <- c('General (major modern basins)',
                                      'Arctic basins',
                                      'Atlantic basins',
@@ -603,7 +672,7 @@ regional_margin_col_names <- c('North American margin history',
 passive_margin_col_names <- c(modern_passive_margin_col_names[-1], regional_margin_col_names)
 
 ages_from_col3 <- na.omit(as.numeric(as.character(na.omit(dfxl[[c[3]]]))))
-age_slide <- 0.5 # every 500K years 
+age_slide <- 0.05 # every 500K years 
 #starting_age <- floor(min(ages_from_col3)) - age_slide/2
 starting_age <- 0 - age_slide/2
 cenozoic_base <- 66.04
@@ -797,6 +866,14 @@ for(col_type in column_type) {
   event_names_by_col_by_main_columns[[col_type]] <- list()
   ev_df_by_main_columns[[col_type]] <- list()
   for (main_column in main_columns) {
+    if (main_column %in% passive_margin_col_names) {
+      print(col$name)
+    }
+    else{ 
+      
+      next 
+    }
+    
     age_r <- c()
     freq_r <- c()
     events_r <- c()
@@ -817,6 +894,9 @@ df = data.frame(ev_df_by_col$event)
 library(DT)
 datatable(df)
 
+dev.off()
+plot.new()
+par(mar=c(4,4,4,4))
 plot(df$age, df$freq, 
      t='l', yaxt='n',
      xlab='age (Ma)',

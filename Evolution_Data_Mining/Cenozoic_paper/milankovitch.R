@@ -70,6 +70,7 @@ eccentricity_df <- data.frame(age=eccentricity_age[e_id],
 precession_df <- data.frame(age=precession_age[p_id],
                             precession=precession[p_id])
 
+library(zoo)
 on <- rollapply(obliquity_df, width=100, FUN=mean)
 plot(obliquity_df, t='l', xlim=c(0,1))
 par(new=T)
@@ -79,15 +80,19 @@ plot(on, t='l', col='red',axes=F, xlim=c(0,1))
 par(mfrow=c(1,1))
 plot(eccentricity_df, t='l')
 #upper cover
+library(astrochron)
 pd <- peak(eccentricity_df, genplot=F)
 e_up_cov_orig <- data.frame(age=pd$Location, e_val=pd$Peak_Value)
 lines(e_up_cov_orig, col='black', lwd=3)
 e_up_cov <- rollapply(e_up_cov_orig, width=3, by=1, FUN=mean)
 lines(e_up_cov, col='red', lwd=5)
 e_t <- linterp(eccentricity_df, dt=0.001)
+plot(eccentricity_df, cex=0.025)
 mtm(e_t)
 e_up_cov_t <- linterp(e_up_cov_orig, dt=0.001)
+plot(e_up_cov_t, cex=0.05)
 mtm(e_up_cov_t)
+mtm(eccentricity_df)
 #lower cover
 pd2 <- trough(eccentricity_df, genplot=F)
 e_down_cov_orig <- data.frame(age=pd2$Location, e_val=pd2$Trough_Value)

@@ -850,6 +850,7 @@ datatable(Mspecdf2[,c(1:4, 9)])
 
 
 # plot pf and nn together
+par(mfrow=c(1,1))
 plot(NN_FAD_LAD_per_df_ap$age, 
      #PF_FAD_LAD_per_df_ap$FAD_cnt , #+ 
      NN_FAD_LAD_per_df_ap$LAD_cnt, 

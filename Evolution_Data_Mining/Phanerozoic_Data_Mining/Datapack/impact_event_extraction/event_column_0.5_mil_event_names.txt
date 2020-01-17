@@ -82,8 +82,7 @@ $`65.5`
 [1] "Chicxulub (Yucatan, Mex.)"
 
 $`70`
-[1] "Chukcha (Siberia)"     "Tin Bider (Algeria)"   "Ouarkziz (Algeria)"   
-[4] "Vargeao Dome (Brazil)"
+[1] "Chukcha (Siberia)"     "Tin Bider (Algeria)"   "Ouarkziz (Algeria)"    "Vargeao Dome (Brazil)"
 
 $`70.5`
 [1] "Kara (n. Urals, Russia)"
