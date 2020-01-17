@@ -1,0 +1,380 @@
+$`3.99999999999999`
+[1] "Northwestern margin of Australia at Timor (Indonesia)"
+
+$`4.99999999999999`
+[1] "Red Sea"       "Taiwan margin"
+
+$`9.6`
+[1] "Gulf of California (Baja)"
+
+$`23.0000000000002`
+[1] "South China Sea (E of Vietnam)"
+
+$`26.0000000000002`
+[1] "Siberia (Lena delta)"                       "Northern margin of Australia in New Guinea"
+
+$`28.0000000000003`
+[1] "Japan Sea (Korea-Japan)" "Taiwan margin"          
+
+$`29.0000000000003`
+[1] "Gulf of Aden (Yemen-Somalia)"
+
+$`30.6000000000003`
+[1] "Svalbard (S margin)"
+
+$`31.0000000000003`
+[1] "South China Sea (Hainan to Taiwan)"
+
+$`34.0000000000002`
+[1] "Northern margin of Venezuela"
+
+$`34.6000000000002`
+[1] "E. Greenland (mid)"
+
+$`35.4000000000001`
+[1] "Jan Mayen plateau (W margin)"
+
+$`36.6500000000001`
+[1] "Greenland (NE corner)"
+
+$`36.9`
+[1] "Barents shelf"
+
+$`42.9999999999997`
+[1] "Swiss Alps (Switzerland)"
+
+$`43.8999999999996`
+[1] "Jan Mayen plateau (S margin)"
+
+$`45.9999999999995`
+[1] "Jan Mayen plateau (N margin)"
+
+$`49.3999999999993`
+[1] "Tasmania (W coast)"
+
+$`51.9999999999992`
+[1] "Late Himalayan margin (Northern India and Nepal)"
+
+$`52.6999999999991`
+[1] "Norwegian Sea"
+
+$`52.9999999999991`
+[1] "Anamas-Akseki margin (Southern Turkey)"
+
+$`53.9999999999991`
+[1] "Arabian Sea (E Arabia)"
+
+$`55.899999999999`
+[1] "Jan Mayen plateau (E margin facing Shetlands)"
+
+$`56.3999999999989`
+[1] "E. Greenland (N)"
+
+$`58.1999999999988`
+[1] "Ireland, facing Iceland"
+
+$`59.1999999999988`
+[1] "Lomonosov Ridge"
+
+$`59.9999999999987`
+[1] "Apulian microcontinent (Greece)"      "Bey Daglari margin (Southern Turkey)"
+
+$`61.2999999999987`
+[1] "E. Greenland (S)"
+
+$`70.9999999999981`
+[1] "Pyreneean-Biscay margin of Iberia (Spain)"
+
+$`78.6999999999977`
+[1] "Lord Howe Rise (W margin)"
+
+$`79.9999999999976`
+[1] "Chatham Rise (S margin)"     "Guaniguanico terrane (Cuba)"
+
+$`81.0999999999975`
+[1] "Coral-Tasman sea (E Australia)"
+
+$`84.9999999999973`
+[1] "Antarctic (Pacific margin)"
+
+$`85.9999999999972`
+[1] "S Australia (western part) - Antarctica"
+
+$`87.1999999999972`
+[1] "Campbell Plateau (S margin)"
+
+$`87.9999999999971`
+[1] "Oman margin (Oman and Iran)"
+
+$`88.4999999999971`
+[1] "Labrador Sea"
+
+$`95.5999999999967`
+[1] "Europe - SW of Ireland"
+
+$`98.8999999999965`
+[1] "S. Atl. (Guyana)"
+
+$`101.299999999996`
+[1] "Madagascar (E. coast)"
+
+$`105.399999999996`
+[1] "Bay of Biscay"
+
+$`105.899999999996`
+[1] "S. Atl. (Amazon)"
+
+$`108.999999999996`
+[1] "Arabian Sea (W India)"
+
+$`109.699999999996`
+[1] "Central Atl. (Guinea)"
+
+$`116.999999999995`
+[1] "Pyreneean-Biscay margin of Iberia (Spain)"
+
+$`119.899999999995`
+[1] "Sri Lanka (S coast)"
+
+$`122.199999999995`
+[1] "S. Atl. (Argentina-Namibia)"
+
+$`123.799999999995`
+[1] "Sri Lanka (NE coast)"
+
+$`124.299999999995`
+[1] "India - East coast"
+
+$`124.899999999995`
+[1] "Gulf of Mannar (India-Sri Lanka)"
+
+$`125.499999999995`
+[1] "S. Atl. (SE Falkland plateau)"
+
+$`127.999999999995`
+[1] "Central Atl. (Grand Banks)"
+
+$`128.999999999995`
+[1] "Naturaliste Plateau (W of Perth); N margin"
+
+$`129.999999999995`
+[1] "Naturaliste Plateau (W of Perth); W margin"
+
+$`130.199999999995`
+[1] "Canada Basin (N.Alaska-Canada Arctic islands)"
+
+$`131.199999999996`
+[1] "W Australia (coast N of Perth)"
+
+$`132.899999999996`
+[1] "Madagascar (S. Mozambique channel)"
+
+$`134.299999999996`
+[1] "Madagascar (NE corner)"
+
+$`135.099999999996`
+[1] "S Africa (Aguilhas) - Antarctica"
+
+$`139.399999999997`
+[1] "S. Atl. (N. Falkland plateau)"
+
+$`142.799999999998`
+[1] "NW Australia (N margin of Exmouth Plateau)"
+
+$`145.399999999999`
+[1] "NW Australia (Broome)"
+
+$`149.5`
+[1] "Central Atl. (S. Grand Banks)"
+
+$`152`
+[1] "Northwestern margin of Australia at Timor (Indonesia)"
+
+$`158.000000000002`
+[1] "Bahama plateau"
+
+$`160.000000000002`
+[1] "Guaniguanico terrane (Cuba)"  "Northern margin of Venezuela"
+
+$`161.000000000002`
+[1] "Devonian to Jurassic Eastern margin of Siberia (Russia)"
+
+$`163.000000000003`
+[1] "E. Africa (Dar Es Salaam)"
+
+$`166.500000000004`
+[1] "Mozambique (east)"
+
+$`168.900000000004`
+[1] "Somalia (east)"
+
+$`169.000000000004`
+[1] "Brookian margin (Arctic Alaska)" "Swiss Alps (Switzerland)"       
+
+$`169.700000000004`
+[1] "Madagascar (N. Mozambique channel)"
+
+$`170.500000000005`
+[1] "Central Atl. (USA-Mauritania)"
+
+$`177.000000000006`
+[1] "Northern margin of Australia in New Guinea"
+
+$`179.500000000007`
+[1] "Mozambique (central)"
+
+$`196.00000000001`
+[1] "Karakorum margin (Pakistan)"
+
+$`216.000000000015`
+[1] "Late Paleozoic margin of northern Iran."
+
+$`234.000000000019`
+[1] "Late Longmen Shan  margin (southern China)"
+
+$`235.000000000019`
+[1] "Bey Daglari margin (Southern Turkey)"   "Anamas-Akseki margin (Southern Turkey)"
+
+$`237.00000000002`
+[1] "Apulian microcontinent (Greece)"
+
+$`240.00000000002`
+[1] "Late South China craton margin"
+
+$`269.000000000027`
+[1] "Karakorum margin (Pakistan)"
+
+$`272.000000000028`
+[1] "Late Himalayan margin (Northern India and Nepal)"
+
+$`274.000000000028`
+[1] "Oman margin (Oman and Iran)"
+
+$`300.000000000034`
+[1] "Late Longmen Shan  margin (southern China)"       
+[2] "Early Longmen Shan margin (southern China)"       
+[3] "Cape Fold Belt (Argentina, S. Africa, Antarctica)"
+
+$`329.000000000041`
+[1] "Paleozoic Taimyr (northern) margin (Northern Russia)"
+
+$`344.000000000044`
+[1] "Saxo-Thuringian block (Bohemian Massif) (Germany)"
+
+$`348.000000000045`
+[1] "Variscan margin of Baltica (Ireland to Poland)"
+
+$`352.000000000046`
+[1] "Brookian margin (Arctic Alaska)"
+
+$`356.000000000047`
+[1] "Cordilleran margin (S. Canada)"
+
+$`360.000000000048`
+[1] "Late South China craton margin"
+
+$`373.000000000051`
+[1] "Paleozoic eastern margin of Baltica (Russia)"
+
+$`377.000000000052`
+[1] "Devonian to Jurassic Eastern margin of Siberia (Russia)"                  
+[2] "Northern margin of Tarim microcontinent (southern Tian Shan Range, China)"
+[3] "Neoproterozoic to Devonian Eastern margin of Siberia (Russia)"            
+
+$`383.000000000053`
+[1] "Paleozoic margin of northwestern Iberia (Spain)"
+
+$`385.000000000053`
+[1] "Cordilleran margin (N. Canada)"
+
+$`386.000000000054`
+[1] "Late Paleozoic margin of northern Iran."
+
+$`408.000000000059`
+[1] "Variscan margin of Baltica (Ireland to Poland)"
+
+$`434.000000000064`
+[1] "Kunlun (southern) margin of Tarim microcontinent (North Kunlun Range, China)"
+
+$`438.000000000065`
+[1] "Farewell terrane (Interior Alaska)"
+
+$`442.000000000066`
+[1] "Early South China craton margin"
+
+$`444.000000000067`
+[1] "Northern margin of Laurentia (Canadian Arctic and N. Greenland)"
+[2] "Saxo-Thuringian block (Bohemian Massif) (Germany)"              
+[3] "Caledonian margin (E. Greenland, NE Svalbard)"                  
+[4] "Nan Ling margin (SE side of China craton)"                      
+
+$`472.000000000073`
+[1] "Cuyania terrane (Argentina)"
+
+$`474.000000000074`
+[1] "Paleozoic margin of northwestern Iberia (Spain)"
+
+$`475.000000000074`
+[1] "Paleozoic eastern margin of Baltica (Russia)"
+
+$`499.000000000079`
+[1] "Early Himalayan margin (Northern India and Nepal)"
+
+$`500.000000000079`
+[1] "Cape Fold Belt (Argentina, S. Africa, Antarctica)"
+
+$`505.000000000081`
+[1] "Caledonian margin of Baltica (Norway)"
+
+$`513.000000000081`
+[1] "Idermeg terrane (eastern Mongolia)"
+
+$`520.000000000075`
+[1] "Tasman orogen (Tasmania and Australia)"
+
+$`527.000000000069`
+[1] "Paleozoic Taimyr (northern) margin (Northern Russia)"
+[2] "Cuyania terrane (Argentina)"                         
+
+$`535.000000000061`
+[1] "Gariep Belt (Namibia)"
+
+$`541.000000000056`
+[1] "Cordilleran margin (S. Canada)"
+
+$`544.000000000053`
+[1] "Farewell terrane (Interior Alaska)"
+
+$`550.000000000048`
+[1] "Neoproterozoic to Devonian Eastern margin of Siberia (Russia)"
+[2] "Northern margin of Kalahari craton (Namibia)"                 
+
+$`555.000000000043`
+[1] "Southern margin of Congo craton (Namibia)"
+
+$`560.000000000039`
+[1] "Timanian orogen (Northern Russia)"
+
+$`574.000000000026`
+[1] "Dzabkhan (or Zavkhan, or Zavhan) Basin (southwestern Mongolia)"
+
+$`579.000000000021`
+[1] "Kaoko Belt (Namibia)"
+
+$`580.00000000002`
+[1] "Araras margin of Amazonia (Brazil)"
+
+$`590.000000000011`
+[1] "Sao Francisco craton, E side (Brazil)"           
+[2] "Northern margin of West African craton (Morocco)"
+[3] "Tasman orogen (Tasmania and Australia)"          
+
+$`593.000000000009`
+[1] "Northern margin of Tarim microcontinent (southern Tian Shan Range, China)"   
+[2] "Kunlun (southern) margin of Tarim microcontinent (North Kunlun Range, China)"
+[3] "Early Longmen Shan margin (southern China)"                                  
+[4] "Neoproterozoic Taimyr (northern) margin (Northern Russia)"                   
+
+$`600.000000000002`
+[1] "Southern margin of Siberian craton (Baikal region, Russia)"
+

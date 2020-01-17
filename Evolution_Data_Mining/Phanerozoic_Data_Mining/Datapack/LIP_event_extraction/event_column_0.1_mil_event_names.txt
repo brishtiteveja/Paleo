@@ -1,0 +1,156 @@
+$`16.5`
+[1] "Columbia River (NW USA)"
+
+$`25.0000000000001`
+[1] "western and central Europe"  "northern and central Africa"
+
+$`31.0000000000002`
+[1] "Afar (Ethiopia)"
+
+$`33.0000000000002`
+[1] "Sierra Madre Occidental (Mex.)"
+
+$`57.0000000000005`
+[1] "North Atlantic Volcanic Province"
+
+$`66.0000000000005`
+[1] "Deccan (c. India)"
+
+$`68.0000000000004`
+[1] "Tian Shan (w. China)"
+
+$`70.0000000000003`
+[1] "Carmacks (w. Canada)"
+
+$`73.0000000000001`
+[1] "Sierra Leone Rise (c. S. Atl. off Africa)" "Maud Rise (S. Atl. off Antarctica)"       
+
+$`82.9999999999996`
+[1] "Kerguelen-Broken Ridge (Indian Ocean)"
+
+$`86.9999999999993`
+[1] "Madagascar"
+
+$`89.9999999999992`
+[1] "Caribbean-Colombia"
+
+$`94.9999999999989`
+[1] "Alpha Ridge and Queen Elizabeth Islands (Arctic)"
+
+$`95.9999999999988`
+[1] "Wallaby Plateau (SE. Indian Ocean)"
+
+$`99.9999999999986`
+[1] "Hess Rise (N. Pac.)"                "Naturaliste Plateau (off SW Aust.)"
+
+$`109.999999999998`
+[1] "Marie Byrd Land (Antarc.)"
+
+$`113.499999999998`
+[1] "Whitsunday (NE Aust.)"
+
+$`117.499999999998`
+[1] "Magellan Rise (c. Pac.)"
+
+$`117.999999999998`
+[1] "Kerguelen-Rajmahal (Indian Ocean)"
+
+$`119.999999999997`
+[1] "Hikurangi Plateau (S. Pac.)" "Nauru Basin (W. Pac.)"      
+
+$`122.999999999997`
+[1] "Ontong Java Plateau (W. Pac.)" "Manihiki Plateau (c. Pac.)"    "Pinon (Ecuador)"              
+
+$`129.999999999997`
+[1] "High Arctic"                     "Mid-Pacific Mountains (N. Pac.)"
+
+$`131.999999999997`
+[1] "Comei (se. Tibet)"
+
+$`133.999999999997`
+[1] "Parana-Etendeka (S. Amer.-Afr.)"
+
+$`135.999999999997`
+[1] "Gascoyne Margin (W Aust.)"
+
+$`137.999999999996`
+[1] "Trap (Greenland)"
+
+$`144.999999999996`
+[1] "Shatsky Rise (W. Pac.)"
+
+$`147.999999999996`
+[1] "Sorachi (Sakhalin)"
+
+$`159.999999999995`
+[1] "Argo Basin Margin (NW Aust.)"
+
+$`182.999999999994`
+[1] "Karoo-Ferrar (Africa-Ant.)"
+
+$`200.999999999993`
+[1] "Central Atlantic Magmatic Province (CAMP)"
+
+$`204.999999999993`
+[1] "Ramparts; Angayucham (Alaska)"
+
+$`219.999999999992`
+[1] "Cache Creek-2 (w. Canada)"
+
+$`229.999999999991`
+[1] "Wrangellia (Alaska, w. Canada)"
+
+$`250.99999999999`
+[1] "Siberian Traps"               "Brisbane-Duaringa (e. Aust.)"
+
+$`257.99999999999`
+[1] "Emeishan (China)"
+
+$`264.999999999992`
+[1] "Cache Creek-1 (w. Canada)"
+
+$`267.999999999992`
+[1] "Himalaya"
+
+$`279.999999999995`
+[1] "Tarim (China)"
+
+$`300`
+[1] "Jutland (n. Europe)" "Europe-NW Africa"   
+
+$`350.000000000011`
+[1] "Yakutsk (e. Russia)" "Panzhihua (China)"  
+
+$`363.500000000014`
+[1] "Viluy traps (Siberia)"
+
+$`365.000000000014`
+[1] "East Europe"
+
+$`408.000000000024`
+[1] "Kyrgyzatin (central Asia)"
+
+$`470.000000000038`
+[1] "Maritimes (NE Canada)"
+
+$`510.000000000047`
+[1] "Kalkarindji (Antrim) (Aust.)"
+
+$`530.000000000052`
+[1] "Wichita Mountains (S. USA)"
+
+$`550.000000000057`
+[1] "Volyn (e. Europe)"
+
+$`560.000000000059`
+[1] "Belaya River (se. Siberia)"
+
+$`570.000000000061`
+[1] "Ouarzazate (NW Afr.)"     "Crimson Creek (Tasmania)"
+
+$`575.000000000062`
+[1] "Late Central-Iapetus (N.Amer.)"
+
+$`590.500000000066`
+[1] "Middle Central-Iapetus  (N.Amer.)"
+
