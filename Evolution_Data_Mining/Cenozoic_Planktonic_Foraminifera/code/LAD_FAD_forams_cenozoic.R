@@ -21,7 +21,7 @@ type_col <- dfxl$X__2
 type_col
 branch_to_col <- dfxl$X__3
 branch_to_col
-group <- dfxl$X__6
+group <- dfxl$X__5
 
 LAD_ix <- which(type_col == 'TOP')
 LAD_ix

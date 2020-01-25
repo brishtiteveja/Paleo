@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TSCreator version="PRO7.4">
+    <settings version="1.0">
+        <setting name="topAge" source="text" unit="Ma">
+            <setting name="stage">Present (0 Ma)</setting>
+            <setting name="text">0.0</setting>
+        </setting>
+        <setting name="baseAge" source="text" unit="Ma">
+            <setting name="stage">Lt. Pleist. ("Tarentian") (0.13 Ma base)</setting>
+            <setting name="text">34.0</setting>
+        </setting>
+        <setting name="unitsPerMY" unit="Ma">30.0</setting>
+        <setting name="skipEmptyColumns" unit="Ma">true</setting>
+        <setting name="variableColors">UNESCO</setting>
+        <setting name="noIndentPattern">false</setting>
+        <setting name="negativeChk">false</setting>
+        <setting name="doPopups">true</setting>
+        <setting name="enEventColBG">false</setting>
+        <setting name="enChartLegend">false</setting>
+        <setting name="enPriority">false</setting>
+        <setting name="enHideBlockLable">false</setting>
+    </settings>
+    <column id="class datastore.RootColumn:Chart Root">
+        <setting name="title">Chart Root</setting>
+        <setting name="useNamedColor">false</setting>
+        <setting name="placeHolder">false</setting>
+        <setting name="drawTitle">false</setting>
+        <setting name="drawAgeLabel">false</setting>
+        <setting name="drawUncertaintyLabel">false</setting>
+        <setting name="isSelected">true</setting>
+        <setting name="width">100.0</setting>
+        <setting name="pad">0.2</setting>
+        <setting name="age pad">2.0</setting>
+        <setting name="backgroundColor"/>
+        <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+        <fonts>
+            <font function="Column Header" inheritable="false"/>
+            <font function="Age Label" inheritable="false"/>
+            <font function="Uncertainty Label" inheritable="false"/>
+            <font function="Zone Column Label" inheritable="false"/>
+            <font function="Sequence Column Label" inheritable="false"/>
+            <font function="Event Column Label" inheritable="false"/>
+            <font function="Popup Body" inheritable="false"/>
+            <font function="Ruler Label" inheritable="false"/>
+            <font function="Point Column Scale Label" inheritable="false"/>
+            <font function="Range Label" inheritable="false"/>
+            <font function="Ruler Tick Mark Label" inheritable="false"/>
+            <font function="Legend Title" inheritable="false"/>
+            <font function="Legend Column Name" inheritable="false"/>
+            <font function="Legend Column Source" inheritable="false"/>
+            <font function="Range Box Label" inheritable="false"/>
+        </fonts>
+        <column id="class datastore.RootColumn:Chart Title">
+            <setting name="title">TimeScale Creator GTS2016 chart</setting>
+            <setting name="useNamedColor">false</setting>
+            <setting name="placeHolder">false</setting>
+            <setting name="drawTitle">true</setting>
+            <setting name="drawAgeLabel">false</setting>
+            <setting name="drawUncertaintyLabel">false</setting>
+            <setting name="isSelected">true</setting>
+            <setting name="width">1178.0</setting>
+            <setting name="pad">0.2</setting>
+            <setting name="age pad">2.0</setting>
+            <setting name="backgroundColor"/>
+            <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+            <fonts>
+                <font function="Column Header" inheritable="false"/>
+                <font function="Age Label" inheritable="false"/>
+                <font function="Uncertainty Label" inheritable="false"/>
+                <font function="Zone Column Label" inheritable="false"/>
+                <font function="Sequence Column Label" inheritable="false"/>
+                <font function="Event Column Label" inheritable="false"/>
+                <font function="Popup Body" inheritable="false"/>
+                <font function="Ruler Label" inheritable="false"/>
+                <font function="Point Column Scale Label" inheritable="false"/>
+                <font function="Range Label" inheritable="false"/>
+                <font function="Ruler Tick Mark Label" inheritable="false"/>
+                <font function="Legend Title" inheritable="false"/>
+                <font function="Legend Column Name" inheritable="false"/>
+                <font function="Legend Column Source" inheritable="false"/>
+                <font function="Range Box Label" inheritable="false"/>
+            </fonts>
+            <column id="class datastore.RulerColumn:Ma">
+                <setting name="title">Ma</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">44.6953125</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <setting justification="right" name="justification"/>
+            </column>
+            <column id="class datastore.MetaColumn:Standard Chronostratigraphy">
+                <setting name="title">Standard Chronostratigraphy</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">132.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor"/>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <column id="class datastore.ZoneColumn:Eon">
+                    <setting name="title">Eon</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">false</setting>
+                    <setting name="width">100.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="normal"/>
+                </column>
+                <column id="class datastore.ZoneColumn:Era">
+                    <setting name="title">Era</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">false</setting>
+                    <setting name="width">100.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="normal"/>
+                </column>
+                <column id="class datastore.ZoneColumn:Sub-Era">
+                    <setting name="title">Sub-Era</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">false</setting>
+                    <setting name="width">90.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="normal"/>
+                </column>
+                <column id="class datastore.ZoneColumn:Period">
+                    <setting name="title">Period</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">false</setting>
+                    <setting name="width">100.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="normal"/>
+                </column>
+                <column id="class datastore.ZoneColumn:Sub-Period">
+                    <setting name="title">Sub-Period</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">false</setting>
+                    <setting name="width">50.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="normal"/>
+                </column>
+                <column id="class datastore.ZoneColumn:Epoch">
+                    <setting name="title">Epoch</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">true</setting>
+                    <setting name="width">50.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="vertical"/>
+                </column>
+                <column id="class datastore.ZoneColumn:Sub-Epoch">
+                    <setting name="title">Sub-Epoch</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">false</setting>
+                    <setting name="width">60.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="normal"/>
+                </column>
+                <column id="class datastore.ZoneColumn:Age/Stage">
+                    <setting name="title">Age/Stage</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">true</setting>
+                    <setting name="width">80.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="vertical"/>
+                </column>
+                <column id="class datastore.ZoneColumn:Substage">
+                    <setting name="title">Substage</setting>
+                    <setting name="useNamedColor">true</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">false</setting>
+                    <setting name="width">100.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" standardized="true" useNamed="true"/>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="crunchOuterMargin">5</setting>
+                    <setting name="crunchInnerMargin">1</setting>
+                    <setting name="crunchAscendWidth">4</setting>
+                    <setting name="crunchOneSideSpaceUse">10</setting>
+                    <setting name="autoFlip">false</setting>
+                    <setting name="orientation" orientation="normal"/>
+                </column>
+            </column>
+            <column id="class datastore.MetaColumn:Milankovitch curves (0 to 250 Ma)">
+                <setting name="title">Milankovitch curves (0 to 250 Ma)</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">304.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor"/>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <column id="class datastore.PointColumn:Insolation 65N [Wm2] 0-100 Ma">
+                    <setting name="title">Insolation 65N [Wm2] 0-100 Ma</setting>
+                    <setting name="useNamedColor">false</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">false</setting>
+                    <setting name="width">100.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="drawPoints">false</setting>
+                    <setting name="drawLine">true</setting>
+                    <setting name="lineColor">rgb(0,0,0)</setting>
+                    <setting name="drawSmooth">true</setting>
+                    <setting name="drawFill">true</setting>
+                    <setting name="fillColor">rgb(64,233,191)</setting>
+                    <setting name="doNotSetWindowAuto">true</setting>
+                    <setting name="minWindow">335.0</setting>
+                    <setting name="maxWindow">410.0</setting>
+                    <setting name="drawScale">false</setting>
+                    <setting name="drawBgrndGradient">false</setting>
+                    <setting name="backGradStart">rgb(0,0,0)</setting>
+                    <setting name="backGradEnd">rgb(255,255,255)</setting>
+                    <setting name="drawCurveGradient">false</setting>
+                    <setting name="curveGradStart">rgb(0,0,0)</setting>
+                    <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                    <setting name="flipScale">false</setting>
+                    <setting name="scaleStart">0.0</setting>
+                    <setting name="scaleStep">15.0</setting>
+                    <setting name="pointType" pointType="rect"/>
+                </column>
+                <column id="class datastore.PointColumn:Eccentricity (0-250 Ma)">
+                    <setting name="title">Eccentricity</setting>
+                    <setting name="useNamedColor">false</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">true</setting>
+                    <setting name="width">100.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="drawPoints">false</setting>
+                    <setting name="drawLine">true</setting>
+                    <setting name="lineColor">rgb(0,0,0)</setting>
+                    <setting name="drawSmooth">true</setting>
+                    <setting name="drawFill">true</setting>
+                    <setting name="fillColor">rgb(153,153,255)</setting>
+                    <setting name="doNotSetWindowAuto">true</setting>
+                    <setting name="minWindow">-0.003</setting>
+                    <setting name="maxWindow">0.071</setting>
+                    <setting name="drawScale">true</setting>
+                    <setting name="drawBgrndGradient">false</setting>
+                    <setting name="backGradStart">rgb(0,0,0)</setting>
+                    <setting name="backGradEnd">rgb(255,255,255)</setting>
+                    <setting name="drawCurveGradient">false</setting>
+                    <setting name="curveGradStart">rgb(0,0,0)</setting>
+                    <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                    <setting name="flipScale">false</setting>
+                    <setting name="scaleStart">0.0</setting>
+                    <setting name="scaleStep">0.015</setting>
+                    <setting name="pointType" pointType="rect"/>
+                </column>
+                <column id="class datastore.PointColumn:Precession (0-250 Ma)">
+                    <setting name="title">Precession</setting>
+                    <setting name="useNamedColor">false</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">true</setting>
+                    <setting name="width">100.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="drawPoints">false</setting>
+                    <setting name="drawLine">true</setting>
+                    <setting name="lineColor">rgb(0,0,0)</setting>
+                    <setting name="drawSmooth">true</setting>
+                    <setting name="drawFill">false</setting>
+                    <setting name="fillColor">rgb(0,255,102)</setting>
+                    <setting name="doNotSetWindowAuto">true</setting>
+                    <setting name="minWindow">-0.072</setting>
+                    <setting name="maxWindow">0.073</setting>
+                    <setting name="drawScale">true</setting>
+                    <setting name="drawBgrndGradient">true</setting>
+                    <setting name="backGradStart">rgb(102,255,51)</setting>
+                    <setting name="backGradEnd">rgb(255,255,255)</setting>
+                    <setting name="drawCurveGradient">false</setting>
+                    <setting name="curveGradStart">rgb(0,0,0)</setting>
+                    <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                    <setting name="flipScale">false</setting>
+                    <setting name="scaleStart">0.0</setting>
+                    <setting name="scaleStep">0.029</setting>
+                    <setting name="pointType" pointType="rect"/>
+                </column>
+                <column id="class datastore.PointColumn:Obliquity (0-250 Ma)">
+                    <setting name="title">Obliquity</setting>
+                    <setting name="useNamedColor">false</setting>
+                    <setting name="placeHolder">false</setting>
+                    <setting name="drawTitle">true</setting>
+                    <setting name="drawAgeLabel">false</setting>
+                    <setting name="drawUncertaintyLabel">false</setting>
+                    <setting name="isSelected">true</setting>
+                    <setting name="width">100.0</setting>
+                    <setting name="pad">0.2</setting>
+                    <setting name="age pad">2.0</setting>
+                    <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                    <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                    <fonts>
+                        <font function="Column Header" inheritable="false"/>
+                        <font function="Age Label" inheritable="false"/>
+                        <font function="Uncertainty Label" inheritable="false"/>
+                        <font function="Zone Column Label" inheritable="false"/>
+                        <font function="Sequence Column Label" inheritable="false"/>
+                        <font function="Event Column Label" inheritable="false"/>
+                        <font function="Popup Body" inheritable="false"/>
+                        <font function="Ruler Label" inheritable="false"/>
+                        <font function="Point Column Scale Label" inheritable="false"/>
+                        <font function="Range Label" inheritable="false"/>
+                        <font function="Ruler Tick Mark Label" inheritable="false"/>
+                        <font function="Legend Title" inheritable="false"/>
+                        <font function="Legend Column Name" inheritable="false"/>
+                        <font function="Legend Column Source" inheritable="false"/>
+                        <font function="Range Box Label" inheritable="false"/>
+                    </fonts>
+                    <setting name="drawPoints">false</setting>
+                    <setting name="drawLine">true</setting>
+                    <setting name="lineColor">rgb(0,0,0)</setting>
+                    <setting name="drawSmooth">true</setting>
+                    <setting name="drawFill">false</setting>
+                    <setting name="fillColor">rgb(255,51,51)</setting>
+                    <setting name="doNotSetWindowAuto">true</setting>
+                    <setting name="minWindow">21.5</setting>
+                    <setting name="maxWindow">25.0</setting>
+                    <setting name="drawScale">true</setting>
+                    <setting name="drawBgrndGradient">true</setting>
+                    <setting name="backGradStart">rgb(255,153,153)</setting>
+                    <setting name="backGradEnd">rgb(255,255,255)</setting>
+                    <setting name="drawCurveGradient">false</setting>
+                    <setting name="curveGradStart">rgb(0,0,0)</setting>
+                    <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                    <setting name="flipScale">false</setting>
+                    <setting name="scaleStart">0.0</setting>
+                    <setting name="scaleStep">0.7</setting>
+                    <setting name="pointType" pointType="rect"/>
+                </column>
+            </column>
+            <column id="class datastore.PointColumn:foram extinction">
+                <setting name="title">foram extinction</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">100.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <setting name="drawPoints">false</setting>
+                <setting name="drawLine">true</setting>
+                <setting name="lineColor">rgb(0,0,0)</setting>
+                <setting name="drawSmooth">true</setting>
+                <setting name="drawFill">true</setting>
+                <setting name="fillColor">rgb(255,0,0)</setting>
+                <setting name="doNotSetWindowAuto">true</setting>
+                <setting name="minWindow">7.0</setting>
+                <setting name="maxWindow">-0.3</setting>
+                <setting name="drawScale">true</setting>
+                <setting name="drawBgrndGradient">false</setting>
+                <setting name="backGradStart">rgb(0,0,0)</setting>
+                <setting name="backGradEnd">rgb(255,255,255)</setting>
+                <setting name="drawCurveGradient">false</setting>
+                <setting name="curveGradStart">rgb(0,0,0)</setting>
+                <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                <setting name="flipScale">true</setting>
+                <setting name="scaleStart">0.0</setting>
+                <setting name="scaleStep">1.32</setting>
+                <setting name="pointType" pointType="rect"/>
+            </column>
+            <column id="class datastore.PointColumn:foram speciation">
+                <setting name="title">foram speciation</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">100.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <setting name="drawPoints">false</setting>
+                <setting name="drawLine">true</setting>
+                <setting name="lineColor">rgb(0,0,0)</setting>
+                <setting name="drawSmooth">true</setting>
+                <setting name="drawFill">true</setting>
+                <setting name="fillColor">rgb(0,153,51)</setting>
+                <setting name="doNotSetWindowAuto">true</setting>
+                <setting name="minWindow">-0.45</setting>
+                <setting name="maxWindow">9.45</setting>
+                <setting name="drawScale">true</setting>
+                <setting name="drawBgrndGradient">false</setting>
+                <setting name="backGradStart">rgb(0,0,0)</setting>
+                <setting name="backGradEnd">rgb(255,255,255)</setting>
+                <setting name="drawCurveGradient">false</setting>
+                <setting name="curveGradStart">rgb(0,0,0)</setting>
+                <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                <setting name="flipScale">false</setting>
+                <setting name="scaleStart">0.0</setting>
+                <setting name="scaleStep">1.98</setting>
+                <setting name="pointType" pointType="rect"/>
+            </column>
+            <column id="class datastore.PointColumn:foram turnover">
+                <setting name="title">foram turnover</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">100.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <setting name="drawPoints">false</setting>
+                <setting name="drawLine">true</setting>
+                <setting name="lineColor">rgb(0,0,0)</setting>
+                <setting name="drawSmooth">true</setting>
+                <setting name="drawFill">true</setting>
+                <setting name="fillColor">rgb(255,153,51)</setting>
+                <setting name="doNotSetWindowAuto">true</setting>
+                <setting name="minWindow">-0.6</setting>
+                <setting name="maxWindow">12.6</setting>
+                <setting name="drawScale">true</setting>
+                <setting name="drawBgrndGradient">false</setting>
+                <setting name="backGradStart">rgb(0,0,0)</setting>
+                <setting name="backGradEnd">rgb(255,255,255)</setting>
+                <setting name="drawCurveGradient">false</setting>
+                <setting name="curveGradStart">rgb(0,0,0)</setting>
+                <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                <setting name="flipScale">false</setting>
+                <setting name="scaleStart">0.0</setting>
+                <setting name="scaleStep">2.64</setting>
+                <setting name="pointType" pointType="rect"/>
+            </column>
+            <column id="class datastore.PointColumn:nannos extinction">
+                <setting name="title">nannos extinction</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">100.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <setting name="drawPoints">false</setting>
+                <setting name="drawLine">true</setting>
+                <setting name="lineColor">rgb(0,0,0)</setting>
+                <setting name="drawSmooth">true</setting>
+                <setting name="drawFill">true</setting>
+                <setting name="fillColor">rgb(255,0,0)</setting>
+                <setting name="doNotSetWindowAuto">true</setting>
+                <setting name="minWindow">6.3</setting>
+                <setting name="maxWindow">-0.3</setting>
+                <setting name="drawScale">true</setting>
+                <setting name="drawBgrndGradient">false</setting>
+                <setting name="backGradStart">rgb(0,0,0)</setting>
+                <setting name="backGradEnd">rgb(255,255,255)</setting>
+                <setting name="drawCurveGradient">false</setting>
+                <setting name="curveGradStart">rgb(0,0,0)</setting>
+                <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                <setting name="flipScale">true</setting>
+                <setting name="scaleStart">0.0</setting>
+                <setting name="scaleStep">1.32</setting>
+                <setting name="pointType" pointType="rect"/>
+            </column>
+            <column id="class datastore.PointColumn:nannos speciation">
+                <setting name="title">nannos speciation</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">100.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <setting name="drawPoints">false</setting>
+                <setting name="drawLine">true</setting>
+                <setting name="lineColor">rgb(0,0,0)</setting>
+                <setting name="drawSmooth">true</setting>
+                <setting name="drawFill">true</setting>
+                <setting name="fillColor">rgb(0,153,0)</setting>
+                <setting name="doNotSetWindowAuto">true</setting>
+                <setting name="minWindow">-0.45</setting>
+                <setting name="maxWindow">9.45</setting>
+                <setting name="drawScale">true</setting>
+                <setting name="drawBgrndGradient">false</setting>
+                <setting name="backGradStart">rgb(0,0,0)</setting>
+                <setting name="backGradEnd">rgb(255,255,255)</setting>
+                <setting name="drawCurveGradient">false</setting>
+                <setting name="curveGradStart">rgb(0,0,0)</setting>
+                <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                <setting name="flipScale">false</setting>
+                <setting name="scaleStart">0.0</setting>
+                <setting name="scaleStep">1.98</setting>
+                <setting name="pointType" pointType="rect"/>
+            </column>
+            <column id="class datastore.PointColumn:nannos turnover">
+                <setting name="title">nannos turnover</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">100.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor" useNamed="false">rgb(255,255,255)</setting>
+                <setting name="customColor" useNamed="false">rgb(255,255,255)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <setting name="drawPoints">false</setting>
+                <setting name="drawLine">true</setting>
+                <setting name="lineColor">rgb(0,0,0)</setting>
+                <setting name="drawSmooth">true</setting>
+                <setting name="drawFill">true</setting>
+                <setting name="fillColor">rgb(153,0,204)</setting>
+                <setting name="doNotSetWindowAuto">true</setting>
+                <setting name="minWindow">-0.5</setting>
+                <setting name="maxWindow">10.5</setting>
+                <setting name="drawScale">true</setting>
+                <setting name="drawBgrndGradient">false</setting>
+                <setting name="backGradStart">rgb(0,0,0)</setting>
+                <setting name="backGradEnd">rgb(255,255,255)</setting>
+                <setting name="drawCurveGradient">false</setting>
+                <setting name="curveGradStart">rgb(0,0,0)</setting>
+                <setting name="curveGradEnd">rgb(255,255,255)</setting>
+                <setting name="flipScale">false</setting>
+                <setting name="scaleStart">0.0</setting>
+                <setting name="scaleStep">2.2</setting>
+                <setting name="pointType" pointType="rect"/>
+            </column>
+            <column id="class datastore.EventColumn:Oxy-18 events">
+                <setting name="title">Oxy-18 events</setting>
+                <setting name="useNamedColor">false</setting>
+                <setting name="placeHolder">false</setting>
+                <setting name="drawTitle">true</setting>
+                <setting name="drawAgeLabel">false</setting>
+                <setting name="drawUncertaintyLabel">false</setting>
+                <setting name="isSelected">true</setting>
+                <setting name="width">80.0</setting>
+                <setting name="pad">0.2</setting>
+                <setting name="age pad">2.0</setting>
+                <setting name="backgroundColor" useNamed="false">rgb(255,255,160)</setting>
+                <setting name="customColor" useNamed="false">rgb(255,255,160)</setting>
+                <fonts>
+                    <font function="Column Header" inheritable="false"/>
+                    <font function="Age Label" inheritable="false"/>
+                    <font function="Uncertainty Label" inheritable="false"/>
+                    <font function="Zone Column Label" inheritable="false"/>
+                    <font function="Sequence Column Label" inheritable="false"/>
+                    <font function="Event Column Label" inheritable="false"/>
+                    <font function="Popup Body" inheritable="false"/>
+                    <font function="Ruler Label" inheritable="false"/>
+                    <font function="Point Column Scale Label" inheritable="false"/>
+                    <font function="Range Label" inheritable="false"/>
+                    <font function="Ruler Tick Mark Label" inheritable="false"/>
+                    <font function="Legend Title" inheritable="false"/>
+                    <font function="Legend Column Name" inheritable="false"/>
+                    <font function="Legend Column Source" inheritable="false"/>
+                    <font function="Range Box Label" inheritable="false"/>
+                </fonts>
+                <setting name="type">events</setting>
+                <setting name="rangeSort">first occurrence</setting>
+            </column>
+        </column>
+    </column>
+</TSCreator>

@@ -7,7 +7,7 @@ dp_fname3 <- 'qryTSCAze_MorphospeciesAzeTableS3_ColourGenus.xls'
 dp_fname4 <- 'qryTSCAze_BiospeciesAze_ColourMorphogroup.xls'
 dp_fname5 <- 'qryTSCAze_BiospeciesAze_ColourEcogroup.xls' 
 
-dp_fname <- dp_fname1
+dp_fname <- dp_fname2
 
 library(readxl)
 # extract the FAD and LAD points from the tscreator datapack in excel format
@@ -98,13 +98,6 @@ root <- lad_df[root_ix,]
 root$name <- as.character(root$name)
 root
 
-fl <- which(frequent_df$name == root$name)
-frequent_df[fl,]
-
-# add the root node to the FAD data frame
-fad_df <- rbind(fad_df, data.frame(FAD=frequent_df[fl,]$frequent, name=frequent_df[fl,]$name, parent='.'))
-
-fad_df <- fad_df[order(fad_df$name),]
 
 
 # create data frame for other point types
@@ -122,6 +115,14 @@ conjectured_df <- data.frame(conjectured=age_col[conjectured_ix], name=name_col[
 conjectured_df
 sample_missing_df <- data.frame(sample_missing=age_col[sample_missing_ix], name=name_col[sample_missing_ix])
 sample_missing_df
+
+fl <- which(frequent_df$name == root$name)
+frequent_df[fl,]
+
+# add the root node to the FAD data frame
+fad_df <- rbind(fad_df, data.frame(FAD=frequent_df[fl,]$frequent, name=frequent_df[fl,]$name, parent='.'))
+
+fad_df <- fad_df[order(fad_df$name),]
 
 # creating data frame to obtain range points
 range_df <- fad_df
@@ -193,6 +194,8 @@ assignBranchLabelToChild <- function(ci, range_df) {
   b_label = as.character(range_df$branch_label[ci])
   
   # if no branchlabel
+  na_cond = is.na(b_label)
+  na_cond = ifelse(identical(na_cond, logical(0)), TRUE, FALSE)
   if (length(b_label) != 0 & !is.na(b_label)) {
     return(range_df)
   }
@@ -224,6 +227,8 @@ findBranchLabelToChild <- function(ci, branch_label_list) {
   b_label = as.character(range_df$branch_label[ci])
   
   # if no branchlabel
+  na_cond = is.na(b_label)
+  na_cond = ifelse(identical(na_cond, logical(0)), TRUE, FALSE)
   if (length(b_label) != 0 & !is.na(b_label)) {
     branch_label_list[[child]] = b_label
     return(branch_label_list)
@@ -263,6 +268,165 @@ for(ci in no_blabel_children_ix) {
 
 datatable(range_df)
 datatable(range_df[,c('name', 'branch_label')])
+
+# show temporal diversity of morphogroups
+morphogroup_cnt <- 19
+morphlbls <- paste("Morphogroup", 1:morphogroup_cnt)
+morphlblids <- c('M1-flat', 'M2-globular', 'M3-globular with supplementary apertures', 
+'M4-spherical', 'M5-clavate', 'M6-planispiral', 'M7-globular', 'M8-globular, keeled', 
+'M9-planispiral', 'M10-tubulospinate', 'M11-keeled spines', 'M12-turborotaliform, keeled',
+'M13-turborotaliform, non-keeled', 'M14-globorotaliform, keeled', 'M15-globorotaliform, anguloconical', 
+'M16-globorotaliform, non-keeled', 'M17-muricate, acarininiform', 'M18-muricocarinate, keeled',
+'M19-muricocarinate, anguloconical')
+
+morphdf <- t(data.frame(rep(0, morphogroup_cnt)))
+colnames(morphdf) <- morphlbls
+morphdf <- morphdf[-1,]
+
+fami_cnt <- length(unique(families))
+familbls <- unique(families)
+famidf <- t(data.frame(rep(0, fami_cnt)))
+colnames(famidf) <- familbls
+famidf <- famidf[-1,]
+
+morphogroups <- list()
+famigroups <-list()
+i <- 1
+for(lsp in existing_sp) {
+  age <- lsp$age
+  lsp$morphogroup <- c()
+  for(sp in lsp$existing_species) {
+     r <- range_df[range_df$name == sp,]
+     lsp$morphogroup <- c(lsp$morphogroup, r$branch_label)
+  }
+  
+  morphogroups[[i]] <- lsp
+  
+  # temporal morphogroup count per group
+  ttdf <- t(data.frame(rep(0, morphogroup_cnt)))
+  colnames(ttdf) <- morphlbls
+  tbl <- table(lsp$morphogroup)
+  for(lbl in morphlbls) {
+    v <- as.integer(tbl[lbl])
+    if (!is.na(v)) { 
+      ttdf[, lbl] <- v
+    }
+  }
+  rownames(ttdf) <- age
+  
+  morphdf <- rbind(morphdf, ttdf)
+  
+  # temporal famigroup count per group
+  ttdf <- t(data.frame(rep(0, fami_cnt)))
+  colnames(ttdf) <- familbls
+  tbl <- table(lsp$families)
+  for(lbl in familbls) {
+    v <- as.integer(tbl[lbl])
+    if (!is.na(v)) { 
+      ttdf[, lbl] <- v
+    }
+  }
+  rownames(ttdf) <- age
+  
+  famidf <- rbind(famidf, ttdf)
+  
+  i <- i+1
+}
+
+library(DT)
+datatable(morphdf)
+
+fami_cnt = length(unique(families))
+i=1
+x=-1 * as.numeric(rownames(famidf))
+y=famidf[,i]
+par(mar=c(4,4,4,4))
+plot(x, y, t='l', xlab='Age (Myr)', ylab='Number of species', lwd=2, ylim=c(0,40))
+
+for(i in 2:fami_cnt) {
+  y=famidf[,i]
+  lines(x,y, col=i, lwd=2)
+}
+
+legend("topleft", legend=familbls, col=1:fami_cnt, lty=1, lwd=2)
+
+par(mar=c(4,4,4,4))
+morphogroup_cnt = 19
+i=1
+x=-1 * as.numeric(rownames(morphdf))
+y=morphdf[,i]
+plot(x, y, t='l', xlab='Age (Myr)', ylab='Number of species', ylim=c(0, 25), lwd=2)
+
+mcols <- c('Black','Red','Green','Blue','Yellow','Brown','Plum', 
+           'Magenta', 'Cyan','Purple','Navy blue','Hot pink','Gray',
+           'Orange','Maroon','Khaki','Aquamarine','Coral','Orchid')
+
+for(i in 2:morphogroup_cnt) {
+  y=morphdf[,i]
+  lines(x,y, col=mcols[i], lwd=2)
+}
+
+
+legend("topleft", legend=morphlblids, col=mcols, lty=1, lwd=2, cex=0.59)
+
+
+# show temporal diversity of ecogroups
+ecogroup_cnt <- 6
+ecolbls <- paste("Ecogroup", 1:ecogroup_cnt)
+ecodf <- t(data.frame(rep(0, ecogroup_cnt)))
+colnames(ecodf) <- ecolbls
+ecodf <- ecodf[-1,]
+
+ecogroups <- list()
+ecodf <- data.frame()
+i <- 1
+for(lsp in existing_sp) {
+  age <- lsp$age
+  lsp$ecogroup <- c()
+  for(sp in lsp$existing_species) {
+    r <- range_df[range_df$name == sp,]
+    lsp$ecogroup <- c(lsp$ecogroup, r$branch_label)
+  }
+  lsp$ecogroup_cnt <- length(lsp$ecogroup)
+  
+  ecogroups[[i]] <- lsp
+  
+  # temporal morphogroup count per group
+  ttdf <- t(data.frame(rep(0, ecogroup_cnt)))
+  colnames(ttdf) <- ecolbls
+  tbl <- table(lsp$ecogroup)
+  for(lbl in ecolbls) {
+    v <- as.integer(tbl[lbl])
+    if (!is.na(v)) { 
+      ttdf[, lbl] <- v
+    }
+  }
+  rownames(ttdf) <- age
+  
+  ecodf <- rbind(ecodf, ttdf)
+  
+  i <- i+1
+}
+
+library(DT)
+datatable(ecodf)
+head(ecodf)
+
+ecogroup_cnt = 6
+i=1
+x=-1 * as.numeric(rownames(ecodf))
+y=ecodf[,i]
+plot(x, y, t='l', xlab='Age (Myr)', ylab='Number of species', lwd=2, ylim=c(0,10))
+
+for(i in 2:ecogroup_cnt) {
+  y=ecodf[,i]
+  lines(x,y, col=i, lwd=2)
+}
+
+ecolblids<-c('E1-With Symbionts', 'E2-Without Symbionts', 'E3-thermocline', 
+'E4-sub-thermocline', 'E5-high-latitude', 'E6-upwelling/high')
+legend("topleft", legend=ecolblids, col=1:ecogroup_cnt, lty=1, lwd=2)
+
 
 # create evolutionary tree list which contains parent child range relationship
 parent <- name_col[FAD_ix]
