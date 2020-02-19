@@ -1,8 +1,7 @@
 # Ice Ages and Astronomical Causes: Page 131 - Sudden terminations and sawtooth shape
 # Deuterium Record from Vostok ICE
 
-
-setwd("~/Dropbox/TSCreator/TSCreator development/Developers/Andy/Datapacks")
+setwd("~/Dropbox/TSCreator/TSCreator_development/Developers/Andy/Projects/Datapacks")
 dp_fname <- "Phan_GTS2016_for_7.1_HaqJur_ForamMikrotax_28July2017.xls"
 library(readxl)
 dfxl <- read_excel(dp_fname)
@@ -47,6 +46,7 @@ s <- stsl_df$SL
 n <- length(s)
 roll_avg <- c(1, 0.5, 2.5, 5, 10, 25, 50)
 roll_n <- length(roll_avg)
+roll_size <- c(5, 10, 15)
 for (k in roll_size) {
   N <- k
   x <- na.omit(stats::filter(s, sides=2, rep(1,N)/N))
@@ -443,6 +443,56 @@ plot(psppa$x.x, psppa$y.y, lty=2, type='l',
 
 
 # Blackman tukey
-?auspec
 library(timsac)
+?auspec
 auspec(delta_Dt.filt, lag=1/3)
+
+
+n = dim(eccentricity_df)[1]
+
+
+# frequency
+n = dim(eccentricity_df)[1]
+lag <- 4 * sqrt(n)
+lag1 <- lag + 1
+x <- rep(0, lag1)
+for(i in 1:lag1) 
+  x[i] <- (i - 1) / (2 * lag)
+
+#a <- auspec(eccentricity_df$eccentricity, window = 'Hanning')
+a <- auspec(eccentricity_df$eccentricity, lag=lag)
+
+b<-bispec(eccentricity_df$eccentricity)
+
+plot(a$stat, t='l')
+plot(b$pspec, t='l')
+
+length(a$stat)
+
+dt = 0.002
+fmax  = 1/(2 * dt)
+N = length(a$stat)
+N
+fmin = fmax/N
+fmin
+fmax
+
+fnorm <- (fmax - fmin)*x + fmin 
+spec <- a$stat
+
+btdf <- data.frame(freq=fnorm, spec=spec)
+plot(btdf, t='l')
+
+#btdf <- btdf[order(btdf$power, decreasing = T),]
+
+d <- btdf
+d <- spec.BT(eccentricity_df$eccentricity)
+head(d[order(d$spec, decreasing = T),], n=20)
+
+plot(d$freq, d$spec, t='l', xlim=c(0, 7))
+
+length(a$stat)
+
+n
+
+

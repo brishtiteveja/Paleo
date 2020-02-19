@@ -468,7 +468,6 @@ for(k in rs) {
 mean_lifespan_per_level <- mean_lifespan_per_level[order(mean_lifespan_per_level$age),] 
 head(mean_lifespan_per_level)
 
-
 df = data.frame(FAD_LAD_per_df)
 # At each pseudolevel, we count the number of speciations or
 # extinctions—encoded as counts in the code (Dataset S2)—and

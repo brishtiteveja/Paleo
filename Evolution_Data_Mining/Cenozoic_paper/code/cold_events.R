@@ -67,7 +67,7 @@ lines(pf_t$age, pf_t$FAD_cnt, lwd=2, col='green')
 lines(pf_t$age, pf_t$LAD_cnt, lwd=2, col='red')
 Y1 <- grconvertY(3.0, "user", "ndc")
 
-par(mfrow=c(3,1))
+par(mfrow=c(2,1))
 plot(PF_dff$age, PF_dff$N.turnover, t='l', xlim=xlim)
 plot(PF_dff$age, PF_dff$raw.turnover.probability, t='l', xlim=xlim, ylim=c(0,0.4))
 

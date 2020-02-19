@@ -106,6 +106,7 @@ Tskdj_df$P_sk_dj <- c_P_sk_dj
 library(DT)
 rownames(Tskdj_df) <- seq(1,NN)
 Tskdj_df <- round(Tskdj_df, 4)
+Tskdj_df <- Tskdj_df[order(Tskdj_df$dj),]
 datatable(Tskdj_df)
 
 
@@ -198,4 +199,8 @@ library(DT)
 rownames(Tekdj_df) <- seq(1,NN)
 Tekdj_df <- round(Tekdj_df, 4)
 datatable(Tekdj_df)
+
+plot(Tekdj_df$dj, Tekdj_df$P_ek_dj, t='l')
+
+plot(Tskdj_df$dj, Tskdj_df$P_sk_dj, t='l')
 

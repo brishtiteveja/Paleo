@@ -416,7 +416,7 @@ ecogroup_cnt = 6
 i=1
 x=-1 * as.numeric(rownames(ecodf))
 y=ecodf[,i]
-plot(x, y, t='l', xlab='Age (Myr)', ylab='Number of species', lwd=2, ylim=c(0,10))
+plot(x, y, t='l', xlab='Age (Myr)', ylab='Number of species', lwd=2)
 
 for(i in 2:ecogroup_cnt) {
   y=ecodf[,i]
@@ -425,7 +425,7 @@ for(i in 2:ecogroup_cnt) {
 
 ecolblids<-c('E1-With Symbionts', 'E2-Without Symbionts', 'E3-thermocline', 
 'E4-sub-thermocline', 'E5-high-latitude', 'E6-upwelling/high')
-legend("topleft", legend=ecolblids, col=1:ecogroup_cnt, lty=1, lwd=2)
+legend("topleft", legend=ecolblids, col=1:ecogroup_cnt, lty=1, lwd=2, cex=0.9)
 
 
 # create evolutionary tree list which contains parent child range relationship

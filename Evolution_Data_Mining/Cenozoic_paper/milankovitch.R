@@ -18,6 +18,7 @@ orbit_dff <- orbit_df[orbit_df$age >= 0,]
 
 plot(orbit_dff$age, orbit_dff$eccentricity, t='l')
 plot(orbit_dff$age, orbit_dff$obliquity, t='l')
+plot(orbit_dff$age, orbit_dff$global.insolation, t='l')
 
 # tscreator milankovitch datapack
 data_dir <- '/Users/andy/Documents/projects/ML-Data Mining/Evolution_Data_Mining/Astronomical_data'
@@ -52,7 +53,7 @@ obliquity <- as.numeric(dfxl$X__1[row_start:row_end])
 
 par(mfrow=c(4,1))
 par(mar=c(2,4,2,1))
-mx_age <- 30
+mx_age <- 34
 i_id <- which(insolation_age <= mx_age)
 plot(insolation_age[i_id], insolation_65N[i_id], t='l')
 e_id <- which(eccentricity_age <= mx_age)
@@ -72,9 +73,14 @@ precession_df <- data.frame(age=precession_age[p_id],
 
 library(zoo)
 on <- rollapply(obliquity_df, width=100, FUN=mean)
-plot(obliquity_df, t='l', xlim=c(0,1))
+a_l <- 0
+a_u <- 8
+par(mfrow=c(4,1))
+plot(obliquity_df, t='hist', xlim=c(a_l, a_u))
 par(new=T)
-plot(on, t='l', col='red',axes=F, xlim=c(0,1))
+plot(on, t='l', col='red',axes=F, xlim=c(a_l, a_u))
+
+
 
 # eccentricity
 par(mfrow=c(1,1))
@@ -101,6 +107,10 @@ e_down_cov <- rollapply(e_down_cov_orig, width=3, by=1, FUN=mean)
 lines(e_down_cov, col='red', lwd=5)
 e_down_cov_t <- linterp(e_down_cov_orig, dt=0.001)
 mtm(e_down_cov_t)
+
+
+band
+
 
 #obliquity
 par(mfrow=c(1,1))
@@ -171,3 +181,28 @@ i_down_cov <- rollapply(i_down_cov_orig, width=3, by=1, FUN=mean)
 lines(i_down_cov, col='blue', lwd=2)
 i_down_cov_t <- linterp(i_down_cov_orig, dt=0.001)
 mtm(i_down_cov_t)
+
+
+
+y <- obliquity_df$obliquity
+y <- y - mean(y)
+
+plot(y, t='l')
+N <- length(y) * 0.05
+win <- N
+taper <- 0.5
+
+library(spectral)
+
+w <- win.tukey(y, a=0.025)
+plot(y, t='l')
+lines(w, col=3)
+
+r <- acf(y, lag.max = N-1, plot=TRUE)
+r$acf
+
+library(ssa)
+
+BT <- btpsd(y, type="Tukey", win=N, taper=0.5)
+
+plot(BT, t='l')
