@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://www.mendeley.com/import/iframe?bookmarklet=true -->
+<html dir="ltr" mozdisallowselectionprint="" moznomarginboxes="" class=" no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        
+        <!-- NREUM: (1) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Weblet Importer</title>
+
+        <link rel="stylesheet" href="./main.css">
+
+        <script src="./satelliteLib-4a7497b2b1d1900fe42ef2c13e32daeedf9c1642.js"></script>
+
+    <script type="text/javascript" src="./analytics.js"></script></head>
+
+    <body>
+
+        <div class="main">
+
+            <div class="toast" style="display: none;"></div>
+
+            <div class="header">
+                <span class="logo icon icon-mendeley-logo"></span>
+                <a href="https://www.mendeley.com/library/" target="_blank" class="btn btn-default web-library">Web Library</a>
+                <a class="close icon icon-remove"></a>
+            </div>
+
+            <div id="toolbar-primary-container"><div id="back-button-container" class="control" style="display: none;"><button class="btn btn-link back"><span class="icon icon-left-bracket"></span>Back</button>
+</div>
+<div id="target-location-picker-container" class="control target-location-picker-container" style="display: block;"><select class="target-location selectized" placeholder="Choose folders or groups" multiple="multiple" tabindex="-1" style="display: none;"></select><div class="selectize-control target-location multi"><div class="selectize-input items not-full has-options"><input type="select-multiple" autocomplete="off" tabindex="0" placeholder="Choose folders or groups" style="width: 127.516px;"></div><div class="selectize-dropdown multi target-location" style="display: none; width: 0px; top: 27px; left: 0px;"><div class="selectize-dropdown-content"></div></div></div>
+</div>
+<div id="select-all-container" class="control" style="display: none;"><div class="select-all">
+    <input id="select-all" class="document-item-checkbox" type="checkbox">
+    <label for="select-all" class="document-item-label"><span class="document-item-tick-styled"></span>All</label>
+</div>
+</div>
+<div id="save-multiple-button-container" class="control" style="display: none;"><button class="btn btn-primary save">Save all</button>
+</div>
+<div id="save-single-button-container" class="control" style="display: block;"><button class="btn btn-primary save">Save</button>
+</div>
+</div>
+            <div id="toolbar-secondary-container" style="display: none;"><div class="download-pdf checked">
+    <input id="download-pdf-checkbox" class="document-item-checkbox" type="checkbox" checked="checked">
+    <label for="download-pdf-checkbox" class="document-item-label"><span class="document-item-tick-styled"></span>Download PDFs if available</label>
+</div>
+</div>
+
+            <div class="loader" style="display: none;">
+                <div class="loader-spinner">
+                    <div class="bounce bounce1"></div>
+                    <div class="bounce bounce2"></div>
+                    <div class="bounce bounce3"></div>
+                    <div class="bounce bounce4"></div>
+                </div>
+            </div>
+
+        <div class="slide-container no-documents-found no-slide-animation slide-edit">
+
+
+    <div class="slide single">
+
+        <div class="item document-item" data-document-item=""><div class="description">
+
+    <div class="notification">
+        <span class="file-success">
+            <span class="icon icon-tick"></span>
+            PDF
+        </span>
+
+        <span class="file-fail">
+            <span class="icon icon-remove"></span>
+            PDF
+        </span>
+
+        <span>
+            <span class="icon icon-tick"></span>
+            Reference
+        </span>
+    </div>
+
+    <div class="progress">
+        <span class="label">
+            Saving
+        </span>
+
+        <span class="percentage">0%</span>
+
+        <div class="track">
+            <div class="bar" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <button class="btn btn-default edit-button">
+        <span class="icon icon-edit"></span>
+        Edit
+    </button>
+
+    <div class="document-metadata document-metadata-view document-metadata-extended"></div>
+
+
+
+</div>
+
+
+<div class="feedback"></div>
+</div>
+    </div>
+
+    <div class="slide edit">
+        <div class="message"><div class="error-no-documents-found">
+   Bibliographic metadata could not be detected. Create metadata below to
+   enhance the quality of this resource.
+</div>
+</div>
+        <div class="container document-metadata-edit"><div class="document-edit-controls">
+    <button class="action-save" type="submit">Save</button>
+    <button class="action-cancel" type="reset" style="display: none;">Cancel</button>
+</div>
+<div class="document-edit-formwrapper">
+    <form class="document-edit-form">
+        <input id="document-edit-id-0" type="hidden" name="id" value="">
+        <div class="document-edit-group">
+            <label for="document-edit-type-0" class="document-edit-heading">type</label>
+            <select id="document-edit-type-0" name="type" class="document-edit-select">
+                <option value="journal">Journal Article</option>
+                <option value="book">Book</option>
+                <option value="generic">Generic</option>
+                <option value="book_section">Book Section</option>
+                <option value="conference_proceedings">Conference Proceedings</option>
+                <option value="working_paper">Working Paper</option>
+                <option value="report">Report</option>
+                <option value="web_page" selected="selected">Web Page</option>
+                <option value="thesis">Thesis</option>
+                <option value="magazine_article">Magazine Article</option>
+                <option value="statute">Statute</option>
+                <option value="patent">Patent</option>
+                <option value="newspaper_article">Newspaper Article</option>
+                <option value="computer_program">Computer Program</option>
+                <option value="hearing">Hearing</option>
+                <option value="television_broadcast">Television Broadcast</option>
+                <option value="encyclopedia_article">Encyclopedia Article</option>
+                <option value="case">Case</option>
+                <option value="film">Film</option>
+                <option value="bill">Bill</option>
+            </select>
+        </div>
+        <div class="document-edit-group" id="document-title">
+            <label for="document-edit-title-0" class="document-edit-heading">title</label>
+            <input id="document-edit-title-0" type="text" name="title" value="IEEE Xplore Full-Text PDF:" class="document-edit-field" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+        </div>
+        <div class="document-edit-group">
+            <label for="document-edit-authors-0" class="document-edit-heading">authors</label>
+            <textarea id="document-edit-authors-0" name="authors" class="document-edit-field"></textarea>
+            <aside class="document-edit-tooltip">
+                <div class="document-edit-tooltip-content">
+                    Last Name, First Names<br>
+                    Last Name, First Names<br>
+                    ...
+                </div>
+            </aside>
+        </div>
+        <div class="document-edit-group">
+            <label for="document-edit-abstract-0" class="document-edit-heading">abstract</label>
+            <textarea id="document-edit-abstract-0" class="document-edit-abstract document-edit-field" name="abstract"></textarea>
+        </div>
+        <fieldset class="document-edit-fieldset">
+            <legend class="document-edit-heading">Details</legend>
+            <div class="document-edit-group">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-source-0" class="document-edit-label">Publication</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-source-0" type="text" class="document-edit-field" name="source" value="">
+                </div>
+            </div>
+            <div class="document-edit-group">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-year-0" class="document-edit-label">Year</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-year-0" type="text" class="document-edit-field" name="year" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-month-0" class="document-edit-label">Month</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-month-0" type="text" class="document-edit-field" name="month" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-day-0" class="document-edit-label">Day</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-day-0" type="text" class="document-edit-field" name="day" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-volume-0" class="document-edit-label">Volume</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-volume-0" type="text" class="document-edit-field" name="volume" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-issue-0" class="document-edit-label">Issue</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-issue-0" type="text" class="document-edit-field" name="issue" value="">
+                </div>
+            </div>
+            <div class="document-edit-group">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-pages-0" class="document-edit-label">Pages</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-pages-0" type="text" class="document-edit-field" name="pages" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-chapter-0" class="document-edit-label">Chapter</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-chapter-0" type="text" class="document-edit-field" name="chapter" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-city-0" class="document-edit-label">City</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-city-0" type="text" class="document-edit-field" name="city" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-edition-0" class="document-edit-label">Edition</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-edition-0" type="text" class="document-edit-field" name="edition" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-editors-0" class="document-edit-label">Editors</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <textarea id="document-edit-editors-0" class="document-edit-field document-edit-field" name="editors"></textarea>
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-publisher-0" class="document-edit-label">Publisher</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-publisher-0" type="text" class="document-edit-field" name="publisher" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-institution-0" class="document-edit-label">Institution</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-institution-0" type="text" class="document-edit-field" name="institution" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-revision-0" class="document-edit-label">Number</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-revision-0" type="text" class="document-edit-field" name="revision" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-series-0" class="document-edit-label">Series</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-series-0" type="text" class="document-edit-field" name="series" value="">
+                </div>
+            </div>
+            <div class="document-edit-group">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-accessed-0" class="document-edit-label">Date Accessed</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-accessed-0" type="text" class="document-edit-field" name="accessed" value="2020-02-10">
+                    <aside class="document-edit-tooltip">
+                        <div class="document-edit-tooltip-content">
+                            Date Format : YYYY-MM-DD
+                        </div>
+                    </aside>
+                </div>
+
+            </div>
+        </fieldset>
+        <fieldset class="document-edit-fieldset">
+            <legend class="document-edit-heading">Catalog IDs</legend>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-arxiv-0" class="document-edit-label">ArXiv ID</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-arxiv-0" type="text" class="document-edit-field" name="identifiers[arxiv]" value="">
+                </div>
+            </div>
+            <div class="document-edit-group">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-doi-0" class="document-edit-label">DOI</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-doi-0" type="text" class="document-edit-field" name="identifiers[doi]" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-pmid-0" class="document-edit-label">PMID</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-pmid-0" type="text" class="document-edit-field" name="identifiers[pmid]" value="">
+                </div>
+            </div>
+            <div class="document-edit-group" style="display: none;">
+                <div class="document-edit-col-a">
+                    <label for="document-edit-isbn-0" class="document-edit-label">ISBN</label>
+                </div>
+                <div class="document-edit-col-b">
+                    <input id="document-edit-isbn-0" type="text" class="document-edit-field" name="identifiers[isbn]" value="">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="document-edit-fieldset">
+            <legend class="document-edit-heading">urls</legend>
+            <div class="document-edit-url-list">
+                <div class="document-edit-group">
+                    <input type="text" class="document-edit-field document-edit-url" name="websites[]" value="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6773415" maxlength="255">
+                    <span class="icon icon-remove action-remove-url" title="Remove URL"></span>
+                </div>
+                            </div>
+            <a class="action-add-url">
+                <span class="icon icon-plus"></span> Add URL
+            </a>
+        </fieldset>
+
+        <fieldset class="document-edit-fieldset">
+            <legend class="document-edit-heading">tags</legend>
+            <div class="document-edit-group">
+                <ul class="document-edit-tag-list">
+                                        <li class="document-edit-add-tag">
+                        <input class="document-edit-add-tag-input" type="text" placeholder="Add Tag" maxlength="50">
+                        <span class="document-edit-add-tag-sizer"></span>
+                    </li>
+                </ul>
+            </div>
+        </fieldset>
+
+        <fieldset class="document-edit-fieldset">
+            <legend class="document-edit-heading">Mendeley Catalog</legend>
+            <div class="document-edit-group document-edit-catalog">
+                <input id="document-edit-hidden-0" class="document-edit-checkbox" type="checkbox" name="hidden" value="true">
+                <label for="document-edit-hidden-0" class="document-edit-label"><span class="document-edit-tick-styled"></span> Exclude from catalog</label>
+                &nbsp;
+                <div class="document-edit-info">
+                    <a href="http://support.mendeley.com/customer/portal/articles/1697541-marking-an-article-as-unpublished" target="_blank">
+                        <span class="icon icon-circle-info"></span>
+                    </a>
+                    <aside class="document-edit-tooltip">
+                        <div class="document-edit-tooltip-content">
+                            By checking this box, you ensure that no one else can see this document in the Mendeley catalog.
+                            <a href="http://support.mendeley.com/customer/portal/articles/1697541-marking-an-article-as-unpublished" target="_blank">Learn more...</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </fieldset>
+        <button id="document-edit-submit-0" type="submit" class="document-edit-submit"></button>
+    </form>
+</div>
+</div>
+    </div>
+</div>
+</div>
+
+        <script src="./main-iframe.js"></script>
+
+        <script type="text/javascript">
+            window.Mendeley = {
+                profile: {
+                    id: '17a9f73a-3f6c-3e97-ae1e-c9750c2f2c56'
+                }
+            };
+
+            window.pageData = {
+                page: {
+                    businessUnit: 'els:rp:st',
+                    language: 'en',
+                    loadTime: String(Date.now() - 1581382652906),
+                    loadTimeStamp: '1581382652906',
+                    name: 'importer',
+                    productName: 'md',
+                    environment: 'prod',
+                    noTracking: 'false',
+                    type: 'np-gp'
+                },
+                visitor: {
+                    userId: 'md:17a9f73a-3f6c-3e97-ae1e-c9750c2f2c56',
+                    accountId: '',
+                    accountName: '',
+                    accessType: 'md:registered-user',
+                    ipAddress: '128.210.107.26'
+                }
+            };
+
+            if (window.pageDataTracker && window.pageDataTracker.trackPageLoad) {
+                window.pageDataTracker.trackPageLoad();
+            }
+        </script>
+
+    
+
+
+<span style="position: absolute; top: -99999px; left: -99999px; width: auto; padding: 0px; white-space: pre; letter-spacing: 0px; font-size: 11px; font-family: Helvetica, Arial, sans-serif; font-weight: 400; text-transform: none;">Choose folders or groups</span></body></html>
